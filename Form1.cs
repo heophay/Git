@@ -29,6 +29,8 @@ namespace GiaoDien
             {
                 panel1.Width = 206;
                 panel4.Visible = true;
+                //háhahfhasff
+                //háhsahhsfasfj
             }
         }
     }
