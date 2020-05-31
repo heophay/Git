@@ -19,15 +19,15 @@ namespace GiaoDien
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(panel1.Width.ToString());
-            if (panel1.Width == 200)
+            MessageBox.Show(panel4.Width.ToString() + " " + pictureBox3.Width.ToString());
+            if (panel1.Width == 206)
             {
                 panel1.Width = 46;
                 panel4.Visible = false;
             }
             else
             {
-                panel1.Width = 200;
+                panel1.Width = 206;
                 panel4.Visible = true;
             }
         }
