@@ -46,10 +46,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel_Interface = new System.Windows.Forms.Panel();
-            this.trangChuUser1 = new GiaoDien.TrangChuUser();
-            this.taiKhoanUser1 = new GiaoDien.TaiKhoanUser();
-            this.gioHangUser1 = new GiaoDien.GioHangUser();
             this.donHang1 = new GiaoDien.DonHang();
+            this.gioHangUser1 = new GiaoDien.GioHangUser();
+            this.taiKhoanUser1 = new GiaoDien.TaiKhoanUser();
+            this.trangChuUser1 = new GiaoDien.TrangChuUser();
             this.panel_Function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -236,7 +236,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(73, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 41);
+            this.label1.Size = new System.Drawing.Size(171, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "PHONE STORE";
             // 
@@ -263,22 +263,14 @@
             this.panel_Interface.Size = new System.Drawing.Size(1227, 808);
             this.panel_Interface.TabIndex = 4;
             // 
-            // trangChuUser1
+            // donHang1
             // 
-            this.trangChuUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trangChuUser1.Location = new System.Drawing.Point(0, 0);
-            this.trangChuUser1.Name = "trangChuUser1";
-            this.trangChuUser1.Size = new System.Drawing.Size(1227, 808);
-            this.trangChuUser1.TabIndex = 0;
-            // 
-            // taiKhoanUser1
-            // 
-            this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taiKhoanUser1.Location = new System.Drawing.Point(0, 0);
-            this.taiKhoanUser1.Name = "taiKhoanUser1";
-            this.taiKhoanUser1.Size = new System.Drawing.Size(1227, 808);
-            this.taiKhoanUser1.TabIndex = 1;
+            this.donHang1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.donHang1.Location = new System.Drawing.Point(0, 0);
+            this.donHang1.Name = "donHang1";
+            this.donHang1.Size = new System.Drawing.Size(1227, 808);
+            this.donHang1.TabIndex = 3;
             // 
             // gioHangUser1
             // 
@@ -289,13 +281,22 @@
             this.gioHangUser1.Size = new System.Drawing.Size(1227, 808);
             this.gioHangUser1.TabIndex = 2;
             // 
-            // donHang1
+            // taiKhoanUser1
             // 
-            this.donHang1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donHang1.Location = new System.Drawing.Point(0, 0);
-            this.donHang1.Name = "donHang1";
-            this.donHang1.Size = new System.Drawing.Size(1227, 808);
-            this.donHang1.TabIndex = 3;
+            this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taiKhoanUser1.Location = new System.Drawing.Point(0, 0);
+            this.taiKhoanUser1.Name = "taiKhoanUser1";
+            this.taiKhoanUser1.Size = new System.Drawing.Size(1227, 808);
+            this.taiKhoanUser1.TabIndex = 1;
+            // 
+            // trangChuUser1
+            // 
+            this.trangChuUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trangChuUser1.Location = new System.Drawing.Point(0, 0);
+            this.trangChuUser1.Name = "trangChuUser1";
+            this.trangChuUser1.Size = new System.Drawing.Size(1227, 808);
+            this.trangChuUser1.TabIndex = 0;
             // 
             // User
             // 

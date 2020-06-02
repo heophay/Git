@@ -27,7 +27,7 @@ namespace GiaoDien
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(panel_Function.Width.ToString());
+            //MessageBox.Show(panel_Function.Width.ToString());
             //273
             //45
             if (panel_Function.Width == 205)
@@ -41,8 +41,10 @@ namespace GiaoDien
                 panel_Function.Width = 205;
                 button_DangKi.Visible = true;
                 button_DngNhap.Visible = true;
+
             }
-           // if(panel_Function.Width)
+            // if(panel_Function.Width)
+           
         }
 
         private void button_TrangChu_Click(object sender, EventArgs e)

@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class Form1 : Form
+    public partial class Detail_NV : Form
     {
-        public Form1()
+        public Detail_NV()
         {
             InitializeComponent();
+            dateTimePicker1.Value = Convert.ToDateTime("2020/09/09");
         }
     }
 }

@@ -31,5 +31,10 @@ namespace GiaoDien
         {
             nhanVienAdMa1.BringToFront();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

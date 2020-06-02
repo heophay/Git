@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManager));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
-            this.sanPhamAdMa2 = new GiaoDien.SanPhamAdMa();
-            this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
-            this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,6 +44,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
+            this.sanPhamAdMa2 = new GiaoDien.SanPhamAdMa();
+            this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
+            this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,40 +66,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1231, 808);
             this.panel2.TabIndex = 9;
-            // 
-            // nhanVienAdMa1
-            // 
-            this.nhanVienAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhanVienAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.nhanVienAdMa1.Name = "nhanVienAdMa1";
-            this.nhanVienAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.nhanVienAdMa1.TabIndex = 3;
-            // 
-            // sanPhamAdMa2
-            // 
-            this.sanPhamAdMa2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sanPhamAdMa2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sanPhamAdMa2.Location = new System.Drawing.Point(0, 0);
-            this.sanPhamAdMa2.Name = "sanPhamAdMa2";
-            this.sanPhamAdMa2.Size = new System.Drawing.Size(1231, 808);
-            this.sanPhamAdMa2.TabIndex = 2;
-            // 
-            // nhapXuatAdMa1
-            // 
-            this.nhapXuatAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhapXuatAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.nhapXuatAdMa1.Name = "nhapXuatAdMa1";
-            this.nhapXuatAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.nhapXuatAdMa1.TabIndex = 1;
-            // 
-            // sanPhamAdMa1
-            // 
-            this.sanPhamAdMa1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sanPhamAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sanPhamAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.sanPhamAdMa1.Name = "sanPhamAdMa1";
-            this.sanPhamAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.sanPhamAdMa1.TabIndex = 0;
             // 
             // button1
             // 
@@ -159,6 +125,7 @@
             this.button4.TabIndex = 1;
             this.button4.Text = "Doanh thu";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -265,6 +232,40 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // nhanVienAdMa1
+            // 
+            this.nhanVienAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhanVienAdMa1.Location = new System.Drawing.Point(0, 0);
+            this.nhanVienAdMa1.Name = "nhanVienAdMa1";
+            this.nhanVienAdMa1.Size = new System.Drawing.Size(1231, 808);
+            this.nhanVienAdMa1.TabIndex = 3;
+            // 
+            // sanPhamAdMa2
+            // 
+            this.sanPhamAdMa2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.sanPhamAdMa2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sanPhamAdMa2.Location = new System.Drawing.Point(0, 0);
+            this.sanPhamAdMa2.Name = "sanPhamAdMa2";
+            this.sanPhamAdMa2.Size = new System.Drawing.Size(1231, 808);
+            this.sanPhamAdMa2.TabIndex = 2;
+            // 
+            // nhapXuatAdMa1
+            // 
+            this.nhapXuatAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhapXuatAdMa1.Location = new System.Drawing.Point(0, 0);
+            this.nhapXuatAdMa1.Name = "nhapXuatAdMa1";
+            this.nhapXuatAdMa1.Size = new System.Drawing.Size(1231, 808);
+            this.nhapXuatAdMa1.TabIndex = 1;
+            // 
+            // sanPhamAdMa1
+            // 
+            this.sanPhamAdMa1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.sanPhamAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sanPhamAdMa1.Location = new System.Drawing.Point(0, 0);
+            this.sanPhamAdMa1.Name = "sanPhamAdMa1";
+            this.sanPhamAdMa1.Size = new System.Drawing.Size(1231, 808);
+            this.sanPhamAdMa1.TabIndex = 0;
             // 
             // AdminManager
             // 

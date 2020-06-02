@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class Form1 : Form
+    public partial class Detail_QLSP : Form
     {
-        public Form1()
+        public Detail_QLSP()
         {
             InitializeComponent();
         }
