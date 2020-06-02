@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManager));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
+            this.sanPhamAdMa2 = new GiaoDien.SanPhamAdMa();
             this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
             this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -46,8 +48,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.sanPhamAdMa2 = new GiaoDien.SanPhamAdMa();
-            this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,6 +66,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1231, 808);
             this.panel2.TabIndex = 9;
+            // 
+            // nhanVienAdMa1
+            // 
+            this.nhanVienAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhanVienAdMa1.Location = new System.Drawing.Point(0, 0);
+            this.nhanVienAdMa1.Name = "nhanVienAdMa1";
+            this.nhanVienAdMa1.Size = new System.Drawing.Size(1231, 808);
+            this.nhanVienAdMa1.TabIndex = 3;
+            // 
+            // sanPhamAdMa2
+            // 
+            this.sanPhamAdMa2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.sanPhamAdMa2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sanPhamAdMa2.Location = new System.Drawing.Point(0, 0);
+            this.sanPhamAdMa2.Name = "sanPhamAdMa2";
+            this.sanPhamAdMa2.Size = new System.Drawing.Size(1231, 808);
+            this.sanPhamAdMa2.TabIndex = 2;
             // 
             // nhapXuatAdMa1
             // 
@@ -100,6 +117,7 @@
             this.button1.Text = "Sản phẩm";
             this.toolTip1.SetToolTip(this.button1, "Sản phẩm");
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -124,6 +142,7 @@
             this.button2.Text = "Theo dõi nhân viên";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -157,6 +176,7 @@
             this.button3.Text = "Kiểm tra nhập xuất";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button_DanhMuc
             // 
@@ -245,23 +265,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // sanPhamAdMa2
-            // 
-            this.sanPhamAdMa2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sanPhamAdMa2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sanPhamAdMa2.Location = new System.Drawing.Point(0, 0);
-            this.sanPhamAdMa2.Name = "sanPhamAdMa2";
-            this.sanPhamAdMa2.Size = new System.Drawing.Size(1231, 808);
-            this.sanPhamAdMa2.TabIndex = 2;
-            // 
-            // nhanVienAdMa1
-            // 
-            this.nhanVienAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhanVienAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.nhanVienAdMa1.Name = "nhanVienAdMa1";
-            this.nhanVienAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.nhanVienAdMa1.TabIndex = 3;
             // 
             // AdminManager
             // 
