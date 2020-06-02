@@ -113,12 +113,6 @@
     <Compile Include="Detail_Gia.Designer.cs">
       <DependentUpon>Detail_Gia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControl\AdminManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,9 +193,6 @@
     <EmbeddedResource Include="Detail_Gia.resx">
       <DependentUpon>Detail_Gia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\AdminManager.resx">
       <DependentUpon>AdminManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,7 +233,6 @@
     <EmbeddedResource Include="UserControl\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="GiaoDien_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
