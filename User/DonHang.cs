@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class User : UserControl
+    public partial class DonHang : UserControl
     {
-        public User()
+        public DonHang()
         {
             InitializeComponent();
         }
