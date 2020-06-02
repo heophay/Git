@@ -22,6 +22,7 @@ namespace GiaoDien
         private void pictureBox_Out_Click(object sender, EventArgs e)
         {
             this.Close();
+            //
         }
     }
 }
