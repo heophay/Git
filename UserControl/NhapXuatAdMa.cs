@@ -16,5 +16,17 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
+
+        private void button_Them_Click(object sender, EventArgs e)
+        {
+            Detail_Gia d = new Detail_Gia();
+            d.ShowDialog();
+        }
+
+        private void button_Sua_Click(object sender, EventArgs e)
+        {
+            Detail_Gia d = new Detail_Gia();
+            d.ShowDialog();
+        }
     }
 }

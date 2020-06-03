@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class Detail_NV : Form
+    public partial class AdManager : Form
     {
-        public Detail_NV()
+        public AdManager()
         {
             InitializeComponent();
-            dateTimePicker1.Value = Convert.ToDateTime("2020/09/09");
+        }
+
+        private void pictureBox_Out_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

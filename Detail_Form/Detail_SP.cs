@@ -39,5 +39,15 @@ namespace GiaoDien
         {
 
         }
+
+        private void txt_gia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_xuatxu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

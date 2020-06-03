@@ -16,5 +16,10 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
+
+        private void bt_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -16,5 +16,11 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            Detail_SP d = new Detail_SP();
+            d.ShowDialog();
+        }
     }
 }

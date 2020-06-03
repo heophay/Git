@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Location = new System.Drawing.Point(208, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(316, 44);
@@ -172,7 +172,7 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
-            // Form8
+            // Detail_Gia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,7 +181,8 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form8";
+            this.Name = "Detail_Gia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form8";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

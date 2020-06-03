@@ -4,24 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class Main : Form
+    public partial class Detail_NV : Form
     {
-        public Main()
+        public Detail_NV()
         {
             InitializeComponent();
-            
-        }
-
-        private void pictureBox_Out_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Date_ngaysinh.Value = Convert.ToDateTime("2020/09/09");
         }
     }
 }

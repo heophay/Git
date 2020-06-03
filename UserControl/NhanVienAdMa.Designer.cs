@@ -171,6 +171,7 @@
             this.button_Sua.TabIndex = 45;
             this.button_Sua.Text = "Sửa";
             this.button_Sua.UseVisualStyleBackColor = false;
+            this.button_Sua.Click += new System.EventHandler(this.button_Sua_Click);
             // 
             // button_Them
             // 
@@ -186,6 +187,7 @@
             this.button_Them.TabIndex = 46;
             this.button_Them.Text = "Thêm";
             this.button_Them.UseVisualStyleBackColor = false;
+            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
             // NhanVienAdMa
             // 
