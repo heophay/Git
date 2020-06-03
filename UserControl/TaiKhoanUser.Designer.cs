@@ -31,13 +31,13 @@
             this.label_TaiKhoan = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_tk = new System.Windows.Forms.TextBox();
             this.label_Password = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_pass = new System.Windows.Forms.TextBox();
             this.label_XNPassword = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button_Luu = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txt_confirmpass = new System.Windows.Forms.TextBox();
+            this.button_changepass = new System.Windows.Forms.Button();
+            this.dateTimePicker_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.groupBox_Gioitinh = new System.Windows.Forms.GroupBox();
             this.radioButton_Nu = new System.Windows.Forms.RadioButton();
             this.radioButton_Nam = new System.Windows.Forms.RadioButton();
@@ -46,11 +46,11 @@
             this.label_Diachi = new System.Windows.Forms.Label();
             this.label_MaTK = new System.Windows.Forms.Label();
             this.label_HoTenKH = new System.Windows.Forms.Label();
-            this.textBox_SoDT = new System.Windows.Forms.TextBox();
-            this.textBox_Diachi = new System.Windows.Forms.TextBox();
-            this.textBox_MaTK = new System.Windows.Forms.TextBox();
-            this.textBox_HotenKH = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txt_SoDT = new System.Windows.Forms.TextBox();
+            this.txt_Diachi = new System.Windows.Forms.TextBox();
+            this.txt_MaTK = new System.Windows.Forms.TextBox();
+            this.txt_HotenKH = new System.Windows.Forms.TextBox();
+            this.bt_luu = new System.Windows.Forms.Button();
             this.groupBox_Gioitinh.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,12 +87,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên tài khoản";
             // 
-            // textBox1
+            // txt_tk
             // 
-            this.textBox1.Location = new System.Drawing.Point(388, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(458, 22);
-            this.textBox1.TabIndex = 2;
+            this.txt_tk.Location = new System.Drawing.Point(388, 102);
+            this.txt_tk.Name = "txt_tk";
+            this.txt_tk.Size = new System.Drawing.Size(458, 22);
+            this.txt_tk.TabIndex = 2;
             // 
             // label_Password
             // 
@@ -105,12 +105,12 @@
             this.label_Password.TabIndex = 1;
             this.label_Password.Text = "Password";
             // 
-            // textBox2
+            // txt_pass
             // 
-            this.textBox2.Location = new System.Drawing.Point(388, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(458, 22);
-            this.textBox2.TabIndex = 2;
+            this.txt_pass.Location = new System.Drawing.Point(388, 150);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.Size = new System.Drawing.Size(458, 22);
+            this.txt_pass.TabIndex = 2;
             // 
             // label_XNPassword
             // 
@@ -123,34 +123,36 @@
             this.label_XNPassword.TabIndex = 1;
             this.label_XNPassword.Text = "Xác nhận Password";
             // 
-            // textBox3
+            // txt_confirmpass
             // 
-            this.textBox3.Location = new System.Drawing.Point(388, 200);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(458, 22);
-            this.textBox3.TabIndex = 2;
+            this.txt_confirmpass.Location = new System.Drawing.Point(388, 200);
+            this.txt_confirmpass.Name = "txt_confirmpass";
+            this.txt_confirmpass.Size = new System.Drawing.Size(458, 22);
+            this.txt_confirmpass.TabIndex = 2;
             // 
-            // button_Luu
+            // button_changepass
             // 
-            this.button_Luu.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button_Luu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button_Luu.FlatAppearance.BorderSize = 0;
-            this.button_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Luu.ForeColor = System.Drawing.Color.White;
-            this.button_Luu.Location = new System.Drawing.Point(488, 254);
-            this.button_Luu.Name = "button_Luu";
-            this.button_Luu.Size = new System.Drawing.Size(244, 47);
-            this.button_Luu.TabIndex = 30;
-            this.button_Luu.Text = "Thay đổi password";
-            this.button_Luu.UseVisualStyleBackColor = false;
+            this.button_changepass.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_changepass.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button_changepass.FlatAppearance.BorderSize = 0;
+            this.button_changepass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_changepass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_changepass.ForeColor = System.Drawing.Color.White;
+            this.button_changepass.Location = new System.Drawing.Point(488, 254);
+            this.button_changepass.Name = "button_changepass";
+            this.button_changepass.Size = new System.Drawing.Size(244, 47);
+            this.button_changepass.TabIndex = 30;
+            this.button_changepass.Text = "Thay đổi password";
+            this.button_changepass.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
+            // dateTimePicker_ngaysinh
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(767, 577);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(238, 22);
-            this.dateTimePicker1.TabIndex = 28;
+            this.dateTimePicker_ngaysinh.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_ngaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_ngaysinh.Location = new System.Drawing.Point(767, 577);
+            this.dateTimePicker_ngaysinh.Name = "dateTimePicker_ngaysinh";
+            this.dateTimePicker_ngaysinh.Size = new System.Drawing.Size(286, 22);
+            this.dateTimePicker_ngaysinh.TabIndex = 28;
             // 
             // groupBox_Gioitinh
             // 
@@ -238,72 +240,72 @@
             this.label_HoTenKH.TabIndex = 26;
             this.label_HoTenKH.Text = "Họ và tên";
             // 
-            // textBox_SoDT
+            // txt_SoDT
             // 
-            this.textBox_SoDT.Location = new System.Drawing.Point(338, 575);
-            this.textBox_SoDT.Name = "textBox_SoDT";
-            this.textBox_SoDT.Size = new System.Drawing.Size(217, 22);
-            this.textBox_SoDT.TabIndex = 18;
+            this.txt_SoDT.Location = new System.Drawing.Point(355, 577);
+            this.txt_SoDT.Name = "txt_SoDT";
+            this.txt_SoDT.Size = new System.Drawing.Size(217, 22);
+            this.txt_SoDT.TabIndex = 18;
             // 
-            // textBox_Diachi
+            // txt_Diachi
             // 
-            this.textBox_Diachi.Location = new System.Drawing.Point(338, 631);
-            this.textBox_Diachi.Name = "textBox_Diachi";
-            this.textBox_Diachi.Size = new System.Drawing.Size(566, 22);
-            this.textBox_Diachi.TabIndex = 19;
+            this.txt_Diachi.Location = new System.Drawing.Point(338, 631);
+            this.txt_Diachi.Name = "txt_Diachi";
+            this.txt_Diachi.Size = new System.Drawing.Size(566, 22);
+            this.txt_Diachi.TabIndex = 19;
             // 
-            // textBox_MaTK
+            // txt_MaTK
             // 
-            this.textBox_MaTK.Location = new System.Drawing.Point(338, 459);
-            this.textBox_MaTK.Name = "textBox_MaTK";
-            this.textBox_MaTK.Size = new System.Drawing.Size(217, 22);
-            this.textBox_MaTK.TabIndex = 20;
+            this.txt_MaTK.Location = new System.Drawing.Point(355, 459);
+            this.txt_MaTK.Name = "txt_MaTK";
+            this.txt_MaTK.Size = new System.Drawing.Size(217, 22);
+            this.txt_MaTK.TabIndex = 20;
             // 
-            // textBox_HotenKH
+            // txt_HotenKH
             // 
-            this.textBox_HotenKH.Location = new System.Drawing.Point(338, 515);
-            this.textBox_HotenKH.Name = "textBox_HotenKH";
-            this.textBox_HotenKH.Size = new System.Drawing.Size(217, 22);
-            this.textBox_HotenKH.TabIndex = 21;
+            this.txt_HotenKH.Location = new System.Drawing.Point(355, 515);
+            this.txt_HotenKH.Name = "txt_HotenKH";
+            this.txt_HotenKH.Size = new System.Drawing.Size(217, 22);
+            this.txt_HotenKH.TabIndex = 21;
             // 
-            // button1
+            // bt_luu
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(478, 699);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 47);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Lưu thay đổi";
-            this.button1.UseVisualStyleBackColor = false;
+            this.bt_luu.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt_luu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bt_luu.FlatAppearance.BorderSize = 0;
+            this.bt_luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_luu.ForeColor = System.Drawing.Color.White;
+            this.bt_luu.Location = new System.Drawing.Point(478, 699);
+            this.bt_luu.Name = "bt_luu";
+            this.bt_luu.Size = new System.Drawing.Size(244, 47);
+            this.bt_luu.TabIndex = 30;
+            this.bt_luu.Text = "Lưu thay đổi";
+            this.bt_luu.UseVisualStyleBackColor = false;
             // 
             // TaiKhoanUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button_Luu);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.bt_luu);
+            this.Controls.Add(this.button_changepass);
+            this.Controls.Add(this.dateTimePicker_ngaysinh);
             this.Controls.Add(this.groupBox_Gioitinh);
             this.Controls.Add(this.label_Ngaysinh);
             this.Controls.Add(this.label_SoDT);
             this.Controls.Add(this.label_Diachi);
             this.Controls.Add(this.label_MaTK);
             this.Controls.Add(this.label_HoTenKH);
-            this.Controls.Add(this.textBox_SoDT);
-            this.Controls.Add(this.textBox_Diachi);
-            this.Controls.Add(this.textBox_MaTK);
-            this.Controls.Add(this.textBox_HotenKH);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_SoDT);
+            this.Controls.Add(this.txt_Diachi);
+            this.Controls.Add(this.txt_MaTK);
+            this.Controls.Add(this.txt_HotenKH);
+            this.Controls.Add(this.txt_confirmpass);
             this.Controls.Add(this.label_XNPassword);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_pass);
             this.Controls.Add(this.label_Password);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_tk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_TaiKhoan);
@@ -321,13 +323,13 @@
         private System.Windows.Forms.Label label_TaiKhoan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_tk;
         private System.Windows.Forms.Label label_Password;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.Label label_XNPassword;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button_Luu;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txt_confirmpass;
+        private System.Windows.Forms.Button button_changepass;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_ngaysinh;
         private System.Windows.Forms.GroupBox groupBox_Gioitinh;
         private System.Windows.Forms.RadioButton radioButton_Nu;
         private System.Windows.Forms.RadioButton radioButton_Nam;
@@ -336,10 +338,10 @@
         private System.Windows.Forms.Label label_Diachi;
         private System.Windows.Forms.Label label_MaTK;
         private System.Windows.Forms.Label label_HoTenKH;
-        private System.Windows.Forms.TextBox textBox_SoDT;
-        private System.Windows.Forms.TextBox textBox_Diachi;
-        private System.Windows.Forms.TextBox textBox_MaTK;
-        private System.Windows.Forms.TextBox textBox_HotenKH;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_SoDT;
+        private System.Windows.Forms.TextBox txt_Diachi;
+        private System.Windows.Forms.TextBox txt_MaTK;
+        private System.Windows.Forms.TextBox txt_HotenKH;
+        private System.Windows.Forms.Button bt_luu;
     }
 }

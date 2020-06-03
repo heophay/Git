@@ -24,7 +24,7 @@ namespace GiaoDien
 
         private void tabItem1_Click(object sender, EventArgs e)
         {
-            Main f = new Main();
+            Main_User f = new Main_User();
             this.Visible = false;
             f.ShowDialog();
             this.Close();

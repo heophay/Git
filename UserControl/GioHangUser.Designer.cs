@@ -32,9 +32,9 @@
             this.button_Tangsoluong = new System.Windows.Forms.Button();
             this.button_XoaSP = new System.Windows.Forms.Button();
             this.button_Lapdonhang = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_Giohang = new System.Windows.Forms.DataGridView();
             this.label_Giohang = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Giohang)).BeginInit();
             this.SuspendLayout();
             // 
             // button_GiamSoLuong
@@ -91,15 +91,15 @@
             this.button_Lapdonhang.Text = "Lập đơn hàng";
             this.button_Lapdonhang.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // DGV_Giohang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(79, 230);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1052, 315);
-            this.dataGridView1.TabIndex = 4;
+            this.DGV_Giohang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Giohang.Location = new System.Drawing.Point(79, 230);
+            this.DGV_Giohang.Name = "DGV_Giohang";
+            this.DGV_Giohang.RowHeadersWidth = 51;
+            this.DGV_Giohang.RowTemplate.Height = 24;
+            this.DGV_Giohang.Size = new System.Drawing.Size(1052, 315);
+            this.DGV_Giohang.TabIndex = 4;
             // 
             // label_Giohang
             // 
@@ -122,11 +122,11 @@
             this.Controls.Add(this.button_Tangsoluong);
             this.Controls.Add(this.button_XoaSP);
             this.Controls.Add(this.button_Lapdonhang);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_Giohang);
             this.Controls.Add(this.label_Giohang);
             this.Name = "GioHangUser";
             this.Size = new System.Drawing.Size(1227, 808);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Giohang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +138,7 @@
         private System.Windows.Forms.Button button_Tangsoluong;
         private System.Windows.Forms.Button button_XoaSP;
         private System.Windows.Forms.Button button_Lapdonhang;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_Giohang;
         private System.Windows.Forms.Label label_Giohang;
     }
 }

@@ -34,7 +34,12 @@ namespace GiaoDien
 
         private void button4_Click(object sender, EventArgs e)
         {
+            doanhThuAd1.BringToFront();
+        }
 
+        private void button_DanhMuc_Click(object sender, EventArgs e)
+        {
+            danhMucAd1.BringToFront();
         }
     }
 }

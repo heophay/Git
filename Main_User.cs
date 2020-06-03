@@ -4,27 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class DoanhThu : Form
+    public partial class Main_User : Form
     {
-        public DoanhThu()
+        public Main_User()
         {
             InitializeComponent();
+            
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void pictureBox_Out_Click(object sender, EventArgs e)
         {
-
-        }
-    public void Show()
-        {
-            DataTable dt = new DataTable();
-
+            this.Close();
         }
     }
 }

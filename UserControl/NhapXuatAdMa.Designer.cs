@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_NoiSX = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbb_gia = new System.Windows.Forms.ComboBox();
+            this.cbb_xuatxu = new System.Windows.Forms.ComboBox();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Sua = new System.Windows.Forms.Button();
             this.button_Them = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_Gia = new System.Windows.Forms.DataGridView();
+            this.ID_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Gia)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -56,12 +58,12 @@
             this.label2.TabIndex = 40;
             this.label2.Text = "Tìm kiếm";
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Location = new System.Drawing.Point(410, 259);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(471, 22);
-            this.textBox1.TabIndex = 39;
+            this.txt_search.Location = new System.Drawing.Point(410, 259);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(471, 22);
+            this.txt_search.TabIndex = 39;
             // 
             // label1
             // 
@@ -94,21 +96,32 @@
             this.label_NoiSX.TabIndex = 34;
             this.label_NoiSX.Text = "Nơi sản xuất";
             // 
-            // comboBox2
+            // cbb_gia
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(740, 188);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(331, 24);
-            this.comboBox2.TabIndex = 35;
+            this.cbb_gia.FormattingEnabled = true;
+            this.cbb_gia.Items.AddRange(new object[] {
+            "Từ 1-2 Triệu",
+            "Từ 2-5 Triệu",
+            "Từ 5 -8 Triệu",
+            "Trên 8 Triệu"});
+            this.cbb_gia.Location = new System.Drawing.Point(740, 188);
+            this.cbb_gia.Name = "cbb_gia";
+            this.cbb_gia.Size = new System.Drawing.Size(331, 24);
+            this.cbb_gia.TabIndex = 35;
             // 
-            // comboBox1
+            // cbb_xuatxu
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(222, 188);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(281, 24);
-            this.comboBox1.TabIndex = 36;
+            this.cbb_xuatxu.FormattingEnabled = true;
+            this.cbb_xuatxu.Items.AddRange(new object[] {
+            "Trung Quốc",
+            "Hàn Quốc",
+            "Nhật Bản",
+            "Mỹ",
+            "Việt Nam"});
+            this.cbb_xuatxu.Location = new System.Drawing.Point(261, 188);
+            this.cbb_xuatxu.Name = "cbb_xuatxu";
+            this.cbb_xuatxu.Size = new System.Drawing.Size(281, 24);
+            this.cbb_xuatxu.TabIndex = 36;
             // 
             // button_Xoa
             // 
@@ -157,21 +170,37 @@
             this.button_Them.UseVisualStyleBackColor = false;
             this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
-            // dataGridView1
+            // DGV_Gia
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DGV_Gia.AllowUserToOrderColumns = true;
+            this.DGV_Gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Gia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Gia,
+            this.MaSP,
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(48, 344);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1130, 276);
-            this.dataGridView1.TabIndex = 44;
+            this.DGV_Gia.Location = new System.Drawing.Point(48, 344);
+            this.DGV_Gia.Name = "DGV_Gia";
+            this.DGV_Gia.RowHeadersWidth = 51;
+            this.DGV_Gia.RowTemplate.Height = 24;
+            this.DGV_Gia.Size = new System.Drawing.Size(1130, 276);
+            this.DGV_Gia.TabIndex = 44;
+            // 
+            // ID_Gia
+            // 
+            this.ID_Gia.HeaderText = "ID_Gia";
+            this.ID_Gia.MinimumWidth = 6;
+            this.ID_Gia.Name = "ID_Gia";
+            this.ID_Gia.Width = 125;
+            // 
+            // MaSP
+            // 
+            this.MaSP.HeaderText = "MaSP";
+            this.MaSP.MinimumWidth = 6;
+            this.MaSP.Name = "MaSP";
+            this.MaSP.Width = 125;
             // 
             // Column1
             // 
@@ -205,20 +234,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_Gia);
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sua);
             this.Controls.Add(this.button_Them);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_NoiSX);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbb_gia);
+            this.Controls.Add(this.cbb_xuatxu);
             this.Name = "NhapXuatAdMa";
             this.Size = new System.Drawing.Size(1228, 808);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Gia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,16 +256,18 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_NoiSX;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbb_gia;
+        private System.Windows.Forms.ComboBox cbb_xuatxu;
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Button button_Sua;
         private System.Windows.Forms.Button button_Them;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

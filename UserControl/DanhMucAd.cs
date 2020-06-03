@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class AdManager : Form
+    public partial class DanhMucAd : UserControl
     {
-        public AdManager()
+        public DanhMucAd()
         {
             InitializeComponent();
         }
 
-        private void pictureBox_Out_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

@@ -35,27 +35,27 @@
             this.button_DangKi = new System.Windows.Forms.Button();
             this.button_DngNhap = new System.Windows.Forms.Button();
             this.label_Greeting = new System.Windows.Forms.Label();
-            this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button_DonHang = new System.Windows.Forms.Button();
-            this.button_GioHang = new System.Windows.Forms.Button();
-            this.button_TaiKhoan = new System.Windows.Forms.Button();
-            this.button_TrangChu = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel_Interface = new System.Windows.Forms.Panel();
             this.donHang1 = new GiaoDien.DonHang();
             this.gioHangUser1 = new GiaoDien.GioHangUser();
             this.taiKhoanUser1 = new GiaoDien.TaiKhoanUser();
             this.trangChuUser1 = new GiaoDien.TrangChuUser();
+            this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button_DonHang = new System.Windows.Forms.Button();
+            this.button_GioHang = new System.Windows.Forms.Button();
+            this.button_TaiKhoan = new System.Windows.Forms.Button();
+            this.button_TrangChu = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel_Function.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel_Interface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel_Interface.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Function
@@ -125,6 +125,76 @@
             this.label_Greeting.TabIndex = 3;
             this.label_Greeting.Text = "Hi! Customer";
             this.label_Greeting.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Location = new System.Drawing.Point(0, 64);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(269, 84);
+            this.panel4.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Mistral", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(73, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "PHONE STORE";
+            // 
+            // panel_Interface
+            // 
+            this.panel_Interface.Controls.Add(this.donHang1);
+            this.panel_Interface.Controls.Add(this.gioHangUser1);
+            this.panel_Interface.Controls.Add(this.taiKhoanUser1);
+            this.panel_Interface.Controls.Add(this.trangChuUser1);
+            this.panel_Interface.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Interface.Location = new System.Drawing.Point(273, 0);
+            this.panel_Interface.Name = "panel_Interface";
+            this.panel_Interface.Size = new System.Drawing.Size(1227, 808);
+            this.panel_Interface.TabIndex = 4;
+            // 
+            // donHang1
+            // 
+            this.donHang1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.donHang1.Location = new System.Drawing.Point(0, 0);
+            this.donHang1.Name = "donHang1";
+            this.donHang1.Size = new System.Drawing.Size(1227, 808);
+            this.donHang1.TabIndex = 3;
+            // 
+            // gioHangUser1
+            // 
+            this.gioHangUser1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gioHangUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gioHangUser1.Location = new System.Drawing.Point(0, 0);
+            this.gioHangUser1.Name = "gioHangUser1";
+            this.gioHangUser1.Size = new System.Drawing.Size(1227, 808);
+            this.gioHangUser1.TabIndex = 2;
+            // 
+            // taiKhoanUser1
+            // 
+            this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taiKhoanUser1.Location = new System.Drawing.Point(0, 0);
+            this.taiKhoanUser1.Name = "taiKhoanUser1";
+            this.taiKhoanUser1.Size = new System.Drawing.Size(1227, 808);
+            this.taiKhoanUser1.TabIndex = 1;
+            // 
+            // trangChuUser1
+            // 
+            this.trangChuUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trangChuUser1.Location = new System.Drawing.Point(0, 0);
+            this.trangChuUser1.Name = "trangChuUser1";
+            this.trangChuUser1.Size = new System.Drawing.Size(1227, 808);
+            this.trangChuUser1.TabIndex = 0;
             // 
             // pictureBox_Profile
             // 
@@ -217,29 +287,6 @@
             this.button_TrangChu.UseVisualStyleBackColor = true;
             this.button_TrangChu.Click += new System.EventHandler(this.button_TrangChu_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(0, 64);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(269, 84);
-            this.panel4.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Mistral", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(73, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "PHONE STORE";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -251,53 +298,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panel_Interface
-            // 
-            this.panel_Interface.Controls.Add(this.donHang1);
-            this.panel_Interface.Controls.Add(this.gioHangUser1);
-            this.panel_Interface.Controls.Add(this.taiKhoanUser1);
-            this.panel_Interface.Controls.Add(this.trangChuUser1);
-            this.panel_Interface.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Interface.Location = new System.Drawing.Point(273, 0);
-            this.panel_Interface.Name = "panel_Interface";
-            this.panel_Interface.Size = new System.Drawing.Size(1227, 808);
-            this.panel_Interface.TabIndex = 4;
-            // 
-            // donHang1
-            // 
-            this.donHang1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.donHang1.Location = new System.Drawing.Point(0, 0);
-            this.donHang1.Name = "donHang1";
-            this.donHang1.Size = new System.Drawing.Size(1227, 808);
-            this.donHang1.TabIndex = 3;
-            // 
-            // gioHangUser1
-            // 
-            this.gioHangUser1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.gioHangUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gioHangUser1.Location = new System.Drawing.Point(0, 0);
-            this.gioHangUser1.Name = "gioHangUser1";
-            this.gioHangUser1.Size = new System.Drawing.Size(1227, 808);
-            this.gioHangUser1.TabIndex = 2;
-            // 
-            // taiKhoanUser1
-            // 
-            this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taiKhoanUser1.Location = new System.Drawing.Point(0, 0);
-            this.taiKhoanUser1.Name = "taiKhoanUser1";
-            this.taiKhoanUser1.Size = new System.Drawing.Size(1227, 808);
-            this.taiKhoanUser1.TabIndex = 1;
-            // 
-            // trangChuUser1
-            // 
-            this.trangChuUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trangChuUser1.Location = new System.Drawing.Point(0, 0);
-            this.trangChuUser1.Name = "trangChuUser1";
-            this.trangChuUser1.Size = new System.Drawing.Size(1227, 808);
-            this.trangChuUser1.TabIndex = 0;
-            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,12 +308,12 @@
             this.Size = new System.Drawing.Size(1500, 808);
             this.panel_Function.ResumeLayout(false);
             this.panel_Function.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel_Interface.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

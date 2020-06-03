@@ -78,11 +78,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdManager.cs">
+    <Compile Include="Detail_Form\Detail_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdManager.Designer.cs">
-      <DependentUpon>AdManager.cs</DependentUpon>
+    <Compile Include="Detail_Form\Detail_KH.Designer.cs">
+      <DependentUpon>Detail_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Admin.Designer.cs">
+      <DependentUpon>Main_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Manager.Designer.cs">
+      <DependentUpon>Main_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Manage_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Manage_User.Designer.cs">
+      <DependentUpon>Manage_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TrangChuManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TrangChuManager.Designer.cs">
+      <DependentUpon>TrangChuManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DanhMucAd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DanhMucAd.Designer.cs">
+      <DependentUpon>DanhMucAd.cs</DependentUpon>
     </Compile>
     <Compile Include="Detail_Form\Detail_SP.cs">
       <SubType>Form</SubType>
@@ -96,18 +126,6 @@
     <Compile Include="Detail_Form\Detail_QLSP.Designer.cs">
       <DependentUpon>Detail_QLSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc.Designer.cs">
-      <DependentUpon>DanhMuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DoanhThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DoanhThu.Designer.cs">
-      <DependentUpon>DoanhThu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Detail_Form\Detail_NV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +137,12 @@
     </Compile>
     <Compile Include="Detail_Form\Detail_Gia.Designer.cs">
       <DependentUpon>Detail_Gia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DoanhThuAd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DoanhThuAd.Designer.cs">
+      <DependentUpon>DoanhThuAd.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -132,11 +156,11 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\AdminManager.cs">
+    <Compile Include="UserControl\TrangChuAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\AdminManager.Designer.cs">
-      <DependentUpon>AdminManager.cs</DependentUpon>
+    <Compile Include="UserControl\TrangChuAdmin.Designer.cs">
+      <DependentUpon>TrangChuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\NhanVienAdMa.cs">
       <SubType>UserControl</SubType>
@@ -162,11 +186,11 @@
     <Compile Include="UserControl\DonHang.Designer.cs">
       <DependentUpon>DonHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Main_User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="Main_User.Designer.cs">
+      <DependentUpon>Main_User.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\GioHangUser.cs">
       <SubType>UserControl</SubType>
@@ -194,8 +218,23 @@
     <Compile Include="UserControl\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdManager.resx">
-      <DependentUpon>AdManager.cs</DependentUpon>
+    <EmbeddedResource Include="Detail_Form\Detail_KH.resx">
+      <DependentUpon>Detail_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Admin.resx">
+      <DependentUpon>Main_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Manager.resx">
+      <DependentUpon>Main_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Manage_User.resx">
+      <DependentUpon>Manage_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TrangChuManager.resx">
+      <DependentUpon>TrangChuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DanhMucAd.resx">
+      <DependentUpon>DanhMucAd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Detail_Form\Detail_SP.resx">
       <DependentUpon>Detail_SP.cs</DependentUpon>
@@ -203,17 +242,14 @@
     <EmbeddedResource Include="Detail_Form\Detail_QLSP.resx">
       <DependentUpon>Detail_QLSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc.resx">
-      <DependentUpon>DanhMuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DoanhThu.resx">
-      <DependentUpon>DoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Detail_Form\Detail_NV.resx">
       <DependentUpon>Detail_NV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Detail_Form\Detail_Gia.resx">
       <DependentUpon>Detail_Gia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DoanhThuAd.resx">
+      <DependentUpon>DoanhThuAd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -221,8 +257,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\AdminManager.resx">
-      <DependentUpon>AdminManager.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\TrangChuAdmin.resx">
+      <DependentUpon>TrangChuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\NhanVienAdMa.resx">
       <DependentUpon>NhanVienAdMa.cs</DependentUpon>
@@ -236,8 +272,8 @@
     <EmbeddedResource Include="UserControl\DonHang.resx">
       <DependentUpon>DonHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="Main_User.resx">
+      <DependentUpon>Main_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\GioHangUser.resx">
       <DependentUpon>GioHangUser.cs</DependentUpon>

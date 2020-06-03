@@ -38,15 +38,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuUser));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_TimKiem = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbb_gia = new System.Windows.Forms.ComboBox();
             this.label_Gia = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbb_thuonghieu = new System.Windows.Forms.ComboBox();
             this.label_ThuongHieu = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label_TimTheo = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView_DSSP = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.label_TimKiem);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txt_search);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -77,19 +77,19 @@
             this.label_TimKiem.TabIndex = 2;
             this.label_TimKiem.Text = "Tìm kiếm";
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Location = new System.Drawing.Point(450, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(476, 22);
-            this.textBox1.TabIndex = 1;
+            this.txt_search.Location = new System.Drawing.Point(450, 89);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(476, 22);
+            this.txt_search.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.cbb_gia);
             this.panel3.Controls.Add(this.label_Gia);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cbb_thuonghieu);
             this.panel3.Controls.Add(this.label_ThuongHieu);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -98,13 +98,18 @@
             this.panel3.Size = new System.Drawing.Size(1228, 62);
             this.panel3.TabIndex = 0;
             // 
-            // comboBox2
+            // cbb_gia
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(802, 20);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(294, 24);
-            this.comboBox2.TabIndex = 3;
+            this.cbb_gia.FormattingEnabled = true;
+            this.cbb_gia.Items.AddRange(new object[] {
+            "Từ 1-2 Triệu",
+            "Từ 2-5 Triệu",
+            "Từ 5 -8 Triệu",
+            "Trên 8 Triệu"});
+            this.cbb_gia.Location = new System.Drawing.Point(802, 20);
+            this.cbb_gia.Name = "cbb_gia";
+            this.cbb_gia.Size = new System.Drawing.Size(294, 24);
+            this.cbb_gia.TabIndex = 3;
             // 
             // label_Gia
             // 
@@ -116,13 +121,19 @@
             this.label_Gia.TabIndex = 2;
             this.label_Gia.Text = "Giá";
             // 
-            // comboBox1
+            // cbb_thuonghieu
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(353, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(261, 24);
-            this.comboBox1.TabIndex = 3;
+            this.cbb_thuonghieu.FormattingEnabled = true;
+            this.cbb_thuonghieu.Items.AddRange(new object[] {
+            "Sam Sung",
+            "Iphone",
+            "Oppo",
+            "Redmi",
+            "Xiaomi"});
+            this.cbb_thuonghieu.Location = new System.Drawing.Point(353, 20);
+            this.cbb_thuonghieu.Name = "cbb_thuonghieu";
+            this.cbb_thuonghieu.Size = new System.Drawing.Size(261, 24);
+            this.cbb_thuonghieu.TabIndex = 3;
             // 
             // label_ThuongHieu
             // 
@@ -155,24 +166,24 @@
             this.label_TimTheo.TabIndex = 0;
             this.label_TimTheo.Text = "Tìm theo";
             // 
-            // listView1
+            // listView_DSSP
             // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.listView_DSSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView_DSSP.HideSelection = false;
+            this.listView_DSSP.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
             listViewItem3,
             listViewItem4,
             listViewItem5,
             listViewItem6});
-            this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(0, 129);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1228, 679);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.Click += new System.EventHandler(this.listView1_Click);
+            this.listView_DSSP.LargeImageList = this.imageList1;
+            this.listView_DSSP.Location = new System.Drawing.Point(0, 129);
+            this.listView_DSSP.Name = "listView_DSSP";
+            this.listView_DSSP.Size = new System.Drawing.Size(1228, 679);
+            this.listView_DSSP.TabIndex = 2;
+            this.listView_DSSP.UseCompatibleStateImageBehavior = false;
+            this.listView_DSSP.Click += new System.EventHandler(this.listView1_Click);
             // 
             // imageList1
             // 
@@ -184,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listView_DSSP);
             this.Controls.Add(this.panel2);
             this.Name = "TrangChuUser";
             this.Size = new System.Drawing.Size(1228, 808);
@@ -202,15 +213,15 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label_TimKiem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbb_gia;
         private System.Windows.Forms.Label label_Gia;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbb_thuonghieu;
         private System.Windows.Forms.Label label_ThuongHieu;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label_TimTheo;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView_DSSP;
         private System.Windows.Forms.ImageList imageList1;
     }
 }

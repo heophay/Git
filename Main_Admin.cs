@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class DanhMuc : Form
+    public partial class Main_Admin : Form
     {
-        public DanhMuc()
+        public Main_Admin()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox_Out_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GiaoDien
 {
-    partial class AdManager
+    partial class Main_User
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdManager));
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_User));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.adminManager1 = new GiaoDien.AdminManager();
             this.pictureBox_Out = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.user1 = new GiaoDien.User();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Out)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.pictureBox_Out);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1500, 42);
-            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.adminManager1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 42);
+            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.Controls.Add(this.pictureBox_Out);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1500, 808);
-            this.panel2.TabIndex = 1;
-            // 
-            // adminManager1
-            // 
-            this.adminManager1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminManager1.Location = new System.Drawing.Point(0, 0);
-            this.adminManager1.Name = "adminManager1";
-            this.adminManager1.Size = new System.Drawing.Size(1500, 808);
-            this.adminManager1.TabIndex = 0;
+            this.panel2.Size = new System.Drawing.Size(1500, 42);
+            this.panel2.TabIndex = 5;
             // 
             // pictureBox_Out
             // 
@@ -75,32 +57,51 @@
             this.pictureBox_Out.Name = "pictureBox_Out";
             this.pictureBox_Out.Size = new System.Drawing.Size(35, 42);
             this.pictureBox_Out.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_Out.TabIndex = 1;
+            this.pictureBox_Out.TabIndex = 0;
             this.pictureBox_Out.TabStop = false;
             this.pictureBox_Out.Click += new System.EventHandler(this.pictureBox_Out_Click);
             // 
-            // AdManager
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.user1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1500, 808);
+            this.panel1.TabIndex = 6;
+            // 
+            // user1
+            // 
+            this.user1.Location = new System.Drawing.Point(0, 0);
+            this.user1.Name = "user1";
+            this.user1.Size = new System.Drawing.Size(1500, 808);
+            this.user1.TabIndex = 0;
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 850);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdManager";
-            this.Text = "AdManager";
-            this.panel1.ResumeLayout(false);
+            this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form1";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Out)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private AdminManager adminManager1;
         private System.Windows.Forms.PictureBox pictureBox_Out;
+        private System.Windows.Forms.Panel panel1;
+        private User user1;
     }
 }
+

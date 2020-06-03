@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.button_Xemdonhang = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_Donhang = new System.Windows.Forms.DataGridView();
             this.label_Donhang = new System.Windows.Forms.Label();
             this.button_XoaDonHang = new System.Windows.Forms.Button();
             this.button_ThanhToan = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Donhang)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Xemdonhang
@@ -50,15 +50,15 @@
             this.button_Xemdonhang.Text = "Xem đơn hàng";
             this.button_Xemdonhang.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // DGV_Donhang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(79, 230);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1052, 315);
-            this.dataGridView1.TabIndex = 5;
+            this.DGV_Donhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Donhang.Location = new System.Drawing.Point(79, 230);
+            this.DGV_Donhang.Name = "DGV_Donhang";
+            this.DGV_Donhang.RowHeadersWidth = 51;
+            this.DGV_Donhang.RowTemplate.Height = 24;
+            this.DGV_Donhang.Size = new System.Drawing.Size(1052, 315);
+            this.DGV_Donhang.TabIndex = 5;
             // 
             // label_Donhang
             // 
@@ -106,11 +106,11 @@
             this.Controls.Add(this.button_ThanhToan);
             this.Controls.Add(this.button_XoaDonHang);
             this.Controls.Add(this.button_Xemdonhang);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_Donhang);
             this.Controls.Add(this.label_Donhang);
             this.Name = "DonHang";
             this.Size = new System.Drawing.Size(1228, 808);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Donhang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +118,7 @@
 
         #endregion
         private System.Windows.Forms.Button button_Xemdonhang;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_Donhang;
         private System.Windows.Forms.Label label_Donhang;
         private System.Windows.Forms.Button button_XoaDonHang;
         private System.Windows.Forms.Button button_ThanhToan;
