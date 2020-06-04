@@ -84,6 +84,12 @@
     <Compile Include="Detail_Form\Detail_KH.Designer.cs">
       <DependentUpon>Detail_KH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,30 @@
     </Compile>
     <Compile Include="Main_Manager.Designer.cs">
       <DependentUpon>Main_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reset_Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reset_Pass.Designer.cs">
+      <DependentUpon>Reset_Pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reset_Pass1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reset_Pass1.Designer.cs">
+      <DependentUpon>Reset_Pass1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reset_Pass2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reset_Pass2.Designer.cs">
+      <DependentUpon>Reset_Pass2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reset_Pass3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reset_Pass3.Designer.cs">
+      <DependentUpon>Reset_Pass3.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Manage_User.cs">
       <SubType>UserControl</SubType>
@@ -143,12 +173,6 @@
     </Compile>
     <Compile Include="UserControl\DoanhThuAd.Designer.cs">
       <DependentUpon>DoanhThuAd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -221,11 +245,26 @@
     <EmbeddedResource Include="Detail_Form\Detail_KH.resx">
       <DependentUpon>Detail_KH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_Admin.resx">
       <DependentUpon>Main_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Manager.resx">
       <DependentUpon>Main_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reset_Pass.resx">
+      <DependentUpon>Reset_Pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reset_Pass1.resx">
+      <DependentUpon>Reset_Pass1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reset_Pass2.resx">
+      <DependentUpon>Reset_Pass2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reset_Pass3.resx">
+      <DependentUpon>Reset_Pass3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Manage_User.resx">
       <DependentUpon>Manage_User.cs</DependentUpon>
@@ -250,9 +289,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\DoanhThuAd.resx">
       <DependentUpon>DoanhThuAd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>

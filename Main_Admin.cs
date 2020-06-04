@@ -15,6 +15,8 @@ namespace GiaoDien
         public Main_Admin()
         {
             InitializeComponent();
+            this.ControlBox = true;
+            this.Visible = true;
         }
 
         private void pictureBox_Out_Click(object sender, EventArgs e)

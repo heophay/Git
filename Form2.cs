@@ -23,7 +23,6 @@ namespace GiaoDien
             txt2.ForeColor = Color.Gray;
             txt2.Text = "Please Enter Address";
             this.txt2.Leave += new System.EventHandler(this.textBox2_Leave);
-            //this.txt2.MouseLeave += new System.EventHandler(this.textBox1_Leave);
             this.txt2.Enter += new System.EventHandler(this.textBox2_Enter);
         }
         private void textBox1_Leave(object sender, EventArgs e)

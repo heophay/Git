@@ -36,7 +36,6 @@
             this.rb_nam = new System.Windows.Forms.RadioButton();
             this.txt_diachi = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.Date_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.txt_dt = new System.Windows.Forms.TextBox();
             this.txt_nv = new System.Windows.Forms.TextBox();
             this.txt_pass = new System.Windows.Forms.TextBox();
@@ -49,6 +48,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbb_ngay = new System.Windows.Forms.ComboBox();
+            this.cbb_thang = new System.Windows.Forms.ComboBox();
+            this.cbb_nam = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -79,10 +81,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbb_nam);
+            this.groupBox1.Controls.Add(this.cbb_thang);
+            this.groupBox1.Controls.Add(this.cbb_ngay);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txt_diachi);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.Date_ngaysinh);
             this.groupBox1.Controls.Add(this.txt_dt);
             this.groupBox1.Controls.Add(this.txt_nv);
             this.groupBox1.Controls.Add(this.txt_pass);
@@ -151,14 +155,6 @@
             this.label10.Size = new System.Drawing.Size(71, 20);
             this.label10.TabIndex = 20;
             this.label10.Text = "Địa Chỉ";
-            // 
-            // Date_ngaysinh
-            // 
-            this.Date_ngaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_ngaysinh.Location = new System.Drawing.Point(147, 280);
-            this.Date_ngaysinh.Name = "Date_ngaysinh";
-            this.Date_ngaysinh.Size = new System.Drawing.Size(359, 24);
-            this.Date_ngaysinh.TabIndex = 18;
             // 
             // txt_dt
             // 
@@ -272,6 +268,40 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Quản lý khách hàng";
             // 
+            // cbb_ngay
+            // 
+            this.cbb_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ngay.FormattingEnabled = true;
+            this.cbb_ngay.IntegralHeight = false;
+            this.cbb_ngay.Location = new System.Drawing.Point(129, 278);
+            this.cbb_ngay.MaxDropDownItems = 19;
+            this.cbb_ngay.Name = "cbb_ngay";
+            this.cbb_ngay.Size = new System.Drawing.Size(104, 26);
+            this.cbb_ngay.TabIndex = 23;
+            // 
+            // cbb_thang
+            // 
+            this.cbb_thang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_thang.FormattingEnabled = true;
+            this.cbb_thang.IntegralHeight = false;
+            this.cbb_thang.Location = new System.Drawing.Point(275, 278);
+            this.cbb_thang.Name = "cbb_thang";
+            this.cbb_thang.Size = new System.Drawing.Size(117, 26);
+            this.cbb_thang.TabIndex = 24;
+            // 
+            // cbb_nam
+            // 
+            this.cbb_nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_nam.FormattingEnabled = true;
+            this.cbb_nam.IntegralHeight = false;
+            this.cbb_nam.Items.AddRange(new object[] {
+            "Năm"});
+            this.cbb_nam.Location = new System.Drawing.Point(434, 278);
+            this.cbb_nam.MaxDropDownItems = 19;
+            this.cbb_nam.Name = "cbb_nam";
+            this.cbb_nam.Size = new System.Drawing.Size(136, 26);
+            this.cbb_nam.TabIndex = 25;
+            // 
             // Detail_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -303,7 +333,6 @@
         private System.Windows.Forms.RadioButton rb_nam;
         private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker Date_ngaysinh;
         private System.Windows.Forms.TextBox txt_dt;
         private System.Windows.Forms.TextBox txt_nv;
         private System.Windows.Forms.TextBox txt_pass;
@@ -316,5 +345,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbb_nam;
+        private System.Windows.Forms.ComboBox cbb_thang;
+        private System.Windows.Forms.ComboBox cbb_ngay;
     }
 }

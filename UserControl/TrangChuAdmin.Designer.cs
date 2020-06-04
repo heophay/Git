@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManager));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.danhMucAd2 = new GiaoDien.DanhMucAd();
             this.doanhThuAd1 = new GiaoDien.DoanhThuAd();
             this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
-            this.sanPhamAdMa2 = new GiaoDien.SanPhamAdMa();
             this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
             this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -58,9 +58,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.danhMucAd2);
             this.panel2.Controls.Add(this.doanhThuAd1);
             this.panel2.Controls.Add(this.nhanVienAdMa1);
-            this.panel2.Controls.Add(this.sanPhamAdMa2);
             this.panel2.Controls.Add(this.nhapXuatAdMa1);
             this.panel2.Controls.Add(this.sanPhamAdMa1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -68,6 +68,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1231, 808);
             this.panel2.TabIndex = 9;
+            // 
+            // danhMucAd2
+            // 
+            this.danhMucAd2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.danhMucAd2.Location = new System.Drawing.Point(0, 0);
+            this.danhMucAd2.Name = "danhMucAd2";
+            this.danhMucAd2.Size = new System.Drawing.Size(1231, 808);
+            this.danhMucAd2.TabIndex = 6;
             // 
             // doanhThuAd1
             // 
@@ -84,15 +92,6 @@
             this.nhanVienAdMa1.Name = "nhanVienAdMa1";
             this.nhanVienAdMa1.Size = new System.Drawing.Size(1231, 808);
             this.nhanVienAdMa1.TabIndex = 3;
-            // 
-            // sanPhamAdMa2
-            // 
-            this.sanPhamAdMa2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sanPhamAdMa2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sanPhamAdMa2.Location = new System.Drawing.Point(0, 0);
-            this.sanPhamAdMa2.Name = "sanPhamAdMa2";
-            this.sanPhamAdMa2.Size = new System.Drawing.Size(1231, 808);
-            this.sanPhamAdMa2.TabIndex = 2;
             // 
             // nhapXuatAdMa1
             // 
@@ -317,8 +316,7 @@
         private SanPhamAdMa sanPhamAdMa1;
         private NhapXuatAdMa nhapXuatAdMa1;
         private NhanVienAdMa nhanVienAdMa1;
-        private SanPhamAdMa sanPhamAdMa2;
         private DoanhThuAd doanhThuAd1;
-        private DanhMucAd danhMucAd1;
+        private DanhMucAd danhMucAd2;
     }
 }

@@ -39,7 +39,7 @@ namespace GiaoDien
 
         private void button_DanhMuc_Click(object sender, EventArgs e)
         {
-            danhMucAd1.BringToFront();
+            danhMucAd2.BringToFront();
         }
     }
 }
