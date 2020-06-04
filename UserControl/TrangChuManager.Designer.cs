@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bt_TTNV = new System.Windows.Forms.Button();
-            this.bt_doanhthu = new System.Windows.Forms.Button();
+            this.bt_KH = new System.Windows.Forms.Button();
             this.bt_Gia = new System.Windows.Forms.Button();
             this.button_DanhMuc = new System.Windows.Forms.Button();
             this.bt_SP = new System.Windows.Forms.Button();
@@ -47,20 +47,23 @@
             this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.danhMucAd1 = new GiaoDien.DanhMucAd();
             this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
+            this.pic_selection = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.pic_selection);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.bt_TTNV);
-            this.panel1.Controls.Add(this.bt_doanhthu);
+            this.panel1.Controls.Add(this.bt_KH);
             this.panel1.Controls.Add(this.bt_Gia);
             this.panel1.Controls.Add(this.button_DanhMuc);
             this.panel1.Controls.Add(this.bt_SP);
@@ -145,23 +148,23 @@
             this.bt_TTNV.UseVisualStyleBackColor = true;
             this.bt_TTNV.Click += new System.EventHandler(this.bt_TTNV_Click);
             // 
-            // bt_doanhthu
+            // bt_KH
             // 
-            this.bt_doanhthu.FlatAppearance.BorderSize = 0;
-            this.bt_doanhthu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.bt_doanhthu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_doanhthu.Font = new System.Drawing.Font("Century Schoolbook", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_doanhthu.ForeColor = System.Drawing.Color.White;
-            this.bt_doanhthu.Image = ((System.Drawing.Image)(resources.GetObject("bt_doanhthu.Image")));
-            this.bt_doanhthu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_doanhthu.Location = new System.Drawing.Point(5, 342);
-            this.bt_doanhthu.Name = "bt_doanhthu";
-            this.bt_doanhthu.Size = new System.Drawing.Size(255, 51);
-            this.bt_doanhthu.TabIndex = 1;
-            this.bt_doanhthu.Text = "Khách hàng";
-            this.toolTip1.SetToolTip(this.bt_doanhthu, "Khách hàng");
-            this.bt_doanhthu.UseVisualStyleBackColor = true;
-            this.bt_doanhthu.Click += new System.EventHandler(this.bt_doanhthu_Click);
+            this.bt_KH.FlatAppearance.BorderSize = 0;
+            this.bt_KH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_KH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_KH.Font = new System.Drawing.Font("Century Schoolbook", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_KH.ForeColor = System.Drawing.Color.White;
+            this.bt_KH.Image = ((System.Drawing.Image)(resources.GetObject("bt_KH.Image")));
+            this.bt_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_KH.Location = new System.Drawing.Point(5, 342);
+            this.bt_KH.Name = "bt_KH";
+            this.bt_KH.Size = new System.Drawing.Size(255, 51);
+            this.bt_KH.TabIndex = 1;
+            this.bt_KH.Text = "Khách hàng";
+            this.toolTip1.SetToolTip(this.bt_KH, "Khách hàng");
+            this.bt_KH.UseVisualStyleBackColor = true;
+            this.bt_KH.Click += new System.EventHandler(this.bt_doanhthu_Click);
             // 
             // bt_Gia
             // 
@@ -259,6 +262,16 @@
             this.nhapXuatAdMa1.Size = new System.Drawing.Size(1231, 808);
             this.nhapXuatAdMa1.TabIndex = 9;
             // 
+            // pic_selection
+            // 
+            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang;
+            this.pic_selection.Location = new System.Drawing.Point(0, 171);
+            this.pic_selection.Name = "pic_selection";
+            this.pic_selection.Size = new System.Drawing.Size(16, 16);
+            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_selection.TabIndex = 10;
+            this.pic_selection.TabStop = false;
+            // 
             // TrangChuManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,6 +290,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,7 +304,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button bt_TTNV;
-        private System.Windows.Forms.Button bt_doanhthu;
+        private System.Windows.Forms.Button bt_KH;
         private System.Windows.Forms.Button bt_Gia;
         private System.Windows.Forms.Button button_DanhMuc;
         private System.Windows.Forms.Button bt_SP;
@@ -300,5 +314,6 @@
         private TaiKhoanUser taiKhoanUser1;
         private Manage_User manage_User1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox pic_selection;
     }
 }

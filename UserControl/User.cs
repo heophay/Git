@@ -15,6 +15,8 @@ namespace GiaoDien
         public User()
         {
             InitializeComponent();
+            trangChuUser1.BringToFront();
+            pic_selection.Top = button_TrangChu.Top;
         }
 
         private void button_DngNhap_Click(object sender, EventArgs e)
@@ -51,22 +53,26 @@ namespace GiaoDien
 
         private void button_TrangChu_Click(object sender, EventArgs e)
         {
-           trangChuUser1.BringToFront();
+            trangChuUser1.BringToFront();
+            pic_selection.Top = button_TrangChu.Top;
         }
 
         private void button_TaiKhoan_Click(object sender, EventArgs e)
         {
             taiKhoanUser1.BringToFront();
+            pic_selection.Top = button_TaiKhoan.Top;
         }
 
         private void button_GioHang_Click(object sender, EventArgs e)
         {
             gioHangUser1.BringToFront();
+            pic_selection.Top = button_GioHang.Top;
         }
 
         private void button_DonHang_Click(object sender, EventArgs e)
         {
             donHang1.BringToFront();
+            pic_selection.Top = button_DonHang.Top;
         }
 
         private void button_DangKi_Click(object sender, EventArgs e)

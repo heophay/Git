@@ -72,5 +72,21 @@ namespace GiaoDien
             //this.txt2.MouseLeave += new System.EventHandler(this.textBox1_Leave);
             this.txt2.Enter += new System.EventHandler(this.textBox2_Enter);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            //timer1.Stop
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
     }
 }

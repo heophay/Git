@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -83,6 +83,12 @@
     </Compile>
     <Compile Include="Detail_Form\Detail_KH.Designer.cs">
       <DependentUpon>Detail_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="First_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="First_Form.Designer.cs">
+      <DependentUpon>First_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -251,6 +257,9 @@
     <EmbeddedResource Include="Detail_Form\Detail_KH.resx">
       <DependentUpon>Detail_KH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="First_Form.resx">
+      <DependentUpon>First_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -355,7 +364,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\saovang.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\product_15574_1.png" />
   </ItemGroup>
@@ -373,6 +384,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ff.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

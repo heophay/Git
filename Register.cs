@@ -136,10 +136,6 @@ namespace GiaoDien
                 txt_diachi.Text = "Địa chỉ";
             }
         }
-        private void Register_Load(object sender, EventArgs e)
-        {
-
-        }
         Login l = new Login();
         private void button1_Click(object sender, EventArgs e)
         {
