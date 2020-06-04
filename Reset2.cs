@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +10,9 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-
-    public partial class Login : Form
+    public partial class Reset2 : UserControl
     {
-        public Login()
+        public Reset2()
         {
             InitializeComponent();
         }

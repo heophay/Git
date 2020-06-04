@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class Reset_Pass3 : UserControl
+    public partial class Reset3 : UserControl
     {
-        public Reset_Pass3()
+        public Reset3()
         {
             InitializeComponent();
-        }
-
-        private void bt_dangnhap_Click(object sender, EventArgs e)
-        {
-            Login l = new Login();
-            l.Show();
-            this.Dispose();
         }
     }
 }

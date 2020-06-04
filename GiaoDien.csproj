@@ -102,29 +102,29 @@
     <Compile Include="Main_Manager.Designer.cs">
       <DependentUpon>Main_Manager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reset1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reset1.Designer.cs">
+      <DependentUpon>Reset1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reset2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reset2.Designer.cs">
+      <DependentUpon>Reset2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reset3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reset3.Designer.cs">
+      <DependentUpon>Reset3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reset_Pass.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reset_Pass.Designer.cs">
       <DependentUpon>Reset_Pass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reset_Pass1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reset_Pass1.Designer.cs">
-      <DependentUpon>Reset_Pass1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reset_Pass2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reset_Pass2.Designer.cs">
-      <DependentUpon>Reset_Pass2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reset_Pass3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reset_Pass3.Designer.cs">
-      <DependentUpon>Reset_Pass3.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Manage_User.cs">
       <SubType>UserControl</SubType>
@@ -254,17 +254,17 @@
     <EmbeddedResource Include="Main_Manager.resx">
       <DependentUpon>Main_Manager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reset1.resx">
+      <DependentUpon>Reset1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reset2.resx">
+      <DependentUpon>Reset2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reset3.resx">
+      <DependentUpon>Reset3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reset_Pass.resx">
       <DependentUpon>Reset_Pass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reset_Pass1.resx">
-      <DependentUpon>Reset_Pass1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reset_Pass2.resx">
-      <DependentUpon>Reset_Pass2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reset_Pass3.resx">
-      <DependentUpon>Reset_Pass3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Manage_User.resx">
       <DependentUpon>Manage_User.cs</DependentUpon>
