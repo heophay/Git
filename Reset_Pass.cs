@@ -20,7 +20,7 @@ namespace GiaoDien
             bt_no.Hide();
             reset11.BringToFront();
         }
-
+        Login l = new Login();
         private void bt_search_Click(object sender, EventArgs e)
         {
             reset21.BringToFront();
@@ -32,7 +32,6 @@ namespace GiaoDien
 
         private void bt_huy_Click(object sender, EventArgs e)
         {
-            Login l = new Login();
             this.Visible = false;
             l.ShowDialog();
             this.Dispose();
@@ -54,15 +53,6 @@ namespace GiaoDien
             bt_no.Hide(); 
             bt_search.Visible = true;
             bt_huy.Visible = true;
-        }
-
-        private void bt_dangnhap_Click(object sender, EventArgs e)
-        {
-            Login l = new Login();
-            this.Visible = false;
-            l.ShowDialog();
-            this.Dispose();
-            l.Dispose();
         }
     }
 }

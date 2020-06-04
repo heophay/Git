@@ -31,15 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bt_huy = new System.Windows.Forms.Button();
-            this.bt_search = new System.Windows.Forms.Button();
+            this.reset31 = new GiaoDien.Reset3();
+            this.reset21 = new GiaoDien.Reset2();
+            this.reset11 = new GiaoDien.Reset1();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.bt_dangnhap = new System.Windows.Forms.Button();
             this.bt_no = new System.Windows.Forms.Button();
             this.bt_yes = new System.Windows.Forms.Button();
-            this.bt_dangnhap = new System.Windows.Forms.Button();
-            this.reset11 = new GiaoDien.Reset1();
-            this.reset21 = new GiaoDien.Reset2();
-            this.reset31 = new GiaoDien.Reset3();
+            this.bt_search = new System.Windows.Forms.Button();
+            this.bt_huy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -79,30 +79,29 @@
             this.panel2.Size = new System.Drawing.Size(848, 499);
             this.panel2.TabIndex = 1;
             // 
-            // bt_huy
+            // reset31
             // 
-            this.bt_huy.BackColor = System.Drawing.Color.White;
-            this.bt_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_huy.Location = new System.Drawing.Point(146, 23);
-            this.bt_huy.Name = "bt_huy";
-            this.bt_huy.Size = new System.Drawing.Size(121, 36);
-            this.bt_huy.TabIndex = 11;
-            this.bt_huy.Text = "Hủy";
-            this.bt_huy.UseVisualStyleBackColor = false;
-            this.bt_huy.Click += new System.EventHandler(this.bt_huy_Click);
+            this.reset31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reset31.Location = new System.Drawing.Point(0, 0);
+            this.reset31.Name = "reset31";
+            this.reset31.Size = new System.Drawing.Size(848, 408);
+            this.reset31.TabIndex = 20;
             // 
-            // bt_search
+            // reset21
             // 
-            this.bt_search.BackColor = System.Drawing.Color.Blue;
-            this.bt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_search.ForeColor = System.Drawing.Color.White;
-            this.bt_search.Location = new System.Drawing.Point(19, 23);
-            this.bt_search.Name = "bt_search";
-            this.bt_search.Size = new System.Drawing.Size(121, 36);
-            this.bt_search.TabIndex = 10;
-            this.bt_search.Text = "Tìm kiếm";
-            this.bt_search.UseVisualStyleBackColor = false;
-            this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
+            this.reset21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reset21.Location = new System.Drawing.Point(0, 0);
+            this.reset21.Name = "reset21";
+            this.reset21.Size = new System.Drawing.Size(848, 408);
+            this.reset21.TabIndex = 19;
+            // 
+            // reset11
+            // 
+            this.reset11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reset11.Location = new System.Drawing.Point(0, 0);
+            this.reset11.Name = "reset11";
+            this.reset11.Size = new System.Drawing.Size(848, 408);
+            this.reset11.TabIndex = 18;
             // 
             // groupBox3
             // 
@@ -117,6 +116,19 @@
             this.groupBox3.Size = new System.Drawing.Size(848, 91);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
+            // 
+            // bt_dangnhap
+            // 
+            this.bt_dangnhap.BackColor = System.Drawing.Color.Blue;
+            this.bt_dangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_dangnhap.ForeColor = System.Drawing.Color.White;
+            this.bt_dangnhap.Location = new System.Drawing.Point(324, 24);
+            this.bt_dangnhap.Name = "bt_dangnhap";
+            this.bt_dangnhap.Size = new System.Drawing.Size(138, 37);
+            this.bt_dangnhap.TabIndex = 14;
+            this.bt_dangnhap.Text = "Đăng nhập";
+            this.bt_dangnhap.UseVisualStyleBackColor = false;
+            this.bt_dangnhap.Click += new System.EventHandler(this.bt_huy_Click);
             // 
             // bt_no
             // 
@@ -143,42 +155,30 @@
             this.bt_yes.UseVisualStyleBackColor = false;
             this.bt_yes.Click += new System.EventHandler(this.bt_yes_Click);
             // 
-            // bt_dangnhap
+            // bt_search
             // 
-            this.bt_dangnhap.BackColor = System.Drawing.Color.Blue;
-            this.bt_dangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_dangnhap.ForeColor = System.Drawing.Color.White;
-            this.bt_dangnhap.Location = new System.Drawing.Point(324, 24);
-            this.bt_dangnhap.Name = "bt_dangnhap";
-            this.bt_dangnhap.Size = new System.Drawing.Size(138, 37);
-            this.bt_dangnhap.TabIndex = 14;
-            this.bt_dangnhap.Text = "Đăng nhập";
-            this.bt_dangnhap.UseVisualStyleBackColor = false;
-            this.bt_dangnhap.Click += new System.EventHandler(this.bt_dangnhap_Click);
+            this.bt_search.BackColor = System.Drawing.Color.Blue;
+            this.bt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_search.ForeColor = System.Drawing.Color.White;
+            this.bt_search.Location = new System.Drawing.Point(19, 23);
+            this.bt_search.Name = "bt_search";
+            this.bt_search.Size = new System.Drawing.Size(121, 36);
+            this.bt_search.TabIndex = 10;
+            this.bt_search.Text = "Tìm kiếm";
+            this.bt_search.UseVisualStyleBackColor = false;
+            this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
             // 
-            // reset11
+            // bt_huy
             // 
-            this.reset11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reset11.Location = new System.Drawing.Point(0, 0);
-            this.reset11.Name = "reset11";
-            this.reset11.Size = new System.Drawing.Size(848, 408);
-            this.reset11.TabIndex = 18;
-            // 
-            // reset21
-            // 
-            this.reset21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reset21.Location = new System.Drawing.Point(0, 0);
-            this.reset21.Name = "reset21";
-            this.reset21.Size = new System.Drawing.Size(848, 408);
-            this.reset21.TabIndex = 19;
-            // 
-            // reset31
-            // 
-            this.reset31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reset31.Location = new System.Drawing.Point(0, 0);
-            this.reset31.Name = "reset31";
-            this.reset31.Size = new System.Drawing.Size(848, 408);
-            this.reset31.TabIndex = 20;
+            this.bt_huy.BackColor = System.Drawing.Color.White;
+            this.bt_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_huy.Location = new System.Drawing.Point(146, 23);
+            this.bt_huy.Name = "bt_huy";
+            this.bt_huy.Size = new System.Drawing.Size(121, 36);
+            this.bt_huy.TabIndex = 11;
+            this.bt_huy.Text = "Hủy";
+            this.bt_huy.UseVisualStyleBackColor = false;
+            this.bt_huy.Click += new System.EventHandler(this.bt_huy_Click);
             // 
             // Reset_Pass
             // 
