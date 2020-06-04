@@ -31,11 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManager));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.danhMucAd2 = new GiaoDien.DanhMucAd();
-            this.doanhThuAd1 = new GiaoDien.DoanhThuAd();
-            this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
-            this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
-            this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bt_SP = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,6 +44,11 @@
             this.bt_doanhthu = new System.Windows.Forms.Button();
             this.bt_Gia = new System.Windows.Forms.Button();
             this.button_DanhMuc = new System.Windows.Forms.Button();
+            this.danhMucAd2 = new GiaoDien.DanhMucAd();
+            this.doanhThuAd1 = new GiaoDien.DoanhThuAd();
+            this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
+            this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
+            this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -64,51 +64,10 @@
             this.panel2.Controls.Add(this.nhapXuatAdMa1);
             this.panel2.Controls.Add(this.sanPhamAdMa1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(269, 0);
+            this.panel2.Location = new System.Drawing.Point(273, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1231, 808);
+            this.panel2.Size = new System.Drawing.Size(1227, 808);
             this.panel2.TabIndex = 9;
-            // 
-            // danhMucAd2
-            // 
-            this.danhMucAd2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.danhMucAd2.Location = new System.Drawing.Point(0, 0);
-            this.danhMucAd2.Name = "danhMucAd2";
-            this.danhMucAd2.Size = new System.Drawing.Size(1231, 808);
-            this.danhMucAd2.TabIndex = 6;
-            // 
-            // doanhThuAd1
-            // 
-            this.doanhThuAd1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.doanhThuAd1.Location = new System.Drawing.Point(0, 0);
-            this.doanhThuAd1.Name = "doanhThuAd1";
-            this.doanhThuAd1.Size = new System.Drawing.Size(1231, 808);
-            this.doanhThuAd1.TabIndex = 5;
-            // 
-            // nhanVienAdMa1
-            // 
-            this.nhanVienAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhanVienAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.nhanVienAdMa1.Name = "nhanVienAdMa1";
-            this.nhanVienAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.nhanVienAdMa1.TabIndex = 3;
-            // 
-            // nhapXuatAdMa1
-            // 
-            this.nhapXuatAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhapXuatAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.nhapXuatAdMa1.Name = "nhapXuatAdMa1";
-            this.nhapXuatAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.nhapXuatAdMa1.TabIndex = 1;
-            // 
-            // sanPhamAdMa1
-            // 
-            this.sanPhamAdMa1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sanPhamAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sanPhamAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.sanPhamAdMa1.Name = "sanPhamAdMa1";
-            this.sanPhamAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.sanPhamAdMa1.TabIndex = 0;
             // 
             // bt_SP
             // 
@@ -149,7 +108,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(269, 808);
+            this.panel1.Size = new System.Drawing.Size(273, 808);
             this.panel1.TabIndex = 7;
             // 
             // label2
@@ -166,12 +125,13 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(60, 49);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel4
             // 
@@ -222,6 +182,7 @@
             this.bt_TTNV.TabIndex = 1;
             this.bt_TTNV.Text = "Theo dõi nhân viên";
             this.bt_TTNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.bt_TTNV, "Theo dõi nhân viên");
             this.bt_TTNV.UseVisualStyleBackColor = true;
             this.bt_TTNV.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -239,6 +200,7 @@
             this.bt_doanhthu.Size = new System.Drawing.Size(255, 51);
             this.bt_doanhthu.TabIndex = 1;
             this.bt_doanhthu.Text = "Doanh thu";
+            this.toolTip1.SetToolTip(this.bt_doanhthu, "Doanh thu");
             this.bt_doanhthu.UseVisualStyleBackColor = true;
             this.bt_doanhthu.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -255,8 +217,8 @@
             this.bt_Gia.Name = "bt_Gia";
             this.bt_Gia.Size = new System.Drawing.Size(255, 51);
             this.bt_Gia.TabIndex = 1;
-            this.bt_Gia.Text = "Kiểm tra nhập xuất";
-            this.bt_Gia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_Gia.Text = "Kiểm tra giá";
+            this.toolTip1.SetToolTip(this.bt_Gia, "Kiểm tra giá");
             this.bt_Gia.UseVisualStyleBackColor = true;
             this.bt_Gia.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -274,8 +236,50 @@
             this.button_DanhMuc.Size = new System.Drawing.Size(255, 51);
             this.button_DanhMuc.TabIndex = 1;
             this.button_DanhMuc.Text = "Danh mục";
+            this.toolTip1.SetToolTip(this.button_DanhMuc, "Danh mục");
             this.button_DanhMuc.UseVisualStyleBackColor = true;
             this.button_DanhMuc.Click += new System.EventHandler(this.button_DanhMuc_Click);
+            // 
+            // danhMucAd2
+            // 
+            this.danhMucAd2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.danhMucAd2.Location = new System.Drawing.Point(0, 0);
+            this.danhMucAd2.Name = "danhMucAd2";
+            this.danhMucAd2.Size = new System.Drawing.Size(1227, 808);
+            this.danhMucAd2.TabIndex = 6;
+            // 
+            // doanhThuAd1
+            // 
+            this.doanhThuAd1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.doanhThuAd1.Location = new System.Drawing.Point(0, 0);
+            this.doanhThuAd1.Name = "doanhThuAd1";
+            this.doanhThuAd1.Size = new System.Drawing.Size(1227, 808);
+            this.doanhThuAd1.TabIndex = 5;
+            // 
+            // nhanVienAdMa1
+            // 
+            this.nhanVienAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhanVienAdMa1.Location = new System.Drawing.Point(0, 0);
+            this.nhanVienAdMa1.Name = "nhanVienAdMa1";
+            this.nhanVienAdMa1.Size = new System.Drawing.Size(1227, 808);
+            this.nhanVienAdMa1.TabIndex = 3;
+            // 
+            // nhapXuatAdMa1
+            // 
+            this.nhapXuatAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhapXuatAdMa1.Location = new System.Drawing.Point(0, 0);
+            this.nhapXuatAdMa1.Name = "nhapXuatAdMa1";
+            this.nhapXuatAdMa1.Size = new System.Drawing.Size(1227, 808);
+            this.nhapXuatAdMa1.TabIndex = 1;
+            // 
+            // sanPhamAdMa1
+            // 
+            this.sanPhamAdMa1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.sanPhamAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sanPhamAdMa1.Location = new System.Drawing.Point(0, 0);
+            this.sanPhamAdMa1.Name = "sanPhamAdMa1";
+            this.sanPhamAdMa1.Size = new System.Drawing.Size(1227, 808);
+            this.sanPhamAdMa1.TabIndex = 0;
             // 
             // AdminManager
             // 

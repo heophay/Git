@@ -75,6 +75,7 @@
             this.bt_resetpass.TabIndex = 17;
             this.bt_resetpass.Text = "Quên mật khẩu?";
             this.bt_resetpass.UseVisualStyleBackColor = false;
+            this.bt_resetpass.Click += new System.EventHandler(this.bt_resetpass_Click);
             // 
             // bt_dangky
             // 
@@ -87,6 +88,7 @@
             this.bt_dangky.TabIndex = 16;
             this.bt_dangky.Text = "Đăng Ký";
             this.bt_dangky.UseVisualStyleBackColor = true;
+            this.bt_dangky.Click += new System.EventHandler(this.bt_dangky_Click);
             // 
             // checkBox_nhoMK
             // 
@@ -124,6 +126,7 @@
             this.bt_login.TabIndex = 15;
             this.bt_login.Text = "Đăng Nhập";
             this.bt_login.UseVisualStyleBackColor = true;
+            this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
             // 
             // txt_user
             // 

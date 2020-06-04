@@ -41,5 +41,23 @@ namespace GiaoDien
         {
             manage_User1.BringToFront();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(panel1.Width.ToString());
+            if (panel1.Width == 202)
+            {
+                panel1.Width = 45;
+                //button_DangKi.Visible = false;
+                //button_DngNhap.Visible = false;
+            }
+            else
+            {
+                panel1.Width = 202;
+                //button_DangKi.Visible = true;
+                //button_DngNhap.Visible = true;
+
+            }
+        }
     }
 }

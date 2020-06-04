@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_dangky = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbb_nam = new System.Windows.Forms.ComboBox();
             this.cbb_thang = new System.Windows.Forms.ComboBox();
@@ -43,21 +43,23 @@
             this.txt_confirm = new System.Windows.Forms.TextBox();
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.txt_diachi = new System.Windows.Forms.TextBox();
+            this.bt_cancel = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // bt_dangky
             // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(149, 660);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 49);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Đăng Ký";
-            this.button1.UseVisualStyleBackColor = false;
+            this.bt_dangky.BackColor = System.Drawing.Color.ForestGreen;
+            this.bt_dangky.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_dangky.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bt_dangky.Location = new System.Drawing.Point(97, 660);
+            this.bt_dangky.Name = "bt_dangky";
+            this.bt_dangky.Size = new System.Drawing.Size(141, 49);
+            this.bt_dangky.TabIndex = 34;
+            this.bt_dangky.Text = "Đăng Ký";
+            this.bt_dangky.UseVisualStyleBackColor = false;
+            this.bt_dangky.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -244,18 +246,31 @@
             this.txt_diachi.Size = new System.Drawing.Size(339, 28);
             this.txt_diachi.TabIndex = 40;
             // 
+            // bt_cancel
+            // 
+            this.bt_cancel.BackColor = System.Drawing.Color.White;
+            this.bt_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancel.Location = new System.Drawing.Point(295, 660);
+            this.bt_cancel.Name = "bt_cancel";
+            this.bt_cancel.Size = new System.Drawing.Size(141, 49);
+            this.bt_cancel.TabIndex = 41;
+            this.bt_cancel.Text = "Hủy";
+            this.bt_cancel.UseVisualStyleBackColor = false;
+            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 758);
+            this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.txt_diachi);
             this.Controls.Add(this.txt_sdt);
             this.Controls.Add(this.txt_confirm);
             this.Controls.Add(this.txt_pass);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.txt_tk);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_dangky);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -273,7 +288,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_dangky;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbb_nam;
         private System.Windows.Forms.ComboBox cbb_thang;
@@ -288,5 +303,6 @@
         private System.Windows.Forms.TextBox txt_confirm;
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.TextBox txt_diachi;
+        private System.Windows.Forms.Button bt_cancel;
     }
 }

@@ -21,6 +21,8 @@ namespace GiaoDien
         {
             button_DngNhap.Visible = false;
             button_DangKi.Visible = false;
+            Login l = new Login();
+            l.ShowDialog();
             pictureBox_Profile.Visible = true;
             label_Greeting.Visible = true;
         }
@@ -65,6 +67,14 @@ namespace GiaoDien
         private void button_DonHang_Click(object sender, EventArgs e)
         {
             donHang1.BringToFront();
+        }
+
+        private void button_DangKi_Click(object sender, EventArgs e)
+        {
+            Register r = new Register();
+            //this.Visible = false;
+            r.ShowDialog();
+            //this.Dispose();
         }
     }
 }

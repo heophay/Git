@@ -41,5 +41,19 @@ namespace GiaoDien
         {
             danhMucAd2.BringToFront();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(panel1.Width.ToString());
+            if (panel1.Width == 205)
+            {
+                panel1.Width = 45;
+            }
+            else
+            {
+                panel1.Width = 205;
+
+            }
+        }
     }
 }

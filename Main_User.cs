@@ -24,5 +24,10 @@ namespace GiaoDien
         {
             this.Close();
         }
+
+        private void user1_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

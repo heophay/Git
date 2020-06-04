@@ -76,8 +76,9 @@
             this.user1.Name = "user1";
             this.user1.Size = new System.Drawing.Size(1500, 808);
             this.user1.TabIndex = 0;
+            this.user1.Load += new System.EventHandler(this.user1_Load);
             // 
-            // Main
+            // Main_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,7 +87,7 @@
             this.Controls.Add(this.panel2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Main";
+            this.Name = "Main_User";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);
