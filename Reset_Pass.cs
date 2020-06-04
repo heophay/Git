@@ -29,7 +29,7 @@ namespace GiaoDien
             bt_search.Hide();
             bt_huy.Hide();
         }
-
+        //me no chu
         private void bt_huy_Click(object sender, EventArgs e)
         {
             this.Visible = false;
