@@ -15,12 +15,10 @@ namespace GiaoDien
         public Form2()
         {
             InitializeComponent();
-            txt1.ForeColor = Color.Gray;
             txt1.Text = "Please Enter Name";
             this.txt1.Leave += new System.EventHandler(this.textBox1_Leave);
             this.txt1.Enter += new System.EventHandler(this.textBox1_Enter);
 
-            txt2.ForeColor = Color.Gray;
             txt2.Text = "Please Enter Address";
             this.txt2.Leave += new System.EventHandler(this.textBox2_Leave);
             this.txt2.Enter += new System.EventHandler(this.textBox2_Enter);
@@ -30,7 +28,7 @@ namespace GiaoDien
             if (txt1.Text == "")
             {
                 txt1.Text = "Please Enter Name";
-                txt1.ForeColor = Color.Gray;
+                //txt1.ForeColor = Color.Gray;
             }
         }
 
@@ -39,7 +37,7 @@ namespace GiaoDien
             if (txt1.Text == "Please Enter Name")
             {
                 txt1.Text = "";
-                txt1.ForeColor = Color.Black;
+                //txt1.ForeColor = Color.Black;
             }
         }
 
@@ -48,7 +46,7 @@ namespace GiaoDien
             if (txt2.Text == "Please Enter Address")
             {
                 txt2.Text = "";
-                txt2.ForeColor = Color.Black;
+                //txt2.ForeColor = Color.Black;
             }
         }
 
@@ -57,7 +55,7 @@ namespace GiaoDien
             if (txt2.Text == "")
             {
                 txt2.Text = "Please Enter Address";
-                txt2.ForeColor = Color.Gray;
+                //txt2.ForeColor = Color.Gray;
             }
         }
 

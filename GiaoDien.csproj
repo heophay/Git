@@ -102,22 +102,28 @@
     <Compile Include="Main_Manager.Designer.cs">
       <DependentUpon>Main_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reset1.cs">
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Reset1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reset1.Designer.cs">
+    <Compile Include="UserControl\Reset1.Designer.cs">
       <DependentUpon>Reset1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reset2.cs">
+    <Compile Include="UserControl\Reset2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reset2.Designer.cs">
+    <Compile Include="UserControl\Reset2.Designer.cs">
       <DependentUpon>Reset2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reset3.cs">
+    <Compile Include="UserControl\Reset3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reset3.Designer.cs">
+    <Compile Include="UserControl\Reset3.Designer.cs">
       <DependentUpon>Reset3.cs</DependentUpon>
     </Compile>
     <Compile Include="Reset_Pass.cs">
@@ -254,13 +260,16 @@
     <EmbeddedResource Include="Main_Manager.resx">
       <DependentUpon>Main_Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reset1.resx">
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Reset1.resx">
       <DependentUpon>Reset1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reset2.resx">
+    <EmbeddedResource Include="UserControl\Reset2.resx">
       <DependentUpon>Reset2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reset3.resx">
+    <EmbeddedResource Include="UserControl\Reset3.resx">
       <DependentUpon>Reset3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reset_Pass.resx">
