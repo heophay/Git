@@ -31,9 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Manager));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox_Out = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.trangChuManager1 = new GiaoDien.TrangChuManager();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Out)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,21 +61,29 @@
             this.pictureBox_Out.TabStop = false;
             this.pictureBox_Out.Click += new System.EventHandler(this.pictureBox_Out_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.trangChuManager1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 42);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1482, 761);
+            this.panel2.TabIndex = 2;
+            // 
             // trangChuManager1
             // 
             this.trangChuManager1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trangChuManager1.Location = new System.Drawing.Point(0, 42);
+            this.trangChuManager1.Location = new System.Drawing.Point(0, 0);
             this.trangChuManager1.Name = "trangChuManager1";
             this.trangChuManager1.Size = new System.Drawing.Size(1482, 761);
-            this.trangChuManager1.TabIndex = 2;
-            this.trangChuManager1.Load += new System.EventHandler(this.trangChuManager1_Load);
+            this.trangChuManager1.TabIndex = 0;
             // 
             // Main_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 803);
-            this.Controls.Add(this.trangChuManager1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main_Manager";
@@ -81,6 +91,7 @@
             this.Text = "Main_Manager";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Out)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -89,6 +100,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox_Out;
+        private System.Windows.Forms.Panel panel2;
         private TrangChuManager trangChuManager1;
     }
 }
