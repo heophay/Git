@@ -84,6 +84,18 @@
     <Compile Include="Detail_Form\Detail_KH.Designer.cs">
       <DependentUpon>Detail_KH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Detail_Form\Detail_LapDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detail_Form\Detail_LapDH.Designer.cs">
+      <DependentUpon>Detail_LapDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detail_Form\Detail_ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detail_Form\Detail_ThanhToan.Designer.cs">
+      <DependentUpon>Detail_ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="First_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +268,12 @@
     </Compile>
     <EmbeddedResource Include="Detail_Form\Detail_KH.resx">
       <DependentUpon>Detail_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detail_Form\Detail_LapDH.resx">
+      <DependentUpon>Detail_LapDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detail_Form\Detail_ThanhToan.resx">
+      <DependentUpon>Detail_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="First_Form.resx">
       <DependentUpon>First_Form.cs</DependentUpon>
