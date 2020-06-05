@@ -26,5 +26,10 @@ namespace GiaoDien
         {
 
         }
+
+        private void pic_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -43,9 +43,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer_go = new System.Windows.Forms.Timer(this.components);
             this.timer_back = new System.Windows.Forms.Timer(this.components);
+            this.pic_seenpass = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_pass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_seenpass)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_resetpass
@@ -100,7 +102,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.label1.Location = new System.Drawing.Point(142, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 52);
+            this.label1.Size = new System.Drawing.Size(248, 51);
             this.label1.TabIndex = 13;
             this.label1.Text = "Mobile App";
             // 
@@ -131,7 +133,6 @@
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(282, 27);
             this.txt_user.TabIndex = 20;
-            this.txt_user.Text = "Tài khoản";
             this.txt_user.Click += new System.EventHandler(this.txt_user_Click);
             // 
             // panel_user
@@ -160,7 +161,6 @@
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(282, 27);
             this.txt_pass.TabIndex = 26;
-            this.txt_pass.Text = "Mật khẩu";
             this.txt_pass.Click += new System.EventHandler(this.txt_pass_Click);
             // 
             // pic_pass
@@ -203,12 +203,24 @@
             this.timer_back.Interval = 10;
             this.timer_back.Tick += new System.EventHandler(this.timer_back_Tick);
             // 
+            // pic_seenpass
+            // 
+            this.pic_seenpass.Image = global::GiaoDien.Properties.Resources.eye_3_24;
+            this.pic_seenpass.Location = new System.Drawing.Point(424, 346);
+            this.pic_seenpass.Name = "pic_seenpass";
+            this.pic_seenpass.Size = new System.Drawing.Size(38, 32);
+            this.pic_seenpass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_seenpass.TabIndex = 29;
+            this.pic_seenpass.TabStop = false;
+            this.pic_seenpass.Click += new System.EventHandler(this.pic_seenpass_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(547, 758);
+            this.Controls.Add(this.pic_seenpass);
             this.Controls.Add(this.panel_pass);
             this.Controls.Add(this.pic_pass);
             this.Controls.Add(this.txt_pass);
@@ -221,14 +233,14 @@
             this.Controls.Add(this.checkBox_nhoMK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_login);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_pass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_seenpass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +261,6 @@
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.Timer timer_go;
         private System.Windows.Forms.Timer timer_back;
+        private System.Windows.Forms.PictureBox pic_seenpass;
     }
 }

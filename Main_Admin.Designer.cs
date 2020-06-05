@@ -33,14 +33,17 @@
             this.pictureBox_Out = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.adminManager1 = new GiaoDien.AdminManager();
+            this.pic_logout = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Out)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logout)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.pic_logout);
             this.panel1.Controls.Add(this.pictureBox_Out);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -79,6 +82,19 @@
             this.adminManager1.Size = new System.Drawing.Size(1500, 808);
             this.adminManager1.TabIndex = 0;
             // 
+            // pic_logout
+            // 
+            this.pic_logout.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pic_logout.Image = ((System.Drawing.Image)(resources.GetObject("pic_logout.Image")));
+            this.pic_logout.InitialImage = ((System.Drawing.Image)(resources.GetObject("pic_logout.InitialImage")));
+            this.pic_logout.Location = new System.Drawing.Point(1430, 0);
+            this.pic_logout.Name = "pic_logout";
+            this.pic_logout.Size = new System.Drawing.Size(35, 42);
+            this.pic_logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_logout.TabIndex = 2;
+            this.pic_logout.TabStop = false;
+            this.pic_logout.Click += new System.EventHandler(this.pic_logout_Click);
+            // 
             // Main_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -93,6 +109,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Out)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -103,5 +120,6 @@
         private System.Windows.Forms.Panel panel2;
         private AdminManager adminManager1;
         private System.Windows.Forms.PictureBox pictureBox_Out;
+        private System.Windows.Forms.PictureBox pic_logout;
     }
 }

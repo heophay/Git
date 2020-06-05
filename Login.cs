@@ -13,11 +13,13 @@ namespace GiaoDien
 
     public partial class Login : Form
     {
+        SE_14 db = new SE_14();
         public Login()
         {
             InitializeComponent();
             SetWaterMarkText();
         }
+
         private void SetWaterMarkText()
         {
             txt_user.Text = "Tài khoản";
@@ -48,6 +50,7 @@ namespace GiaoDien
             if (txt_pass.Text == "Mật khẩu")
             {
                 txt_pass.Text = "";
+                txt_pass.UseSystemPasswordChar = true;
             }
         }
 
@@ -56,6 +59,7 @@ namespace GiaoDien
             if (txt_pass.Text == "")
             {
                 txt_pass.Text = "Mật khẩu";
+                txt_pass.UseSystemPasswordChar = false;
             }
         }
         Register r;
@@ -97,16 +101,91 @@ namespace GiaoDien
 
         private void bt_login_Click(object sender, EventArgs e)
         {
-            //Main_User mu = new Main_User();
-            this.Visible = false;
-            //mu.ShowDialog();
-            this.Dispose();
-        }
+            if(Check_User()!=null)
+            {
+                
+                if(Check_User()== "Customer")
+                {
+                    this.Visible = false;
+                    this.Dispose();
+                }
+                else
+                {
+                    if (Check_User() == "Admin")
+                    {
+                        Main_Admin ma = new Main_Admin();
+                        //this.Visible = false;
+                        ma.Show();
+                        ma.TopMost = true;
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        Main_Manager mn = new Main_Manager();
+                        this.Visible = false;
+                        mn.ShowDialog();
+                        mn.TopMost = true;
+                        this.Dispose();
+                    }
+                }
 
-        private void Login_Load(object sender, EventArgs e)
+            }
+
+        }
+       
+        private string Check_User()
         {
-        }
+            try
+            {
+                string tam = "";
+                TaiKhoan tk = new TaiKhoan();
+                tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.Pass==txt_pass.Text).FirstOrDefault();
+                if(tk !=null)
+                {
+                    //đúng
+                    //MessageBox.Show("đúng");
 
+                    string s = "";
+                    
+                    foreach (string i in db.TaiKhoans.Select(p => p.LoaiTK).Distinct().ToList())
+                    {
+                        if (i == tk.LoaiTK)
+                        {
+                            s = i;
+                            tam = tk.LoaiTK;
+                        }
+                    }
+                    //MessageBox.Show(s + " đã đăng nhập"); 
+                    return tam;
+                }
+                else
+                {
+                    //sai
+                    MessageBox.Show("Tên TK hoặc MK sai");
+                    return null;
+                }
+                
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+        }
+        private string Determine_User( TaiKhoan tk)
+        {
+            string s = "";
+            string tam = "";
+            foreach (string i in db.TaiKhoans.Select(p => p.LoaiTK).Distinct().ToList())
+            {
+                if (i == tk.LoaiTK)
+                {
+                    s = i;
+                    tam = tk.MaTK;
+                }
+            }
+            MessageBox.Show(s + " đã đăng nhập");
+            return tam;
+        }
         private void txt_user_Click(object sender, EventArgs e)
         {
             pic_user.Image = Properties.Resources.user_32;
@@ -129,6 +208,16 @@ namespace GiaoDien
             txt_pass.ForeColor = Color.FromArgb(78, 184, 206);
         }
 
-
+        private void pic_seenpass_Click(object sender, EventArgs e)
+        {
+            if(txt_pass.UseSystemPasswordChar==true)
+            {
+                txt_pass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_pass.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

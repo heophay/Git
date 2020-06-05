@@ -15,6 +15,12 @@ namespace GiaoDien
         public DonHang()
         {
             InitializeComponent();
+            ShowDTGV();
+        }
+        SE_14 db = new SE_14();
+        private void ShowDTGV()
+        {
+            DGV_Donhang.DataSource=db.TaiKhoans.Select(p => new { p.MaTK, p.TenTK, p.Pass, p.LoaiTK }).ToList();
         }
     }
 }
