@@ -388,5 +388,26 @@
   <ItemGroup>
     <None Include="Resources\ff.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telephone-symbol-icon-png-clipart_2965774.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-3-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock-4-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock-4-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

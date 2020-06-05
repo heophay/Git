@@ -136,22 +136,10 @@ namespace GiaoDien
                 txt_diachi.Text = "Địa chỉ";
             }
         }
-        Login l = new Login();
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            l.ShowDialog();
-            this.Dispose();
-            l.Dispose();
+            this.Visible=false;
 
-        }
-
-        private void bt_cancel_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            l.ShowDialog();
-            this.Dispose();
-            l.Dispose();
         }
     }
 }

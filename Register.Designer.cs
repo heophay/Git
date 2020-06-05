@@ -51,6 +51,8 @@
             // bt_dangky
             // 
             this.bt_dangky.BackColor = System.Drawing.Color.ForestGreen;
+            this.bt_dangky.FlatAppearance.BorderSize = 0;
+            this.bt_dangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_dangky.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_dangky.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bt_dangky.Location = new System.Drawing.Point(97, 660);
@@ -67,6 +69,7 @@
             this.groupBox2.Controls.Add(this.cbb_thang);
             this.groupBox2.Controls.Add(this.cbb_ngay);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(109, 465);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(297, 79);
@@ -76,7 +79,8 @@
             // 
             // cbb_nam
             // 
-            this.cbb_nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_nam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbb_nam.Font = new System.Drawing.Font("Arial", 10.8F);
             this.cbb_nam.FormattingEnabled = true;
             this.cbb_nam.IntegralHeight = false;
             this.cbb_nam.Items.AddRange(new object[] {
@@ -84,12 +88,13 @@
             this.cbb_nam.Location = new System.Drawing.Point(196, 31);
             this.cbb_nam.MaxDropDownItems = 19;
             this.cbb_nam.Name = "cbb_nam";
-            this.cbb_nam.Size = new System.Drawing.Size(79, 28);
+            this.cbb_nam.Size = new System.Drawing.Size(79, 29);
             this.cbb_nam.TabIndex = 2;
             // 
             // cbb_thang
             // 
-            this.cbb_thang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_thang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbb_thang.Font = new System.Drawing.Font("Arial", 10.8F);
             this.cbb_thang.FormattingEnabled = true;
             this.cbb_thang.Items.AddRange(new object[] {
             "Tháng 1",
@@ -106,13 +111,14 @@
             "Tháng 12"});
             this.cbb_thang.Location = new System.Drawing.Point(76, 31);
             this.cbb_thang.Name = "cbb_thang";
-            this.cbb_thang.Size = new System.Drawing.Size(114, 28);
+            this.cbb_thang.Size = new System.Drawing.Size(114, 29);
             this.cbb_thang.TabIndex = 1;
             // 
             // cbb_ngay
             // 
+            this.cbb_ngay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cbb_ngay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbb_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ngay.Font = new System.Drawing.Font("Arial", 10.8F);
             this.cbb_ngay.FormattingEnabled = true;
             this.cbb_ngay.IntegralHeight = false;
             this.cbb_ngay.Items.AddRange(new object[] {
@@ -150,7 +156,7 @@
             this.cbb_ngay.Location = new System.Drawing.Point(6, 31);
             this.cbb_ngay.MaxDropDownItems = 19;
             this.cbb_ngay.Name = "cbb_ngay";
-            this.cbb_ngay.Size = new System.Drawing.Size(63, 28);
+            this.cbb_ngay.Size = new System.Drawing.Size(63, 29);
             this.cbb_ngay.TabIndex = 0;
             // 
             // groupBox1
@@ -158,6 +164,7 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(109, 570);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(239, 66);
@@ -190,8 +197,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.label1.Location = new System.Drawing.Point(177, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 44);
@@ -200,7 +208,10 @@
             // 
             // txt_tk
             // 
-            this.txt_tk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_tk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_tk.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tk.ForeColor = System.Drawing.Color.Black;
             this.txt_tk.Location = new System.Drawing.Point(97, 90);
             this.txt_tk.Name = "txt_tk";
             this.txt_tk.Size = new System.Drawing.Size(339, 28);
@@ -208,7 +219,10 @@
             // 
             // txt_name
             // 
-            this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_name.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.txt_name.ForeColor = System.Drawing.Color.Black;
             this.txt_name.Location = new System.Drawing.Point(97, 151);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(339, 28);
@@ -216,7 +230,10 @@
             // 
             // txt_pass
             // 
-            this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_pass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_pass.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.txt_pass.ForeColor = System.Drawing.Color.Black;
             this.txt_pass.Location = new System.Drawing.Point(97, 210);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(339, 28);
@@ -224,7 +241,10 @@
             // 
             // txt_confirm
             // 
-            this.txt_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_confirm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_confirm.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.txt_confirm.ForeColor = System.Drawing.Color.Black;
             this.txt_confirm.Location = new System.Drawing.Point(97, 270);
             this.txt_confirm.Name = "txt_confirm";
             this.txt_confirm.Size = new System.Drawing.Size(339, 28);
@@ -232,7 +252,10 @@
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_sdt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_sdt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_sdt.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.txt_sdt.ForeColor = System.Drawing.Color.Black;
             this.txt_sdt.Location = new System.Drawing.Point(97, 333);
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(339, 28);
@@ -240,7 +263,10 @@
             // 
             // txt_diachi
             // 
-            this.txt_diachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_diachi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_diachi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_diachi.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.txt_diachi.ForeColor = System.Drawing.Color.Black;
             this.txt_diachi.Location = new System.Drawing.Point(97, 395);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(339, 28);
@@ -256,12 +282,13 @@
             this.bt_cancel.TabIndex = 41;
             this.bt_cancel.Text = "Hủy";
             this.bt_cancel.UseVisualStyleBackColor = false;
-            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
+            this.bt_cancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(547, 758);
             this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.txt_diachi);
@@ -274,6 +301,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";

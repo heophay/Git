@@ -41,12 +41,10 @@
             this.txt_BNT = new System.Windows.Forms.TextBox();
             this.txt_gia = new System.Windows.Forms.TextBox();
             this.pic_dt = new System.Windows.Forms.PictureBox();
-            this.pic_trangchu = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_trangchu)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,26 +171,14 @@
             this.pic_dt.TabStop = false;
             this.toolTip1.SetToolTip(this.pic_dt, "Sam Sung Galaxy A50");
             // 
-            // pic_trangchu
-            // 
-            this.pic_trangchu.BackgroundImage = global::GiaoDien.Properties.Resources.tải_xuống__1_;
-            this.pic_trangchu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pic_trangchu.Location = new System.Drawing.Point(24, 34);
-            this.pic_trangchu.Name = "pic_trangchu";
-            this.pic_trangchu.Size = new System.Drawing.Size(50, 35);
-            this.pic_trangchu.TabIndex = 3;
-            this.pic_trangchu.TabStop = false;
-            this.toolTip1.SetToolTip(this.pic_trangchu, "Trang Chủ");
-            this.pic_trangchu.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label12.Location = new System.Drawing.Point(457, 34);
+            this.label12.Location = new System.Drawing.Point(483, 24);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(348, 38);
+            this.label12.Size = new System.Drawing.Size(403, 44);
             this.label12.TabIndex = 47;
             this.label12.Text = "Sam Sung Galaxy A50";
             // 
@@ -223,12 +209,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pic_dt);
-            this.Controls.Add(this.pic_trangchu);
             this.Name = "Detail_SP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_trangchu)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -249,7 +233,6 @@
         private System.Windows.Forms.TextBox txt_sim;
         private System.Windows.Forms.TextBox txt_BNT;
         private System.Windows.Forms.TextBox txt_gia;
-        private System.Windows.Forms.PictureBox pic_trangchu;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
