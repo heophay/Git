@@ -32,7 +32,6 @@
             this.DGV_Donhang = new System.Windows.Forms.DataGridView();
             this.label_Donhang = new System.Windows.Forms.Label();
             this.button_XoaDonHang = new System.Windows.Forms.Button();
-            this.button_ThanhToan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Donhang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,12 +42,13 @@
             this.button_Xemdonhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Xemdonhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.button_Xemdonhang.ForeColor = System.Drawing.Color.White;
-            this.button_Xemdonhang.Location = new System.Drawing.Point(165, 630);
+            this.button_Xemdonhang.Location = new System.Drawing.Point(192, 606);
             this.button_Xemdonhang.Name = "button_Xemdonhang";
-            this.button_Xemdonhang.Size = new System.Drawing.Size(221, 38);
+            this.button_Xemdonhang.Size = new System.Drawing.Size(219, 44);
             this.button_Xemdonhang.TabIndex = 6;
             this.button_Xemdonhang.Text = "Xem đơn hàng";
             this.button_Xemdonhang.UseVisualStyleBackColor = false;
+            this.button_Xemdonhang.Click += new System.EventHandler(this.button_Xemdonhang_Click);
             // 
             // DGV_Donhang
             // 
@@ -78,32 +78,18 @@
             this.button_XoaDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_XoaDonHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.button_XoaDonHang.ForeColor = System.Drawing.Color.White;
-            this.button_XoaDonHang.Location = new System.Drawing.Point(472, 630);
+            this.button_XoaDonHang.Location = new System.Drawing.Point(749, 606);
             this.button_XoaDonHang.Name = "button_XoaDonHang";
-            this.button_XoaDonHang.Size = new System.Drawing.Size(221, 38);
+            this.button_XoaDonHang.Size = new System.Drawing.Size(224, 44);
             this.button_XoaDonHang.TabIndex = 6;
             this.button_XoaDonHang.Text = "Xóa đơn hàng";
             this.button_XoaDonHang.UseVisualStyleBackColor = false;
-            // 
-            // button_ThanhToan
-            // 
-            this.button_ThanhToan.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button_ThanhToan.FlatAppearance.BorderSize = 0;
-            this.button_ThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.button_ThanhToan.ForeColor = System.Drawing.Color.White;
-            this.button_ThanhToan.Location = new System.Drawing.Point(799, 630);
-            this.button_ThanhToan.Name = "button_ThanhToan";
-            this.button_ThanhToan.Size = new System.Drawing.Size(221, 38);
-            this.button_ThanhToan.TabIndex = 6;
-            this.button_ThanhToan.Text = "Thanh toán";
-            this.button_ThanhToan.UseVisualStyleBackColor = false;
+            this.button_XoaDonHang.Click += new System.EventHandler(this.button_XoaDonHang_Click);
             // 
             // DonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button_ThanhToan);
             this.Controls.Add(this.button_XoaDonHang);
             this.Controls.Add(this.button_Xemdonhang);
             this.Controls.Add(this.DGV_Donhang);
@@ -121,6 +107,5 @@
         private System.Windows.Forms.DataGridView DGV_Donhang;
         private System.Windows.Forms.Label label_Donhang;
         private System.Windows.Forms.Button button_XoaDonHang;
-        private System.Windows.Forms.Button button_ThanhToan;
     }
 }

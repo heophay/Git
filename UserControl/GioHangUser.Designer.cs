@@ -44,7 +44,7 @@
             this.button_GiamSoLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_GiamSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.button_GiamSoLuong.ForeColor = System.Drawing.Color.White;
-            this.button_GiamSoLuong.Location = new System.Drawing.Point(160, 673);
+            this.button_GiamSoLuong.Location = new System.Drawing.Point(160, 661);
             this.button_GiamSoLuong.Name = "button_GiamSoLuong";
             this.button_GiamSoLuong.Size = new System.Drawing.Size(179, 40);
             this.button_GiamSoLuong.TabIndex = 5;
@@ -58,7 +58,7 @@
             this.button_Tangsoluong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Tangsoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.button_Tangsoluong.ForeColor = System.Drawing.Color.White;
-            this.button_Tangsoluong.Location = new System.Drawing.Point(160, 625);
+            this.button_Tangsoluong.Location = new System.Drawing.Point(160, 613);
             this.button_Tangsoluong.Name = "button_Tangsoluong";
             this.button_Tangsoluong.Size = new System.Drawing.Size(179, 42);
             this.button_Tangsoluong.TabIndex = 6;
@@ -72,24 +72,25 @@
             this.button_XoaSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_XoaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.button_XoaSP.ForeColor = System.Drawing.Color.White;
-            this.button_XoaSP.Location = new System.Drawing.Point(434, 646);
+            this.button_XoaSP.Location = new System.Drawing.Point(452, 624);
             this.button_XoaSP.Name = "button_XoaSP";
-            this.button_XoaSP.Size = new System.Drawing.Size(228, 42);
+            this.button_XoaSP.Size = new System.Drawing.Size(221, 63);
             this.button_XoaSP.TabIndex = 7;
             this.button_XoaSP.Text = "Xóa sản phẩm";
             this.button_XoaSP.UseVisualStyleBackColor = false;
             // 
             // button_Lapdonhang
             // 
-            this.button_Lapdonhang.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button_Lapdonhang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button_Lapdonhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Lapdonhang.ForeColor = System.Drawing.Color.Red;
-            this.button_Lapdonhang.Location = new System.Drawing.Point(762, 646);
+            this.button_Lapdonhang.ForeColor = System.Drawing.Color.White;
+            this.button_Lapdonhang.Location = new System.Drawing.Point(774, 624);
             this.button_Lapdonhang.Name = "button_Lapdonhang";
-            this.button_Lapdonhang.Size = new System.Drawing.Size(228, 42);
+            this.button_Lapdonhang.Size = new System.Drawing.Size(221, 63);
             this.button_Lapdonhang.TabIndex = 8;
             this.button_Lapdonhang.Text = "Lập đơn hàng";
             this.button_Lapdonhang.UseVisualStyleBackColor = false;
+            this.button_Lapdonhang.Click += new System.EventHandler(this.button_Lapdonhang_Click);
             // 
             // DGV_Giohang
             // 
