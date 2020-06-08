@@ -4,25 +4,23 @@ namespace GiaoDien
     using System.Data.Entity;
     using System.Linq;
 
-    public class SE_14 : DbContext
+    public class SE_14X : DbContext
     {
-        // Your context has been configured to use a 'DACNPM' connection string from your application's 
+        // Your context has been configured to use a 'SE_14X' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // 'GiaoDien.DACNPM' database on your LocalDb instance. 
+        // 'GiaoDien.SE_14X' database on your LocalDb instance. 
         // 
-        // If you wish to target a different database and/or database provider, modify the 'DACNPM' 
+        // If you wish to target a different database and/or database provider, modify the 'SE_14X' 
         // connection string in the application configuration file.
-        public SE_14()
-            : base("name=DACNPM")
+        public SE_14X()
+            : base("name=SE_14X")
         {
-            Database.SetInitializer(new CreateDB());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
     }
 
     //public class MyEntity

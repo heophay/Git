@@ -13,7 +13,7 @@ namespace GiaoDien
 
     public partial class Login : Form
     {
-        SE_14 db = new SE_14();
+        SE_14Q db = new SE_14Q();
         public Login()
         {
             InitializeComponent();
@@ -139,7 +139,7 @@ namespace GiaoDien
             {
                 string tam = "";
                 TaiKhoan tk = new TaiKhoan();
-                tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.Pass==txt_pass.Text).FirstOrDefault();
+                tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.PassTK==txt_pass.Text).FirstOrDefault();
                 if(tk !=null)
                 {
                     //đúng

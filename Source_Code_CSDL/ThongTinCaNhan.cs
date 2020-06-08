@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace GiaoDien
 {
-    public class TaiKhoan
+    public partial class ThongTinCaNhan
     {
         [Key]
         public string MaTK { get; set; }
-        public string TenTK { get; set; }
-        public string Pass { get; set; }
-        public string LoaiTK { get; set; }
+        public string TenKH { get; set; }
+        public string SoDT { get; set; }
+        public string DiaChi { get; set; }
+        public DateTime NgaySinh { get; set; }
+        public bool Gender { get; set; }
+
     }
 }

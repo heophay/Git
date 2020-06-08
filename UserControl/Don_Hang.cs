@@ -11,17 +11,17 @@ using GiaoDien.Detail_Form;
 
 namespace GiaoDien
 {
-    public partial class DonHang : UserControl
+    public partial class Don_Hang : UserControl
     {
-        public DonHang()
+        public Don_Hang()
         {
             InitializeComponent();
             ShowDTGV();
         }
-        SE_14 db = new SE_14();
+        SE_14Q db = new SE_14Q();
         private void ShowDTGV()
         {
-            DGV_Donhang.DataSource=db.TaiKhoans.Select(p => new { p.MaTK, p.TenTK, p.Pass, p.LoaiTK }).ToList();
+            DGV_Donhang.DataSource=db.TaiKhoans.Select(p => new { p.MaTK, p.TenTK, p.PassTK, p.LoaiTK }).ToList();
         }
 
         private void button_Xemdonhang_Click(object sender, EventArgs e)

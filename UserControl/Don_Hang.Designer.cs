@@ -1,6 +1,6 @@
 ﻿namespace GiaoDien
 {
-    partial class DonHang
+    partial class Don_Hang
     {
         /// <summary> 
         /// Required designer variable.

@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace GiaoDien
 {
-    public class CreateDB : CreateDatabaseIfNotExists<SE_14>
+    public class CreateDB : CreateDatabaseIfNotExists<SE_14Q>
     {
-        protected override void Seed(SE_14 context)
+        protected override void Seed(SE_14Q context)
         {
             context.TaiKhoans.Add(new TaiKhoan
             {
                 MaTK = "001",
                 TenTK = "ADMIN",
-                Pass = "123456",
+                PassTK = "123456",
                 LoaiTK = "Admin"
             });
             context.TaiKhoans.Add(new TaiKhoan
             {
                 MaTK = "002",
                 TenTK = "Manager1",
-                Pass = "123456",
+                PassTK = "123456",
                 LoaiTK = "Manager"
             });
             context.TaiKhoans.Add(new TaiKhoan
             {
                 MaTK = "005",
                 TenTK = "Customer1",
-                Pass = "123",
+                PassTK = "123",
                 LoaiTK = "Customer"
             });
             base.Seed(context);
