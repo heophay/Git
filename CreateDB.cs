@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace GiaoDien
 {
-    public class CreateDB : CreateDatabaseIfNotExists<SE_14Q>
+    public class CreateDB : CreateDatabaseIfNotExists<SE_14X>
     {
-        protected override void Seed(SE_14Q context)
+        protected override void Seed(SE_14X context)
         {
             context.TaiKhoans.Add(new TaiKhoan
             {

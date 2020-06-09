@@ -21,6 +21,14 @@ namespace GiaoDien
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        public virtual DbSet<ChiTiet_SP> ChiTiet_SPs { get; set; }
+        public virtual DbSet<DanhMuc> DanhMucs { get; set; }
+        public virtual DbSet<DonHang> DonHangs { get; set; }
+        public virtual DbSet<KT_Gia_NhapXuat> KT_Gia_NhapXuats { get; set; }
+        public virtual DbSet<MuaHang> MuaHangs { get; set; }
+        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public virtual DbSet<Theodoi_NV> Theodoi_NVs { get; set; }
+        public virtual DbSet<ThongTinCaNhan> ThongTinCaNhans { get; set; }
     }
 
     //public class MyEntity
