@@ -17,6 +17,11 @@ namespace GiaoDien
         public string DiaChi{ get; set; }
         public string SoDT { get; set; }
         public bool Gender { get; set; }
-
+        public Theodoi_NV()
+        {
+            this.DonHangs = new HashSet<DonHang>();
+        }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
+        public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

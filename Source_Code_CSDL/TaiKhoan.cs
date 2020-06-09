@@ -14,5 +14,16 @@ namespace GiaoDien
         public string TenTK { get; set; }
         public string PassTK { get; set; }
         public string LoaiTK { get; set; }
+
+        public TaiKhoan()
+        {
+            this.DonHangs = new HashSet<DonHang>();
+            this.ThongTinCaNhans = new HashSet<ThongTinCaNhan>();
+            this.Theodoi_NVs = new HashSet<Theodoi_NV>();
+            
+        }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
+        public virtual ICollection<Theodoi_NV> Theodoi_NVs { get; set; }
+        public virtual ICollection<ThongTinCaNhan> ThongTinCaNhans { get; set; }
     }
 }

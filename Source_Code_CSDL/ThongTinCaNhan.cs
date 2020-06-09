@@ -17,5 +17,6 @@ namespace GiaoDien
         public DateTime NgaySinh { get; set; }
         public bool Gender { get; set; }
 
+        public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

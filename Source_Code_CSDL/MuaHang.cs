@@ -17,5 +17,8 @@ namespace GiaoDien
         public int ID_Gia { get; set; }
         public int ThanhTien { get; set; }
 
+        public virtual DonHang DonHang { get; set; }
+        public virtual ChiTiet_SP ChiTiet_SP { get; set; }
+        public virtual KT_Gia_NhapXuat KT_Gia_NhapXuat { get; set; }
     }
 }
