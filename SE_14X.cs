@@ -15,6 +15,7 @@ namespace GiaoDien
         public SE_14X()
             : base("name=SE_14X")
         {
+            Database.SetInitializer(new CreateDB());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

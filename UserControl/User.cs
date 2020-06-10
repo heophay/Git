@@ -71,7 +71,7 @@ namespace GiaoDien
 
         private void button_DonHang_Click(object sender, EventArgs e)
         {
-            donHang1.BringToFront();
+            donHangCus1.BringToFront();
             pic_selection.Top = button_DonHang.Top;
         }
 

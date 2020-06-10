@@ -64,6 +64,7 @@
     <Reference Include="DevComponents.DotNetBar2, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
@@ -87,6 +88,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DonHangCus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DonHangCus.Designer.cs">
+      <DependentUpon>DonHangCus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source_Code_CSDL\DonHang.cs" />
     <Compile Include="Source_Code_CSDL\ChiTiet_SP.cs" />
     <Compile Include="CreateDB.cs" />
@@ -242,12 +255,6 @@
     <Compile Include="UserControl\SanPhamAdMa.Designer.cs">
       <DependentUpon>SanPhamAdMa.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\Don_Hang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\Don_Hang.Designer.cs">
-      <DependentUpon>Don_Hang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main_Form\Main_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Detail_Form\Detail_ThanhToan.resx">
       <DependentUpon>Detail_ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DonHangCus.resx">
+      <DependentUpon>DonHangCus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form\First_Form.resx">
       <DependentUpon>First_Form.cs</DependentUpon>
@@ -351,9 +364,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\SanPhamAdMa.resx">
       <DependentUpon>SanPhamAdMa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\Don_Hang.resx">
-      <DependentUpon>Don_Hang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form\Main_User.resx">
       <DependentUpon>Main_User.cs</DependentUpon>

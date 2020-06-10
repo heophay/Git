@@ -13,11 +13,12 @@ namespace GiaoDien
 
     public partial class Login : Form
     {
-        SE_14Q db = new SE_14Q();
+        SE_14X db = new SE_14X();
         public Login()
         {
             InitializeComponent();
             SetWaterMarkText();
+            
         }
 
         private void SetWaterMarkText()
