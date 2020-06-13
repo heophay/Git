@@ -13,7 +13,7 @@ namespace GiaoDien
 
     public partial class Login : Form
     {
-        SE_14X db = new SE_14X();
+        SE_14P db = new SE_14P();
         public Login()
         {
             InitializeComponent();

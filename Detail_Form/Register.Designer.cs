@@ -61,7 +61,7 @@
             this.bt_dangky.TabIndex = 34;
             this.bt_dangky.Text = "Đăng Ký";
             this.bt_dangky.UseVisualStyleBackColor = false;
-            this.bt_dangky.Click += new System.EventHandler(this.button1_Click);
+            this.bt_dangky.Click += new System.EventHandler(this.bt_dangky_Click);
             // 
             // groupBox2
             // 
@@ -282,7 +282,7 @@
             this.bt_cancel.TabIndex = 41;
             this.bt_cancel.Text = "Hủy";
             this.bt_cancel.UseVisualStyleBackColor = false;
-            this.bt_cancel.Click += new System.EventHandler(this.button1_Click);
+            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
             // 
             // Register
             // 

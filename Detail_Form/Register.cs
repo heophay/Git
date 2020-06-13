@@ -136,10 +136,26 @@ namespace GiaoDien
                 txt_diachi.Text = "Địa chỉ";
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Visible=false;
 
+        private void bt_cancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_dangky_Click(object sender, EventArgs e)
+        {
+            SE_14P db = new SE_14P();
+            if (!txt_pass.Text.ToString().Equals(txt_confirm.Text.ToString()))
+            {
+                MessageBox.Show("Password xac nhan sai!!");
+            }
+            else
+            {
+               /* db.TaiKhoans.Add(new TaiKhoan
+                {
+                    MaTK
+                })*/
+            }
         }
     }
 }

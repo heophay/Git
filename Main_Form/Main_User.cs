@@ -27,8 +27,8 @@ namespace GiaoDien
 
         private void user1_Load(object sender, EventArgs e)
         {
-            trangChuManager1.BringToFront();
-           // adminManager1.BringToFront();
+            //trangChuManager1.BringToFront();
+            adminManager1.BringToFront();
             //user1.BringToFront();
         }
     }

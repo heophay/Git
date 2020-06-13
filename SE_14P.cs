@@ -4,16 +4,16 @@ namespace GiaoDien
     using System.Data.Entity;
     using System.Linq;
 
-    public class SE_14H : DbContext
+    public class SE_14P : DbContext
     {
-        // Your context has been configured to use a 'SE_14H' connection string from your application's 
+        // Your context has been configured to use a 'SE_14P' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // 'GiaoDien.SE_14H' database on your LocalDb instance. 
+        // 'GiaoDien.SE_14P' database on your LocalDb instance. 
         // 
-        // If you wish to target a different database and/or database provider, modify the 'SE_14H' 
+        // If you wish to target a different database and/or database provider, modify the 'SE_14P' 
         // connection string in the application configuration file.
-        public SE_14H()
-            : base("name=SE_14H")
+        public SE_14P()
+            : base("name=SE_14P")
         {
             Database.SetInitializer(new CreateDB());
         }
@@ -25,6 +25,7 @@ namespace GiaoDien
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<Theodoi_NV> Theodoi_NVs { get; set; }
         public virtual DbSet<ThongTinCaNhan> ThongTinCaNhans { get; set; }
+
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 

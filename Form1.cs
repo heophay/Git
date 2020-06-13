@@ -17,7 +17,7 @@ namespace GiaoDien
             InitializeComponent();
             Show();
         }
-        SE_14H db = new SE_14H();
+        SE_14P db = new SE_14P();
         public void Show()
         {
             dataGridView1.DataSource = db.TaiKhoans.Select(p => new { p.MaTK, p.TenTK, p.PassTK, p.LoaiTK }).ToList();
