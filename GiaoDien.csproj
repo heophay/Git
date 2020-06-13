@@ -94,6 +94,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="SE_14H.cs" />
     <Compile Include="UserControl\DonHangCus.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,7 +107,6 @@
     <Compile Include="Source_Code_CSDL\DanhMuc.cs" />
     <Compile Include="Source_Code_CSDL\KT_Gia_NhapXuat.cs" />
     <Compile Include="Source_Code_CSDL\MuaHang.cs" />
-    <Compile Include="SE_14Q.cs" />
     <Compile Include="Detail_Form\Detail_KH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,7 +155,6 @@
     <Compile Include="Detail_Form\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="SE_14X.cs" />
     <Compile Include="Source_Code_CSDL\TaiKhoan.cs" />
     <Compile Include="Source_Code_CSDL\Theodoi_NV.cs" />
     <Compile Include="Source_Code_CSDL\ThongTinCaNhan.cs" />

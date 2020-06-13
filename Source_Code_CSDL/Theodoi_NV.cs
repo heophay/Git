@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace GiaoDien
 {
     public partial class Theodoi_NV
     {
-        [Key]
+        [Key,ForeignKey("TaiKhoan")]
         public string MaNV { get; set; }
         public string MaTK { get; set; }
         public string TenNV { get; set; }
