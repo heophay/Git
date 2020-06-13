@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuManager));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_selection = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -47,12 +48,11 @@
             this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.danhMucAd1 = new GiaoDien.DanhMucAd();
             this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
-            this.pic_selection = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +72,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(269, 808);
             this.panel1.TabIndex = 8;
+            // 
+            // pic_selection
+            // 
+            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang;
+            this.pic_selection.Location = new System.Drawing.Point(0, 171);
+            this.pic_selection.Name = "pic_selection";
+            this.pic_selection.Size = new System.Drawing.Size(16, 16);
+            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_selection.TabIndex = 10;
+            this.pic_selection.TabStop = false;
             // 
             // label2
             // 
@@ -231,8 +241,7 @@
             // taiKhoanUser1
             // 
             this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taiKhoanUser1.Location = new System.Drawing.Point(269, 0);
+            this.taiKhoanUser1.Location = new System.Drawing.Point(266, 399);
             this.taiKhoanUser1.Name = "taiKhoanUser1";
             this.taiKhoanUser1.Size = new System.Drawing.Size(1231, 808);
             this.taiKhoanUser1.TabIndex = 12;
@@ -262,16 +271,6 @@
             this.nhapXuatAdMa1.Size = new System.Drawing.Size(1231, 808);
             this.nhapXuatAdMa1.TabIndex = 9;
             // 
-            // pic_selection
-            // 
-            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang;
-            this.pic_selection.Location = new System.Drawing.Point(0, 171);
-            this.pic_selection.Name = "pic_selection";
-            this.pic_selection.Size = new System.Drawing.Size(16, 16);
-            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_selection.TabIndex = 10;
-            this.pic_selection.TabStop = false;
-            // 
             // TrangChuManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -286,11 +285,11 @@
             this.Size = new System.Drawing.Size(1500, 808);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -32,7 +32,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox_Out = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.trangChuManager1 = new GiaoDien.TrangChuManager();
             this.user1 = new GiaoDien.User();
+            this.adminManager1 = new GiaoDien.AdminManager();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Out)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,20 +65,35 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.adminManager1);
             this.panel1.Controls.Add(this.user1);
+            this.panel1.Controls.Add(this.trangChuManager1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1500, 808);
             this.panel1.TabIndex = 6;
             // 
+            // trangChuManager1
+            // 
+            this.trangChuManager1.Location = new System.Drawing.Point(0, 0);
+            this.trangChuManager1.Name = "trangChuManager1";
+            this.trangChuManager1.Size = new System.Drawing.Size(1500, 808);
+            this.trangChuManager1.TabIndex = 0;
+            // 
             // user1
             // 
             this.user1.Location = new System.Drawing.Point(0, 0);
             this.user1.Name = "user1";
             this.user1.Size = new System.Drawing.Size(1500, 808);
-            this.user1.TabIndex = 0;
-            this.user1.Load += new System.EventHandler(this.user1_Load);
+            this.user1.TabIndex = 1;
+            // 
+            // adminManager1
+            // 
+            this.adminManager1.Location = new System.Drawing.Point(0, 0);
+            this.adminManager1.Name = "adminManager1";
+            this.adminManager1.Size = new System.Drawing.Size(1500, 808);
+            this.adminManager1.TabIndex = 2;
             // 
             // Main_User
             // 
@@ -102,7 +119,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox_Out;
         private System.Windows.Forms.Panel panel1;
+        private AdminManager adminManager1;
         private User user1;
+        private TrangChuManager trangChuManager1;
     }
 }
 
