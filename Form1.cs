@@ -20,7 +20,7 @@ namespace GiaoDien
         SE_14P db = new SE_14P();
         public void Show()
         {
-            dataGridView1.DataSource = db.TaiKhoans.Select(p => new { p.MaTK, p.TenTK, p.PassTK, p.LoaiTK }).ToList();
+            dataGridView1.DataSource = db.ThongTinCaNhans.Select(p => new { p.MaTK, p.NgaySinh }).ToList();
         }
     }
 }

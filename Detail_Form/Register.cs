@@ -24,6 +24,7 @@ namespace GiaoDien
                 cbb_nam.Items.Add(i);
             }
             cbb_nam.SelectedIndex = 21;
+            lb_Thongbao.Visible = false;
         }
         private void SetWaterMarkText()
         {
@@ -139,22 +140,54 @@ namespace GiaoDien
 
         private void bt_cancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void bt_dangky_Click(object sender, EventArgs e)
         {
             SE_14P db = new SE_14P();
-            if (!txt_pass.Text.ToString().Equals(txt_confirm.Text.ToString()))
+            int x = db.TaiKhoans.Count();
+            if (db.TaiKhoans.Where(p => p.TenTK.Contains(txt_tk.Text)).Count() != 0)
             {
-                MessageBox.Show("Password xac nhan sai!!");
+                lb_Thongbao.Text = "Tai khoan da ton tai!";
+                lb_Thongbao.Visible = true;
             }
             else
             {
-               /* db.TaiKhoans.Add(new TaiKhoan
+                if (!txt_pass.Text.ToString().Equals(txt_confirm.Text.ToString()))
                 {
-                    MaTK
-                })*/
+                    lb_Thongbao.Text = "Password xac nhan sai!!";
+                }
+                else
+                {
+                    db.TaiKhoans.Add(new TaiKhoan
+                    {
+                        MaTK = x.ToString(),
+                        TenTK = txt_tk.Text,
+                        PassTK = txt_pass.Text,
+                        LoaiTK = "Customer",
+                    });
+                    db.ThongTinCaNhans.Add(new ThongTinCaNhan
+                    {
+                        MaTK = x.ToString(),
+                        TenKH = txt_name.Text,
+                        SoDT = txt_sdt.Text,
+                        DiaChi = txt_diachi.Text,
+                        NgaySinh = new DateTime(Convert.ToInt32(cbb_nam.SelectedItem.ToString()),
+                            cbb_thang.SelectedIndex + 1, Convert.ToInt32(cbb_ngay.SelectedItem.ToString())),
+                        Gender = rdb_Nam.Checked
+                    });
+                    db.SaveChanges();
+                    MessageBox.Show("Success");
+                }
+            }
+        }
+
+        private void txt_tk_TextChanged(object sender, EventArgs e)
+        {
+            foreach(char i in txt_tk.Text)
+            {
+                MessageBox.Show(System.Convert.ToInt32(i).ToString());
             }
         }
     }
