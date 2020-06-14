@@ -52,7 +52,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.bt_openfile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +77,7 @@
             this.bt_luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_luu.ForeColor = System.Drawing.Color.White;
-            this.bt_luu.Location = new System.Drawing.Point(29, 499);
+            this.bt_luu.Location = new System.Drawing.Point(485, 590);
             this.bt_luu.Name = "bt_luu";
             this.bt_luu.Size = new System.Drawing.Size(104, 38);
             this.bt_luu.TabIndex = 21;
@@ -86,7 +90,7 @@
             this.bt_huy.FlatAppearance.BorderSize = 0;
             this.bt_huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_huy.Location = new System.Drawing.Point(820, 499);
+            this.bt_huy.Location = new System.Drawing.Point(1241, 590);
             this.bt_huy.Name = "bt_huy";
             this.bt_huy.Size = new System.Drawing.Size(104, 38);
             this.bt_huy.TabIndex = 22;
@@ -116,9 +120,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(29, 104);
+            this.groupBox1.Location = new System.Drawing.Point(436, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(895, 361);
+            this.groupBox1.Size = new System.Drawing.Size(909, 361);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
@@ -325,11 +329,35 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Tên Điện Thoại";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(29, 116);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(401, 451);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "OpenPicture";
+            // 
+            // bt_openfile
+            // 
+            this.bt_openfile.Location = new System.Drawing.Point(106, 590);
+            this.bt_openfile.Name = "bt_openfile";
+            this.bt_openfile.Size = new System.Drawing.Size(111, 51);
+            this.bt_openfile.TabIndex = 24;
+            this.bt_openfile.Text = "Thêm ảnh";
+            this.bt_openfile.UseVisualStyleBackColor = true;
+            this.bt_openfile.Click += new System.EventHandler(this.bt_openfile_Click);
+            // 
             // Detail_QLSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 556);
+            this.ClientSize = new System.Drawing.Size(1366, 761);
+            this.Controls.Add(this.bt_openfile);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bt_huy);
             this.Controls.Add(this.bt_luu);
@@ -340,6 +368,7 @@
             this.Text = "Form4";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,5 +400,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button bt_openfile;
     }
 }

@@ -21,5 +21,10 @@ namespace GiaoDien
         {
             this.Close();
         }
+
+        private void bt_openfile_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
     }
 }

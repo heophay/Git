@@ -12,6 +12,7 @@ namespace GiaoDien
 {
     public partial class Reset_Pass : Form
     {
+        SE_14P db = new SE_14P();
         public Reset_Pass()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace GiaoDien
         Login l = new Login();
         private void bt_search_Click(object sender, EventArgs e)
         {
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == reset11.txt_TK).FirstOrDefault();
             reset21.BringToFront();
             bt_yes.Visible = true;
             bt_no.Visible = true;

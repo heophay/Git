@@ -147,7 +147,7 @@ namespace GiaoDien
             SE_14P db = new SE_14P();
             if (!txt_pass.Text.ToString().Equals(txt_confirm.Text.ToString()))
             {
-                MessageBox.Show("Password xac nhan sai!!");
+                label_notice.Text = "Xác nhận mật khẩu không giống mật khẩu";
             }
             else
             {

@@ -43,11 +43,11 @@
             this.button_DanhMuc = new System.Windows.Forms.Button();
             this.bt_SP = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.manage_User1 = new GiaoDien.Manage_User();
             this.taiKhoanUser1 = new GiaoDien.TaiKhoanUser();
             this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.danhMucAd1 = new GiaoDien.DanhMucAd();
             this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
+            this.manage_User1 = new GiaoDien.Manage_User();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -230,18 +230,11 @@
             this.bt_SP.UseVisualStyleBackColor = true;
             this.bt_SP.Click += new System.EventHandler(this.bt_SP_Click);
             // 
-            // manage_User1
-            // 
-            this.manage_User1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manage_User1.Location = new System.Drawing.Point(269, 0);
-            this.manage_User1.Name = "manage_User1";
-            this.manage_User1.Size = new System.Drawing.Size(1231, 808);
-            this.manage_User1.TabIndex = 13;
-            // 
             // taiKhoanUser1
             // 
             this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.taiKhoanUser1.Location = new System.Drawing.Point(266, 399);
+            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taiKhoanUser1.Location = new System.Drawing.Point(269, 0);
             this.taiKhoanUser1.Name = "taiKhoanUser1";
             this.taiKhoanUser1.Size = new System.Drawing.Size(1231, 808);
             this.taiKhoanUser1.TabIndex = 12;
@@ -270,6 +263,14 @@
             this.nhapXuatAdMa1.Name = "nhapXuatAdMa1";
             this.nhapXuatAdMa1.Size = new System.Drawing.Size(1231, 808);
             this.nhapXuatAdMa1.TabIndex = 9;
+            // 
+            // manage_User1
+            // 
+            this.manage_User1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manage_User1.Location = new System.Drawing.Point(269, 0);
+            this.manage_User1.Name = "manage_User1";
+            this.manage_User1.Size = new System.Drawing.Size(1231, 808);
+            this.manage_User1.TabIndex = 13;
             // 
             // TrangChuManager
             // 
@@ -311,8 +312,8 @@
         private DanhMucAd danhMucAd1;
         private SanPhamAdMa sanPhamAdMa1;
         private TaiKhoanUser taiKhoanUser1;
-        private Manage_User manage_User1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pic_selection;
+        private Manage_User manage_User1;
     }
 }
