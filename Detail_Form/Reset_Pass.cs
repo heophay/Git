@@ -12,7 +12,7 @@ namespace GiaoDien
 {
     public partial class Reset_Pass : Form
     {
-        SE_14P db = new SE_14P();
+        SE_14F db = new SE_14F();
         public Reset_Pass()
         {
             InitializeComponent();

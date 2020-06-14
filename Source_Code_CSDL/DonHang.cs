@@ -12,8 +12,11 @@ namespace GiaoDien
     {
         [Key]
         public string MaDonHang { get; set; }
+        [ForeignKey("ThongTinCaNhan")]
         public string MaTK { get; set; }
+        [ForeignKey("Theodoi_NV")]
         public string MaNV { get; set; }
+        
         public DateTime NgayTao { get; set; }
         public DateTime NgayThanhToan { get; set; }
         public Nullable<int> UuDai { get; set; }
@@ -25,6 +28,6 @@ namespace GiaoDien
         }
         public virtual ICollection<MuaHang> MuaHangs { get; set; }
         public virtual Theodoi_NV Theodoi_NV { get; set; }
-        public virtual TaiKhoan TaiKhoan { get; set; }
+        public virtual ThongTinCaNhan ThongTinCaNhan { get; set; }
     }
 }

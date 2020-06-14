@@ -292,11 +292,10 @@
             this.lb_Thongbao.AutoSize = true;
             this.lb_Thongbao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Thongbao.ForeColor = System.Drawing.Color.Red;
-            this.lb_Thongbao.Location = new System.Drawing.Point(154, 451);
+            this.lb_Thongbao.Location = new System.Drawing.Point(92, 441);
             this.lb_Thongbao.Name = "lb_Thongbao";
-            this.lb_Thongbao.Size = new System.Drawing.Size(64, 25);
+            this.lb_Thongbao.Size = new System.Drawing.Size(0, 25);
             this.lb_Thongbao.TabIndex = 42;
-            this.lb_Thongbao.Text = "label2";
             // 
             // Register
             // 

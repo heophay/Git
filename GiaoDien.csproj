@@ -94,7 +94,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="SE_14P.cs" />
+    <Compile Include="SE_14F.cs" />
     <Compile Include="UserControl\DonHangCus.cs">
       <SubType>UserControl</SubType>
     </Compile>

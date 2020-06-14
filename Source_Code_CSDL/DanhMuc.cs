@@ -12,10 +12,9 @@ namespace GiaoDien
     {
         [Key]
         public string MaDM { get; set; }
-        public string MaSP { get; set; }
         public string TenDM { get; set; }
         public string LoaiDM { get; set; }
-        [ForeignKey("MaSP")]
-        public virtual ICollection<ChiTiet_SP> ChiTiet_SPs { get; set; }
+
+        public virtual  ICollection<ChiTiet_SP> ChiTiet_SPs { get; set; }
     }
 }

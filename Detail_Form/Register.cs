@@ -12,6 +12,7 @@ namespace GiaoDien
 {
     public partial class Register : Form
     {
+        SE_14F db = new SE_14F();
         public Register()
         {
             InitializeComponent();
@@ -145,7 +146,6 @@ namespace GiaoDien
 
         private void bt_dangky_Click(object sender, EventArgs e)
         {
-            SE_14P db = new SE_14P();
             int x = db.TaiKhoans.Count();
             if (db.TaiKhoans.Where(p => p.TenTK.Contains(txt_tk.Text)).Count() != 0)
             {
@@ -187,7 +187,7 @@ namespace GiaoDien
         {
             foreach(char i in txt_tk.Text)
             {
-                MessageBox.Show(System.Convert.ToInt32(i).ToString());
+                //MessageBox.Show(System.Convert.ToInt32(i).ToString());
             }
         }
     }
