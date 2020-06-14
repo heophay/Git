@@ -34,8 +34,8 @@
             this.cbb_thang = new System.Windows.Forms.ComboBox();
             this.cbb_ngay = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdb_Nu = new System.Windows.Forms.RadioButton();
+            this.rdb_Nam = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_tk = new System.Windows.Forms.TextBox();
             this.txt_name = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.txt_diachi = new System.Windows.Forms.TextBox();
             this.bt_cancel = new System.Windows.Forms.Button();
-            this.label_notice = new System.Windows.Forms.Label();
+            this.lb_Thongbao = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             this.bt_dangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_dangky.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_dangky.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bt_dangky.Location = new System.Drawing.Point(100, 670);
+            this.bt_dangky.Location = new System.Drawing.Point(97, 678);
             this.bt_dangky.Name = "bt_dangky";
             this.bt_dangky.Size = new System.Drawing.Size(141, 49);
             this.bt_dangky.TabIndex = 34;
@@ -71,7 +71,7 @@
             this.groupBox2.Controls.Add(this.cbb_ngay);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(112, 475);
+            this.groupBox2.Location = new System.Drawing.Point(106, 495);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(297, 79);
             this.groupBox2.TabIndex = 33;
@@ -162,38 +162,39 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rdb_Nu);
+            this.groupBox1.Controls.Add(this.rdb_Nam);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(112, 580);
+            this.groupBox1.Location = new System.Drawing.Point(115, 589);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(239, 66);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Giới Tính";
             // 
-            // radioButton2
+            // rdb_Nu
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(145, 30);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(51, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdb_Nu.AutoSize = true;
+            this.rdb_Nu.Location = new System.Drawing.Point(145, 30);
+            this.rdb_Nu.Name = "rdb_Nu";
+            this.rdb_Nu.Size = new System.Drawing.Size(51, 24);
+            this.rdb_Nu.TabIndex = 1;
+            this.rdb_Nu.TabStop = true;
+            this.rdb_Nu.Text = "Nữ";
+            this.rdb_Nu.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdb_Nam
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(28, 30);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdb_Nam.AutoSize = true;
+            this.rdb_Nam.Checked = true;
+            this.rdb_Nam.Location = new System.Drawing.Point(28, 30);
+            this.rdb_Nam.Name = "rdb_Nam";
+            this.rdb_Nam.Size = new System.Drawing.Size(65, 24);
+            this.rdb_Nam.TabIndex = 0;
+            this.rdb_Nam.TabStop = true;
+            this.rdb_Nam.Text = "Nam";
+            this.rdb_Nam.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -214,10 +215,10 @@
             this.txt_tk.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tk.ForeColor = System.Drawing.Color.Black;
             this.txt_tk.Location = new System.Drawing.Point(97, 90);
-            this.txt_tk.MaxLength = 32;
             this.txt_tk.Name = "txt_tk";
             this.txt_tk.Size = new System.Drawing.Size(339, 28);
             this.txt_tk.TabIndex = 35;
+            this.txt_tk.TextChanged += new System.EventHandler(this.txt_tk_TextChanged);
             // 
             // txt_name
             // 
@@ -226,7 +227,6 @@
             this.txt_name.Font = new System.Drawing.Font("Arial", 10.8F);
             this.txt_name.ForeColor = System.Drawing.Color.Black;
             this.txt_name.Location = new System.Drawing.Point(97, 151);
-            this.txt_name.MaxLength = 32;
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(339, 28);
             this.txt_name.TabIndex = 36;
@@ -238,7 +238,6 @@
             this.txt_pass.Font = new System.Drawing.Font("Arial", 10.8F);
             this.txt_pass.ForeColor = System.Drawing.Color.Black;
             this.txt_pass.Location = new System.Drawing.Point(97, 210);
-            this.txt_pass.MaxLength = 32;
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(339, 28);
             this.txt_pass.TabIndex = 37;
@@ -250,7 +249,6 @@
             this.txt_confirm.Font = new System.Drawing.Font("Arial", 10.8F);
             this.txt_confirm.ForeColor = System.Drawing.Color.Black;
             this.txt_confirm.Location = new System.Drawing.Point(97, 270);
-            this.txt_confirm.MaxLength = 32;
             this.txt_confirm.Name = "txt_confirm";
             this.txt_confirm.Size = new System.Drawing.Size(339, 28);
             this.txt_confirm.TabIndex = 38;
@@ -262,7 +260,6 @@
             this.txt_sdt.Font = new System.Drawing.Font("Arial", 10.8F);
             this.txt_sdt.ForeColor = System.Drawing.Color.Black;
             this.txt_sdt.Location = new System.Drawing.Point(97, 333);
-            this.txt_sdt.MaxLength = 32;
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(339, 28);
             this.txt_sdt.TabIndex = 39;
@@ -274,7 +271,6 @@
             this.txt_diachi.Font = new System.Drawing.Font("Arial", 10.8F);
             this.txt_diachi.ForeColor = System.Drawing.Color.Black;
             this.txt_diachi.Location = new System.Drawing.Point(97, 395);
-            this.txt_diachi.MaxLength = 32;
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(339, 28);
             this.txt_diachi.TabIndex = 40;
@@ -283,7 +279,7 @@
             // 
             this.bt_cancel.BackColor = System.Drawing.Color.White;
             this.bt_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancel.Location = new System.Drawing.Point(298, 670);
+            this.bt_cancel.Location = new System.Drawing.Point(295, 678);
             this.bt_cancel.Name = "bt_cancel";
             this.bt_cancel.Size = new System.Drawing.Size(141, 49);
             this.bt_cancel.TabIndex = 41;
@@ -291,16 +287,16 @@
             this.bt_cancel.UseVisualStyleBackColor = false;
             this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
             // 
-            // label_notice
+            // lb_Thongbao
             // 
-            this.label_notice.AutoSize = true;
-            this.label_notice.BackColor = System.Drawing.Color.White;
-            this.label_notice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_notice.ForeColor = System.Drawing.Color.Red;
-            this.label_notice.Location = new System.Drawing.Point(94, 439);
-            this.label_notice.Name = "label_notice";
-            this.label_notice.Size = new System.Drawing.Size(0, 20);
-            this.label_notice.TabIndex = 42;
+            this.lb_Thongbao.AutoSize = true;
+            this.lb_Thongbao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Thongbao.ForeColor = System.Drawing.Color.Red;
+            this.lb_Thongbao.Location = new System.Drawing.Point(154, 451);
+            this.lb_Thongbao.Name = "lb_Thongbao";
+            this.lb_Thongbao.Size = new System.Drawing.Size(64, 25);
+            this.lb_Thongbao.TabIndex = 42;
+            this.lb_Thongbao.Text = "label2";
             // 
             // Register
             // 
@@ -308,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(547, 758);
-            this.Controls.Add(this.label_notice);
+            this.Controls.Add(this.lb_Thongbao);
             this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.txt_diachi);
             this.Controls.Add(this.txt_sdt);
@@ -340,8 +336,8 @@
         private System.Windows.Forms.ComboBox cbb_thang;
         private System.Windows.Forms.ComboBox cbb_ngay;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdb_Nu;
+        private System.Windows.Forms.RadioButton rdb_Nam;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_tk;
         private System.Windows.Forms.TextBox txt_name;
@@ -350,6 +346,6 @@
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.Button bt_cancel;
-        private System.Windows.Forms.Label label_notice;
+        private System.Windows.Forms.Label lb_Thongbao;
     }
 }
