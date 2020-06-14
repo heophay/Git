@@ -12,6 +12,7 @@ namespace GiaoDien
 {
     public partial class Manage_User : UserControl
     {
+        Detail_KH d;
         SE_14F db = new SE_14F();
         public Manage_User()
         {
@@ -21,13 +22,13 @@ namespace GiaoDien
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            Detail_KH d = new Detail_KH();
-            d.ShowDialog();
+             d= new Detail_KH();
+             d.ShowDialog();
         }
 
         private void button_Sua_Click(object sender, EventArgs e)
         {
-            Detail_KH d = new Detail_KH();
+            d = new Detail_KH();
             d.ShowDialog();
         }
         public void ShowDGV()

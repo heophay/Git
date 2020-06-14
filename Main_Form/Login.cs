@@ -13,12 +13,13 @@ namespace GiaoDien
 
     public partial class Login : Form
     {
+        string _MaTK ;
+        string nameCus;
         SE_14F db = new SE_14F();
         public Login()
         {
             InitializeComponent();
-            SetWaterMarkText();
-            
+            SetWaterMarkText();  
         }
 
         private void SetWaterMarkText()
@@ -64,6 +65,10 @@ namespace GiaoDien
             }
         }
         Register r;
+
+        public string MaTK { get => _MaTK; set => _MaTK = value; }
+        public string NameCus { get => nameCus; set => nameCus = value; }
+
         public void bt_dangky_Click(object sender, EventArgs e)
         {
             r = new Register();
@@ -102,17 +107,22 @@ namespace GiaoDien
 
         private void bt_login_Click(object sender, EventArgs e)
         {
-            if(Check_User()!=null)
+            NameCus = txt_user.Text;
+            string s = Check_User();
+            MaTK = s;
+            if (s!=null)
             {
                 
-                if(Check_User()== "Customer")
+                if(s== "Customer")
                 {
                     this.Visible = false;
+                    Main_User mu = new Main_User();
+                    mu.ShowDialog();
                     this.Dispose();
                 }
                 else
                 {
-                    if (Check_User() == "Admin")
+                    if (s == "Admin")
                     {
                         Main_Admin ma = new Main_Admin();
                         //this.Visible = false;
@@ -131,7 +141,6 @@ namespace GiaoDien
                 }
 
             }
-
         }
        
         private string Check_User()
@@ -143,25 +152,18 @@ namespace GiaoDien
                 tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.PassTK==txt_pass.Text).FirstOrDefault();
                 if(tk !=null)
                 {
-                    //đúng
-                    //MessageBox.Show("đúng");
-
-                    string s = "";
-                    
+                    //MaTK = tk.MaTK;
                     foreach (string i in db.TaiKhoans.Select(p => p.LoaiTK).Distinct().ToList())
                     {
                         if (i == tk.LoaiTK)
                         {
-                            s = i;
                             tam = tk.LoaiTK;
                         }
                     }
-                    //MessageBox.Show(s + " đã đăng nhập"); 
                     return tam;
                 }
                 else
                 {
-                    //sai
                     MessageBox.Show("Tên TK hoặc MK sai");
                     return null;
                 }

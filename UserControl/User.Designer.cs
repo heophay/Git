@@ -47,10 +47,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel_Interface = new System.Windows.Forms.Panel();
-            this.gioHangUser1 = new GiaoDien.GioHangUser();
-            this.taiKhoanUser1 = new GiaoDien.TaiKhoanUser();
-            this.trangChuUser1 = new GiaoDien.TrangChuUser();
             this.donHangCus1 = new GiaoDien.DonHangCus();
+            this.gioHangUser1 = new GiaoDien.GioHangUser();
+            this.trangChuUser1 = new GiaoDien.TrangChuUser();
             this.panel_Function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
@@ -135,9 +134,9 @@
             this.label_Greeting.ForeColor = System.Drawing.Color.White;
             this.label_Greeting.Location = new System.Drawing.Point(63, 727);
             this.label_Greeting.Name = "label_Greeting";
-            this.label_Greeting.Size = new System.Drawing.Size(136, 27);
+            this.label_Greeting.Size = new System.Drawing.Size(44, 27);
             this.label_Greeting.TabIndex = 3;
-            this.label_Greeting.Text = "Hi! Customer";
+            this.label_Greeting.Text = "Hi! ";
             this.label_Greeting.Visible = false;
             // 
             // pictureBox_Profile
@@ -273,13 +272,20 @@
             // 
             this.panel_Interface.Controls.Add(this.donHangCus1);
             this.panel_Interface.Controls.Add(this.gioHangUser1);
-            this.panel_Interface.Controls.Add(this.taiKhoanUser1);
             this.panel_Interface.Controls.Add(this.trangChuUser1);
             this.panel_Interface.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Interface.Location = new System.Drawing.Point(273, 0);
             this.panel_Interface.Name = "panel_Interface";
             this.panel_Interface.Size = new System.Drawing.Size(1227, 808);
             this.panel_Interface.TabIndex = 4;
+            // 
+            // donHangCus1
+            // 
+            this.donHangCus1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.donHangCus1.Location = new System.Drawing.Point(0, 0);
+            this.donHangCus1.Name = "donHangCus1";
+            this.donHangCus1.Size = new System.Drawing.Size(1227, 808);
+            this.donHangCus1.TabIndex = 3;
             // 
             // gioHangUser1
             // 
@@ -290,15 +296,6 @@
             this.gioHangUser1.Size = new System.Drawing.Size(1227, 808);
             this.gioHangUser1.TabIndex = 2;
             // 
-            // taiKhoanUser1
-            // 
-            this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taiKhoanUser1.Location = new System.Drawing.Point(0, 0);
-            this.taiKhoanUser1.Name = "taiKhoanUser1";
-            this.taiKhoanUser1.Size = new System.Drawing.Size(1227, 808);
-            this.taiKhoanUser1.TabIndex = 1;
-            // 
             // trangChuUser1
             // 
             this.trangChuUser1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -306,14 +303,6 @@
             this.trangChuUser1.Name = "trangChuUser1";
             this.trangChuUser1.Size = new System.Drawing.Size(1227, 808);
             this.trangChuUser1.TabIndex = 0;
-            // 
-            // donHangCus1
-            // 
-            this.donHangCus1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donHangCus1.Location = new System.Drawing.Point(0, 0);
-            this.donHangCus1.Name = "donHangCus1";
-            this.donHangCus1.Size = new System.Drawing.Size(1227, 808);
-            this.donHangCus1.TabIndex = 3;
             // 
             // User
             // 

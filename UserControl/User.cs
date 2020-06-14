@@ -26,6 +26,7 @@ namespace GiaoDien
             Login l = new Login();
             l.ShowDialog();
             pictureBox_Profile.Visible = true;
+            label_Greeting.Text += l.NameCus;
             label_Greeting.Visible = true;
         }
 

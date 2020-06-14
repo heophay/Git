@@ -28,5 +28,6 @@ namespace GiaoDien
             Detail_LapDH f = new Detail_LapDH();
             f.ShowDialog();
         }
+
     }
 }

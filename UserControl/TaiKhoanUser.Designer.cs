@@ -37,21 +37,22 @@
             this.label_XNPassword = new System.Windows.Forms.Label();
             this.txt_confirmpass = new System.Windows.Forms.TextBox();
             this.button_changepass = new System.Windows.Forms.Button();
-            this.dateTimePicker_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.groupBox_Gioitinh = new System.Windows.Forms.GroupBox();
             this.radioButton_Nu = new System.Windows.Forms.RadioButton();
             this.radioButton_Nam = new System.Windows.Forms.RadioButton();
-            this.label_Ngaysinh = new System.Windows.Forms.Label();
             this.label_SoDT = new System.Windows.Forms.Label();
             this.label_Diachi = new System.Windows.Forms.Label();
-            this.label_MaTK = new System.Windows.Forms.Label();
             this.label_HoTenKH = new System.Windows.Forms.Label();
             this.txt_SoDT = new System.Windows.Forms.TextBox();
             this.txt_Diachi = new System.Windows.Forms.TextBox();
-            this.txt_MaTK = new System.Windows.Forms.TextBox();
             this.txt_HotenKH = new System.Windows.Forms.TextBox();
             this.bt_luu = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbb_ngay = new System.Windows.Forms.ComboBox();
+            this.cbb_thang = new System.Windows.Forms.ComboBox();
+            this.cbb_nam = new System.Windows.Forms.ComboBox();
             this.groupBox_Gioitinh.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_TaiKhoan
@@ -145,15 +146,6 @@
             this.button_changepass.Text = "Thay đổi password";
             this.button_changepass.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker_ngaysinh
-            // 
-            this.dateTimePicker_ngaysinh.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ngaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ngaysinh.Location = new System.Drawing.Point(767, 577);
-            this.dateTimePicker_ngaysinh.Name = "dateTimePicker_ngaysinh";
-            this.dateTimePicker_ngaysinh.Size = new System.Drawing.Size(286, 22);
-            this.dateTimePicker_ngaysinh.TabIndex = 28;
-            // 
             // groupBox_Gioitinh
             // 
             this.groupBox_Gioitinh.Controls.Add(this.radioButton_Nu);
@@ -190,21 +182,11 @@
             this.radioButton_Nam.Text = "Nam";
             this.radioButton_Nam.UseVisualStyleBackColor = true;
             // 
-            // label_Ngaysinh
-            // 
-            this.label_Ngaysinh.AutoSize = true;
-            this.label_Ngaysinh.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label_Ngaysinh.Location = new System.Drawing.Point(668, 577);
-            this.label_Ngaysinh.Name = "label_Ngaysinh";
-            this.label_Ngaysinh.Size = new System.Drawing.Size(88, 20);
-            this.label_Ngaysinh.TabIndex = 22;
-            this.label_Ngaysinh.Text = "Ngày sinh";
-            // 
             // label_SoDT
             // 
             this.label_SoDT.AutoSize = true;
             this.label_SoDT.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label_SoDT.Location = new System.Drawing.Point(215, 577);
+            this.label_SoDT.Location = new System.Drawing.Point(221, 510);
             this.label_SoDT.Name = "label_SoDT";
             this.label_SoDT.Size = new System.Drawing.Size(116, 20);
             this.label_SoDT.TabIndex = 23;
@@ -214,27 +196,17 @@
             // 
             this.label_Diachi.AutoSize = true;
             this.label_Diachi.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label_Diachi.Location = new System.Drawing.Point(249, 634);
+            this.label_Diachi.Location = new System.Drawing.Point(234, 656);
             this.label_Diachi.Name = "label_Diachi";
             this.label_Diachi.Size = new System.Drawing.Size(64, 20);
             this.label_Diachi.TabIndex = 24;
             this.label_Diachi.Text = "Địa chỉ";
             // 
-            // label_MaTK
-            // 
-            this.label_MaTK.AutoSize = true;
-            this.label_MaTK.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label_MaTK.Location = new System.Drawing.Point(217, 459);
-            this.label_MaTK.Name = "label_MaTK";
-            this.label_MaTK.Size = new System.Drawing.Size(115, 20);
-            this.label_MaTK.TabIndex = 25;
-            this.label_MaTK.Text = "Mã tài khoản";
-            // 
             // label_HoTenKH
             // 
             this.label_HoTenKH.AutoSize = true;
             this.label_HoTenKH.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label_HoTenKH.Location = new System.Drawing.Point(240, 515);
+            this.label_HoTenKH.Location = new System.Drawing.Point(246, 448);
             this.label_HoTenKH.Name = "label_HoTenKH";
             this.label_HoTenKH.Size = new System.Drawing.Size(86, 20);
             this.label_HoTenKH.TabIndex = 26;
@@ -242,28 +214,21 @@
             // 
             // txt_SoDT
             // 
-            this.txt_SoDT.Location = new System.Drawing.Point(355, 577);
+            this.txt_SoDT.Location = new System.Drawing.Point(361, 510);
             this.txt_SoDT.Name = "txt_SoDT";
             this.txt_SoDT.Size = new System.Drawing.Size(217, 22);
             this.txt_SoDT.TabIndex = 18;
             // 
             // txt_Diachi
             // 
-            this.txt_Diachi.Location = new System.Drawing.Point(338, 631);
+            this.txt_Diachi.Location = new System.Drawing.Point(323, 653);
             this.txt_Diachi.Name = "txt_Diachi";
             this.txt_Diachi.Size = new System.Drawing.Size(566, 22);
             this.txt_Diachi.TabIndex = 19;
             // 
-            // txt_MaTK
-            // 
-            this.txt_MaTK.Location = new System.Drawing.Point(355, 459);
-            this.txt_MaTK.Name = "txt_MaTK";
-            this.txt_MaTK.Size = new System.Drawing.Size(217, 22);
-            this.txt_MaTK.TabIndex = 20;
-            // 
             // txt_HotenKH
             // 
-            this.txt_HotenKH.Location = new System.Drawing.Point(355, 515);
+            this.txt_HotenKH.Location = new System.Drawing.Point(361, 448);
             this.txt_HotenKH.Name = "txt_HotenKH";
             this.txt_HotenKH.Size = new System.Drawing.Size(217, 22);
             this.txt_HotenKH.TabIndex = 21;
@@ -283,23 +248,63 @@
             this.bt_luu.Text = "Lưu thay đổi";
             this.bt_luu.UseVisualStyleBackColor = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbb_nam);
+            this.groupBox1.Controls.Add(this.cbb_thang);
+            this.groupBox1.Controls.Add(this.cbb_ngay);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(238, 562);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(608, 63);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ngày Sinh";
+            // 
+            // cbb_ngay
+            // 
+            this.cbb_ngay.FormattingEnabled = true;
+            this.cbb_ngay.IntegralHeight = false;
+            this.cbb_ngay.ItemHeight = 20;
+            this.cbb_ngay.Location = new System.Drawing.Point(123, 17);
+            this.cbb_ngay.MaxDropDownItems = 19;
+            this.cbb_ngay.Name = "cbb_ngay";
+            this.cbb_ngay.Size = new System.Drawing.Size(121, 28);
+            this.cbb_ngay.TabIndex = 0;
+            // 
+            // cbb_thang
+            // 
+            this.cbb_thang.FormattingEnabled = true;
+            this.cbb_thang.IntegralHeight = false;
+            this.cbb_thang.Location = new System.Drawing.Point(250, 17);
+            this.cbb_thang.Name = "cbb_thang";
+            this.cbb_thang.Size = new System.Drawing.Size(121, 28);
+            this.cbb_thang.TabIndex = 1;
+            // 
+            // cbb_nam
+            // 
+            this.cbb_nam.FormattingEnabled = true;
+            this.cbb_nam.IntegralHeight = false;
+            this.cbb_nam.Location = new System.Drawing.Point(377, 17);
+            this.cbb_nam.MaxDropDownItems = 19;
+            this.cbb_nam.Name = "cbb_nam";
+            this.cbb_nam.Size = new System.Drawing.Size(121, 28);
+            this.cbb_nam.TabIndex = 2;
+            // 
             // TaiKhoanUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bt_luu);
             this.Controls.Add(this.button_changepass);
-            this.Controls.Add(this.dateTimePicker_ngaysinh);
             this.Controls.Add(this.groupBox_Gioitinh);
-            this.Controls.Add(this.label_Ngaysinh);
             this.Controls.Add(this.label_SoDT);
             this.Controls.Add(this.label_Diachi);
-            this.Controls.Add(this.label_MaTK);
             this.Controls.Add(this.label_HoTenKH);
             this.Controls.Add(this.txt_SoDT);
             this.Controls.Add(this.txt_Diachi);
-            this.Controls.Add(this.txt_MaTK);
             this.Controls.Add(this.txt_HotenKH);
             this.Controls.Add(this.txt_confirmpass);
             this.Controls.Add(this.label_XNPassword);
@@ -313,6 +318,7 @@
             this.Size = new System.Drawing.Size(1228, 808);
             this.groupBox_Gioitinh.ResumeLayout(false);
             this.groupBox_Gioitinh.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,19 +335,19 @@
         private System.Windows.Forms.Label label_XNPassword;
         private System.Windows.Forms.TextBox txt_confirmpass;
         private System.Windows.Forms.Button button_changepass;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_ngaysinh;
         private System.Windows.Forms.GroupBox groupBox_Gioitinh;
         private System.Windows.Forms.RadioButton radioButton_Nu;
         private System.Windows.Forms.RadioButton radioButton_Nam;
-        private System.Windows.Forms.Label label_Ngaysinh;
         private System.Windows.Forms.Label label_SoDT;
         private System.Windows.Forms.Label label_Diachi;
-        private System.Windows.Forms.Label label_MaTK;
         private System.Windows.Forms.Label label_HoTenKH;
         private System.Windows.Forms.TextBox txt_SoDT;
         private System.Windows.Forms.TextBox txt_Diachi;
-        private System.Windows.Forms.TextBox txt_MaTK;
         private System.Windows.Forms.TextBox txt_HotenKH;
         private System.Windows.Forms.Button bt_luu;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbb_nam;
+        private System.Windows.Forms.ComboBox cbb_thang;
+        private System.Windows.Forms.ComboBox cbb_ngay;
     }
 }
