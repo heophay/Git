@@ -16,8 +16,8 @@ namespace GiaoDien
         public Main_User()
         {
             InitializeComponent();
-            user1.BringToFront();
-            //trangChuManager1.BringToFront();
+            //user1.BringToFront();
+            trangChuManager1.BringToFront();
             //adminManager1.BringToFront();
         }
 

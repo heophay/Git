@@ -109,15 +109,12 @@ namespace GiaoDien
         {
             NameCus = txt_user.Text;
             string s = Check_User();
-            MaTK = s;
             if (s!=null)
             {
                 
                 if(s== "Customer")
                 {
                     this.Visible = false;
-                    Main_User mu = new Main_User();
-                    mu.ShowDialog();
                     this.Dispose();
                 }
                 else
@@ -139,7 +136,6 @@ namespace GiaoDien
                         this.Dispose();
                     }
                 }
-
             }
         }
        
@@ -152,7 +148,7 @@ namespace GiaoDien
                 tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.PassTK==txt_pass.Text).FirstOrDefault();
                 if(tk !=null)
                 {
-                    //MaTK = tk.MaTK;
+                    MaTK = tk.MaTK;
                     foreach (string i in db.TaiKhoans.Select(p => p.LoaiTK).Distinct().ToList())
                     {
                         if (i == tk.LoaiTK)
@@ -166,28 +162,12 @@ namespace GiaoDien
                 {
                     MessageBox.Show("Tên TK hoặc MK sai");
                     return null;
-                }
-                
+                }       
             }
             catch(Exception)
             {
                 return null;
             }
-        }
-        private string Determine_User( TaiKhoan tk)
-        {
-            string s = "";
-            string tam = "";
-            foreach (string i in db.TaiKhoans.Select(p => p.LoaiTK).Distinct().ToList())
-            {
-                if (i == tk.LoaiTK)
-                {
-                    s = i;
-                    tam = tk.MaTK;
-                }
-            }
-            MessageBox.Show(s + " đã đăng nhập");
-            return tam;
         }
         private void txt_user_Click(object sender, EventArgs e)
         {

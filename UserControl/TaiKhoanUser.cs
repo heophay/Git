@@ -16,8 +16,6 @@ namespace GiaoDien
         public TaiKhoanUser()
         {
             InitializeComponent();
-            Login l = new Login();
-            //MessageBox.Show(l.MaTK);
             SetView();
         }
         public void SetView()
@@ -39,9 +37,10 @@ namespace GiaoDien
                 cbb_nam.Items.Add(i);
             }
             cbb_nam.SelectedIndex = 21;
-            
+            Login l = new Login();
+            MessageBox.Show(l.MaTK);
             ThongTinCaNhan Cus = new ThongTinCaNhan();
-            
+
             //Cus = db.ThongTinCaNhans.Where(p => p.MaTK == l.MaTK).FirstOrDefault();
             //txt_HotenKH.Text = Cus.TenKH;
             //txt_SoDT.Text = Cus.SoDT;

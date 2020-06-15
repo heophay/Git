@@ -31,18 +31,12 @@
             this.cbb_search = new System.Windows.Forms.ComboBox();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.label_HangSX = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGV_NV = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Sua = new System.Windows.Forms.Button();
             this.button_Them = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_NV)).BeginInit();
             this.SuspendLayout();
             // 
             // cbb_search
@@ -75,64 +69,15 @@
             this.label_HangSX.TabIndex = 3;
             this.label_HangSX.Text = "Tìm kiếm";
             // 
-            // dataGridView1
+            // DGV_NV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNV,
-            this.Column3,
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(79, 256);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1065, 324);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // MaNV
-            // 
-            this.MaNV.HeaderText = "MaNV";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            this.MaNV.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "DiaChi";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "TenNV";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "NgaySinh";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "SoDT";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Gender";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.DGV_NV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_NV.Location = new System.Drawing.Point(79, 256);
+            this.DGV_NV.Name = "DGV_NV";
+            this.DGV_NV.RowHeadersWidth = 51;
+            this.DGV_NV.RowTemplate.Height = 24;
+            this.DGV_NV.Size = new System.Drawing.Size(1065, 324);
+            this.DGV_NV.TabIndex = 5;
             // 
             // label1
             // 
@@ -203,10 +148,10 @@
             this.Controls.Add(this.cbb_search);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.label_HangSX);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_NV);
             this.Name = "NhanVienAdMa";
             this.Size = new System.Drawing.Size(1228, 808);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_NV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,13 +162,7 @@
         private System.Windows.Forms.ComboBox cbb_search;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label label_HangSX;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView DGV_NV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Button button_Sua;

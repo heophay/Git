@@ -39,12 +39,6 @@
             this.button_Sua = new System.Windows.Forms.Button();
             this.button_Them = new System.Windows.Forms.Button();
             this.DGV_Gia = new System.Windows.Forms.DataGridView();
-            this.ID_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Gia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,61 +168,12 @@
             // 
             this.DGV_Gia.AllowUserToOrderColumns = true;
             this.DGV_Gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Gia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Gia,
-            this.MaSP,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
             this.DGV_Gia.Location = new System.Drawing.Point(48, 344);
             this.DGV_Gia.Name = "DGV_Gia";
             this.DGV_Gia.RowHeadersWidth = 51;
             this.DGV_Gia.RowTemplate.Height = 24;
             this.DGV_Gia.Size = new System.Drawing.Size(1130, 276);
             this.DGV_Gia.TabIndex = 44;
-            // 
-            // ID_Gia
-            // 
-            this.ID_Gia.HeaderText = "ID_Gia";
-            this.ID_Gia.MinimumWidth = 6;
-            this.ID_Gia.Name = "ID_Gia";
-            this.ID_Gia.Width = 125;
-            // 
-            // MaSP
-            // 
-            this.MaSP.HeaderText = "MaSP";
-            this.MaSP.MinimumWidth = 6;
-            this.MaSP.Name = "MaSP";
-            this.MaSP.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "SanPham";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "GiaNhap";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "GiaBan";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "NgayApDUng";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
             // 
             // NhapXuatAdMa
             // 
@@ -266,11 +211,5 @@
         private System.Windows.Forms.Button button_Sua;
         private System.Windows.Forms.Button button_Them;
         private System.Windows.Forms.DataGridView DGV_Gia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Gia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

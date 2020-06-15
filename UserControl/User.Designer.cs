@@ -50,6 +50,7 @@
             this.donHangCus1 = new GiaoDien.DonHangCus();
             this.gioHangUser1 = new GiaoDien.GioHangUser();
             this.trangChuUser1 = new GiaoDien.TrangChuUser();
+            this.taiKhoanUser1 = new GiaoDien.TaiKhoanUser();
             this.panel_Function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
@@ -270,6 +271,7 @@
             // 
             // panel_Interface
             // 
+            this.panel_Interface.Controls.Add(this.taiKhoanUser1);
             this.panel_Interface.Controls.Add(this.donHangCus1);
             this.panel_Interface.Controls.Add(this.gioHangUser1);
             this.panel_Interface.Controls.Add(this.trangChuUser1);
@@ -303,6 +305,15 @@
             this.trangChuUser1.Name = "trangChuUser1";
             this.trangChuUser1.Size = new System.Drawing.Size(1227, 808);
             this.trangChuUser1.TabIndex = 0;
+            // 
+            // taiKhoanUser1
+            // 
+            this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taiKhoanUser1.Location = new System.Drawing.Point(0, 0);
+            this.taiKhoanUser1.Name = "taiKhoanUser1";
+            this.taiKhoanUser1.Size = new System.Drawing.Size(1227, 808);
+            this.taiKhoanUser1.TabIndex = 4;
             // 
             // User
             // 
@@ -342,10 +353,10 @@
         private System.Windows.Forms.Button button_DangKi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_Interface;
-        private TaiKhoanUser taiKhoanUser1;
         private TrangChuUser trangChuUser1;
         private GioHangUser gioHangUser1;
         private System.Windows.Forms.PictureBox pic_selection;
         private DonHangCus donHangCus1;
+        private TaiKhoanUser taiKhoanUser1;
     }
 }
