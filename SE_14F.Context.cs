@@ -34,5 +34,6 @@ namespace GiaoDien
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<Theodoi_NV> Theodoi_NV { get; set; }
         public virtual DbSet<ThongTinCaNhan> ThongTinCaNhans { get; set; }
+        public virtual DbSet<ItemsGH> ItemsGHs { get; set; }
     }
 }

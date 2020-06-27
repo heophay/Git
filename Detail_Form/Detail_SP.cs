@@ -10,13 +10,24 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
+
     public partial class Detail_SP : Form
     {
+        SE_14 db = new SE_14();
+        private string _MaSP;
+
+        public string MaSP { get => _MaSP; set => _MaSP = value; }
+
         public Detail_SP()
         {
             InitializeComponent();
         }
-
+        public Detail_SP(string masp)
+        {
+            InitializeComponent();
+            this.MaSP = masp;
+            SetView();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Oke");
@@ -48,6 +59,33 @@ namespace GiaoDien
         private void txt_xuatxu_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void SetView()
+        {
+                KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                ChiTiet_SP sp = db.ChiTiet_SP.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                txt_namedt.Text += " " + sp.TenSP;
+                txt_hangsx.Text += " " + sp.HangSX;
+                txt_HDH.Text += " " + sp.HeDieuHanh;
+                txt_manhinh.Text += " " + sp.ManHinh;
+                txt_xuatxu.Text += " " + sp.NoiXuatXu;
+                txt_baohanh.Text += " " + sp.BaoHanh;
+                txt_BNT.Text += " " + sp.BoNhoTrong;
+                txt_sim.Text += " " + sp.SoSim.ToString();
+                txt_pin.Text += " " + sp.Pin;
+                txt_ram.Text += " " + sp.Ram;
+                txt_gia.Text += " " + gia.GiaBan.ToString();
+        }
+
+        private void btn_Muahang_Click(object sender, EventArgs e)
+        {
+            ItemsGH s = new ItemsGH();
+            s.MaSP = "10";
+            s.HangSX = "hh";
+            s.TenSP = "aa";
+            s.ManHinh = "10 inch";
+            db.ItemsGHs.Add(s);
+            MessageBox.Show(db.ItemsGHs.Count().ToString());
         }
     }
 }
