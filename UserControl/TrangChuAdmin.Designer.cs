@@ -1,6 +1,6 @@
 ﻿namespace GiaoDien
 {
-    partial class AdminManager
+    partial class TrangChuAdmin
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,206 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuAdmin));
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.doanhThuAd1 = new GiaoDien.DoanhThuAd();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.bt_SP = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bt_TTNV = new System.Windows.Forms.Button();
             this.bt_doanhthu = new System.Windows.Forms.Button();
             this.bt_Gia = new System.Windows.Forms.Button();
             this.button_DanhMuc = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pic_selection = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bt_SP = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.doanhThuAd1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(273, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1227, 808);
-            this.panel2.TabIndex = 9;
-            // 
-            // doanhThuAd1
-            // 
-            this.doanhThuAd1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.doanhThuAd1.Location = new System.Drawing.Point(0, 0);
-            this.doanhThuAd1.Name = "doanhThuAd1";
-            this.doanhThuAd1.Size = new System.Drawing.Size(1227, 808);
-            this.doanhThuAd1.TabIndex = 5;
-            // 
-            // bt_SP
-            // 
-            this.bt_SP.FlatAppearance.BorderSize = 0;
-            this.bt_SP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.bt_SP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_SP.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
-            this.bt_SP.ForeColor = System.Drawing.Color.White;
-            this.bt_SP.Image = ((System.Drawing.Image)(resources.GetObject("bt_SP.Image")));
-            this.bt_SP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_SP.Location = new System.Drawing.Point(8, 171);
-            this.bt_SP.Name = "bt_SP";
-            this.bt_SP.Size = new System.Drawing.Size(255, 51);
-            this.bt_SP.TabIndex = 1;
-            this.bt_SP.Text = "Sản phẩm";
-            this.toolTip1.SetToolTip(this.bt_SP, "Sản phẩm");
-            this.bt_SP.UseVisualStyleBackColor = true;
-            this.bt_SP.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bt_TTNV
-            // 
-            this.bt_TTNV.FlatAppearance.BorderSize = 0;
-            this.bt_TTNV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.bt_TTNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_TTNV.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_TTNV.ForeColor = System.Drawing.Color.White;
-            this.bt_TTNV.Image = ((System.Drawing.Image)(resources.GetObject("bt_TTNV.Image")));
-            this.bt_TTNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_TTNV.Location = new System.Drawing.Point(5, 399);
-            this.bt_TTNV.Name = "bt_TTNV";
-            this.bt_TTNV.Size = new System.Drawing.Size(255, 51);
-            this.bt_TTNV.TabIndex = 1;
-            this.bt_TTNV.Text = "Theo dõi nhân viên";
-            this.bt_TTNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.bt_TTNV, "Theo dõi nhân viên");
-            this.bt_TTNV.UseVisualStyleBackColor = true;
-            this.bt_TTNV.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // bt_doanhthu
-            // 
-            this.bt_doanhthu.FlatAppearance.BorderSize = 0;
-            this.bt_doanhthu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.bt_doanhthu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_doanhthu.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
-            this.bt_doanhthu.ForeColor = System.Drawing.Color.White;
-            this.bt_doanhthu.Image = ((System.Drawing.Image)(resources.GetObject("bt_doanhthu.Image")));
-            this.bt_doanhthu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_doanhthu.Location = new System.Drawing.Point(5, 342);
-            this.bt_doanhthu.Name = "bt_doanhthu";
-            this.bt_doanhthu.Size = new System.Drawing.Size(255, 51);
-            this.bt_doanhthu.TabIndex = 1;
-            this.bt_doanhthu.Text = "Doanh thu";
-            this.toolTip1.SetToolTip(this.bt_doanhthu, "Doanh thu");
-            this.bt_doanhthu.UseVisualStyleBackColor = true;
-            this.bt_doanhthu.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // bt_Gia
-            // 
-            this.bt_Gia.FlatAppearance.BorderSize = 0;
-            this.bt_Gia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.bt_Gia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Gia.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Gia.ForeColor = System.Drawing.Color.White;
-            this.bt_Gia.Image = ((System.Drawing.Image)(resources.GetObject("bt_Gia.Image")));
-            this.bt_Gia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Gia.Location = new System.Drawing.Point(5, 285);
-            this.bt_Gia.Name = "bt_Gia";
-            this.bt_Gia.Size = new System.Drawing.Size(255, 51);
-            this.bt_Gia.TabIndex = 1;
-            this.bt_Gia.Text = "Kiểm tra giá";
-            this.toolTip1.SetToolTip(this.bt_Gia, "Kiểm tra giá");
-            this.bt_Gia.UseVisualStyleBackColor = true;
-            this.bt_Gia.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button_DanhMuc
-            // 
-            this.button_DanhMuc.FlatAppearance.BorderSize = 0;
-            this.button_DanhMuc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.button_DanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_DanhMuc.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
-            this.button_DanhMuc.ForeColor = System.Drawing.Color.White;
-            this.button_DanhMuc.Image = ((System.Drawing.Image)(resources.GetObject("button_DanhMuc.Image")));
-            this.button_DanhMuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_DanhMuc.Location = new System.Drawing.Point(5, 228);
-            this.button_DanhMuc.Name = "button_DanhMuc";
-            this.button_DanhMuc.Size = new System.Drawing.Size(255, 51);
-            this.button_DanhMuc.TabIndex = 1;
-            this.button_DanhMuc.Text = "Danh mục";
-            this.toolTip1.SetToolTip(this.button_DanhMuc, "Danh mục");
-            this.button_DanhMuc.UseVisualStyleBackColor = true;
-            this.button_DanhMuc.Click += new System.EventHandler(this.button_DanhMuc_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(269, 42);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(0, 0);
-            this.panel3.TabIndex = 8;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel1.Controls.Add(this.pic_selection);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.bt_TTNV);
-            this.panel1.Controls.Add(this.bt_doanhthu);
-            this.panel1.Controls.Add(this.bt_Gia);
-            this.panel1.Controls.Add(this.button_DanhMuc);
-            this.panel1.Controls.Add(this.bt_SP);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(269, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(273, 808);
-            this.panel1.TabIndex = 7;
+            this.panel1.Size = new System.Drawing.Size(1231, 808);
+            this.panel1.TabIndex = 0;
             // 
-            // pic_selection
+            // panel2
             // 
-            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang;
-            this.pic_selection.Location = new System.Drawing.Point(0, 171);
-            this.pic_selection.Name = "pic_selection";
-            this.pic_selection.Size = new System.Drawing.Size(16, 16);
-            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_selection.TabIndex = 9;
-            this.pic_selection.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.bt_TTNV);
+            this.panel2.Controls.Add(this.bt_doanhthu);
+            this.panel2.Controls.Add(this.bt_Gia);
+            this.panel2.Controls.Add(this.button_DanhMuc);
+            this.panel2.Controls.Add(this.bt_SP);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(269, 808);
+            this.panel2.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Jokerman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(72, 6);
+            this.label2.Location = new System.Drawing.Point(72, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 43);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 25;
             this.label2.Text = "Welcome!!";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 49);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(0, 64);
+            this.panel4.Location = new System.Drawing.Point(0, 67);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(269, 84);
-            this.panel4.TabIndex = 6;
+            this.panel4.TabIndex = 23;
             // 
             // label1
             // 
@@ -242,6 +106,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "PHONE STORE";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 24;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -253,22 +127,100 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // AdminManager
+            // bt_TTNV
+            // 
+            this.bt_TTNV.FlatAppearance.BorderSize = 0;
+            this.bt_TTNV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_TTNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_TTNV.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_TTNV.ForeColor = System.Drawing.Color.White;
+            this.bt_TTNV.Image = ((System.Drawing.Image)(resources.GetObject("bt_TTNV.Image")));
+            this.bt_TTNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_TTNV.Location = new System.Drawing.Point(5, 402);
+            this.bt_TTNV.Name = "bt_TTNV";
+            this.bt_TTNV.Size = new System.Drawing.Size(255, 51);
+            this.bt_TTNV.TabIndex = 18;
+            this.bt_TTNV.Text = "Theo dõi nhân viên";
+            this.bt_TTNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_TTNV.UseVisualStyleBackColor = true;
+            // 
+            // bt_doanhthu
+            // 
+            this.bt_doanhthu.FlatAppearance.BorderSize = 0;
+            this.bt_doanhthu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_doanhthu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_doanhthu.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
+            this.bt_doanhthu.ForeColor = System.Drawing.Color.White;
+            this.bt_doanhthu.Image = ((System.Drawing.Image)(resources.GetObject("bt_doanhthu.Image")));
+            this.bt_doanhthu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_doanhthu.Location = new System.Drawing.Point(5, 345);
+            this.bt_doanhthu.Name = "bt_doanhthu";
+            this.bt_doanhthu.Size = new System.Drawing.Size(255, 51);
+            this.bt_doanhthu.TabIndex = 19;
+            this.bt_doanhthu.Text = "Doanh thu";
+            this.bt_doanhthu.UseVisualStyleBackColor = true;
+            // 
+            // bt_Gia
+            // 
+            this.bt_Gia.FlatAppearance.BorderSize = 0;
+            this.bt_Gia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_Gia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Gia.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Gia.ForeColor = System.Drawing.Color.White;
+            this.bt_Gia.Image = ((System.Drawing.Image)(resources.GetObject("bt_Gia.Image")));
+            this.bt_Gia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_Gia.Location = new System.Drawing.Point(5, 288);
+            this.bt_Gia.Name = "bt_Gia";
+            this.bt_Gia.Size = new System.Drawing.Size(255, 51);
+            this.bt_Gia.TabIndex = 20;
+            this.bt_Gia.Text = "Kiểm tra giá";
+            this.bt_Gia.UseVisualStyleBackColor = true;
+            // 
+            // button_DanhMuc
+            // 
+            this.button_DanhMuc.FlatAppearance.BorderSize = 0;
+            this.button_DanhMuc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.button_DanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_DanhMuc.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
+            this.button_DanhMuc.ForeColor = System.Drawing.Color.White;
+            this.button_DanhMuc.Image = ((System.Drawing.Image)(resources.GetObject("button_DanhMuc.Image")));
+            this.button_DanhMuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_DanhMuc.Location = new System.Drawing.Point(5, 231);
+            this.button_DanhMuc.Name = "button_DanhMuc";
+            this.button_DanhMuc.Size = new System.Drawing.Size(255, 51);
+            this.button_DanhMuc.TabIndex = 21;
+            this.button_DanhMuc.Text = "Danh mục";
+            this.button_DanhMuc.UseVisualStyleBackColor = true;
+            // 
+            // bt_SP
+            // 
+            this.bt_SP.FlatAppearance.BorderSize = 0;
+            this.bt_SP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_SP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_SP.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
+            this.bt_SP.ForeColor = System.Drawing.Color.White;
+            this.bt_SP.Image = ((System.Drawing.Image)(resources.GetObject("bt_SP.Image")));
+            this.bt_SP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_SP.Location = new System.Drawing.Point(8, 174);
+            this.bt_SP.Name = "bt_SP";
+            this.bt_SP.Size = new System.Drawing.Size(255, 51);
+            this.bt_SP.TabIndex = 22;
+            this.bt_SP.Text = "Sản phẩm";
+            this.bt_SP.UseVisualStyleBackColor = true;
+            // 
+            // TrangChuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Name = "AdminManager";
+            this.Name = "TrangChuAdmin";
             this.Size = new System.Drawing.Size(1500, 808);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -276,25 +228,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button bt_SP;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button bt_TTNV;
-        private System.Windows.Forms.Button bt_doanhthu;
-        private System.Windows.Forms.Button bt_Gia;
-        private System.Windows.Forms.Button button_DanhMuc;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private SanPhamAdMa sanPhamAdMa1;
-        private NhapXuatAdMa nhapXuatAdMa1;
-        private NhanVienAdMa nhanVienAdMa1;
-        private DoanhThuAd doanhThuAd1;
-        private DanhMucAd danhMucAd2;
-        private System.Windows.Forms.PictureBox pic_selection;
+        private System.Windows.Forms.Button bt_TTNV;
+        private System.Windows.Forms.Button bt_doanhthu;
+        private System.Windows.Forms.Button bt_Gia;
+        private System.Windows.Forms.Button button_DanhMuc;
+        private System.Windows.Forms.Button bt_SP;
     }
 }

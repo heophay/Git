@@ -28,92 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuManager));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pic_selection = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bt_TTNV = new System.Windows.Forms.Button();
             this.bt_KH = new System.Windows.Forms.Button();
             this.bt_Gia = new System.Windows.Forms.Button();
             this.button_DanhMuc = new System.Windows.Forms.Button();
             this.bt_SP = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.taiKhoanUser1 = new GiaoDien.TaiKhoanUser();
-            this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
-            this.danhMucAd1 = new GiaoDien.DanhMucAd();
-            this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
-            this.manage_User1 = new GiaoDien.Manage_User();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel1.Controls.Add(this.pic_selection);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.bt_TTNV);
-            this.panel1.Controls.Add(this.bt_KH);
-            this.panel1.Controls.Add(this.bt_Gia);
-            this.panel1.Controls.Add(this.button_DanhMuc);
-            this.panel1.Controls.Add(this.bt_SP);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(269, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(269, 808);
-            this.panel1.TabIndex = 8;
+            this.panel1.Size = new System.Drawing.Size(1231, 808);
+            this.panel1.TabIndex = 0;
             // 
-            // pic_selection
+            // panel2
             // 
-            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang;
-            this.pic_selection.Location = new System.Drawing.Point(0, 171);
-            this.pic_selection.Name = "pic_selection";
-            this.pic_selection.Size = new System.Drawing.Size(16, 16);
-            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_selection.TabIndex = 10;
-            this.pic_selection.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.bt_TTNV);
+            this.panel2.Controls.Add(this.bt_KH);
+            this.panel2.Controls.Add(this.bt_Gia);
+            this.panel2.Controls.Add(this.button_DanhMuc);
+            this.panel2.Controls.Add(this.bt_SP);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(269, 808);
+            this.panel2.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Jokerman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(72, 6);
+            this.label2.Location = new System.Drawing.Point(69, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 43);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 26;
             this.label2.Text = "Welcome!!";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 49);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(0, 64);
+            this.panel4.Location = new System.Drawing.Point(-3, 61);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(269, 84);
-            this.panel4.TabIndex = 6;
+            this.panel4.TabIndex = 24;
             // 
             // label1
             // 
@@ -127,6 +105,16 @@
             this.label1.Size = new System.Drawing.Size(171, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "PHONE STORE";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -148,15 +136,13 @@
             this.bt_TTNV.ForeColor = System.Drawing.Color.White;
             this.bt_TTNV.Image = ((System.Drawing.Image)(resources.GetObject("bt_TTNV.Image")));
             this.bt_TTNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_TTNV.Location = new System.Drawing.Point(5, 399);
+            this.bt_TTNV.Location = new System.Drawing.Point(2, 396);
             this.bt_TTNV.Name = "bt_TTNV";
             this.bt_TTNV.Size = new System.Drawing.Size(255, 51);
-            this.bt_TTNV.TabIndex = 1;
+            this.bt_TTNV.TabIndex = 19;
             this.bt_TTNV.Text = "Thông tin cá nhân";
             this.bt_TTNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.bt_TTNV, "Thông tin cá nhân");
             this.bt_TTNV.UseVisualStyleBackColor = true;
-            this.bt_TTNV.Click += new System.EventHandler(this.bt_TTNV_Click);
             // 
             // bt_KH
             // 
@@ -167,14 +153,12 @@
             this.bt_KH.ForeColor = System.Drawing.Color.White;
             this.bt_KH.Image = ((System.Drawing.Image)(resources.GetObject("bt_KH.Image")));
             this.bt_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_KH.Location = new System.Drawing.Point(5, 342);
+            this.bt_KH.Location = new System.Drawing.Point(2, 339);
             this.bt_KH.Name = "bt_KH";
             this.bt_KH.Size = new System.Drawing.Size(255, 51);
-            this.bt_KH.TabIndex = 1;
+            this.bt_KH.TabIndex = 20;
             this.bt_KH.Text = "Khách hàng";
-            this.toolTip1.SetToolTip(this.bt_KH, "Khách hàng");
             this.bt_KH.UseVisualStyleBackColor = true;
-            this.bt_KH.Click += new System.EventHandler(this.bt_doanhthu_Click);
             // 
             // bt_Gia
             // 
@@ -185,14 +169,12 @@
             this.bt_Gia.ForeColor = System.Drawing.Color.White;
             this.bt_Gia.Image = ((System.Drawing.Image)(resources.GetObject("bt_Gia.Image")));
             this.bt_Gia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Gia.Location = new System.Drawing.Point(5, 285);
+            this.bt_Gia.Location = new System.Drawing.Point(2, 282);
             this.bt_Gia.Name = "bt_Gia";
             this.bt_Gia.Size = new System.Drawing.Size(255, 51);
-            this.bt_Gia.TabIndex = 1;
+            this.bt_Gia.TabIndex = 21;
             this.bt_Gia.Text = "Kiểm tra giá";
-            this.toolTip1.SetToolTip(this.bt_Gia, "Kiểm tra giá");
             this.bt_Gia.UseVisualStyleBackColor = true;
-            this.bt_Gia.Click += new System.EventHandler(this.bt_Gia_Click);
             // 
             // button_DanhMuc
             // 
@@ -203,14 +185,12 @@
             this.button_DanhMuc.ForeColor = System.Drawing.Color.White;
             this.button_DanhMuc.Image = ((System.Drawing.Image)(resources.GetObject("button_DanhMuc.Image")));
             this.button_DanhMuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_DanhMuc.Location = new System.Drawing.Point(5, 228);
+            this.button_DanhMuc.Location = new System.Drawing.Point(2, 225);
             this.button_DanhMuc.Name = "button_DanhMuc";
             this.button_DanhMuc.Size = new System.Drawing.Size(255, 51);
-            this.button_DanhMuc.TabIndex = 1;
+            this.button_DanhMuc.TabIndex = 22;
             this.button_DanhMuc.Text = "Danh mục";
-            this.toolTip1.SetToolTip(this.button_DanhMuc, "Danh mục");
             this.button_DanhMuc.UseVisualStyleBackColor = true;
-            this.button_DanhMuc.Click += new System.EventHandler(this.button_DanhMuc_Click);
             // 
             // bt_SP
             // 
@@ -221,75 +201,26 @@
             this.bt_SP.ForeColor = System.Drawing.Color.White;
             this.bt_SP.Image = ((System.Drawing.Image)(resources.GetObject("bt_SP.Image")));
             this.bt_SP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_SP.Location = new System.Drawing.Point(8, 171);
+            this.bt_SP.Location = new System.Drawing.Point(5, 168);
             this.bt_SP.Name = "bt_SP";
             this.bt_SP.Size = new System.Drawing.Size(255, 51);
-            this.bt_SP.TabIndex = 1;
+            this.bt_SP.TabIndex = 23;
             this.bt_SP.Text = "Sản phẩm";
-            this.toolTip1.SetToolTip(this.bt_SP, "Sản phẩm");
             this.bt_SP.UseVisualStyleBackColor = true;
-            this.bt_SP.Click += new System.EventHandler(this.bt_SP_Click);
-            // 
-            // taiKhoanUser1
-            // 
-            this.taiKhoanUser1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.taiKhoanUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taiKhoanUser1.Location = new System.Drawing.Point(269, 0);
-            this.taiKhoanUser1.Name = "taiKhoanUser1";
-            this.taiKhoanUser1.Size = new System.Drawing.Size(1231, 808);
-            this.taiKhoanUser1.TabIndex = 12;
-            // 
-            // sanPhamAdMa1
-            // 
-            this.sanPhamAdMa1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sanPhamAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sanPhamAdMa1.Location = new System.Drawing.Point(269, 0);
-            this.sanPhamAdMa1.Name = "sanPhamAdMa1";
-            this.sanPhamAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.sanPhamAdMa1.TabIndex = 11;
-            // 
-            // danhMucAd1
-            // 
-            this.danhMucAd1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.danhMucAd1.Location = new System.Drawing.Point(269, 0);
-            this.danhMucAd1.Name = "danhMucAd1";
-            this.danhMucAd1.Size = new System.Drawing.Size(1231, 808);
-            this.danhMucAd1.TabIndex = 10;
-            // 
-            // nhapXuatAdMa1
-            // 
-            this.nhapXuatAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhapXuatAdMa1.Location = new System.Drawing.Point(269, 0);
-            this.nhapXuatAdMa1.Name = "nhapXuatAdMa1";
-            this.nhapXuatAdMa1.Size = new System.Drawing.Size(1231, 808);
-            this.nhapXuatAdMa1.TabIndex = 9;
-            // 
-            // manage_User1
-            // 
-            this.manage_User1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manage_User1.Location = new System.Drawing.Point(269, 0);
-            this.manage_User1.Name = "manage_User1";
-            this.manage_User1.Size = new System.Drawing.Size(1231, 808);
-            this.manage_User1.TabIndex = 13;
             // 
             // TrangChuManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.manage_User1);
-            this.Controls.Add(this.taiKhoanUser1);
-            this.Controls.Add(this.sanPhamAdMa1);
-            this.Controls.Add(this.danhMucAd1);
-            this.Controls.Add(this.nhapXuatAdMa1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "TrangChuManager";
             this.Size = new System.Drawing.Size(1500, 808);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -298,6 +229,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel4;
@@ -308,12 +240,5 @@
         private System.Windows.Forms.Button bt_Gia;
         private System.Windows.Forms.Button button_DanhMuc;
         private System.Windows.Forms.Button bt_SP;
-        private NhapXuatAdMa nhapXuatAdMa1;
-        private DanhMucAd danhMucAd1;
-        private SanPhamAdMa sanPhamAdMa1;
-        private TaiKhoanUser taiKhoanUser1;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox pic_selection;
-        private Manage_User manage_User1;
     }
 }

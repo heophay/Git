@@ -121,19 +121,19 @@ namespace GiaoDien
                 {
                     if (s == "Admin")
                     {
-                        Main_Admin ma = new Main_Admin();
-                        //this.Visible = false;
-                        ma.Show();
-                        ma.TopMost = true;
-                        this.Dispose();
+                        //Main_Admin ma = new Main_Admin();
+                        ////this.Visible = false;
+                        //ma.Show();
+                        //ma.TopMost = true;
+                        //this.Dispose();
                     }
                     else
                     {
-                        Main_Manager mn = new Main_Manager();
-                        this.Visible = false;
-                        mn.ShowDialog();
-                        mn.TopMost = true;
-                        this.Dispose();
+                        //Main_Manager mn = new Main_Manager();
+                        //this.Visible = false;
+                        //mn.ShowDialog();
+                        //mn.TopMost = true;
+                        //this.Dispose();
                     }
                 }
             }

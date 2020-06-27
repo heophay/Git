@@ -29,13 +29,13 @@ namespace GiaoDien
             label_load.Location = b;
             label_load.BackColor = Color.Transparent;
         }
-        Main_User mu = new Main_User();
+        //Main_User mu = new Main_User();
         int i = 10;
         int tam = 0;
         private void run()
         {
             this.Visible = false;
-            mu.ShowDialog();
+            //mu.ShowDialog();
             this.Close();
         }
         private void timer1_Tick(object sender, EventArgs e)
