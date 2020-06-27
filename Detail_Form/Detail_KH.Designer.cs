@@ -31,9 +31,6 @@
             this.bt_huy = new System.Windows.Forms.Button();
             this.bt_luu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbb_nam = new System.Windows.Forms.ComboBox();
-            this.cbb_thang = new System.Windows.Forms.ComboBox();
-            this.cbb_ngay = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rb_nu = new System.Windows.Forms.RadioButton();
             this.rb_nam = new System.Windows.Forms.RadioButton();
@@ -51,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -85,9 +83,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbb_nam);
-            this.groupBox1.Controls.Add(this.cbb_thang);
-            this.groupBox1.Controls.Add(this.cbb_ngay);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txt_diachi);
             this.groupBox1.Controls.Add(this.label10);
@@ -107,40 +103,6 @@
             this.groupBox1.Size = new System.Drawing.Size(691, 372);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            // 
-            // cbb_nam
-            // 
-            this.cbb_nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_nam.FormattingEnabled = true;
-            this.cbb_nam.IntegralHeight = false;
-            this.cbb_nam.Items.AddRange(new object[] {
-            "Năm"});
-            this.cbb_nam.Location = new System.Drawing.Point(434, 278);
-            this.cbb_nam.MaxDropDownItems = 19;
-            this.cbb_nam.Name = "cbb_nam";
-            this.cbb_nam.Size = new System.Drawing.Size(136, 26);
-            this.cbb_nam.TabIndex = 25;
-            // 
-            // cbb_thang
-            // 
-            this.cbb_thang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_thang.FormattingEnabled = true;
-            this.cbb_thang.IntegralHeight = false;
-            this.cbb_thang.Location = new System.Drawing.Point(275, 278);
-            this.cbb_thang.Name = "cbb_thang";
-            this.cbb_thang.Size = new System.Drawing.Size(117, 26);
-            this.cbb_thang.TabIndex = 24;
-            // 
-            // cbb_ngay
-            // 
-            this.cbb_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_ngay.FormattingEnabled = true;
-            this.cbb_ngay.IntegralHeight = false;
-            this.cbb_ngay.Location = new System.Drawing.Point(129, 278);
-            this.cbb_ngay.MaxDropDownItems = 19;
-            this.cbb_ngay.Name = "cbb_ngay";
-            this.cbb_ngay.Size = new System.Drawing.Size(104, 26);
-            this.cbb_ngay.TabIndex = 23;
             // 
             // groupBox2
             // 
@@ -306,6 +268,13 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Quản lý khách hàng";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(204, 281);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(366, 22);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
             // Detail_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,8 +318,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbb_nam;
-        private System.Windows.Forms.ComboBox cbb_thang;
-        private System.Windows.Forms.ComboBox cbb_ngay;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

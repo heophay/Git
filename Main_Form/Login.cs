@@ -15,7 +15,7 @@ namespace GiaoDien
     {
         string _MaTK ;
         string nameCus;
-        SE_14F db = new SE_14F();
+        SE_14 db = new SE_14();
         public Login()
         {
             InitializeComponent();

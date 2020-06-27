@@ -12,7 +12,7 @@ namespace GiaoDien
 {
     public partial class Register : Form
     {
-        SE_14F db = new SE_14F();
+        SE_14 db = new SE_14();
         public Register()
         {
             InitializeComponent();

@@ -31,11 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManager));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.danhMucAd2 = new GiaoDien.DanhMucAd();
             this.doanhThuAd1 = new GiaoDien.DoanhThuAd();
-            this.nhanVienAdMa1 = new GiaoDien.NhanVienAdMa();
-            this.nhapXuatAdMa1 = new GiaoDien.NhapXuatAdMa();
-            this.sanPhamAdMa1 = new GiaoDien.SanPhamAdMa();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bt_SP = new System.Windows.Forms.Button();
             this.bt_TTNV = new System.Windows.Forms.Button();
@@ -44,40 +40,28 @@
             this.button_DanhMuc = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_selection = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pic_selection = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.danhMucAd2);
             this.panel2.Controls.Add(this.doanhThuAd1);
-            this.panel2.Controls.Add(this.nhanVienAdMa1);
-            this.panel2.Controls.Add(this.nhapXuatAdMa1);
-            this.panel2.Controls.Add(this.sanPhamAdMa1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(273, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1227, 808);
             this.panel2.TabIndex = 9;
-            // 
-            // danhMucAd2
-            // 
-            this.danhMucAd2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.danhMucAd2.Location = new System.Drawing.Point(0, 0);
-            this.danhMucAd2.Name = "danhMucAd2";
-            this.danhMucAd2.Size = new System.Drawing.Size(1227, 808);
-            this.danhMucAd2.TabIndex = 6;
             // 
             // doanhThuAd1
             // 
@@ -86,31 +70,6 @@
             this.doanhThuAd1.Name = "doanhThuAd1";
             this.doanhThuAd1.Size = new System.Drawing.Size(1227, 808);
             this.doanhThuAd1.TabIndex = 5;
-            // 
-            // nhanVienAdMa1
-            // 
-            this.nhanVienAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhanVienAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.nhanVienAdMa1.Name = "nhanVienAdMa1";
-            this.nhanVienAdMa1.Size = new System.Drawing.Size(1227, 808);
-            this.nhanVienAdMa1.TabIndex = 3;
-            // 
-            // nhapXuatAdMa1
-            // 
-            this.nhapXuatAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhapXuatAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.nhapXuatAdMa1.Name = "nhapXuatAdMa1";
-            this.nhapXuatAdMa1.Size = new System.Drawing.Size(1227, 808);
-            this.nhapXuatAdMa1.TabIndex = 1;
-            // 
-            // sanPhamAdMa1
-            // 
-            this.sanPhamAdMa1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sanPhamAdMa1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sanPhamAdMa1.Location = new System.Drawing.Point(0, 0);
-            this.sanPhamAdMa1.Name = "sanPhamAdMa1";
-            this.sanPhamAdMa1.Size = new System.Drawing.Size(1227, 808);
-            this.sanPhamAdMa1.TabIndex = 0;
             // 
             // bt_SP
             // 
@@ -228,6 +187,16 @@
             this.panel1.Size = new System.Drawing.Size(273, 808);
             this.panel1.TabIndex = 7;
             // 
+            // pic_selection
+            // 
+            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang;
+            this.pic_selection.Location = new System.Drawing.Point(0, 171);
+            this.pic_selection.Name = "pic_selection";
+            this.pic_selection.Size = new System.Drawing.Size(16, 16);
+            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_selection.TabIndex = 9;
+            this.pic_selection.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -284,16 +253,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // pic_selection
-            // 
-            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang;
-            this.pic_selection.Location = new System.Drawing.Point(0, 171);
-            this.pic_selection.Name = "pic_selection";
-            this.pic_selection.Size = new System.Drawing.Size(16, 16);
-            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_selection.TabIndex = 9;
-            this.pic_selection.TabStop = false;
-            // 
             // AdminManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,11 +265,11 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
             this.ResumeLayout(false);
 
         }

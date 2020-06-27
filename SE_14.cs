@@ -4,7 +4,7 @@ namespace GiaoDien
     using System.Data.Entity;
     using System.Linq;
 
-    public class SE_14F : DbContext
+    public class SE_14 : DbContext
     {
         // Your context has been configured to use a 'SE_14F' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -12,7 +12,7 @@ namespace GiaoDien
         // 
         // If you wish to target a different database and/or database provider, modify the 'SE_14F' 
         // connection string in the application configuration file.
-        public SE_14F()
+        public SE_14()
             : base("name=SE_14F")
         {
             Database.SetInitializer(new CreateDB());

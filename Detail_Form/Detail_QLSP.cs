@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DACNPM.dll;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace GiaoDien
 {
     public partial class QLSP : Form
     {
-        SE_14F db = new SE_14F();
+        SE_14 db = new SE_14();
         private string _MaSP;
         public string MaSP { get => _MaSP; set => _MaSP = value; }
         public ShowDTGV_QLSP show { get => _show; set => _show = value; }
@@ -45,6 +46,8 @@ namespace GiaoDien
             if (result == DialogResult.OK)
             {
                 // Lấy hình ảnh
+                openFileDialog1.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
+                openFileDialog1.FilterIndex = 1;
                 Image img = Image.FromFile(openFileDialog1.FileName);
                 // Gán ảnh
                 pictureBox1.Image = img;
@@ -111,7 +114,7 @@ namespace GiaoDien
                             Ram = cbb_ram.SelectedItem.ToString(),
                             BoNhoTrong = cbb_BNT.SelectedItem.ToString(),
                             SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString())
-                        }) ;                     
+                        });
                         db.SaveChanges();
                         Run();
                     }

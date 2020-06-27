@@ -36,18 +36,19 @@
             this.button_Them = new System.Windows.Forms.Button();
             this.button_Sua = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbb_gia = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.bt_search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_QLSP)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(408, 256);
+            this.txt_search.Location = new System.Drawing.Point(236, 259);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(471, 22);
             this.txt_search.TabIndex = 9;
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
             // label1
             // 
@@ -142,16 +143,6 @@
             this.button_Xoa.UseVisualStyleBackColor = false;
             this.button_Xoa.Click += new System.EventHandler(this.button_Xoa_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(292, 257);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 20);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Tìm kiếm";
-            // 
             // cbb_gia
             // 
             this.cbb_gia.FormattingEnabled = true;
@@ -175,12 +166,23 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Giá";
             // 
+            // bt_search
+            // 
+            this.bt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.bt_search.Location = new System.Drawing.Point(762, 254);
+            this.bt_search.Name = "bt_search";
+            this.bt_search.Size = new System.Drawing.Size(109, 30);
+            this.bt_search.TabIndex = 33;
+            this.bt_search.Text = "Tìm Kiếm";
+            this.bt_search.UseVisualStyleBackColor = true;
+            this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
+            // 
             // SanPhamAdMa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.bt_search);
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sua);
             this.Controls.Add(this.button_Them);
@@ -209,8 +211,8 @@
         private System.Windows.Forms.Button button_Them;
         private System.Windows.Forms.Button button_Sua;
         private System.Windows.Forms.Button button_Xoa;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbb_gia;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bt_search;
     }
 }

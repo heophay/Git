@@ -15,10 +15,10 @@ namespace GiaoDien
         public Form1()
         {
             InitializeComponent();
-            Show();
+            Show1();
         }
-        SE_14F db = new SE_14F();
-        public void Show()
+        SE_14 db = new SE_14();
+        public void Show1()
         {
             dataGridView1.DataSource = db.TaiKhoans.Select(p => new { p.MaTK, p.TenTK,p.PassTK,p.LoaiTK }).ToList();
         }

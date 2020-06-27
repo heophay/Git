@@ -13,7 +13,7 @@ namespace GiaoDien
     public partial class Manage_User : UserControl
     {
         Detail_KH d;
-        SE_14F db = new SE_14F();
+        SE_14 db = new SE_14();
         public Manage_User()
         {
             InitializeComponent();

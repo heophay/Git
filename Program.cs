@@ -17,7 +17,7 @@ namespace GiaoDien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_Admin());
+            Application.Run(new Main_User());
         }
     }
 }

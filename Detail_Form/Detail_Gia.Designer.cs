@@ -41,9 +41,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbb_nam = new System.Windows.Forms.ComboBox();
-            this.cbb_thang = new System.Windows.Forms.ComboBox();
-            this.cbb_ngay = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,9 +168,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbb_nam);
-            this.groupBox1.Controls.Add(this.cbb_thang);
-            this.groupBox1.Controls.Add(this.cbb_ngay);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -188,41 +184,12 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
-            // cbb_nam
+            // dateTimePicker1
             // 
-            this.cbb_nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_nam.FormattingEnabled = true;
-            this.cbb_nam.IntegralHeight = false;
-            this.cbb_nam.Items.AddRange(new object[] {
-            "Năm"});
-            this.cbb_nam.Location = new System.Drawing.Point(395, 167);
-            this.cbb_nam.MaxDropDownItems = 19;
-            this.cbb_nam.Name = "cbb_nam";
-            this.cbb_nam.Size = new System.Drawing.Size(99, 26);
-            this.cbb_nam.TabIndex = 28;
-            this.cbb_nam.SelectedIndexChanged += new System.EventHandler(this.cbb_nam_SelectedIndexChanged);
-            // 
-            // cbb_thang
-            // 
-            this.cbb_thang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_thang.FormattingEnabled = true;
-            this.cbb_thang.IntegralHeight = false;
-            this.cbb_thang.Location = new System.Drawing.Point(276, 167);
-            this.cbb_thang.Name = "cbb_thang";
-            this.cbb_thang.Size = new System.Drawing.Size(106, 26);
-            this.cbb_thang.TabIndex = 27;
-            this.cbb_thang.SelectedIndexChanged += new System.EventHandler(this.cbb_thang_SelectedIndexChanged);
-            // 
-            // cbb_ngay
-            // 
-            this.cbb_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_ngay.FormattingEnabled = true;
-            this.cbb_ngay.IntegralHeight = false;
-            this.cbb_ngay.Location = new System.Drawing.Point(186, 167);
-            this.cbb_ngay.MaxDropDownItems = 19;
-            this.cbb_ngay.Name = "cbb_ngay";
-            this.cbb_ngay.Size = new System.Drawing.Size(84, 26);
-            this.cbb_ngay.TabIndex = 26;
+            this.dateTimePicker1.Location = new System.Drawing.Point(223, 169);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(278, 22);
+            this.dateTimePicker1.TabIndex = 29;
             // 
             // Detail_Gia
             // 
@@ -257,8 +224,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbb_nam;
-        private System.Windows.Forms.ComboBox cbb_thang;
-        private System.Windows.Forms.ComboBox cbb_ngay;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

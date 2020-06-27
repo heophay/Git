@@ -12,7 +12,7 @@ namespace GiaoDien
 {
     public partial class SanPhamAdMa : UserControl
     {
-        SE_14F db = new SE_14F();
+        SE_14 db = new SE_14();
         public SanPhamAdMa()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace GiaoDien
         }
         public void SetView()
         {
-            DGV_QLSP.DataSource = db.ChiTiet_SPs.Select(p => new { p.MaSP, p.TenSP, p.HangSX, p.ManHinh, p.HeDieuHanh, p.Ram, p.SoSim, p.Pin, p.NoiXuatXu }).ToList();
+            DGV_QLSP.DataSource = db.ChiTiet_SPs.Select(p => new { p.MaSP, p.TenSP,p.HangSX, p.ManHinh, p.HeDieuHanh, p.Ram, p.SoSim, p.Pin, p.NoiXuatXu }).ToList();
         }
 
         private void button_Xoa_Click(object sender, EventArgs e)
@@ -76,6 +76,20 @@ namespace GiaoDien
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        private void bt_search_Click(object sender, EventArgs e)
+        {
+            var list = db.ChiTiet_SPs.Where(p => p.TenSP.Contains(txt_search.Text));
+            DGV_QLSP.DataSource = list.ToList();
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_search.Text=="")
+            {
+                SetView();
             }
         }
     }

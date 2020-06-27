@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.bt_luu = new System.Windows.Forms.Button();
-            this.bt_huy = new System.Windows.Forms.Button();
             this.bt_sua = new System.Windows.Forms.Button();
             this.bt_them = new System.Windows.Forms.Button();
             this.txt_tenDM = new System.Windows.Forms.TextBox();
@@ -39,13 +38,13 @@
             this.bt_xoa = new System.Windows.Forms.Button();
             this.DGV_DanhMuc = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.trangthai_no = new System.Windows.Forms.RadioButton();
+            this.trangthai_yes = new System.Windows.Forms.RadioButton();
             this.txt_madanhmuc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.trangthai_yes = new System.Windows.Forms.RadioButton();
-            this.trangthai_no = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DanhMuc)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -57,24 +56,13 @@
             this.bt_luu.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.bt_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_luu.ForeColor = System.Drawing.Color.White;
-            this.bt_luu.Location = new System.Drawing.Point(45, 455);
+            this.bt_luu.Location = new System.Drawing.Point(227, 439);
             this.bt_luu.Name = "bt_luu";
             this.bt_luu.Size = new System.Drawing.Size(114, 37);
             this.bt_luu.TabIndex = 20;
             this.bt_luu.Text = "Lưu";
             this.bt_luu.UseVisualStyleBackColor = false;
-            // 
-            // bt_huy
-            // 
-            this.bt_huy.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bt_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_huy.ForeColor = System.Drawing.Color.White;
-            this.bt_huy.Location = new System.Drawing.Point(415, 455);
-            this.bt_huy.Name = "bt_huy";
-            this.bt_huy.Size = new System.Drawing.Size(114, 37);
-            this.bt_huy.TabIndex = 19;
-            this.bt_huy.Text = "Hủy";
-            this.bt_huy.UseVisualStyleBackColor = false;
+            this.bt_luu.Click += new System.EventHandler(this.bt_luu_Click);
             // 
             // bt_sua
             // 
@@ -154,6 +142,7 @@
             this.bt_xoa.TabIndex = 19;
             this.bt_xoa.Text = "Xóa";
             this.bt_xoa.UseVisualStyleBackColor = false;
+            this.bt_xoa.Click += new System.EventHandler(this.bt_xoa_Click);
             // 
             // DGV_DanhMuc
             // 
@@ -168,7 +157,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.bt_huy);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.txt_madanhmuc);
             this.groupBox2.Controls.Add(this.label6);
@@ -184,6 +172,39 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chỉnh Sửa";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.trangthai_no);
+            this.groupBox3.Controls.Add(this.trangthai_yes);
+            this.groupBox3.Location = new System.Drawing.Point(38, 295);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(486, 77);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Trạng Thái";
+            // 
+            // trangthai_no
+            // 
+            this.trangthai_no.AutoSize = true;
+            this.trangthai_no.Location = new System.Drawing.Point(304, 40);
+            this.trangthai_no.Name = "trangthai_no";
+            this.trangthai_no.Size = new System.Drawing.Size(154, 24);
+            this.trangthai_no.TabIndex = 1;
+            this.trangthai_no.TabStop = true;
+            this.trangthai_no.Text = "Không hiệu lực";
+            this.trangthai_no.UseVisualStyleBackColor = true;
+            // 
+            // trangthai_yes
+            // 
+            this.trangthai_yes.AutoSize = true;
+            this.trangthai_yes.Location = new System.Drawing.Point(72, 40);
+            this.trangthai_yes.Name = "trangthai_yes";
+            this.trangthai_yes.Size = new System.Drawing.Size(125, 24);
+            this.trangthai_yes.TabIndex = 0;
+            this.trangthai_yes.TabStop = true;
+            this.trangthai_yes.Text = "Có hiệu lực";
+            this.trangthai_yes.UseVisualStyleBackColor = true;
             // 
             // txt_madanhmuc
             // 
@@ -222,39 +243,6 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Loại Danh Mục";
             // 
-            // trangthai_yes
-            // 
-            this.trangthai_yes.AutoSize = true;
-            this.trangthai_yes.Location = new System.Drawing.Point(72, 40);
-            this.trangthai_yes.Name = "trangthai_yes";
-            this.trangthai_yes.Size = new System.Drawing.Size(125, 24);
-            this.trangthai_yes.TabIndex = 0;
-            this.trangthai_yes.TabStop = true;
-            this.trangthai_yes.Text = "Có hiệu lực";
-            this.trangthai_yes.UseVisualStyleBackColor = true;
-            // 
-            // trangthai_no
-            // 
-            this.trangthai_no.AutoSize = true;
-            this.trangthai_no.Location = new System.Drawing.Point(304, 40);
-            this.trangthai_no.Name = "trangthai_no";
-            this.trangthai_no.Size = new System.Drawing.Size(154, 24);
-            this.trangthai_no.TabIndex = 1;
-            this.trangthai_no.TabStop = true;
-            this.trangthai_no.Text = "Không hiệu lực";
-            this.trangthai_no.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.trangthai_no);
-            this.groupBox3.Controls.Add(this.trangthai_yes);
-            this.groupBox3.Location = new System.Drawing.Point(38, 295);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(486, 77);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Trạng Thái";
-            // 
             // DanhMucAd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,7 +266,6 @@
         #endregion
 
         private System.Windows.Forms.Button bt_luu;
-        private System.Windows.Forms.Button bt_huy;
         private System.Windows.Forms.Button bt_sua;
         private System.Windows.Forms.Button bt_them;
         private System.Windows.Forms.TextBox txt_tenDM;

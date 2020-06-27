@@ -12,7 +12,7 @@ namespace GiaoDien
 {
     public partial class NhapXuatAdMa : UserControl
     {
-        SE_14F db = new SE_14F();
+        SE_14 db = new SE_14();
         public NhapXuatAdMa()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace GiaoDien
         }
         public void SetView()
         {
-            DGV_Gia.DataSource = db.KT_Gia_NhapXuats.Select(p => new { p.ID_Gia, p.ChiTiet_SP.MaSP, p.GiaBan, p.GiaNhap, p.NgayApDung }).ToList();
+            DGV_Gia.DataSource = db.KT_Gia_NhapXuats.Select(p => new { p.ID_Gia, p.ChiTiet_SP.MaSP, p.GiaNhap, p.GiaBan, p.NgayApDung }).ToList();
         }
     }
 }

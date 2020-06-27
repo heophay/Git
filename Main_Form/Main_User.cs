@@ -16,9 +16,10 @@ namespace GiaoDien
         public Main_User()
         {
             InitializeComponent();
-            //user1.BringToFront();
             trangChuManager1.BringToFront();
             //adminManager1.BringToFront();
+            user1.BringToFront();
+            
         }
 
         private void pictureBox_Out_Click(object sender, EventArgs e)
