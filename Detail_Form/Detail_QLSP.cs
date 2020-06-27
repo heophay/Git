@@ -58,7 +58,7 @@ namespace GiaoDien
             if(MaSP!="")
             {
                 txt_masp.Enabled = false;
-                ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                ChiTiet_SP sp = db.ChiTiet_SP.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 txt_masp.Text = sp.MaSP;
                 txt_baohanh.Text = sp.BaoHanh;
                 txt_HDH.Text = sp.HeDieuHanh;
@@ -96,12 +96,12 @@ namespace GiaoDien
         {
             try
             {
-                ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                ChiTiet_SP sp = db.ChiTiet_SP.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 if(sp==null)
                 {
                     if (txt_baohanh.Text != "" && txt_HDH.Text != "" && txt_manhinh.Text != "" && txt_namedt.Text != "" && txt_pin.Text != "" && txt_xuatxu.Text != "")
                     {
-                        db.ChiTiet_SPs.Add(new ChiTiet_SP
+                        db.ChiTiet_SP.Add(new ChiTiet_SP
                         {
                             MaSP = txt_masp.Text,
                             BaoHanh = txt_baohanh.Text,
@@ -141,7 +141,7 @@ namespace GiaoDien
         {
             try
             {
-                ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                ChiTiet_SP sp = db.ChiTiet_SP.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 if (txt_masp.Enabled == true && txt_masp.Text.Equals(sp.MaSP))
                 {
                     MessageBox.Show("MSSV trùng rồi, nhập lại cái khác đi");

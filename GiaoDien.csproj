@@ -88,7 +88,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source_Code_CSDL\DanhMuc.cs" />
+    <Compile Include="ChiTiet_SP.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DonHang.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KT_Gia_NhapXuat.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MuaHang.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SE_14F.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SE_14F.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SE_14F.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SE_14F.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SE_14F.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,7 +133,15 @@
     <Compile Include="Main_Form\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="SE_14.cs" />
+    <Compile Include="TaiKhoan.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Theodoi_NV.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.cs">
+      <DependentUpon>SE_14F.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\QLKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,11 +202,6 @@
     <Compile Include="UserControl\DonHangCus.Designer.cs">
       <DependentUpon>DonHangCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source_Code_CSDL\DonHang.cs" />
-    <Compile Include="Source_Code_CSDL\ChiTiet_SP.cs" />
-    <Compile Include="CreateDB.cs" />
-    <Compile Include="Source_Code_CSDL\KT_Gia_NhapXuat.cs" />
-    <Compile Include="Source_Code_CSDL\MuaHang.cs" />
     <Compile Include="Detail_Form\Detail_KH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,9 +238,6 @@
     <Compile Include="Detail_Form\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source_Code_CSDL\TaiKhoan.cs" />
-    <Compile Include="Source_Code_CSDL\Theodoi_NV.cs" />
-    <Compile Include="Source_Code_CSDL\ThongTinCaNhan.cs" />
     <Compile Include="UserControl\Reset1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -381,6 +413,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="SE_14F.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SE_14F.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SE_14F.edmx.diagram">
+      <DependentUpon>SE_14F.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -433,6 +472,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SE_14F.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SE_14F.edmx</DependentUpon>
+      <LastGenOutput>SE_14F.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SE_14F.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SE_14F.edmx</DependentUpon>
+      <LastGenOutput>SE_14F.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

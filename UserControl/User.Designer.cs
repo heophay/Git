@@ -104,6 +104,7 @@
             this.button_DangKi.TabIndex = 27;
             this.button_DangKi.Text = "Đăng kí";
             this.button_DangKi.UseVisualStyleBackColor = false;
+            this.button_DangKi.Click += new System.EventHandler(this.button_DangKi_Click);
             // 
             // button_DngNhap
             // 
@@ -116,6 +117,7 @@
             this.button_DngNhap.TabIndex = 28;
             this.button_DngNhap.Text = "Đăng nhập";
             this.button_DngNhap.UseVisualStyleBackColor = false;
+            this.button_DngNhap.Click += new System.EventHandler(this.button_DngNhap_Click);
             // 
             // label_Greeting
             // 

@@ -16,10 +16,16 @@ namespace GiaoDien
         string _MaTK ;
         string nameCus;
         SE_14 db = new SE_14();
+        public Get_User GU;
         public Login()
         {
             InitializeComponent();
             SetWaterMarkText();  
+        }
+        public Login(Get_User gu)
+        {
+            InitializeComponent();
+            this.GU = gu;
         }
 
         private void SetWaterMarkText()
@@ -72,7 +78,7 @@ namespace GiaoDien
         public void bt_dangky_Click(object sender, EventArgs e)
         {
             r = new Register();
-            r.Show();
+            r.ShowDialog();
             this.TopMost =true;
             r.TopMost = false;
             timer_go.Start();
@@ -104,7 +110,7 @@ namespace GiaoDien
             rp.ShowDialog();
             this.Dispose();
         }
-
+        //Main_Form ma=null;
         private void bt_login_Click(object sender, EventArgs e)
         {
             NameCus = txt_user.Text;
@@ -114,26 +120,29 @@ namespace GiaoDien
                 
                 if(s== "Customer")
                 {
+                    //Main_Form ma = new Main_Form("");
                     this.Visible = false;
-                    this.Dispose();
+                    this.GU("");
+                    //ma.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
                     if (s == "Admin")
                     {
-                        //Main_Admin ma = new Main_Admin();
-                        ////this.Visible = false;
-                        //ma.Show();
-                        //ma.TopMost = true;
-                        //this.Dispose();
+                        //Main_Form ma = new Main_Form("Admin");
+                        this.Visible = false;
+                        this.GU("Admin");
+                        //ma.ShowDialog();
+                        this.Dispose();
                     }
                     else
                     {
-                        //Main_Manager mn = new Main_Manager();
-                        //this.Visible = false;
-                        //mn.ShowDialog();
-                        //mn.TopMost = true;
-                        //this.Dispose();
+                        //Main_Form ma = new Main_Form("Manager");
+                        this.Visible = false;
+                        this.GU("Manager");
+                        //ma.ShowDialog();
+                        this.Dispose();
                     }
                 }
             }

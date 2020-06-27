@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace GiaoDien
             InitializeComponent();
             Show1();
         }
+
         SE_14 db = new SE_14();
         public void Show1()
         {

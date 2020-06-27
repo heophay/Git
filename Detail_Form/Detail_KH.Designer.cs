@@ -31,6 +31,7 @@
             this.bt_huy = new System.Windows.Forms.Button();
             this.bt_luu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rb_nu = new System.Windows.Forms.RadioButton();
             this.rb_nam = new System.Windows.Forms.RadioButton();
@@ -40,7 +41,7 @@
             this.txt_nv = new System.Windows.Forms.TextBox();
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.txt_tk = new System.Windows.Forms.TextBox();
-            this.txt_manv = new System.Windows.Forms.TextBox();
+            this.txt_makh = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             this.groupBox1.Controls.Add(this.txt_nv);
             this.groupBox1.Controls.Add(this.txt_pass);
             this.groupBox1.Controls.Add(this.txt_tk);
-            this.groupBox1.Controls.Add(this.txt_manv);
+            this.groupBox1.Controls.Add(this.txt_makh);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -103,6 +103,13 @@
             this.groupBox1.Size = new System.Drawing.Size(691, 372);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(204, 281);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(366, 22);
+            this.dateTimePicker1.TabIndex = 23;
             // 
             // groupBox2
             // 
@@ -188,14 +195,14 @@
             this.txt_tk.Size = new System.Drawing.Size(171, 27);
             this.txt_tk.TabIndex = 14;
             // 
-            // txt_manv
+            // txt_makh
             // 
-            this.txt_manv.AccessibleDescription = "";
-            this.txt_manv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_manv.Location = new System.Drawing.Point(129, 31);
-            this.txt_manv.Name = "txt_manv";
-            this.txt_manv.Size = new System.Drawing.Size(171, 27);
-            this.txt_manv.TabIndex = 13;
+            this.txt_makh.AccessibleDescription = "";
+            this.txt_makh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_makh.Location = new System.Drawing.Point(129, 31);
+            this.txt_makh.Name = "txt_makh";
+            this.txt_makh.Size = new System.Drawing.Size(171, 27);
+            this.txt_makh.TabIndex = 13;
             // 
             // label8
             // 
@@ -268,13 +275,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Quản lý khách hàng";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(204, 281);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(366, 22);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
             // Detail_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -310,7 +310,7 @@
         private System.Windows.Forms.TextBox txt_nv;
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.TextBox txt_tk;
-        private System.Windows.Forms.TextBox txt_manv;
+        private System.Windows.Forms.TextBox txt_makh;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff7f1d7b13384d9ea57fca84133b1a02" Name="Diagram1">
+        <EntityTypeShape EntityType="SE_14Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.ChiTiet_SP" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.DanhMuc" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.DonHang" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.KT_Gia_NhapXuat" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.MuaHang" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.TaiKhoan" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.Theodoi_NV" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.ThongTinCaNhan" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_KT_Gia_NhapXuat_dbo_ChiTiet_SP_MaSP" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_MuaHangs_dbo_ChiTiet_SP_MaSP" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_DonHangs_dbo_TaiKhoans_MaTK" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_DonHangs_dbo_Theodoi_NV_MaNV" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_DonHangs_dbo_ThongTinCaNhans_MaTK" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_MuaHangs_dbo_DonHangs_MaDonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_MuaHangs_dbo_KT_Gia_NhapXuat_ID_Gia" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_Theodoi_NV_dbo_TaiKhoans_MaTK" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.FK_dbo_ThongTinCaNhans_dbo_TaiKhoans_MaTK" ManuallyRouted="false" />
+        <AssociationConnector Association="SE_14Model.DanhMucChiTiet_SP" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
