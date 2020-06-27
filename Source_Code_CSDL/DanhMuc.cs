@@ -15,6 +15,6 @@ namespace GiaoDien
         public string TenDM { get; set; }
         public string LoaiDM { get; set; }
 
-        public virtual  ICollection<ChiTiet_SP> ChiTiet_SPs { get; set; }
+        public virtual ICollection<ChiTiet_SP> ChiTiet_SPs { get; set; }
     }
 }

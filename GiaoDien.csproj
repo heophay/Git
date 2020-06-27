@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source_Code_CSDL\DanhMuc.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,11 +132,11 @@
     <Compile Include="UserControl\DoanhThuAd.Designer.cs">
       <DependentUpon>DoanhThuAd.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\DanhMuc.cs">
+    <Compile Include="UserControl\DanhMucAd.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\DanhMuc.Designer.cs">
-      <DependentUpon>DanhMuc.cs</DependentUpon>
+    <Compile Include="UserControl\DanhMucAd.Designer.cs">
+      <DependentUpon>DanhMucAd.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\User.cs">
       <SubType>UserControl</SubType>
@@ -164,9 +165,6 @@
     <Compile Include="Source_Code_CSDL\DonHang.cs" />
     <Compile Include="Source_Code_CSDL\ChiTiet_SP.cs" />
     <Compile Include="CreateDB.cs" />
-    <Compile Include="Source_Code_CSDL\DanhMuc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Source_Code_CSDL\KT_Gia_NhapXuat.cs" />
     <Compile Include="Source_Code_CSDL\MuaHang.cs" />
     <Compile Include="Detail_Form\Detail_KH.cs">
@@ -306,8 +304,8 @@
     <EmbeddedResource Include="UserControl\DoanhThuAd.resx">
       <DependentUpon>DoanhThuAd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\DanhMuc.resx">
-      <DependentUpon>DanhMuc.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\DanhMucAd.resx">
+      <DependentUpon>DanhMucAd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\User.resx">
       <DependentUpon>User.cs</DependentUpon>

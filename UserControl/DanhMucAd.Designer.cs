@@ -1,6 +1,6 @@
 ﻿namespace GiaoDien
 {
-    partial class DanhMuc
+    partial class DanhMucAd
     {
         /// <summary> 
         /// Required designer variable.
@@ -239,14 +239,14 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Quản Lý Danh Mục";
             // 
-            // DanhMuc
+            // DanhMucAd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "DanhMuc";
+            this.Name = "DanhMucAd";
             this.Size = new System.Drawing.Size(1228, 808);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -24,12 +24,12 @@ namespace GiaoDien
         public string NoiXuatXu { get; set; }
         public ChiTiet_SP()
         {
-            this.DanhMucs = new HashSet<DanhMuc>();
+            this.DanhMucs = new HashSet<DanhMucAd>();
             this.KT_Gia_NhapXuats = new HashSet<KT_Gia_NhapXuat>();
             this.MuaHangs = new HashSet<MuaHang>();
         }
 
-        public virtual ICollection<DanhMuc> DanhMucs { get; set; }
+        public virtual ICollection<DanhMucAd> DanhMucs { get; set; }
         public virtual ICollection<KT_Gia_NhapXuat> KT_Gia_NhapXuats { get; set; }
         public virtual ICollection<MuaHang> MuaHangs { get; set; }
     }

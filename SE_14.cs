@@ -18,7 +18,7 @@ namespace GiaoDien
             Database.SetInitializer(new CreateDB());
         }
         public virtual DbSet<ChiTiet_SP> ChiTiet_SPs { get; set; }
-        public virtual DbSet<DanhMuc> DanhMucs { get; set; }
+        public virtual DbSet<DanhMucAd> DanhMucs { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
         public virtual DbSet<KT_Gia_NhapXuat> KT_Gia_NhapXuats { get; set; }
         public virtual DbSet<MuaHang> MuaHangs { get; set; }

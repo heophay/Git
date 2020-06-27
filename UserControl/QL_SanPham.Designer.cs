@@ -96,6 +96,7 @@
             this.button_Them.TabIndex = 43;
             this.button_Them.Text = "Thêm";
             this.button_Them.UseVisualStyleBackColor = false;
+            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
             // txt_search
             // 
@@ -172,7 +173,7 @@
             this.DGV_QLSP.Size = new System.Drawing.Size(1130, 276);
             this.DGV_QLSP.TabIndex = 38;
             // 
-            // UserControl2
+            // QL_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,7 +188,7 @@
             this.Controls.Add(this.cbb_gia);
             this.Controls.Add(this.cbb_xuatxu);
             this.Controls.Add(this.DGV_QLSP);
-            this.Name = "UserControl2";
+            this.Name = "QL_SanPham";
             this.Size = new System.Drawing.Size(1228, 808);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_QLSP)).EndInit();
             this.ResumeLayout(false);

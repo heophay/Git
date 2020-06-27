@@ -53,6 +53,7 @@
             this.button_Xoa.TabIndex = 52;
             this.button_Xoa.Text = "Xóa";
             this.button_Xoa.UseVisualStyleBackColor = false;
+            this.button_Xoa.Click += new System.EventHandler(this.button_Xoa_Click);
             // 
             // button_Sua
             // 
@@ -68,6 +69,7 @@
             this.button_Sua.TabIndex = 53;
             this.button_Sua.Text = "Sửa";
             this.button_Sua.UseVisualStyleBackColor = false;
+            this.button_Sua.Click += new System.EventHandler(this.button_Sua_Click);
             // 
             // button_Them
             // 
@@ -83,6 +85,7 @@
             this.button_Them.TabIndex = 54;
             this.button_Them.Text = "Thêm";
             this.button_Them.UseVisualStyleBackColor = false;
+            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
             // label1
             // 
@@ -135,7 +138,7 @@
             this.DGV_NV.Size = new System.Drawing.Size(1065, 324);
             this.DGV_NV.TabIndex = 49;
             // 
-            // UserControl1
+            // TT_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,7 +150,7 @@
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.label_HangSX);
             this.Controls.Add(this.DGV_NV);
-            this.Name = "UserControl1";
+            this.Name = "TT_NhanVien";
             this.Size = new System.Drawing.Size(1228, 808);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_NV)).EndInit();
             this.ResumeLayout(false);

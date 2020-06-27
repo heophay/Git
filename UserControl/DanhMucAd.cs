@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public partial class DanhMuc : UserControl
+    public partial class DanhMucAd : UserControl
     {
-        public DanhMuc()
+        public DanhMucAd()
         {
             InitializeComponent();
         }
