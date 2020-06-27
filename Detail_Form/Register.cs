@@ -146,7 +146,15 @@ namespace GiaoDien
 
         private void bt_dangky_Click(object sender, EventArgs e)
         {
-            int x = db.TaiKhoans.Count();
+            string x = (db.TaiKhoans.Count() + 1).ToString();
+            foreach (char i in db.TaiKhoans.Select(p => new { p.MaTK }).ToString())
+            {
+                if (x == i.ToString())
+                {
+                    x = (Convert.ToInt32(x) + 1).ToString();
+                    continue;
+                }
+            }
             if (db.TaiKhoans.Where(p => p.TenTK.Contains(txt_tk.Text)).Count() != 0)
             {
                 lb_Thongbao.Text = "Tai khoan da ton tai!";
@@ -162,19 +170,19 @@ namespace GiaoDien
                 {
                     db.TaiKhoans.Add(new TaiKhoan
                     {
-                        MaTK = x.ToString(),
+                        MaTK = x,
                         TenTK = txt_tk.Text,
                         PassTK = txt_pass.Text,
                         LoaiTK = "Customer",
                     });
                     db.ThongTinCaNhans.Add(new ThongTinCaNhan
                     {
-                        MaTK = x.ToString(),
+                        MaTK = x,
                         TenKH = txt_name.Text,
                         SoDT = txt_sdt.Text,
                         DiaChi = txt_diachi.Text,
                         NgaySinh = new DateTime(Convert.ToInt32(cbb_nam.SelectedItem.ToString()),
-                            cbb_thang.SelectedIndex + 1, Convert.ToInt32(cbb_ngay.SelectedItem.ToString())),
+                        cbb_thang.SelectedIndex + 1, Convert.ToInt32(cbb_ngay.SelectedItem.ToString())),
                         Gender = rdb_Nam.Checked
                     });
                     db.SaveChanges();

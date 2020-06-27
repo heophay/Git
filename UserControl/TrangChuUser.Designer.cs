@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Product1", 0);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Product2", 0);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Product3", 0);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Product4", 0);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Product5", 0);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Product6", 0);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuUser));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_TimKiem = new System.Windows.Forms.Label();
@@ -46,11 +40,20 @@
             this.label_ThuongHieu = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label_TimTheo = new System.Windows.Forms.Label();
-            this.listView_DSSP = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dienThoai8 = new GiaoDien.DienThoai();
+            this.dienThoai7 = new GiaoDien.DienThoai();
+            this.dienThoai6 = new GiaoDien.DienThoai();
+            this.dienThoai5 = new GiaoDien.DienThoai();
+            this.dienThoai4 = new GiaoDien.DienThoai();
+            this.dienThoai3 = new GiaoDien.DienThoai();
+            this.dienThoai2 = new GiaoDien.DienThoai();
+            this.dienThoai1 = new GiaoDien.DienThoai();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -166,36 +169,106 @@
             this.label_TimTheo.TabIndex = 0;
             this.label_TimTheo.Text = "Tìm theo";
             // 
-            // listView_DSSP
-            // 
-            this.listView_DSSP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView_DSSP.HideSelection = false;
-            this.listView_DSSP.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
-            this.listView_DSSP.LargeImageList = this.imageList1;
-            this.listView_DSSP.Location = new System.Drawing.Point(0, 129);
-            this.listView_DSSP.Name = "listView_DSSP";
-            this.listView_DSSP.Size = new System.Drawing.Size(1228, 679);
-            this.listView_DSSP.TabIndex = 2;
-            this.listView_DSSP.UseCompatibleStateImageBehavior = false;
-            this.listView_DSSP.Click += new System.EventHandler(this.listView1_Click);
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "10044940_DTDD_SAMSUNG_SM-A715FDS-128GB-DEN_01_96en-r2.jpg");
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dienThoai8);
+            this.panel1.Controls.Add(this.dienThoai7);
+            this.panel1.Controls.Add(this.dienThoai6);
+            this.panel1.Controls.Add(this.dienThoai5);
+            this.panel1.Controls.Add(this.dienThoai4);
+            this.panel1.Controls.Add(this.dienThoai3);
+            this.panel1.Controls.Add(this.dienThoai2);
+            this.panel1.Controls.Add(this.dienThoai1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 129);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1228, 679);
+            this.panel1.TabIndex = 2;
+            // 
+            // dienThoai8
+            // 
+            this.dienThoai8.Location = new System.Drawing.Point(978, 352);
+            this.dienThoai8.Name = "dienThoai8";
+            this.dienThoai8.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai8.TabIndex = 7;
+            this.dienThoai8.Txt = null;
+            this.dienThoai8.Value1 = null;
+            // 
+            // dienThoai7
+            // 
+            this.dienThoai7.Location = new System.Drawing.Point(641, 340);
+            this.dienThoai7.Name = "dienThoai7";
+            this.dienThoai7.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai7.TabIndex = 6;
+            this.dienThoai7.Txt = null;
+            this.dienThoai7.Value1 = null;
+            // 
+            // dienThoai6
+            // 
+            this.dienThoai6.Location = new System.Drawing.Point(326, 340);
+            this.dienThoai6.Name = "dienThoai6";
+            this.dienThoai6.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai6.TabIndex = 5;
+            this.dienThoai6.Txt = null;
+            this.dienThoai6.Value1 = null;
+            // 
+            // dienThoai5
+            // 
+            this.dienThoai5.Location = new System.Drawing.Point(0, 340);
+            this.dienThoai5.Name = "dienThoai5";
+            this.dienThoai5.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai5.TabIndex = 4;
+            this.dienThoai5.Txt = null;
+            this.dienThoai5.Value1 = null;
+            // 
+            // dienThoai4
+            // 
+            this.dienThoai4.Location = new System.Drawing.Point(978, 0);
+            this.dienThoai4.Name = "dienThoai4";
+            this.dienThoai4.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai4.TabIndex = 3;
+            this.dienThoai4.Txt = null;
+            this.dienThoai4.Value1 = null;
+            // 
+            // dienThoai3
+            // 
+            this.dienThoai3.Location = new System.Drawing.Point(641, 3);
+            this.dienThoai3.Name = "dienThoai3";
+            this.dienThoai3.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai3.TabIndex = 2;
+            this.dienThoai3.Txt = null;
+            this.dienThoai3.Value1 = null;
+            // 
+            // dienThoai2
+            // 
+            this.dienThoai2.Location = new System.Drawing.Point(326, 0);
+            this.dienThoai2.Name = "dienThoai2";
+            this.dienThoai2.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai2.TabIndex = 1;
+            this.dienThoai2.Txt = null;
+            this.dienThoai2.Value1 = null;
+            // 
+            // dienThoai1
+            // 
+            this.dienThoai1.Location = new System.Drawing.Point(0, 0);
+            this.dienThoai1.Name = "dienThoai1";
+            this.dienThoai1.Size = new System.Drawing.Size(250, 300);
+            this.dienThoai1.TabIndex = 0;
+            this.dienThoai1.Txt = null;
+            this.dienThoai1.Value1 = null;
+            this.dienThoai1.Click += new System.EventHandler(this.dienThoai1_Click);
+            // 
             // TrangChuUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listView_DSSP);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "TrangChuUser";
             this.Size = new System.Drawing.Size(1228, 808);
@@ -205,6 +278,7 @@
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -221,7 +295,15 @@
         private System.Windows.Forms.Label label_ThuongHieu;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label_TimTheo;
-        private System.Windows.Forms.ListView listView_DSSP;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panel1;
+        private DienThoai dienThoai8;
+        private DienThoai dienThoai7;
+        private DienThoai dienThoai6;
+        private DienThoai dienThoai5;
+        private DienThoai dienThoai4;
+        private DienThoai dienThoai3;
+        private DienThoai dienThoai2;
+        private DienThoai dienThoai1;
     }
 }

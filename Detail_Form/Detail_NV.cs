@@ -57,6 +57,13 @@ namespace GiaoDien
                 {
                     if (txt_nv.Text != "" && txt_pass.Text != "" && txt_tk.Text != "" && txt_dt.Text != "" && txt_diachi.Text != "")
                     {
+                        db.TaiKhoans.Add(new TaiKhoan
+                        {
+                            MaTK = txt_manv.Text,
+                            TenTK = txt_tk.Text,
+                            PassTK = txt_pass.Text,
+                            LoaiTK = "Customer",
+                        });
                         db.Theodoi_NV.Add(new Theodoi_NV
                         {
                             MaTK = txt_manv.Text,
@@ -95,7 +102,7 @@ namespace GiaoDien
                 Theodoi_NV nv = db.Theodoi_NV.Where(p => p.MaTK == MaNV).FirstOrDefault();
                 if (txt_manv.Enabled == true && txt_manv.Text.Equals(nv.MaTK))
                 {
-                    MessageBox.Show("MSSV trùng rồi, nhập lại cái khác đi");
+                    MessageBox.Show("Ma so trùng rồi, nhập lại cái khác đi");
                     return false;
                 }
                 else
@@ -118,6 +125,14 @@ namespace GiaoDien
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        private void bt_luu_Click(object sender, EventArgs e)
+        {
+            if(Oke())
+            {
+
             }
         }
     }

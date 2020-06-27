@@ -115,6 +115,14 @@ namespace GiaoDien
                             BoNhoTrong = cbb_BNT.SelectedItem.ToString(),
                             SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString())
                         });
+                        db.KT_Gia_NhapXuat.Add(new KT_Gia_NhapXuat
+                        {
+                            MaSP = txt_masp.Text,
+                            GiaNhap = Convert.ToInt32(txt_gianhap.Text.ToString()),
+                            GiaBan = Convert.ToInt32(txt_giaban.Text.ToString()),
+                            NgayApDung = ngayapdung.Value
+
+                        }) ;
                         db.SaveChanges();
                         Run();
                     }

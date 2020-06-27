@@ -97,6 +97,12 @@
     <Compile Include="DanhMuc.cs">
       <DependentUpon>SE_14F.tt</DependentUpon>
     </Compile>
+    <Compile Include="DienThoai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DienThoai.Designer.cs">
+      <DependentUpon>DienThoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="DonHang.cs">
       <DependentUpon>SE_14F.tt</DependentUpon>
     </Compile>
@@ -315,6 +321,9 @@
     <EmbeddedResource Include="Detail_Form\Detail_ThanhToan.resx">
       <DependentUpon>Detail_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DienThoai.resx">
+      <DependentUpon>DienThoai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +482,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\product_15574_11.png" />
     <Content Include="SE_14F.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SE_14F.edmx</DependentUpon>

@@ -123,6 +123,16 @@ namespace GiaoDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap product_15574_11 {
+            get {
+                object obj = ResourceManager.GetObject("product_15574_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap saovang {
             get {
                 object obj = ResourceManager.GetObject("saovang", resourceCulture);

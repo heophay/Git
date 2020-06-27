@@ -12,14 +12,18 @@ namespace GiaoDien
 {
     public partial class Detail_SP : Form
     {
+        private string _MaDT;
+
+        public string MaDT { get => _MaDT; set => _MaDT = value; }
+
         public Detail_SP()
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public Detail_SP(string Madt)
         {
-            MessageBox.Show("Oke");
+            MaDT = Madt;
+            InitializeComponent();
         }
 
         private void tabItem1_Click(object sender, EventArgs e)

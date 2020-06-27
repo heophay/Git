@@ -33,6 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rb_nu = new System.Windows.Forms.RadioButton();
@@ -48,7 +49,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.bt_luu = new System.Windows.Forms.Button();
             this.bt_huy = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +116,13 @@
             this.groupBox1.Size = new System.Drawing.Size(701, 372);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(149, 316);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(305, 22);
+            this.dateTimePicker1.TabIndex = 27;
             // 
             // label2
             // 
@@ -253,6 +260,7 @@
             this.bt_luu.TabIndex = 13;
             this.bt_luu.Text = "Lưu";
             this.bt_luu.UseVisualStyleBackColor = false;
+            this.bt_luu.Click += new System.EventHandler(this.bt_luu_Click);
             // 
             // bt_huy
             // 
@@ -266,13 +274,6 @@
             this.bt_huy.TabIndex = 14;
             this.bt_huy.Text = "Hủy";
             this.bt_huy.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 316);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(305, 22);
-            this.dateTimePicker1.TabIndex = 27;
             // 
             // Detail_NV
             // 

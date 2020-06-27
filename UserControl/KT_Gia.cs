@@ -16,24 +16,26 @@ namespace GiaoDien
         public KT_Gia()
         {
             InitializeComponent();
-            SetView();
         }
-
-        private void button_Them_Click(object sender, EventArgs e)
+        private void ShowDTGV()
         {
-            Detail_Gia d = new Detail_Gia();
-            d.ShowDialog();
+            DGV_Gia.DataSource = db.KT_Gia_NhapXuat.Select(p => new { p.ID_Gia, p.MaSP, p.GiaNhap, p.GiaBan, p.NgayApDung }).ToList();
         }
 
         private void button_Sua_Click(object sender, EventArgs e)
         {
-            Detail_Gia d = new Detail_Gia();
-            d.ShowDialog();
+            DataGridViewSelectedRowCollection r = DGV_Gia.SelectedRows;
+            if (r.Count == 1)
+            {
+                Detail_Gia f = new Detail_Gia(Convert.ToInt32(r[0].Cells["ID_GIa"].Value.ToString()));
+                f.D += new Detail_Gia.SHow(ShowDTGV);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Error!");
+            }
         }
-        public void SetView()
-        {
-            DGV_Gia.DataSource = db.KT_Gia_NhapXuat.Select(p => new { p.ID_Gia, p.ChiTiet_SP.MaSP, p.GiaNhap, p.GiaBan, p.NgayApDung }).ToList();
 
-        }
     }
 }
