@@ -101,6 +101,42 @@
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="SE_14.cs" />
+    <Compile Include="UserControl\QLKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\QLKH.Designer.cs">
+      <DependentUpon>QLKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\KT_Gia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\KT_Gia.Designer.cs">
+      <DependentUpon>KT_Gia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TT_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TT_NhanVien.Designer.cs">
+      <DependentUpon>TT_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\QL_SanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\QL_SanPham.Designer.cs">
+      <DependentUpon>QL_SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DoanhThuAd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DoanhThuAd.Designer.cs">
+      <DependentUpon>DoanhThuAd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DanhMuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DanhMuc.Designer.cs">
+      <DependentUpon>DanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\User.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,7 +164,9 @@
     <Compile Include="Source_Code_CSDL\DonHang.cs" />
     <Compile Include="Source_Code_CSDL\ChiTiet_SP.cs" />
     <Compile Include="CreateDB.cs" />
-    <Compile Include="Source_Code_CSDL\DanhMuc.cs" />
+    <Compile Include="Source_Code_CSDL\DanhMuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Source_Code_CSDL\KT_Gia_NhapXuat.cs" />
     <Compile Include="Source_Code_CSDL\MuaHang.cs" />
     <Compile Include="Detail_Form\Detail_KH.cs">
@@ -194,18 +232,6 @@
     <Compile Include="Detail_Form\Reset_Pass.Designer.cs">
       <DependentUpon>Reset_Pass.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\Manage_User.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\Manage_User.Designer.cs">
-      <DependentUpon>Manage_User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\DanhMucAd.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\DanhMucAd.Designer.cs">
-      <DependentUpon>DanhMucAd.cs</DependentUpon>
-    </Compile>
     <Compile Include="Detail_Form\Detail_SP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,30 +255,6 @@
     </Compile>
     <Compile Include="Detail_Form\Detail_Gia.Designer.cs">
       <DependentUpon>Detail_Gia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\DoanhThuAd.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\DoanhThuAd.Designer.cs">
-      <DependentUpon>DoanhThuAd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\NhanVienAdMa.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\NhanVienAdMa.Designer.cs">
-      <DependentUpon>NhanVienAdMa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\NhapXuatAdMa.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\NhapXuatAdMa.Designer.cs">
-      <DependentUpon>NhapXuatAdMa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\SanPhamAdMa.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\SanPhamAdMa.Designer.cs">
-      <DependentUpon>SanPhamAdMa.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\GioHangUser.cs">
       <SubType>UserControl</SubType>
@@ -289,6 +291,24 @@
     <EmbeddedResource Include="Main_Form\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\QLKH.resx">
+      <DependentUpon>QLKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\KT_Gia.resx">
+      <DependentUpon>KT_Gia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TT_NhanVien.resx">
+      <DependentUpon>TT_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\QL_SanPham.resx">
+      <DependentUpon>QL_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DoanhThuAd.resx">
+      <DependentUpon>DoanhThuAd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DanhMuc.resx">
+      <DependentUpon>DanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,12 +342,6 @@
     <EmbeddedResource Include="Detail_Form\Reset_Pass.resx">
       <DependentUpon>Reset_Pass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\Manage_User.resx">
-      <DependentUpon>Manage_User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\DanhMucAd.resx">
-      <DependentUpon>DanhMucAd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Detail_Form\Detail_SP.resx">
       <DependentUpon>Detail_SP.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,18 +353,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Detail_Form\Detail_Gia.resx">
       <DependentUpon>Detail_Gia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\DoanhThuAd.resx">
-      <DependentUpon>DoanhThuAd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\NhanVienAdMa.resx">
-      <DependentUpon>NhanVienAdMa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\NhapXuatAdMa.resx">
-      <DependentUpon>NhapXuatAdMa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\SanPhamAdMa.resx">
-      <DependentUpon>SanPhamAdMa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\GioHangUser.resx">
       <DependentUpon>GioHangUser.cs</DependentUpon>
