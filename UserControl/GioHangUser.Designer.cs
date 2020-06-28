@@ -50,6 +50,7 @@
             this.button_GiamSoLuong.TabIndex = 5;
             this.button_GiamSoLuong.Text = "Giảm số lượng";
             this.button_GiamSoLuong.UseVisualStyleBackColor = false;
+            this.button_GiamSoLuong.Click += new System.EventHandler(this.button_GiamSoLuong_Click);
             // 
             // button_Tangsoluong
             // 
@@ -64,6 +65,7 @@
             this.button_Tangsoluong.TabIndex = 6;
             this.button_Tangsoluong.Text = "Tăng số lượng";
             this.button_Tangsoluong.UseVisualStyleBackColor = false;
+            this.button_Tangsoluong.Click += new System.EventHandler(this.button_Tangsoluong_Click);
             // 
             // button_XoaSP
             // 
@@ -99,6 +101,7 @@
             this.DGV_Giohang.Name = "DGV_Giohang";
             this.DGV_Giohang.RowHeadersWidth = 51;
             this.DGV_Giohang.RowTemplate.Height = 24;
+            this.DGV_Giohang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Giohang.Size = new System.Drawing.Size(1052, 315);
             this.DGV_Giohang.TabIndex = 4;
             // 

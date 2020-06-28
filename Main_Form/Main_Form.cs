@@ -27,7 +27,7 @@ namespace GiaoDien
                 panel2.Controls.Clear();
                 panel2.Controls.Add(user2);
             }
-            /*else
+            else
             {
                 if (user2.LoaiTK == "Manager")
                 {
@@ -41,7 +41,7 @@ namespace GiaoDien
                     TrangChuManager l = new TrangChuManager("Admin");
                     panel2.Controls.Add(l);
                 }
-            }*/
+            }
         }
         public string Text1 { get => text; set => text = value; }
 

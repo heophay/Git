@@ -59,7 +59,6 @@
             this.txt_xuatxu.Size = new System.Drawing.Size(486, 27);
             this.txt_xuatxu.TabIndex = 40;
             this.txt_xuatxu.Text = "Xuất Xứ:";
-            this.txt_xuatxu.TextChanged += new System.EventHandler(this.txt_xuatxu_TextChanged);
             // 
             // txt_pin
             // 
@@ -160,7 +159,6 @@
             this.txt_gia.Size = new System.Drawing.Size(394, 45);
             this.txt_gia.TabIndex = 46;
             this.txt_gia.Text = "Giá:";
-            this.txt_gia.TextChanged += new System.EventHandler(this.txt_gia_TextChanged);
             // 
             // pic_dt
             // 
@@ -229,6 +227,7 @@
             this.btn_Huy.TabIndex = 49;
             this.btn_Huy.Text = "Hủy";
             this.btn_Huy.UseVisualStyleBackColor = false;
+            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
             // 
             // Detail_SP
             // 

@@ -32,7 +32,7 @@ namespace GiaoDien
             List<ItemsGH> sp = new List<ItemsGH>();
             foreach (string i in ListSP)
             {
-                ChiTiet_SP temp = db.ChiTiet_SPs.Where(p => p.MaSP.Contains(i)).FirstOrDefault();
+                ChiTiet_SP temp = db.ChiTiet_SP.Where(p => p.MaSP.Contains(i)).FirstOrDefault();
                 KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.MaSP.Contains(i)).FirstOrDefault();
                 ItemsGH t = new ItemsGH();
                 t.TenSP = temp.TenSP;
@@ -54,6 +54,15 @@ namespace GiaoDien
             Detail_LapDH f = new Detail_LapDH(Get_ListCTSP());
             f.ShowDialog();
         }
-       
+
+        private void button_Tangsoluong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_GiamSoLuong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
