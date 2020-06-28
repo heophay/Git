@@ -10,20 +10,18 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
+    public delegate void Get_User(string value);
     public delegate void Get_ListMaSP(List<string> Masp);
     public partial class User : UserControl
     {
-        public delegate void Get();
-        private Get _d;
-        private string _LoaiTK="";
+        
+        private List<string> ListMaSP = new List<string>();
+        private string _LoaiTK;
         public string LoaiTK { get => _LoaiTK; set => _LoaiTK = value; }
-        public Get D { get => _d; set => _d = value; }
 
         public User()
         {
             InitializeComponent();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new TrangChuUser());
         }
         private void button_DngNhap_Click(object sender, EventArgs e)
         {
@@ -44,25 +42,40 @@ namespace GiaoDien
         private void button_TrangChu_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new TrangChuUser());
+            TrangChuUser l = new TrangChuUser();
+            panel1.Controls.Add(l);
         }
 
         private void button_TaiKhoan_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new TaiKhoanUser());
+            TaiKhoanUser l = new TaiKhoanUser();
+            panel1.Controls.Add(l);
         }
 
         private void button_GioHang_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new GioHangUser());
+            GioHangUser l = new GioHangUser(this.ListMaSP);
+            panel1.Controls.Add(l);
         }
 
         private void button_DonHang_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new DonHangCus());
+            DonHangCus l = new DonHangCus();
+            panel1.Controls.Add(l);
+        }
+        public  void Get_Listmasp(List<string> Masp)
+        {
+            this.ListMaSP = Masp;
+        }
+
+        private void User_Load(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            TrangChuUser l = new TrangChuUser(Get_Listmasp);
+            panel1.Controls.Add(l);
         }
     }
 }

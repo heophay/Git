@@ -13,15 +13,20 @@ namespace GiaoDien
 {
     public partial class DonHangCus : UserControl
     {
+        private string _MaTK;
+
         public DonHangCus()
         {
             InitializeComponent();
         }
 
         SE_14 db = new SE_14();
+
+        public string MaTK { get => _MaTK; set => _MaTK = value; }
+
         private void ShowDTGV()
         {
-            DGV_Donhang.DataSource = db.TaiKhoans.Select(p => new { p.MaTK, p.TenTK, p.PassTK, p.LoaiTK }).ToList();
+            DGV_Donhang.DataSource = db.DonHangs.Select(p => new { p.MaDonHang, p.NgayTao, p.NgayThanhToan, p.UuDai,p.TrangThai }).ToList();
         }
         private void button_Xemdonhang_Click(object sender, EventArgs e)
         {

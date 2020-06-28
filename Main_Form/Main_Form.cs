@@ -10,89 +10,44 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public delegate void Get_User(string value);
+   
     public partial class Main_Form : Form
     {
-        public Main_Form()
+        private string text;
+        public Main_Form(string text)
         {
+            Text1 = text;
             InitializeComponent();
-            panel5.Controls.Add(new TrangChuUser());
-        }
-        private string _LoaiTK ;
-        public string LoaiTK { get => _LoaiTK; set => _LoaiTK = value; }
-        private void button_DngNhap_Click(object sender, EventArgs e)
-        {
-            //this.Visible = false;
-            Login l = new Login(SetValue);
-            l.ShowDialog();
             SetView_Login();
         }
-        public void SetValue(string value)
-        {
-            LoaiTK = value;
-        }
-        private void button_DangKi_Click(object sender, EventArgs e)
-        {
-            Register r = new Register();
-            r.ShowDialog();
-        }
-
-        private void button_TrangChu_Click(object sender, EventArgs e)
-        {
-            panel5.Controls.Clear();
-            panel5.Controls.Add(new TrangChuUser());
-        }
-
-        private void button_TaiKhoan_Click(object sender, EventArgs e)
-        {
-            panel5.Controls.Clear();
-            panel5.Controls.Add(new TaiKhoanUser());
-        }
-
-        private void button_GioHang_Click(object sender, EventArgs e)
-        {
-            panel5.Controls.Clear();
-            panel5.Controls.Add(new GioHangUser());
-        }
-
-        private void button_DonHang_Click(object sender, EventArgs e)
-        {
-            panel5.Controls.Clear();
-            panel5.Controls.Add(new DonHangCus());
-        }
-        Panel p = new Panel();
         public void SetView_Login()
         {
-            if (LoaiTK == "")
+            if (user2.LoaiTK == "")
             {
-
+                panel2.Controls.Clear();
+                panel2.Controls.Add(user2);
             }
             else
             {
-                if (LoaiTK == "Manager")
+                if (user2.LoaiTK == "Manager")
                 {
-
                     panel2.Controls.Clear();
                     TrangChuManager l = new TrangChuManager("Manager");
                     panel2.Controls.Add(l);
-                    
                 }
-                if(LoaiTK == "Admin")
+                if (user2.LoaiTK == "Admin")
                 {
                     panel2.Controls.Clear();
                     TrangChuManager l = new TrangChuManager("Admin");
                     panel2.Controls.Add(l);
-                    
-
                 }
             }
-           
         }
+        public string Text1 { get => text; set => text = value; }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Main_Form_Activated(object sender, EventArgs e)
         {
-            this.Close();
-
+            SetView_Login();
         }
     }
 }

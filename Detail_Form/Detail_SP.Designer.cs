@@ -40,6 +40,7 @@
             this.txt_sim = new System.Windows.Forms.TextBox();
             this.txt_BNT = new System.Windows.Forms.TextBox();
             this.txt_gia = new System.Windows.Forms.TextBox();
+            this.pic_dt = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pic_dt = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -78,7 +79,7 @@
             this.txt_HDH.Name = "txt_HDH";
             this.txt_HDH.Size = new System.Drawing.Size(486, 27);
             this.txt_HDH.TabIndex = 37;
-            this.txt_HDH.Text = "Hệ Điều Hành: ";
+            this.txt_HDH.Text = "Hệ Điều Hành";
             // 
             // txt_manhinh
             // 
@@ -154,7 +155,7 @@
             // 
             this.txt_gia.Enabled = false;
             this.txt_gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gia.Location = new System.Drawing.Point(215, 396);
+            this.txt_gia.Location = new System.Drawing.Point(217, 355);
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(394, 45);
             this.txt_gia.TabIndex = 46;
@@ -176,7 +177,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label12.Location = new System.Drawing.Point(483, 24);
+            this.label12.Location = new System.Drawing.Point(722, 24);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(403, 44);
             this.label12.TabIndex = 47;
@@ -197,41 +198,45 @@
             this.groupBox1.Controls.Add(this.txt_manhinh);
             this.groupBox1.Location = new System.Drawing.Point(490, 104);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(796, 477);
+            this.groupBox1.Size = new System.Drawing.Size(796, 426);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             // 
-            // button1
+            // btn_Muahang
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(396, 597);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 45);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Mua Hàng";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Muahang.BackColor = System.Drawing.Color.Red;
+            this.btn_Muahang.FlatAppearance.BorderSize = 0;
+            this.btn_Muahang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Muahang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Muahang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Muahang.Location = new System.Drawing.Point(271, 553);
+            this.btn_Muahang.Name = "btn_Muahang";
+            this.btn_Muahang.Size = new System.Drawing.Size(149, 50);
+            this.btn_Muahang.TabIndex = 49;
+            this.btn_Muahang.Text = "Mua hàng";
+            this.btn_Muahang.UseVisualStyleBackColor = false;
+            this.btn_Muahang.Click += new System.EventHandler(this.btn_Muahang_Click);
             // 
-            // btn_huy
+            // pic_dt
             // 
-            this.btn_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_huy.Location = new System.Drawing.Point(829, 597);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(137, 45);
-            this.btn_huy.TabIndex = 49;
-            this.btn_huy.Text = "Hủy";
-            this.btn_huy.UseVisualStyleBackColor = true;
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
+            this.btn_Huy.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Huy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Huy.Location = new System.Drawing.Point(868, 553);
+            this.btn_Huy.Name = "btn_Huy";
+            this.btn_Huy.Size = new System.Drawing.Size(149, 50);
+            this.btn_Huy.TabIndex = 49;
+            this.btn_Huy.Text = "Hủy";
+            this.btn_Huy.UseVisualStyleBackColor = false;
+            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
             // 
             // Detail_SP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 666);
-            this.Controls.Add(this.btn_huy);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1312, 626);
+            this.Controls.Add(this.btn_Huy);
+            this.Controls.Add(this.btn_Muahang);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pic_dt);
@@ -262,7 +267,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_huy;
+        private System.Windows.Forms.Button btn_Muahang;
+        private System.Windows.Forms.Button btn_Huy;
     }
 }

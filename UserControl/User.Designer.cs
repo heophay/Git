@@ -272,6 +272,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "User";
             this.Size = new System.Drawing.Size(1500, 808);
+            this.Load += new System.EventHandler(this.User_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();

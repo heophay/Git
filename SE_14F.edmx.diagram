@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="SE_14Model.DonHang" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SE_14Model.KT_Gia_NhapXuat" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="SE_14Model.MuaHang" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SE_14Model.TaiKhoan" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SE_14Model.TaiKhoan" Width="1.5" PointX="1.875" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SE_14Model.Theodoi_NV" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SE_14Model.ThongTinCaNhan" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
         <AssociationConnector Association="SE_14Model.FK_dbo_KT_Gia_NhapXuat_dbo_ChiTiet_SP_MaSP" ManuallyRouted="false" />

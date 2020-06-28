@@ -25,6 +25,13 @@ namespace GiaoDien
             InitializeComponent();
             SetView();
         }
+        public Detail_SP(string Madt,KQ sender)
+        {
+            MaDT = Madt;
+            this.Result = sender;
+            InitializeComponent();
+            SetView();
+        }
         public Detail_SP(string Madt)
         {
             MaDT = Madt;
@@ -40,7 +47,7 @@ namespace GiaoDien
         }
         private void SetView()
         {
-            ChiTiet_SP ct = db.ChiTiet_SP.Where(p => p.MaSP == MaDT).Select(p => p).FirstOrDefault();
+            ChiTiet_SP ct = db.ChiTiet_SP.Where(p => p.MaSP == MaDT).FirstOrDefault();
             txt_baohanh.Text += ct.BaoHanh;
             txt_BNT.Text += ct.BoNhoTrong;
             txt_hangsx.Text += ct.HangSX;
@@ -55,12 +62,13 @@ namespace GiaoDien
             txt_gia.Text +="  "+ kt.GiaBan.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Muahang_Click(object sender, EventArgs e)
         {
             this.Result(true);
+            this.Close();
         }
 
-        private void btn_huy_Click(object sender, EventArgs e)
+        private void btn_Huy_Click(object sender, EventArgs e)
         {
             this.Close();
         }
