@@ -54,6 +54,7 @@
             this.tendt.TabIndex = 1;
             this.tendt.Text = "SamSung";
             this.tendt.UseVisualStyleBackColor = true;
+            this.tendt.Click += new System.EventHandler(this.tendt_Click);
             // 
             // DienThoai
             // 

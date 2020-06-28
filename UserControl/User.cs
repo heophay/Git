@@ -10,16 +10,20 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public delegate void Get_User(string value);
+    //
     public partial class User : UserControl
     {
-        
-        private string _LoaiTK;
+        public delegate void Get();
+        private Get _d;
+        private string _LoaiTK="";
         public string LoaiTK { get => _LoaiTK; set => _LoaiTK = value; }
+        public Get D { get => _d; set => _d = value; }
 
         public User()
         {
             InitializeComponent();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new TrangChuUser());
         }
         private void button_DngNhap_Click(object sender, EventArgs e)
         {
@@ -35,6 +39,30 @@ namespace GiaoDien
         {
             Register r = new Register();
             r.ShowDialog();
+        }
+
+        private void button_TrangChu_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new TrangChuUser());
+        }
+
+        private void button_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new TaiKhoanUser());
+        }
+
+        private void button_GioHang_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new GioHangUser());
+        }
+
+        private void button_DonHang_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new DonHangCus());
         }
     }
 }

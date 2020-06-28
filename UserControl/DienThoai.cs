@@ -17,11 +17,14 @@ namespace GiaoDien
         public DienThoai()
         {
             InitializeComponent();
-            tendt.Text = Txt;
         }
-
         public string Value1 { get => Value; set => Value = value; }
         public string Txt { get => _txt; set => _txt = value; }
 
+        private void tendt_Click(object sender, EventArgs e)
+        {
+            Detail_SP d = new Detail_SP("1");
+            d.ShowDialog();
+        }
     }
 }

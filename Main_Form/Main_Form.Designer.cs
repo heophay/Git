@@ -28,59 +28,301 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.user1 = new GiaoDien.User();
-            this.trangChuManager1 = new GiaoDien.TrangChuManager();
-            this.trangChuAdmin1 = new GiaoDien.TrangChuAdmin();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button_DangKi = new System.Windows.Forms.Button();
+            this.button_DngNhap = new System.Windows.Forms.Button();
+            this.label_Greeting = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pic_selection = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button_DonHang = new System.Windows.Forms.Button();
+            this.button_GioHang = new System.Windows.Forms.Button();
+            this.button_TaiKhoan = new System.Windows.Forms.Button();
+            this.button_TrangChu = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1482, 50);
             this.panel1.TabIndex = 0;
             // 
-            // user1
+            // panel2
             // 
-            this.user1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user1.LoaiTK = null;
-            this.user1.Location = new System.Drawing.Point(0, 50);
-            this.user1.Name = "user1";
-            this.user1.Size = new System.Drawing.Size(1482, 761);
-            this.user1.TabIndex = 14;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1482, 761);
+            this.panel2.TabIndex = 15;
             // 
-            // trangChuManager1
+            // panel3
             // 
-            this.trangChuManager1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trangChuManager1.Location = new System.Drawing.Point(0, 50);
-            this.trangChuManager1.Name = "trangChuManager1";
-            this.trangChuManager1.Size = new System.Drawing.Size(1482, 761);
-            this.trangChuManager1.TabIndex = 13;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel3.Controls.Add(this.pic_selection);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.button_DangKi);
+            this.panel3.Controls.Add(this.button_DngNhap);
+            this.panel3.Controls.Add(this.label_Greeting);
+            this.panel3.Controls.Add(this.pictureBox_Profile);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.button_DonHang);
+            this.panel3.Controls.Add(this.button_GioHang);
+            this.panel3.Controls.Add(this.button_TaiKhoan);
+            this.panel3.Controls.Add(this.button_TrangChu);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(269, 761);
+            this.panel3.TabIndex = 3;
             // 
-            // trangChuAdmin1
+            // label2
             // 
-            this.trangChuAdmin1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trangChuAdmin1.Location = new System.Drawing.Point(0, 50);
-            this.trangChuAdmin1.Name = "trangChuAdmin1";
-            this.trangChuAdmin1.Size = new System.Drawing.Size(1482, 761);
-            this.trangChuAdmin1.TabIndex = 12;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Jokerman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(72, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 43);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Welcome!!";
+            // 
+            // button_DangKi
+            // 
+            this.button_DangKi.BackColor = System.Drawing.Color.White;
+            this.button_DangKi.FlatAppearance.BorderSize = 0;
+            this.button_DangKi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_DangKi.Location = new System.Drawing.Point(54, 706);
+            this.button_DangKi.Name = "button_DangKi";
+            this.button_DangKi.Size = new System.Drawing.Size(166, 37);
+            this.button_DangKi.TabIndex = 27;
+            this.button_DangKi.Text = "Đăng kí";
+            this.button_DangKi.UseVisualStyleBackColor = false;
+            this.button_DangKi.Click += new System.EventHandler(this.button_DangKi_Click);
+            // 
+            // button_DngNhap
+            // 
+            this.button_DngNhap.BackColor = System.Drawing.Color.White;
+            this.button_DngNhap.FlatAppearance.BorderSize = 0;
+            this.button_DngNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_DngNhap.Location = new System.Drawing.Point(54, 663);
+            this.button_DngNhap.Name = "button_DngNhap";
+            this.button_DngNhap.Size = new System.Drawing.Size(166, 37);
+            this.button_DngNhap.TabIndex = 28;
+            this.button_DngNhap.Text = "Đăng nhập";
+            this.button_DngNhap.UseVisualStyleBackColor = false;
+            this.button_DngNhap.Click += new System.EventHandler(this.button_DngNhap_Click);
+            // 
+            // label_Greeting
+            // 
+            this.label_Greeting.AutoSize = true;
+            this.label_Greeting.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Greeting.ForeColor = System.Drawing.Color.White;
+            this.label_Greeting.Location = new System.Drawing.Point(63, 730);
+            this.label_Greeting.Name = "label_Greeting";
+            this.label_Greeting.Size = new System.Drawing.Size(44, 27);
+            this.label_Greeting.TabIndex = 26;
+            this.label_Greeting.Text = "Hi! ";
+            this.label_Greeting.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Location = new System.Drawing.Point(0, 67);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(269, 84);
+            this.panel4.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Mistral", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(73, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "PHONE STORE";
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(266, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1216, 761);
+            this.panel5.TabIndex = 2;
+            // 
+            // pic_selection
+            // 
+            this.pic_selection.Location = new System.Drawing.Point(0, 174);
+            this.pic_selection.Name = "pic_selection";
+            this.pic_selection.Size = new System.Drawing.Size(16, 16);
+            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_selection.TabIndex = 30;
+            this.pic_selection.TabStop = false;
+            // 
+            // pictureBox_Profile
+            // 
+            this.pictureBox_Profile.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Profile.Image")));
+            this.pictureBox_Profile.Location = new System.Drawing.Point(68, 590);
+            this.pictureBox_Profile.Name = "pictureBox_Profile";
+            this.pictureBox_Profile.Size = new System.Drawing.Size(131, 137);
+            this.pictureBox_Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Profile.TabIndex = 25;
+            this.pictureBox_Profile.TabStop = false;
+            this.pictureBox_Profile.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.TabStop = false;
+            // 
+            // button_DonHang
+            // 
+            this.button_DonHang.FlatAppearance.BorderSize = 0;
+            this.button_DonHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.button_DonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_DonHang.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
+            this.button_DonHang.ForeColor = System.Drawing.Color.White;
+            this.button_DonHang.Image = ((System.Drawing.Image)(resources.GetObject("button_DonHang.Image")));
+            this.button_DonHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_DonHang.Location = new System.Drawing.Point(3, 345);
+            this.button_DonHang.Name = "button_DonHang";
+            this.button_DonHang.Size = new System.Drawing.Size(257, 51);
+            this.button_DonHang.TabIndex = 21;
+            this.button_DonHang.Text = "Đơn hàng";
+            this.button_DonHang.UseVisualStyleBackColor = true;
+            this.button_DonHang.Click += new System.EventHandler(this.button_DonHang_Click);
+            // 
+            // button_GioHang
+            // 
+            this.button_GioHang.FlatAppearance.BorderSize = 0;
+            this.button_GioHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.button_GioHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_GioHang.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
+            this.button_GioHang.ForeColor = System.Drawing.Color.White;
+            this.button_GioHang.Image = ((System.Drawing.Image)(resources.GetObject("button_GioHang.Image")));
+            this.button_GioHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_GioHang.Location = new System.Drawing.Point(0, 288);
+            this.button_GioHang.Name = "button_GioHang";
+            this.button_GioHang.Size = new System.Drawing.Size(260, 51);
+            this.button_GioHang.TabIndex = 22;
+            this.button_GioHang.Text = "Giỏ hàng";
+            this.button_GioHang.UseVisualStyleBackColor = true;
+            this.button_GioHang.Click += new System.EventHandler(this.button_GioHang_Click);
+            // 
+            // button_TaiKhoan
+            // 
+            this.button_TaiKhoan.FlatAppearance.BorderSize = 0;
+            this.button_TaiKhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.button_TaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_TaiKhoan.Font = new System.Drawing.Font("Century Schoolbook", 13.2F);
+            this.button_TaiKhoan.ForeColor = System.Drawing.Color.White;
+            this.button_TaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("button_TaiKhoan.Image")));
+            this.button_TaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_TaiKhoan.Location = new System.Drawing.Point(0, 231);
+            this.button_TaiKhoan.Name = "button_TaiKhoan";
+            this.button_TaiKhoan.Size = new System.Drawing.Size(260, 51);
+            this.button_TaiKhoan.TabIndex = 23;
+            this.button_TaiKhoan.Text = "Tài khoản";
+            this.button_TaiKhoan.UseVisualStyleBackColor = true;
+            this.button_TaiKhoan.Click += new System.EventHandler(this.button_TaiKhoan_Click);
+            // 
+            // button_TrangChu
+            // 
+            this.button_TrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_TrangChu.FlatAppearance.BorderSize = 0;
+            this.button_TrangChu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.button_TrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_TrangChu.Font = new System.Drawing.Font("Century Schoolbook", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_TrangChu.ForeColor = System.Drawing.Color.White;
+            this.button_TrangChu.Image = ((System.Drawing.Image)(resources.GetObject("button_TrangChu.Image")));
+            this.button_TrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_TrangChu.Location = new System.Drawing.Point(3, 174);
+            this.button_TrangChu.Name = "button_TrangChu";
+            this.button_TrangChu.Size = new System.Drawing.Size(260, 51);
+            this.button_TrangChu.TabIndex = 24;
+            this.button_TrangChu.Text = "Trang chủ";
+            this.button_TrangChu.UseVisualStyleBackColor = true;
+            this.button_TrangChu.Click += new System.EventHandler(this.button_TrangChu_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 84);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::GiaoDien.Properties.Resources.pngtree_logout__icon_in_trendy_style_isolated_background_png_image_4859907;
+            this.pictureBox1.Location = new System.Drawing.Point(1427, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 811);
-            this.Controls.Add(this.user1);
-            this.Controls.Add(this.trangChuManager1);
-            this.Controls.Add(this.trangChuAdmin1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main_Form";
-            this.Activated += new System.EventHandler(this.Main_Form_Activated);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -88,8 +330,23 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private TrangChuAdmin trangChuAdmin1;
-        private TrangChuManager trangChuManager1;
-        private User user1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pic_selection;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_DangKi;
+        private System.Windows.Forms.Button button_DngNhap;
+        private System.Windows.Forms.Label label_Greeting;
+        private System.Windows.Forms.PictureBox pictureBox_Profile;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button_DonHang;
+        private System.Windows.Forms.Button button_GioHang;
+        private System.Windows.Forms.Button button_TaiKhoan;
+        private System.Windows.Forms.Button button_TrangChu;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
