@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuUser));
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Product1", 0);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Product2", 0);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Product3", 0);
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Product4", 0);
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Product5", 0);
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Product6", 0);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuUser));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_TimKiem = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
@@ -46,8 +46,8 @@
             this.label_ThuongHieu = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label_TimTheo = new System.Windows.Forms.Label();
-            this.listView_DSSP = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.listView_DSSP = new System.Windows.Forms.ListView();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -166,6 +166,12 @@
             this.label_TimTheo.TabIndex = 0;
             this.label_TimTheo.Text = "Tìm theo";
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "10044940_DTDD_SAMSUNG_SM-A715FDS-128GB-DEN_01_96en-r2.jpg");
+            // 
             // listView_DSSP
             // 
             this.listView_DSSP.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -184,12 +190,6 @@
             this.listView_DSSP.TabIndex = 2;
             this.listView_DSSP.UseCompatibleStateImageBehavior = false;
             this.listView_DSSP.Click += new System.EventHandler(this.listView1_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "10044940_DTDD_SAMSUNG_SM-A715FDS-128GB-DEN_01_96en-r2.jpg");
             // 
             // TrangChuUser
             // 
@@ -221,7 +221,7 @@
         private System.Windows.Forms.Label label_ThuongHieu;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label_TimTheo;
-        private System.Windows.Forms.ListView listView_DSSP;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView listView_DSSP;
     }
 }

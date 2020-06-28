@@ -44,7 +44,7 @@ namespace GiaoDien
         }
         public void SetView()
         {
-            DGV_QLSP.DataSource = db.ChiTiet_SP.Select(p => new { p.MaSP, p.TenSP, p.HangSX, p.ManHinh, p.HeDieuHanh, p.Ram, p.SoSim, p.Pin, p.NoiXuatXu }).ToList();
+            DGV_QLSP.DataSource = db.ChiTiet_SPs.Select(p => new { p.MaSP, p.TenSP, p.HangSX, p.ManHinh, p.HeDieuHanh, p.Ram, p.SoSim, p.Pin, p.NoiXuatXu }).ToList();
         }
 
         private void button_Xoa_Click(object sender, EventArgs e)
@@ -60,13 +60,13 @@ namespace GiaoDien
             try
             {
                 DataGridViewSelectedRowCollection r = DGV_QLSP.SelectedRows;
-                foreach (ChiTiet_SP i in db.ChiTiet_SP)
+                foreach (ChiTiet_SP i in db.ChiTiet_SPs)
                 {
                     foreach (DataGridViewRow j in r)
                     {
                         if (i.MaSP == j.Cells["MaSP"].Value.ToString())
                         {
-                            db.ChiTiet_SP.Remove(i);
+                            db.ChiTiet_SPs.Remove(i);
                         }
                     }
                 }
@@ -81,7 +81,7 @@ namespace GiaoDien
 
         private void bt_search_Click(object sender, EventArgs e)
         {
-            var list = db.ChiTiet_SP.Where(p => p.TenSP.Contains(txt_search.Text));
+            var list = db.ChiTiet_SPs.Where(p => p.TenSP.Contains(txt_search.Text));
             DGV_QLSP.DataSource = list.ToList();
         }
 

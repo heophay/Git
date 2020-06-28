@@ -8,9 +8,9 @@ namespace GiaoDien
 {
     public class ItemsGH
     {
-        public string MaSP { get; set; }
         public string TenSP { get; set; }
-        public string HangSX { get; set; }
-        public string ManHinh { get; set; }
+        public int Soluong { get; set; }
+        public int Gia { get; set; }
+        public int ThanhTien { get; set; }
     }
 }

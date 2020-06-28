@@ -26,7 +26,7 @@ namespace GiaoDien
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
-        public virtual DbSet<ChiTiet_SP> ChiTiet_SP { get; set; }
+        public virtual DbSet<ChiTiet_SP> ChiTiet_SPs { get; set; }
         public virtual DbSet<DanhMuc> DanhMucs { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
         public virtual DbSet<KT_Gia_NhapXuat> KT_Gia_NhapXuat { get; set; }

@@ -14,31 +14,44 @@ namespace GiaoDien
     
     public partial class GioHangUser : UserControl
     {
-        private string _Ma;
+        SE_14 db = new SE_14();
         private List<string> ListSP = new List<string>();
         public GioHangUser()
         {
+            InitializeComponent();            
+        }
+        public GioHangUser(List<string> Masp)
+        {
             InitializeComponent();
+            this.ListSP = Masp;
+            Showsp();
+        }
+
+        public List<ItemsGH> Get_ListCTSP()
+        {
+            List<ItemsGH> sp = new List<ItemsGH>();
+            foreach (string i in ListSP)
+            {
+                ChiTiet_SP temp = db.ChiTiet_SPs.Where(p => p.MaSP.Contains(i)).FirstOrDefault();
+                KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.MaSP.Contains(i)).FirstOrDefault();
+                ItemsGH t = new ItemsGH();
+                t.TenSP = temp.TenSP;
+                t.Soluong = 1;
+                t.Gia = gia.GiaBan;
+                t.ThanhTien = t.Soluong * t.Gia;
+                sp.Add(t);
+            }
+            return sp;
             
         }
-        public GioHangUser(string MaSP)
-        {
-            InitializeComponent();
-            this.Ma = MaSP;
-            MessageBox.Show("OK");
-            kt();
-        }
 
-        public void kt()
+        public void Showsp()
         {
-            ListSP.Add(this.Ma);
-            MessageBox.Show(ListSP.Count.ToString());
+            DGV_Giohang.DataSource = Get_ListCTSP();
         }
-        public string Ma { get => _Ma; set => _Ma = value; }
-
         private void button_Lapdonhang_Click(object sender, EventArgs e)
         {
-            Detail_LapDH f = new Detail_LapDH();
+            Detail_LapDH f = new Detail_LapDH(Get_ListCTSP());
             f.ShowDialog();
         }
        

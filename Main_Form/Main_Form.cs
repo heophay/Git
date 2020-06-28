@@ -18,25 +18,30 @@ namespace GiaoDien
         {
             Text1 = text;
             InitializeComponent();
+            SetView_Login();
         }
         public void SetView_Login()
         {
-            if (user1.LoaiTK == "")
+            if (user2.LoaiTK == "")
             {
-                user1.BringToFront();
+                panel2.Controls.Clear();
+                panel2.Controls.Add(user2);
             }
-            else
+            /*else
             {
-                if (user1.LoaiTK == "Admin")
+                if (user2.LoaiTK == "Manager")
                 {
-                    trangChuAdmin1.BringToFront();
+                    panel2.Controls.Clear();
+                    TrangChuManager l = new TrangChuManager("Manager");
+                    panel2.Controls.Add(l);
                 }
-                if (user1.LoaiTK == "Manager")
+                if (user2.LoaiTK == "Admin")
                 {
-                    trangChuManager1.BringToFront();
+                    panel2.Controls.Clear();
+                    TrangChuManager l = new TrangChuManager("Admin");
+                    panel2.Controls.Add(l);
                 }
-            }
-           
+            }*/
         }
         public string Text1 { get => text; set => text = value; }
 
