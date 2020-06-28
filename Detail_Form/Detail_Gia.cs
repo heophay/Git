@@ -12,39 +12,38 @@ namespace GiaoDien
 {
     public partial class Detail_Gia : Form
     {
-        SE_14 db = new SE_14();
-        public delegate void Showdata();
         private int _IDGia;
-        private Showdata _ShowGia;
+        public delegate void SHow();
+        SHow d;
+        public Detail_Gia(int magia)
+        {
+            IDGia = magia;
+            InitializeComponent();
+        }
+        SE_14 db = new SE_14();
 
         public int IDGia { get => _IDGia; set => _IDGia = value; }
-        public Showdata ShowGia { get => _ShowGia; set => _ShowGia = value; }
+        public SHow D { get => d; set => d = value; }
 
-        public Detail_Gia()
-        {
-            InitializeComponent();
-        }
-        public Detail_Gia(int IDGia)
-        {
-            InitializeComponent();
-            this.IDGia = IDGia;
-        }
         private void SetView()
         {
-            if (IDGia != -1)
+            if (IDGia != 0)
             {
-                txt_IDGia.Enabled = false;
-                KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.ID_Gia == IDGia).FirstOrDefault();
-                txt_MaSP.Text = gia.MaSP;
-                txt_GiaNhap.Text = gia.GiaNhap.ToString();
-                txt_GiaBan.Text = gia.GiaBan.ToString();
+                txt_idgia.Enabled = false;
+                txt_masp.Enabled = false;
+                KT_Gia_NhapXuat nv = db.KT_Gia_NhapXuat.Where(p => p.ID_Gia == IDGia).FirstOrDefault();
+                txt_idgia.Text = nv.ID_Gia.ToString();
+                txt_masp.Text = nv.MaSP;
+                txt_giaban.Text = nv.GiaBan.ToString();
+                txt_gianhap.Text = nv.GiaNhap.ToString();
+                ngayapdung.Value = Convert.ToDateTime(nv.NgayApDung.ToString());
             }
         }
         private void Run()
         {
-            if (ShowGia != null)
+            if (D != null)
             {
-                ShowGia();
+                D();
                 this.Close();
             }
         }
@@ -52,39 +51,24 @@ namespace GiaoDien
         {
             try
             {
-                KT_Gia_NhapXuat sp = db.KT_Gia_NhapXuat.Where(p => p.ID_Gia == IDGia).FirstOrDefault();
-                if (sp == null)
-                {                                      
-                        MessageBox.Show("Không có thông tin giá cần sửa!");
-                }
-                else
+                KT_Gia_NhapXuat nv = db.KT_Gia_NhapXuat.Where(p => p.ID_Gia == IDGia).FirstOrDefault();
+                if (nv!= null)
                 {
-                    if (Check_MaSP())
+                    if (txt_idgia.Enabled == false &&txt_masp.Enabled==false)
                     {
-
+                        if (txt_masp.Text == "" || txt_giaban.Text == "" || txt_gianhap.Text == "")
+                        {
+                            MessageBox.Show("Không được để trống");
+                        }
+                        nv.ID_Gia = Convert.ToInt32(txt_idgia.Text.ToString());
+                        nv.MaSP = txt_masp.Text;
+                        nv.GiaNhap = Convert.ToInt32(txt_gianhap.Text.ToString());
+                        nv.GiaBan = Convert.ToInt32(txt_giaban.Text.ToString());
+                        nv.NgayApDung = ngayapdung.Value;
+                        db.SaveChanges();
+                        Run();
                     }
                 }
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-        private bool Check_MaSP()
-        {
-            try
-            {
-                KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.ID_Gia == IDGia).FirstOrDefault();
-                if (txt_GiaBan.Text == "" || txt_GiaNhap.Text == "" || txt_MaSP.Text == "")
-                {
-                     MessageBox.Show("Không được để trống");
-                }
-                gia.GiaNhap = Convert.ToInt32(txt_GiaNhap.Text);
-                gia.GiaBan = Convert.ToInt32(txt_GiaBan.Text);
-                gia.MaSP = txt_MaSP.Text;
-                db.SaveChanges();
-                Run();
                 return true;
             }
             catch (Exception)

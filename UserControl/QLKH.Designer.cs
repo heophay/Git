@@ -30,7 +30,6 @@
         {
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Sua = new System.Windows.Forms.Button();
-            this.button_Them = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbb_search = new System.Windows.Forms.ComboBox();
             this.txt_search = new System.Windows.Forms.TextBox();
@@ -47,7 +46,7 @@
             this.button_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Xoa.ForeColor = System.Drawing.Color.White;
-            this.button_Xoa.Location = new System.Drawing.Point(852, 694);
+            this.button_Xoa.Location = new System.Drawing.Point(883, 694);
             this.button_Xoa.Name = "button_Xoa";
             this.button_Xoa.Size = new System.Drawing.Size(204, 47);
             this.button_Xoa.TabIndex = 60;
@@ -63,29 +62,13 @@
             this.button_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Sua.ForeColor = System.Drawing.Color.White;
-            this.button_Sua.Location = new System.Drawing.Point(490, 694);
+            this.button_Sua.Location = new System.Drawing.Point(104, 694);
             this.button_Sua.Name = "button_Sua";
             this.button_Sua.Size = new System.Drawing.Size(203, 47);
             this.button_Sua.TabIndex = 61;
             this.button_Sua.Text = "Sửa";
             this.button_Sua.UseVisualStyleBackColor = false;
             this.button_Sua.Click += new System.EventHandler(this.button_Sua_Click);
-            // 
-            // button_Them
-            // 
-            this.button_Them.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button_Them.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button_Them.FlatAppearance.BorderSize = 0;
-            this.button_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.ForeColor = System.Drawing.Color.White;
-            this.button_Them.Location = new System.Drawing.Point(149, 694);
-            this.button_Them.Name = "button_Them";
-            this.button_Them.Size = new System.Drawing.Size(190, 47);
-            this.button_Them.TabIndex = 62;
-            this.button_Them.Text = "Thêm";
-            this.button_Them.UseVisualStyleBackColor = false;
-            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
             // label1
             // 
@@ -144,7 +127,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sua);
-            this.Controls.Add(this.button_Them);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbb_search);
             this.Controls.Add(this.txt_search);
@@ -162,7 +144,6 @@
 
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Button button_Sua;
-        private System.Windows.Forms.Button button_Them;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbb_search;
         private System.Windows.Forms.TextBox txt_search;

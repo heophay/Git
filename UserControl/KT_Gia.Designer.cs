@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.DGV_Gia = new System.Windows.Forms.DataGridView();
-            this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Sua = new System.Windows.Forms.Button();
-            this.button_Them = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,21 +51,6 @@
             this.DGV_Gia.Size = new System.Drawing.Size(1130, 276);
             this.DGV_Gia.TabIndex = 55;
             // 
-            // button_Xoa
-            // 
-            this.button_Xoa.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button_Xoa.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button_Xoa.FlatAppearance.BorderSize = 0;
-            this.button_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Xoa.ForeColor = System.Drawing.Color.White;
-            this.button_Xoa.Location = new System.Drawing.Point(842, 702);
-            this.button_Xoa.Name = "button_Xoa";
-            this.button_Xoa.Size = new System.Drawing.Size(204, 47);
-            this.button_Xoa.TabIndex = 52;
-            this.button_Xoa.Text = "Xóa";
-            this.button_Xoa.UseVisualStyleBackColor = false;
-            // 
             // button_Sua
             // 
             this.button_Sua.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -76,27 +59,12 @@
             this.button_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Sua.ForeColor = System.Drawing.Color.White;
-            this.button_Sua.Location = new System.Drawing.Point(480, 702);
+            this.button_Sua.Location = new System.Drawing.Point(469, 704);
             this.button_Sua.Name = "button_Sua";
             this.button_Sua.Size = new System.Drawing.Size(203, 47);
             this.button_Sua.TabIndex = 53;
             this.button_Sua.Text = "Sửa";
             this.button_Sua.UseVisualStyleBackColor = false;
-            // 
-            // button_Them
-            // 
-            this.button_Them.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button_Them.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button_Them.FlatAppearance.BorderSize = 0;
-            this.button_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.ForeColor = System.Drawing.Color.White;
-            this.button_Them.Location = new System.Drawing.Point(139, 702);
-            this.button_Them.Name = "button_Them";
-            this.button_Them.Size = new System.Drawing.Size(190, 47);
-            this.button_Them.TabIndex = 54;
-            this.button_Them.Text = "Thêm";
-            this.button_Them.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -173,14 +141,12 @@
             this.cbb_xuatxu.Size = new System.Drawing.Size(281, 24);
             this.cbb_xuatxu.TabIndex = 48;
             // 
-            // UserControl1
+            // KT_Gia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.DGV_Gia);
-            this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sua);
-            this.Controls.Add(this.button_Them);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.label1);
@@ -188,7 +154,7 @@
             this.Controls.Add(this.label_NoiSX);
             this.Controls.Add(this.cbb_gia);
             this.Controls.Add(this.cbb_xuatxu);
-            this.Name = "UserControl1";
+            this.Name = "KT_Gia";
             this.Size = new System.Drawing.Size(1228, 808);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Gia)).EndInit();
             this.ResumeLayout(false);
@@ -199,9 +165,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DGV_Gia;
-        private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Button button_Sua;
-        private System.Windows.Forms.Button button_Them;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label label1;

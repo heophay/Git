@@ -1,5 +1,4 @@
-﻿using GiaoDien.Detail_Form;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,80 +10,39 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-
     public partial class Detail_SP : Form
     {
-        private MyDel _Result;
-
+        private string _MaDT;
         SE_14 db = new SE_14();
-        private string _MaSP;
 
-        public string MaSP { get => _MaSP; set => _MaSP = value; }
-        public MyDel Result { get => _Result; set => _Result = value; }
+        public string MaDT { get => _MaDT; set => _MaDT = value; }
 
         public Detail_SP()
         {
             InitializeComponent();
-        }
-        public Detail_SP(string masp,MyDel sender)
-        {
-            InitializeComponent();
-            this.MaSP = masp;
-            this.Result = sender;
             SetView();
         }
-        private void button1_Click(object sender, EventArgs e)
+        public Detail_SP(string Madt)
         {
-            MessageBox.Show("Oke");
-        }
-
-        private void tabItem1_Click(object sender, EventArgs e)
-        {
-            //Main_User f = new Main_User();
-            this.Visible = false;
-            //f.ShowDialog();
-            this.Close();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Oke");
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txt_gia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_xuatxu_TextChanged(object sender, EventArgs e)
-        {
-
+            MaDT = Madt;
+            InitializeComponent();
+            SetView();
         }
         private void SetView()
         {
-                KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.MaSP == MaSP).FirstOrDefault();
-                ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
-                txt_namedt.Text += " " + sp.TenSP;
-                txt_hangsx.Text += " " + sp.HangSX;
-                txt_HDH.Text += " " + sp.HeDieuHanh;
-                txt_manhinh.Text += " " + sp.ManHinh;
-                txt_xuatxu.Text += " " + sp.NoiXuatXu;
-                txt_baohanh.Text += " " + sp.BaoHanh;
-                txt_BNT.Text += " " + sp.BoNhoTrong;
-                txt_sim.Text += " " + sp.SoSim.ToString();
-                txt_pin.Text += " " + sp.Pin;
-                txt_ram.Text += " " + sp.Ram;
-                txt_gia.Text += " " + gia.GiaBan.ToString();
-        }
-
-        private void btn_Muahang_Click(object sender, EventArgs e)
-        {
-            this.Result(true);
+            ChiTiet_SP ct = db.ChiTiet_SP.Where(p => p.MaSP == MaDT).Select(p => p).FirstOrDefault();
+            txt_baohanh.Text += ct.BaoHanh;
+            txt_BNT.Text += ct.BoNhoTrong;
+            txt_hangsx.Text += ct.HangSX;
+            txt_HDH.Text += ct.HeDieuHanh;
+            txt_manhinh.Text += ct.ManHinh;
+            txt_namedt.Text += ct.TenSP;
+            txt_pin.Text += ct.Pin;
+            txt_ram.Text += ct.Ram;
+            txt_sim.Text += ct.Ram.ToString();
+            txt_xuatxu.Text += ct.Ram;
+            KT_Gia_NhapXuat kt = db.KT_Gia_NhapXuat.Where(p => p.MaSP == MaDT).Select(p => p).FirstOrDefault();
+            txt_gia.Text +="  "+ kt.GiaBan.ToString();
         }
     }
 }

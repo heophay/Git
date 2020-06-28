@@ -48,9 +48,7 @@
             this.txt_HotenKH = new System.Windows.Forms.TextBox();
             this.bt_luu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbb_ngay = new System.Windows.Forms.ComboBox();
-            this.cbb_thang = new System.Windows.Forms.ComboBox();
-            this.cbb_nam = new System.Windows.Forms.ComboBox();
+            this.Ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.groupBox_Gioitinh.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -250,9 +248,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbb_nam);
-            this.groupBox1.Controls.Add(this.cbb_thang);
-            this.groupBox1.Controls.Add(this.cbb_ngay);
+            this.groupBox1.Controls.Add(this.Ngaysinh);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(238, 562);
             this.groupBox1.Name = "groupBox1";
@@ -261,35 +257,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ngày Sinh";
             // 
-            // cbb_ngay
+            // Ngaysinh
             // 
-            this.cbb_ngay.FormattingEnabled = true;
-            this.cbb_ngay.IntegralHeight = false;
-            this.cbb_ngay.ItemHeight = 20;
-            this.cbb_ngay.Location = new System.Drawing.Point(123, 17);
-            this.cbb_ngay.MaxDropDownItems = 19;
-            this.cbb_ngay.Name = "cbb_ngay";
-            this.cbb_ngay.Size = new System.Drawing.Size(121, 28);
-            this.cbb_ngay.TabIndex = 0;
-            // 
-            // cbb_thang
-            // 
-            this.cbb_thang.FormattingEnabled = true;
-            this.cbb_thang.IntegralHeight = false;
-            this.cbb_thang.Location = new System.Drawing.Point(250, 17);
-            this.cbb_thang.Name = "cbb_thang";
-            this.cbb_thang.Size = new System.Drawing.Size(121, 28);
-            this.cbb_thang.TabIndex = 1;
-            // 
-            // cbb_nam
-            // 
-            this.cbb_nam.FormattingEnabled = true;
-            this.cbb_nam.IntegralHeight = false;
-            this.cbb_nam.Location = new System.Drawing.Point(377, 17);
-            this.cbb_nam.MaxDropDownItems = 19;
-            this.cbb_nam.Name = "cbb_nam";
-            this.cbb_nam.Size = new System.Drawing.Size(121, 28);
-            this.cbb_nam.TabIndex = 2;
+            this.Ngaysinh.Location = new System.Drawing.Point(137, 15);
+            this.Ngaysinh.Name = "Ngaysinh";
+            this.Ngaysinh.Size = new System.Drawing.Size(420, 27);
+            this.Ngaysinh.TabIndex = 0;
             // 
             // TaiKhoanUser
             // 
@@ -346,8 +319,6 @@
         private System.Windows.Forms.TextBox txt_HotenKH;
         private System.Windows.Forms.Button bt_luu;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbb_nam;
-        private System.Windows.Forms.ComboBox cbb_thang;
-        private System.Windows.Forms.ComboBox cbb_ngay;
+        private System.Windows.Forms.DateTimePicker Ngaysinh;
     }
 }

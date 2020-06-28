@@ -12,9 +12,22 @@ namespace GiaoDien
 {
     public partial class TrangChuManager : UserControl
     {
-        public TrangChuManager()
+        private string _Loai;
+        public TrangChuManager(string LoaiTK)
         {
+            Loai = LoaiTK;
             InitializeComponent();
+            if(Loai=="Manager")
+            {
+                bt_Nhanvien.Visible = false;
+            }
+            if(Loai == "Admin")
+            {
+                
+                bt_TTCN.Visible = false;
+            }
         }
+
+        public string Loai { get => _Loai; set => _Loai = value; }
     }
 }
