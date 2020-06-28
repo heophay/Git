@@ -10,12 +10,15 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
+    public delegate void KQ(bool kq);
     public partial class Detail_SP : Form
     {
         private string _MaDT;
+        private KQ _Result;
         SE_14 db = new SE_14();
 
         public string MaDT { get => _MaDT; set => _MaDT = value; }
+        public KQ Result { get => _Result; set => _Result = value; }
 
         public Detail_SP()
         {
@@ -25,6 +28,13 @@ namespace GiaoDien
         public Detail_SP(string Madt)
         {
             MaDT = Madt;
+            InitializeComponent();
+            SetView();
+        }
+        public Detail_SP(string Madt,KQ sender)
+        {
+            MaDT = Madt;
+            this.Result = sender;
             InitializeComponent();
             SetView();
         }
@@ -43,6 +53,16 @@ namespace GiaoDien
             txt_xuatxu.Text += ct.Ram;
             KT_Gia_NhapXuat kt = db.KT_Gia_NhapXuat.Where(p => p.MaSP == MaDT).Select(p => p).FirstOrDefault();
             txt_gia.Text +="  "+ kt.GiaBan.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Result(true);
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

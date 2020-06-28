@@ -16,6 +16,7 @@ namespace GiaoDien
         public QLKH()
         {
             InitializeComponent();
+            ShowDTGV();
         }
         private void ShowDTGV()
         {

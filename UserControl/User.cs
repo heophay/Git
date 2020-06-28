@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    //
+    public delegate void Get_ListMaSP(List<string> Masp);
     public partial class User : UserControl
     {
         public delegate void Get();

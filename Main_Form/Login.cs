@@ -25,6 +25,7 @@ namespace GiaoDien
         public Login(Get_User gu)
         {
             InitializeComponent();
+            SetWaterMarkText();
             this.GU = gu;
         }
 
@@ -110,7 +111,6 @@ namespace GiaoDien
             rp.ShowDialog();
             this.Dispose();
         }
-        //Main_Form ma=null;
         private void bt_login_Click(object sender, EventArgs e)
         {
             NameCus = txt_user.Text;
@@ -120,34 +120,27 @@ namespace GiaoDien
                 
                 if(s== "Customer")
                 {
-                    //Main_Form ma = new Main_Form("");
                     this.Visible = false;
                     this.GU("");
-                    //ma.ShowDialog();
                     this.Close();
                 }
                 else
                 {
                     if (s == "Admin")
                     {
-                        //Main_Form ma = new Main_Form("Admin");
                         this.Visible = false;
                         this.GU("Admin");
-                        //ma.ShowDialog();
                         this.Dispose();
                     }
                     else
                     {
-                        //Main_Form ma = new Main_Form("Manager");
                         this.Visible = false;
                         this.GU("Manager");
-                        //ma.ShowDialog();
                         this.Dispose();
                     }
                 }
             }
-        }
-       
+        }    
         private string Check_User()
         {
             try

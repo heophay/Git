@@ -66,7 +66,9 @@ namespace GiaoDien
                     {
                         if (i.MaSP == j.Cells["MaSP"].Value.ToString())
                         {
-                            db.ChiTiet_SP.Remove(i);
+                            KT_Gia_NhapXuat t =  db.KT_Gia_NhapXuat.Where(p => p.MaSP == i.MaSP).FirstOrDefault();
+                            db.KT_Gia_NhapXuat.Remove(t);
+                            db.ChiTiet_SP.Remove(i); 
                         }
                     }
                 }

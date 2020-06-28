@@ -16,6 +16,7 @@ namespace GiaoDien
         public KT_Gia()
         {
             InitializeComponent();
+            ShowDTGV();
         }
         private void ShowDTGV()
         {

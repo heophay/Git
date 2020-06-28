@@ -16,6 +16,7 @@ namespace GiaoDien
         public TT_NhanVien()
         {
             InitializeComponent();
+            ShowDTGV();
         }
         private void ShowDTGV()
         {

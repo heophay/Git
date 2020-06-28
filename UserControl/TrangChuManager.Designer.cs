@@ -159,6 +159,7 @@
             this.bt_Nhanvien.Text = "Theo dõi nhân viên";
             this.bt_Nhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_Nhanvien.UseVisualStyleBackColor = true;
+            this.bt_Nhanvien.Click += new System.EventHandler(this.bt_Nhanvien_Click);
             // 
             // bt_SP
             // 
@@ -176,6 +177,7 @@
             this.bt_SP.TabIndex = 23;
             this.bt_SP.Text = "Sản phẩm";
             this.bt_SP.UseVisualStyleBackColor = true;
+            this.bt_SP.Click += new System.EventHandler(this.bt_SP_Click);
             // 
             // bt_TTCN
             // 
@@ -194,6 +196,7 @@
             this.bt_TTCN.Text = "Thông tin cá nhân";
             this.bt_TTCN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_TTCN.UseVisualStyleBackColor = true;
+            this.bt_TTCN.Click += new System.EventHandler(this.bt_TTCN_Click);
             // 
             // bt_KH
             // 
@@ -211,6 +214,7 @@
             this.bt_KH.TabIndex = 20;
             this.bt_KH.Text = "Khách hàng";
             this.bt_KH.UseVisualStyleBackColor = true;
+            this.bt_KH.Click += new System.EventHandler(this.bt_KH_Click);
             // 
             // button_DanhMuc
             // 
@@ -228,6 +232,7 @@
             this.button_DanhMuc.TabIndex = 22;
             this.button_DanhMuc.Text = "Danh mục";
             this.button_DanhMuc.UseVisualStyleBackColor = true;
+            this.button_DanhMuc.Click += new System.EventHandler(this.button_DanhMuc_Click);
             // 
             // bt_Gia
             // 
@@ -245,6 +250,7 @@
             this.bt_Gia.TabIndex = 21;
             this.bt_Gia.Text = "Kiểm tra giá";
             this.bt_Gia.UseVisualStyleBackColor = true;
+            this.bt_Gia.Click += new System.EventHandler(this.bt_Gia_Click);
             // 
             // pictureBox2
             // 

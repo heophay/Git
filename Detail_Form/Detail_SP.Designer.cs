@@ -41,12 +41,13 @@
             this.txt_BNT = new System.Windows.Forms.TextBox();
             this.txt_gia = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pic_dt = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.pic_dt = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.btn_huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_xuatxu
@@ -159,6 +160,17 @@
             this.txt_gia.TabIndex = 46;
             this.txt_gia.Text = "Giá:";
             // 
+            // pic_dt
+            // 
+            this.pic_dt.BackgroundImage = global::GiaoDien.Properties.Resources.product_15574_1;
+            this.pic_dt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pic_dt.Location = new System.Drawing.Point(24, 75);
+            this.pic_dt.Name = "pic_dt";
+            this.pic_dt.Size = new System.Drawing.Size(450, 506);
+            this.pic_dt.TabIndex = 4;
+            this.pic_dt.TabStop = false;
+            this.toolTip1.SetToolTip(this.pic_dt, "Sam Sung Galaxy A50");
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -191,30 +203,34 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(76, 24);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(396, 597);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 45);
             this.button1.TabIndex = 49;
             this.button1.Text = "Mua Hàng";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pic_dt
+            // btn_huy
             // 
-            this.pic_dt.BackgroundImage = global::GiaoDien.Properties.Resources.product_15574_1;
-            this.pic_dt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pic_dt.Location = new System.Drawing.Point(24, 75);
-            this.pic_dt.Name = "pic_dt";
-            this.pic_dt.Size = new System.Drawing.Size(450, 506);
-            this.pic_dt.TabIndex = 4;
-            this.pic_dt.TabStop = false;
-            this.toolTip1.SetToolTip(this.pic_dt, "Sam Sung Galaxy A50");
+            this.btn_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.Location = new System.Drawing.Point(829, 597);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(137, 45);
+            this.btn_huy.TabIndex = 49;
+            this.btn_huy.Text = "Hủy";
+            this.btn_huy.UseVisualStyleBackColor = true;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // Detail_SP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 626);
+            this.ClientSize = new System.Drawing.Size(1312, 666);
+            this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label12);
@@ -222,9 +238,9 @@
             this.Name = "Detail_SP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +263,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_huy;
     }
 }
