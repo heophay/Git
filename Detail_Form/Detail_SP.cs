@@ -25,13 +25,6 @@ namespace GiaoDien
             InitializeComponent();
             SetView();
         }
-        public Detail_SP(string Madt,KQ sender)
-        {
-            MaDT = Madt;
-            this.Result = sender;
-            InitializeComponent();
-            SetView();
-        }
         public Detail_SP(string Madt)
         {
             MaDT = Madt;
@@ -62,13 +55,14 @@ namespace GiaoDien
             txt_gia.Text +="  "+ kt.GiaBan.ToString();
         }
 
-        private void btn_Muahang_Click(object sender, EventArgs e)
+
+        private void btn_Muahang_Click_1(object sender, EventArgs e)
         {
             this.Result(true);
             this.Close();
         }
 
-        private void btn_Huy_Click(object sender, EventArgs e)
+        private void btn_Huy_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

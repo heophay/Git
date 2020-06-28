@@ -19,6 +19,7 @@ namespace GiaoDien
         {
             MaNV = manv;
             InitializeComponent();
+            SetView();
         }
         SE_14 db = new SE_14();
 
@@ -111,7 +112,6 @@ namespace GiaoDien
                     {
                         MessageBox.Show("Không được để trống");
                     }
-                    nv.MaTK = txt_nv.Text;
                     nv.TenNV = txt_nv.Text;
                     nv.SoDT = txt_dt.Text;
                     nv.DiaChi = txt_diachi.Text;

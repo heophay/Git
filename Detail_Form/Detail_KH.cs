@@ -19,6 +19,7 @@ namespace GiaoDien
         {
             MaKH = makh;
             InitializeComponent();
+            SetView();
         }
         SE_14 db = new SE_14();
 
@@ -55,18 +56,22 @@ namespace GiaoDien
                 ThongTinCaNhan nv = db.ThongTinCaNhans.Where(p => p.MaTK == MaKH).FirstOrDefault();
                 if (nv != null)
                 {
-                    if (txt_makh.Enabled == false && txt_makh.Text.Equals(nv.MaTK))
+                    if (txt_makh.Enabled ==false)
                     {
-                        
+                        if (txt_nv.Text == "" || txt_pass.Text == "" || txt_tk.Text == "" || txt_dt.Text == "" || txt_diachi.Text == "")
+                        {
+                            MessageBox.Show("Không được để trống");
+                        }
+                        nv.TenKH = txt_nv.Text;
+                        nv.SoDT = txt_dt.Text;
+                        nv.DiaChi = txt_diachi.Text;
+                        nv.NgaySinh = dateTimePicker1.Value;
+                        nv.Gender = rb_nam.Checked;
+                        db.SaveChanges();
+                        Run();
                     }
                 }
-                else
-                {
-                    if (Check_MaSP())
-                    {
-
-                    }
-                }
+                
                 return true;
             }
             catch (Exception)
@@ -85,7 +90,6 @@ namespace GiaoDien
                     {
                         MessageBox.Show("Không được để trống");
                     }
-                    nv.MaTK = txt_nv.Text;
                     nv.TenKH = txt_nv.Text;
                     nv.SoDT = txt_dt.Text;
                     nv.DiaChi = txt_diachi.Text;
@@ -99,6 +103,19 @@ namespace GiaoDien
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        private void bt_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bt_luu_Click(object sender, EventArgs e)
+        {
+            if(Oke())
+            {
+
             }
         }
     }

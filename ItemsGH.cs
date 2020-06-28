@@ -8,6 +8,7 @@ namespace GiaoDien
 {
     public class ItemsGH
     {
+        public string MaSP { get; set; }
         public string TenSP { get; set; }
         public int Soluong { get; set; }
         public int Gia { get; set; }

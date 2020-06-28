@@ -66,6 +66,7 @@
             this.bt_huy.TabIndex = 18;
             this.bt_huy.Text = "Hủy";
             this.bt_huy.UseVisualStyleBackColor = false;
+            this.bt_huy.Click += new System.EventHandler(this.bt_huy_Click);
             // 
             // bt_luu
             // 
@@ -80,6 +81,7 @@
             this.bt_luu.TabIndex = 17;
             this.bt_luu.Text = "Lưu";
             this.bt_luu.UseVisualStyleBackColor = false;
+            this.bt_luu.Click += new System.EventHandler(this.bt_luu_Click);
             // 
             // groupBox1
             // 

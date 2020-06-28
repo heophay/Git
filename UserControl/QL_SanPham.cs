@@ -17,14 +17,32 @@ namespace GiaoDien
         {
             InitializeComponent();
             SetView();
+        }
+        private void SetView()
+        {
+            cbb_gia.Items.Clear();
+            cbb_loaidt.Items.Clear();
+            foreach (DanhMuc i in db.DanhMucs)
+            {
+                cbb_gia.Items.Add(i.TenDM);
+            }
+            foreach (ChiTiet_SP i in db.ChiTiet_SP)
+            {
+                bool kt = true;
+                foreach(string j in cbb_loaidt.Items)
+                {
+                    if (i.HangSX == j) kt = false;
+                }
+                if (kt == true) cbb_loaidt.Items.Add(i.HangSX);
+            }
             cbb_gia.SelectedIndex = 0;
-            cbb_xuatxu.SelectedIndex = 0;
+            cbb_loaidt.SelectedIndex = 0;
         }
         private void button_Them_Click(object sender, EventArgs e)
         {
 
             QLSP q = new QLSP("");
-            q.show += new QLSP.ShowDTGV_QLSP(SetView);
+            q.show += new QLSP.ShowDTGV_QLSP(ShowDTGV);
             q.ShowDialog();
         }
 
@@ -34,7 +52,7 @@ namespace GiaoDien
             if (r.Count == 1)
             {
                 QLSP f = new QLSP(r[0].Cells["MaSP"].Value.ToString());
-                f.show += new QLSP.ShowDTGV_QLSP(SetView);
+                f.show += new QLSP.ShowDTGV_QLSP(ShowDTGV);
                 f.ShowDialog();
             }
             else
@@ -42,18 +60,17 @@ namespace GiaoDien
                 MessageBox.Show("Error!");
             }
         }
-        public void SetView()
+        private void ShowDTGV()
         {
-            DGV_QLSP.DataSource = db.ChiTiet_SP.Select(p => new { p.MaSP, p.TenSP, p.HangSX, p.ManHinh, p.HeDieuHanh, p.Ram, p.SoSim, p.Pin, p.NoiXuatXu }).ToList();
+            DGV_QLSP.DataSource = db.KT_Gia_NhapXuat.Select(p => new { p.MaSP,p.ID_Gia, p.ChiTiet_SP.TenSP, p.GiaNhap, p.GiaBan, p.NgayApDung, p.ChiTiet_SP.HangSX, p.ChiTiet_SP.ManHinh, p.ChiTiet_SP.HeDieuHanh, p.ChiTiet_SP.Ram, p.ChiTiet_SP.SoSim, p.ChiTiet_SP.Pin, p.ChiTiet_SP.NoiXuatXu }).ToList();
         }
-
         private void button_Xoa_Click(object sender, EventArgs e)
         {
             if (!Del())
             {
                 MessageBox.Show("Error");
             }
-            SetView();
+            ShowDTGV();
         }
         private bool Del()
         {
@@ -83,16 +100,39 @@ namespace GiaoDien
 
         private void bt_search_Click(object sender, EventArgs e)
         {
+            var list = db.KT_Gia_NhapXuat.Where(p => p.MaSP.Contains(txt_search.Text));
+            DGV_QLSP.DataSource = list.ToList();
+        }
+        private void bt_search_Gia_Click(object sender, EventArgs e)
+        {
             var list = db.ChiTiet_SP.Where(p => p.TenSP.Contains(txt_search.Text));
             DGV_QLSP.DataSource = list.ToList();
         }
-
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
             if (txt_search.Text == "")
             {
-                SetView();
+                ShowDTGV();
             }
+        }
+        private void button_Sua__GiaClick(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection r = DGV_QLSP.SelectedRows;
+            if (r.Count == 1)
+            {
+                Detail_Gia f = new Detail_Gia(Convert.ToInt32(r[0].Cells["ID_GIa"].Value.ToString()));
+                f.D += new Detail_Gia.SHow(ShowDTGV);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Error!");
+            }
+        }
+
+        private void bt_show_SP_Click(object sender, EventArgs e)
+        {
+            ShowDTGV();
         }
     }
 }

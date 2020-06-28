@@ -16,14 +16,19 @@ namespace GiaoDien
     {
         SE_14 db = new SE_14();
         private List<string> ListSP = new List<string>();
+        private string _MaTK;
+
+        public string MaTK { get => _MaTK; set => _MaTK = value; }
+
         public GioHangUser()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
-        public GioHangUser(List<string> Masp)
+        public GioHangUser(List<string> Masp, string matk)
         {
             InitializeComponent();
             this.ListSP = Masp;
+            this.MaTK = matk;
             Showsp();
         }
 
@@ -35,6 +40,7 @@ namespace GiaoDien
                 ChiTiet_SP temp = db.ChiTiet_SP.Where(p => p.MaSP.Contains(i)).FirstOrDefault();
                 KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.MaSP.Contains(i)).FirstOrDefault();
                 ItemsGH t = new ItemsGH();
+                t.MaSP = temp.MaSP;
                 t.TenSP = temp.TenSP;
                 t.Soluong = 1;
                 t.Gia = gia.GiaBan;
@@ -42,7 +48,7 @@ namespace GiaoDien
                 sp.Add(t);
             }
             return sp;
-            
+
         }
 
         public void Showsp()
@@ -51,7 +57,7 @@ namespace GiaoDien
         }
         private void button_Lapdonhang_Click(object sender, EventArgs e)
         {
-            Detail_LapDH f = new Detail_LapDH(Get_ListCTSP());
+            Detail_LapDH f = new Detail_LapDH(Get_ListCTSP(), this.MaTK);
             f.ShowDialog();
         }
 

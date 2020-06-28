@@ -31,27 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuManager));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.bt_Nhanvien = new System.Windows.Forms.Button();
             this.bt_SP = new System.Windows.Forms.Button();
             this.bt_TTCN = new System.Windows.Forms.Button();
             this.bt_KH = new System.Windows.Forms.Button();
             this.button_DanhMuc = new System.Windows.Forms.Button();
-            this.bt_Gia = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label_Greeting = new System.Windows.Forms.Label();
+            this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,16 +75,30 @@
             this.panel2.Size = new System.Drawing.Size(269, 808);
             this.panel2.TabIndex = 1;
             // 
-            // label2
+            // panel5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Jokerman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(77, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 43);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Welcome!!";
+            this.panel5.Controls.Add(this.label_Greeting);
+            this.panel5.Controls.Add(this.pictureBox_Profile);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 67);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(269, 741);
+            this.panel5.TabIndex = 28;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.bt_Nhanvien);
+            this.panel6.Controls.Add(this.bt_SP);
+            this.panel6.Controls.Add(this.bt_TTCN);
+            this.panel6.Controls.Add(this.bt_KH);
+            this.panel6.Controls.Add(this.button_DanhMuc);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 84);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(269, 328);
+            this.panel6.TabIndex = 25;
             // 
             // panel4
             // 
@@ -118,29 +134,16 @@
             this.panel3.Size = new System.Drawing.Size(269, 67);
             this.panel3.TabIndex = 27;
             // 
-            // panel5
+            // label2
             // 
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.panel4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 67);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(269, 741);
-            this.panel5.TabIndex = 28;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.bt_Nhanvien);
-            this.panel6.Controls.Add(this.bt_SP);
-            this.panel6.Controls.Add(this.bt_TTCN);
-            this.panel6.Controls.Add(this.bt_KH);
-            this.panel6.Controls.Add(this.button_DanhMuc);
-            this.panel6.Controls.Add(this.bt_Gia);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 84);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(269, 328);
-            this.panel6.TabIndex = 25;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Jokerman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(77, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 43);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Welcome!!";
             // 
             // bt_Nhanvien
             // 
@@ -152,7 +155,7 @@
             this.bt_Nhanvien.ForeColor = System.Drawing.Color.White;
             this.bt_Nhanvien.Image = ((System.Drawing.Image)(resources.GetObject("bt_Nhanvien.Image")));
             this.bt_Nhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Nhanvien.Location = new System.Drawing.Point(0, 255);
+            this.bt_Nhanvien.Location = new System.Drawing.Point(0, 204);
             this.bt_Nhanvien.Name = "bt_Nhanvien";
             this.bt_Nhanvien.Size = new System.Drawing.Size(269, 51);
             this.bt_Nhanvien.TabIndex = 27;
@@ -171,11 +174,11 @@
             this.bt_SP.ForeColor = System.Drawing.Color.White;
             this.bt_SP.Image = ((System.Drawing.Image)(resources.GetObject("bt_SP.Image")));
             this.bt_SP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_SP.Location = new System.Drawing.Point(0, 204);
+            this.bt_SP.Location = new System.Drawing.Point(0, 153);
             this.bt_SP.Name = "bt_SP";
             this.bt_SP.Size = new System.Drawing.Size(269, 51);
             this.bt_SP.TabIndex = 23;
-            this.bt_SP.Text = "Sản phẩm";
+            this.bt_SP.Text = "Sản phẩm ";
             this.bt_SP.UseVisualStyleBackColor = true;
             this.bt_SP.Click += new System.EventHandler(this.bt_SP_Click);
             // 
@@ -189,7 +192,7 @@
             this.bt_TTCN.ForeColor = System.Drawing.Color.White;
             this.bt_TTCN.Image = ((System.Drawing.Image)(resources.GetObject("bt_TTCN.Image")));
             this.bt_TTCN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_TTCN.Location = new System.Drawing.Point(0, 153);
+            this.bt_TTCN.Location = new System.Drawing.Point(0, 102);
             this.bt_TTCN.Name = "bt_TTCN";
             this.bt_TTCN.Size = new System.Drawing.Size(269, 51);
             this.bt_TTCN.TabIndex = 19;
@@ -208,7 +211,7 @@
             this.bt_KH.ForeColor = System.Drawing.Color.White;
             this.bt_KH.Image = ((System.Drawing.Image)(resources.GetObject("bt_KH.Image")));
             this.bt_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_KH.Location = new System.Drawing.Point(0, 102);
+            this.bt_KH.Location = new System.Drawing.Point(0, 51);
             this.bt_KH.Name = "bt_KH";
             this.bt_KH.Size = new System.Drawing.Size(269, 51);
             this.bt_KH.TabIndex = 20;
@@ -226,31 +229,13 @@
             this.button_DanhMuc.ForeColor = System.Drawing.Color.White;
             this.button_DanhMuc.Image = ((System.Drawing.Image)(resources.GetObject("button_DanhMuc.Image")));
             this.button_DanhMuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_DanhMuc.Location = new System.Drawing.Point(0, 51);
+            this.button_DanhMuc.Location = new System.Drawing.Point(0, 0);
             this.button_DanhMuc.Name = "button_DanhMuc";
             this.button_DanhMuc.Size = new System.Drawing.Size(269, 51);
             this.button_DanhMuc.TabIndex = 22;
             this.button_DanhMuc.Text = "Danh mục";
             this.button_DanhMuc.UseVisualStyleBackColor = true;
             this.button_DanhMuc.Click += new System.EventHandler(this.button_DanhMuc_Click);
-            // 
-            // bt_Gia
-            // 
-            this.bt_Gia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bt_Gia.FlatAppearance.BorderSize = 0;
-            this.bt_Gia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.bt_Gia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Gia.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Gia.ForeColor = System.Drawing.Color.White;
-            this.bt_Gia.Image = ((System.Drawing.Image)(resources.GetObject("bt_Gia.Image")));
-            this.bt_Gia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Gia.Location = new System.Drawing.Point(0, 0);
-            this.bt_Gia.Name = "bt_Gia";
-            this.bt_Gia.Size = new System.Drawing.Size(269, 51);
-            this.bt_Gia.TabIndex = 21;
-            this.bt_Gia.Text = "Kiểm tra giá";
-            this.bt_Gia.UseVisualStyleBackColor = true;
-            this.bt_Gia.Click += new System.EventHandler(this.bt_Gia_Click);
             // 
             // pictureBox2
             // 
@@ -273,6 +258,29 @@
             this.pictureBox3.TabIndex = 25;
             this.pictureBox3.TabStop = false;
             // 
+            // label_Greeting
+            // 
+            this.label_Greeting.AutoSize = true;
+            this.label_Greeting.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Greeting.ForeColor = System.Drawing.Color.White;
+            this.label_Greeting.Location = new System.Drawing.Point(49, 675);
+            this.label_Greeting.Name = "label_Greeting";
+            this.label_Greeting.Size = new System.Drawing.Size(44, 27);
+            this.label_Greeting.TabIndex = 28;
+            this.label_Greeting.Text = "Hi! ";
+            this.label_Greeting.Visible = false;
+            // 
+            // pictureBox_Profile
+            // 
+            this.pictureBox_Profile.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Profile.Image")));
+            this.pictureBox_Profile.Location = new System.Drawing.Point(54, 526);
+            this.pictureBox_Profile.Name = "pictureBox_Profile";
+            this.pictureBox_Profile.Size = new System.Drawing.Size(131, 137);
+            this.pictureBox_Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Profile.TabIndex = 27;
+            this.pictureBox_Profile.TabStop = false;
+            this.pictureBox_Profile.Visible = false;
+            // 
             // TrangChuManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,14 +290,16 @@
             this.Name = "TrangChuManager";
             this.Size = new System.Drawing.Size(1500, 808);
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,12 +315,13 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button bt_TTCN;
         private System.Windows.Forms.Button bt_KH;
-        private System.Windows.Forms.Button bt_Gia;
         private System.Windows.Forms.Button button_DanhMuc;
         private System.Windows.Forms.Button bt_SP;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button bt_Nhanvien;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label_Greeting;
+        private System.Windows.Forms.PictureBox pictureBox_Profile;
     }
 }

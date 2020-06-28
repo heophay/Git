@@ -31,25 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pic_selection = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button_DangKi = new System.Windows.Forms.Button();
-            this.button_DngNhap = new System.Windows.Forms.Button();
             this.label_Greeting = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pic_selection = new System.Windows.Forms.PictureBox();
             this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button_DonHang = new System.Windows.Forms.Button();
             this.button_GioHang = new System.Windows.Forms.Button();
             this.button_TaiKhoan = new System.Windows.Forms.Button();
             this.button_TrangChu = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,8 +64,6 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel2.Controls.Add(this.pic_selection);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button_DangKi);
-            this.panel2.Controls.Add(this.button_DngNhap);
             this.panel2.Controls.Add(this.label_Greeting);
             this.panel2.Controls.Add(this.pictureBox_Profile);
             this.panel2.Controls.Add(this.pictureBox3);
@@ -82,15 +78,6 @@
             this.panel2.Size = new System.Drawing.Size(269, 808);
             this.panel2.TabIndex = 1;
             // 
-            // pic_selection
-            // 
-            this.pic_selection.Location = new System.Drawing.Point(0, 174);
-            this.pic_selection.Name = "pic_selection";
-            this.pic_selection.Size = new System.Drawing.Size(16, 16);
-            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_selection.TabIndex = 30;
-            this.pic_selection.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -102,43 +89,49 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Welcome!!";
             // 
-            // button_DangKi
-            // 
-            this.button_DangKi.BackColor = System.Drawing.Color.White;
-            this.button_DangKi.FlatAppearance.BorderSize = 0;
-            this.button_DangKi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_DangKi.Location = new System.Drawing.Point(54, 706);
-            this.button_DangKi.Name = "button_DangKi";
-            this.button_DangKi.Size = new System.Drawing.Size(166, 37);
-            this.button_DangKi.TabIndex = 27;
-            this.button_DangKi.Text = "Đăng kí";
-            this.button_DangKi.UseVisualStyleBackColor = false;
-            this.button_DangKi.Click += new System.EventHandler(this.button_DangKi_Click);
-            // 
-            // button_DngNhap
-            // 
-            this.button_DngNhap.BackColor = System.Drawing.Color.White;
-            this.button_DngNhap.FlatAppearance.BorderSize = 0;
-            this.button_DngNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_DngNhap.Location = new System.Drawing.Point(54, 663);
-            this.button_DngNhap.Name = "button_DngNhap";
-            this.button_DngNhap.Size = new System.Drawing.Size(166, 37);
-            this.button_DngNhap.TabIndex = 28;
-            this.button_DngNhap.Text = "Đăng nhập";
-            this.button_DngNhap.UseVisualStyleBackColor = false;
-            this.button_DngNhap.Click += new System.EventHandler(this.button_DngNhap_Click);
-            // 
             // label_Greeting
             // 
             this.label_Greeting.AutoSize = true;
             this.label_Greeting.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Greeting.ForeColor = System.Drawing.Color.White;
-            this.label_Greeting.Location = new System.Drawing.Point(63, 730);
+            this.label_Greeting.Location = new System.Drawing.Point(63, 739);
             this.label_Greeting.Name = "label_Greeting";
             this.label_Greeting.Size = new System.Drawing.Size(44, 27);
             this.label_Greeting.TabIndex = 26;
             this.label_Greeting.Text = "Hi! ";
-            this.label_Greeting.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Location = new System.Drawing.Point(0, 67);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(269, 84);
+            this.panel4.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Mistral", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(73, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "PHONE STORE";
+            // 
+            // pic_selection
+            // 
+            this.pic_selection.Image = global::GiaoDien.Properties.Resources.saovang1;
+            this.pic_selection.Location = new System.Drawing.Point(0, 174);
+            this.pic_selection.Name = "pic_selection";
+            this.pic_selection.Size = new System.Drawing.Size(16, 16);
+            this.pic_selection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_selection.TabIndex = 30;
+            this.pic_selection.TabStop = false;
             // 
             // pictureBox_Profile
             // 
@@ -149,7 +142,6 @@
             this.pictureBox_Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Profile.TabIndex = 25;
             this.pictureBox_Profile.TabStop = false;
-            this.pictureBox_Profile.Visible = false;
             // 
             // pictureBox3
             // 
@@ -230,29 +222,6 @@
             this.button_TrangChu.UseVisualStyleBackColor = true;
             this.button_TrangChu.Click += new System.EventHandler(this.button_TrangChu_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(0, 67);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(269, 84);
-            this.panel4.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Mistral", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(73, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "PHONE STORE";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -275,11 +244,11 @@
             this.Load += new System.EventHandler(this.User_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_selection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,8 +260,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pic_selection;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button_DangKi;
-        private System.Windows.Forms.Button button_DngNhap;
         private System.Windows.Forms.Label label_Greeting;
         private System.Windows.Forms.PictureBox pictureBox_Profile;
         private System.Windows.Forms.PictureBox pictureBox3;

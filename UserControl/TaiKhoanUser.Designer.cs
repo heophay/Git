@@ -143,6 +143,7 @@
             this.button_changepass.TabIndex = 30;
             this.button_changepass.Text = "Thay đổi password";
             this.button_changepass.UseVisualStyleBackColor = false;
+            this.button_changepass.Click += new System.EventHandler(this.button_changepass_Click);
             // 
             // groupBox_Gioitinh
             // 
@@ -245,6 +246,7 @@
             this.bt_luu.TabIndex = 30;
             this.bt_luu.Text = "Lưu thay đổi";
             this.bt_luu.UseVisualStyleBackColor = false;
+            this.bt_luu.Click += new System.EventHandler(this.bt_luu_Click);
             // 
             // groupBox1
             // 

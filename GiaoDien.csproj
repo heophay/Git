@@ -482,6 +482,8 @@
   <ItemGroup>
     <None Include="Resources\product_15574_11.png" />
     <None Include="Resources\pngtree-logout--icon-in-trendy-style-isolated-background-png-image_4859907.jpg" />
+    <None Include="Resources\pngtree-logout--icon-in-trendy-style-isolated-background-png-image_48599071.jpg" />
+    <None Include="Resources\saovang1.png" />
     <Content Include="SE_14F.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SE_14F.edmx</DependentUpon>

@@ -13,16 +13,22 @@ namespace GiaoDien.Detail_Form
     public delegate void MyDel(bool KQ);
     public partial class Detail_LapDH : Form
     {
-        private bool KQTT;
+        private bool _KQTT;
+        private string _MaTK;
         private List<ItemsGH> listCTSP;
+
+        public bool KQTT { get => _KQTT; set => _KQTT = value; }
+        public string MaTK { get => _MaTK; set => _MaTK = value; }
+
         public Detail_LapDH()
         {
             InitializeComponent();
         }
-        public Detail_LapDH(List<ItemsGH> listCTSP)
+        public Detail_LapDH(List<ItemsGH> listCTSP, string Matk)
         {
             InitializeComponent();
             this.listCTSP = listCTSP;
+            this.MaTK = Matk;
             Showdata();
         }
         private void bt_Cancel_Click(object sender, EventArgs e)
@@ -32,7 +38,7 @@ namespace GiaoDien.Detail_Form
 
         private void bt_ThanhToan_Click(object sender, EventArgs e)
         {
-            Detail_ThanhToan f = new Detail_ThanhToan(ResultThanhToan,this.listCTSP);
+            Detail_ThanhToan f = new Detail_ThanhToan(ResultThanhToan,this.listCTSP,MaTK);
             f.ShowDialog();
             if (KQTT == true)
             {

@@ -13,41 +13,48 @@ namespace GiaoDien
    
     public partial class Main_Form : Form
     {
+        SE_14 db = new SE_14();
         private string text;
-        public Main_Form(string text)
+        public string Text1 { get => text; set => text = value; }
+        public Main_Form(string MaTK)
         {
-            Text1 = text;
+            Text1 = MaTK;
             InitializeComponent();
-            SetView_Login();
+            SetView_Login(Text1);
         }
-        public void SetView_Login()
+        public void SetView_Login(string matk)
         {
-            if (user2.LoaiTK == "")
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == matk).FirstOrDefault();
+            string txt1 = tk.LoaiTK;
+            if (txt1 == "Customer")
             {
+                User u = new User(matk);
                 panel2.Controls.Clear();
-                panel2.Controls.Add(user2);
+                panel2.Controls.Add(u);
             }
             else
             {
-                if (user2.LoaiTK == "Manager")
+                if (txt1 == "Manager")
                 {
                     panel2.Controls.Clear();
-                    TrangChuManager l = new TrangChuManager("Manager");
+                    TrangChuManager l = new TrangChuManager(matk);
                     panel2.Controls.Add(l);
                 }
-                if (user2.LoaiTK == "Admin")
+                if (txt1 == "Admin")
                 {
                     panel2.Controls.Clear();
-                    TrangChuManager l = new TrangChuManager("Admin");
+                    TrangChuManager l = new TrangChuManager(matk);
                     panel2.Controls.Add(l);
                 }
             }
         }
-        public string Text1 { get => text; set => text = value; }
 
-        private void Main_Form_Activated(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            SetView_Login();
+            Login l = new Login();
+            this.Visible = false;
+            l.ShowDialog();
+            this.Dispose();
         }
     }
 }

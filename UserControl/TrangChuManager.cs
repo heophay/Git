@@ -12,23 +12,28 @@ namespace GiaoDien
 {
     public partial class TrangChuManager : UserControl
     {
-        private string _Loai;
-        public TrangChuManager(string LoaiTK)
+        SE_14 db = new SE_14();
+        private string _MaTK;
+        public TrangChuManager(string Matk)
         {
-            Loai = LoaiTK;
+            MaTK = Matk;
             InitializeComponent();
-            if(Loai=="Manager")
+            SetView(MaTK);
+        }
+        private void SetView(string matk)
+        {
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == matk).FirstOrDefault();
+            if (tk.LoaiTK== "Manager")
             {
                 bt_Nhanvien.Visible = false;
             }
-            if(Loai == "Admin")
+            if (tk.LoaiTK == "Admin")
             {
-                
+
                 bt_TTCN.Visible = false;
             }
         }
-
-        public string Loai { get => _Loai; set => _Loai = value; }
+        public string MaTK { get => _MaTK; set => _MaTK = value; }
 
         private void bt_Gia_Click(object sender, EventArgs e)
         {
@@ -51,7 +56,7 @@ namespace GiaoDien
         private void bt_TTCN_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            panel1.Controls.Add(new TT_NhanVien());
+            panel1.Controls.Add(new TaiKhoanUser(MaTK));
         }
 
         private void bt_SP_Click(object sender, EventArgs e)

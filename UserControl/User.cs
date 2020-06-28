@@ -10,53 +10,39 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public delegate void Get_User(string value);
     public delegate void Get_ListMaSP(List<string> Masp);
     public partial class User : UserControl
     {
-        
         private List<string> ListMaSP = new List<string>();
-        private string _LoaiTK;
-        public string LoaiTK { get => _LoaiTK; set => _LoaiTK = value; }
+        private string _matk;
 
-        public User()
+        public string Matk { get => _matk; set => _matk = value; }
+
+        public User(string Matk)
         {
+            this.Matk = Matk;
             InitializeComponent();
+            panel1.Controls.Clear();
+            TrangChuUser l = new TrangChuUser();
+            panel1.Controls.Add(l);
         }
-        private void button_DngNhap_Click(object sender, EventArgs e)
-        {
-            //this.Visible = false;
-            Login l = new Login(SetValue);
-            l.ShowDialog();
-        }
-        public void SetValue(string value)
-        {
-            LoaiTK= value;
-        }
-        private void button_DangKi_Click(object sender, EventArgs e)
-        {
-            Register r = new Register();
-            r.ShowDialog();
-        }
-
         private void button_TrangChu_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             TrangChuUser l = new TrangChuUser();
             panel1.Controls.Add(l);
         }
-
         private void button_TaiKhoan_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            TaiKhoanUser l = new TaiKhoanUser();
+            TaiKhoanUser l = new TaiKhoanUser(Matk);
             panel1.Controls.Add(l);
         }
 
         private void button_GioHang_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            GioHangUser l = new GioHangUser(this.ListMaSP);
+            GioHangUser l = new GioHangUser(this.ListMaSP,Matk);
             panel1.Controls.Add(l);
         }
 
@@ -77,5 +63,6 @@ namespace GiaoDien
             TrangChuUser l = new TrangChuUser(Get_Listmasp);
             panel1.Controls.Add(l);
         }
+
     }
 }

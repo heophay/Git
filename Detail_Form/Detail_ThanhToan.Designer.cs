@@ -31,19 +31,19 @@
             this.lb_ThanhToan = new System.Windows.Forms.Label();
             this.grb_InfoProduct = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txt_Tongtien = new System.Windows.Forms.TextBox();
+            this.txt_Tongtien1 = new System.Windows.Forms.TextBox();
             this.label_TongTien = new System.Windows.Forms.Label();
             this.bt_XacNhan = new System.Windows.Forms.Button();
             this.bt_Cancel = new System.Windows.Forms.Button();
             this.grb_DonHang = new System.Windows.Forms.GroupBox();
+            this.dtp_DateTT = new System.Windows.Forms.DateTimePicker();
+            this.dtp_DateTao = new System.Windows.Forms.DateTimePicker();
             this.lb_NgayTT = new System.Windows.Forms.Label();
+            this.txt_Tongtien2 = new System.Windows.Forms.TextBox();
             this.txt_maDH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lb_NgayTao = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grb_InfoProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grb_DonHang.SuspendLayout();
@@ -63,7 +63,7 @@
             // grb_InfoProduct
             // 
             this.grb_InfoProduct.Controls.Add(this.dataGridView1);
-            this.grb_InfoProduct.Controls.Add(this.txt_Tongtien);
+            this.grb_InfoProduct.Controls.Add(this.txt_Tongtien1);
             this.grb_InfoProduct.Controls.Add(this.label_TongTien);
             this.grb_InfoProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_InfoProduct.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -84,12 +84,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(749, 166);
             this.dataGridView1.TabIndex = 4;
             // 
-            // txt_Tongtien
+            // txt_Tongtien1
             // 
-            this.txt_Tongtien.Location = new System.Drawing.Point(563, 213);
-            this.txt_Tongtien.Name = "txt_Tongtien";
-            this.txt_Tongtien.Size = new System.Drawing.Size(170, 27);
-            this.txt_Tongtien.TabIndex = 3;
+            this.txt_Tongtien1.Location = new System.Drawing.Point(563, 213);
+            this.txt_Tongtien1.Name = "txt_Tongtien1";
+            this.txt_Tongtien1.Size = new System.Drawing.Size(170, 27);
+            this.txt_Tongtien1.TabIndex = 3;
             // 
             // label_TongTien
             // 
@@ -130,10 +130,10 @@
             // 
             // grb_DonHang
             // 
-            this.grb_DonHang.Controls.Add(this.dateTimePicker2);
-            this.grb_DonHang.Controls.Add(this.dateTimePicker1);
+            this.grb_DonHang.Controls.Add(this.dtp_DateTT);
+            this.grb_DonHang.Controls.Add(this.dtp_DateTao);
             this.grb_DonHang.Controls.Add(this.lb_NgayTT);
-            this.grb_DonHang.Controls.Add(this.textBox1);
+            this.grb_DonHang.Controls.Add(this.txt_Tongtien2);
             this.grb_DonHang.Controls.Add(this.txt_maDH);
             this.grb_DonHang.Controls.Add(this.label1);
             this.grb_DonHang.Controls.Add(this.label2);
@@ -147,6 +147,20 @@
             this.grb_DonHang.TabStop = false;
             this.grb_DonHang.Text = "Thông tin đơn hàng";
             // 
+            // dtp_DateTT
+            // 
+            this.dtp_DateTT.Location = new System.Drawing.Point(484, 149);
+            this.dtp_DateTT.Name = "dtp_DateTT";
+            this.dtp_DateTT.Size = new System.Drawing.Size(276, 27);
+            this.dtp_DateTT.TabIndex = 2;
+            // 
+            // dtp_DateTao
+            // 
+            this.dtp_DateTao.Location = new System.Drawing.Point(484, 56);
+            this.dtp_DateTao.Name = "dtp_DateTao";
+            this.dtp_DateTao.Size = new System.Drawing.Size(276, 27);
+            this.dtp_DateTao.TabIndex = 2;
+            // 
             // lb_NgayTT
             // 
             this.lb_NgayTT.AutoSize = true;
@@ -156,6 +170,13 @@
             this.lb_NgayTT.Size = new System.Drawing.Size(130, 20);
             this.lb_NgayTT.TabIndex = 0;
             this.lb_NgayTT.Text = "Ngày thanh toán";
+            // 
+            // txt_Tongtien2
+            // 
+            this.txt_Tongtien2.Location = new System.Drawing.Point(118, 149);
+            this.txt_Tongtien2.Name = "txt_Tongtien2";
+            this.txt_Tongtien2.Size = new System.Drawing.Size(199, 27);
+            this.txt_Tongtien2.TabIndex = 1;
             // 
             // txt_maDH
             // 
@@ -194,27 +215,6 @@
             this.lb_NgayTao.TabIndex = 0;
             this.lb_NgayTao.Text = "Ngày tạo";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(484, 56);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(276, 27);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(484, 149);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(276, 27);
-            this.dateTimePicker2.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(118, 149);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 27);
-            this.textBox1.TabIndex = 1;
-            // 
             // Detail_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,7 +244,7 @@
         private System.Windows.Forms.Label lb_ThanhToan;
         private System.Windows.Forms.GroupBox grb_InfoProduct;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txt_Tongtien;
+        private System.Windows.Forms.TextBox txt_Tongtien1;
         private System.Windows.Forms.Label label_TongTien;
         private System.Windows.Forms.Button bt_XacNhan;
         private System.Windows.Forms.Button bt_Cancel;
@@ -254,8 +254,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb_NgayTao;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtp_DateTT;
+        private System.Windows.Forms.DateTimePicker dtp_DateTao;
+        private System.Windows.Forms.TextBox txt_Tongtien2;
     }
 }

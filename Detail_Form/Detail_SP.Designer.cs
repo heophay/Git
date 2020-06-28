@@ -42,11 +42,10 @@
             this.txt_gia = new System.Windows.Forms.TextBox();
             this.pic_dt = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pic_dt = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_huy = new System.Windows.Forms.Button();
+            this.btn_Muahang = new System.Windows.Forms.Button();
+            this.btn_Huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -165,7 +164,7 @@
             // 
             this.pic_dt.BackgroundImage = global::GiaoDien.Properties.Resources.product_15574_1;
             this.pic_dt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pic_dt.Location = new System.Drawing.Point(24, 75);
+            this.pic_dt.Location = new System.Drawing.Point(12, 24);
             this.pic_dt.Name = "pic_dt";
             this.pic_dt.Size = new System.Drawing.Size(450, 506);
             this.pic_dt.TabIndex = 4;
@@ -208,27 +207,25 @@
             this.btn_Muahang.FlatAppearance.BorderSize = 0;
             this.btn_Muahang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Muahang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Muahang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Muahang.Location = new System.Drawing.Point(271, 553);
+            this.btn_Muahang.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Muahang.Location = new System.Drawing.Point(339, 561);
             this.btn_Muahang.Name = "btn_Muahang";
-            this.btn_Muahang.Size = new System.Drawing.Size(149, 50);
+            this.btn_Muahang.Size = new System.Drawing.Size(140, 53);
             this.btn_Muahang.TabIndex = 49;
             this.btn_Muahang.Text = "Mua hàng";
             this.btn_Muahang.UseVisualStyleBackColor = false;
-            this.btn_Muahang.Click += new System.EventHandler(this.btn_Muahang_Click);
+            this.btn_Muahang.Click += new System.EventHandler(this.btn_Muahang_Click_1);
             // 
-            // pic_dt
+            // btn_Huy
             // 
-            this.btn_Huy.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Huy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Huy.Location = new System.Drawing.Point(868, 553);
+            this.btn_Huy.Location = new System.Drawing.Point(781, 561);
             this.btn_Huy.Name = "btn_Huy";
-            this.btn_Huy.Size = new System.Drawing.Size(149, 50);
+            this.btn_Huy.Size = new System.Drawing.Size(140, 53);
             this.btn_Huy.TabIndex = 49;
             this.btn_Huy.Text = "Hủy";
-            this.btn_Huy.UseVisualStyleBackColor = false;
-            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
+            this.btn_Huy.UseVisualStyleBackColor = true;
+            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click_1);
             // 
             // Detail_SP
             // 

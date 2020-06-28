@@ -43,16 +43,5 @@ namespace GiaoDien
             }
             this.GetSP(ListMaSP);
         }
-        private void GetKQ(bool kq)
-        {
-            if (kq == true)
-            {
-                ListMaSP1.Add("2");
-                //string s = "";
-                //for (int i = 0; i < ListMaSP.Count; i++) s += ListMaSP[i];                            
-                //MessageBox.Show(s);
-            }
-            this.GetSP(ListMaSP1);
-        }
     }
 }

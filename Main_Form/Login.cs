@@ -15,18 +15,13 @@ namespace GiaoDien
     {
         string _MaTK ;
         string nameCus;
+        public string MaTK { get => _MaTK; set => _MaTK = value; }
+        public string NameCus { get => nameCus; set => nameCus = value; }
         SE_14 db = new SE_14();
-        public Get_User GU;
         public Login()
         {
             InitializeComponent();
             SetWaterMarkText();  
-        }
-        public Login(Get_User gu)
-        {
-            InitializeComponent();
-            SetWaterMarkText();
-            this.GU = gu;
         }
 
         private void SetWaterMarkText()
@@ -73,8 +68,7 @@ namespace GiaoDien
         }
         Register r;
 
-        public string MaTK { get => _MaTK; set => _MaTK = value; }
-        public string NameCus { get => nameCus; set => nameCus = value; }
+       
 
         public void bt_dangky_Click(object sender, EventArgs e)
         {
@@ -121,21 +115,24 @@ namespace GiaoDien
                 if(s== "Customer")
                 {
                     this.Visible = false;
-                    this.GU("");
-                    this.Close();
+                    Main_Form ma = new Main_Form(MaTK);
+                    ma.ShowDialog();
+                    this.Dispose();
                 }
                 else
                 {
                     if (s == "Admin")
                     {
                         this.Visible = false;
-                        this.GU("Admin");
+                        Main_Form ma = new Main_Form(MaTK);
+                        ma.ShowDialog();
                         this.Dispose();
                     }
                     else
                     {
                         this.Visible = false;
-                        this.GU("Manager");
+                        Main_Form ma = new Main_Form(MaTK);
+                        ma.ShowDialog();
                         this.Dispose();
                     }
                 }
