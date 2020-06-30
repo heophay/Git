@@ -56,13 +56,13 @@ namespace GiaoDien
                 }
                 if (dh.TrangThai == true)
                 {
-                    Detail_LapDH f = new Detail_LapDH(dh.MaDonHang, true,ShowDTGV);
+                    Detail_LapDH f = new Detail_LapDH(dh.MaDonHang, true,ShowDTGV,MaTK);
                     f.ShowDGV += ShowDTGV;
                     f.ShowDialog();
                 }
                 else
                 {
-                    Detail_LapDH f = new Detail_LapDH(dh.MaDonHang, false, ShowDTGV);
+                    Detail_LapDH f = new Detail_LapDH(dh.MaDonHang, false, ShowDTGV, MaTK);
                     f.ShowDialog();
                 }
 
@@ -75,7 +75,61 @@ namespace GiaoDien
 
         private void button_XoaDonHang_Click(object sender, EventArgs e)
         {
-
+            DataGridViewSelectedRowCollection dr = DGV_Donhang.SelectedRows;
+            if (dr.Count < 1)
+            {
+                MessageBox.Show("Hãy chọn đơn hàng!!");
+            }
+            else
+            {
+                Delete_MH();
+                Delete_DH();
+                ShowDTGV();
+            }
+        }
+        public void Delete_DH()
+        {
+            DataGridViewSelectedRowCollection dr = DGV_Donhang.SelectedRows;
+            try
+            {
+                foreach (DonHang i in db.DonHangs)
+                {
+                    foreach (DataGridViewRow r in dr)
+                    {
+                        if (i.MaDonHang.Equals(r.Cells["MaDonHang"].Value.ToString()))
+                        {
+                            db.DonHangs.Remove(i);
+                        }
+                    }
+                }
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+        public void Delete_MH()
+        {
+            DataGridViewSelectedRowCollection dr = DGV_Donhang.SelectedRows;
+            try
+            {
+                foreach (MuaHang i in db.MuaHangs)
+                {
+                    foreach (DataGridViewRow r in dr)
+                    {
+                        if (i.MaDonHang.Equals(r.Cells["MaDonHang"].Value.ToString()))
+                        {
+                            db.MuaHangs.Remove(i);
+                        }
+                    }
+                }
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 }

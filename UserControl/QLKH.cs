@@ -42,25 +42,39 @@ namespace GiaoDien
             }
             else
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Click vào 1 Row trước khi muốn Edit");
             }
         }
         private bool Del()
         {
             try
             {
+                List<string> matk = new List<string>();
                 DataGridViewSelectedRowCollection r = DGV_KH.SelectedRows;
-                foreach (ThongTinCaNhan i in db.ThongTinCaNhans)
+                if(r.Count>0)
                 {
-                    foreach (DataGridViewRow j in r)
+                    foreach (ThongTinCaNhan i in db.ThongTinCaNhans)
                     {
-                        if (i.MaTK == j.Cells["MaTK"].Value.ToString())
+                        foreach (DataGridViewRow j in r)
                         {
-                            db.ThongTinCaNhans.Remove(i);
+                            if (i.MaTK == j.Cells["MaTK"].Value.ToString())
+                            {
+                                db.ThongTinCaNhans.Remove(i);
+                            }
                         }
                     }
+                    foreach (string i in matk)
+                    {
+                        TaiKhoan del = db.TaiKhoans.Where(p => p.MaTK == i).FirstOrDefault();
+                        db.TaiKhoans.Remove(del);
+                    }
+                    MessageBox.Show("Xóa thành công");
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
+                else
+                {
+                    MessageBox.Show("Click vào 1 Row trước khi Delete");
+                }
                 return true;
             }
             catch (Exception)

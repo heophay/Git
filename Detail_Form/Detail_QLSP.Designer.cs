@@ -63,6 +63,8 @@
             this.pic_dt = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.bt_openfile = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txt_soluong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +111,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_soluong);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.ngayapdung);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txt_giaban);
@@ -441,6 +445,24 @@
             this.bt_openfile.UseVisualStyleBackColor = true;
             this.bt_openfile.Click += new System.EventHandler(this.bt_openfile_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label16.Location = new System.Drawing.Point(473, 38);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(92, 24);
+            this.label16.TabIndex = 49;
+            this.label16.Text = "Số Lượng";
+            // 
+            // txt_soluong
+            // 
+            this.txt_soluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.txt_soluong.Location = new System.Drawing.Point(638, 34);
+            this.txt_soluong.Name = "txt_soluong";
+            this.txt_soluong.Size = new System.Drawing.Size(232, 28);
+            this.txt_soluong.TabIndex = 50;
+            // 
             // QLSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -501,5 +523,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_giaban;
         private System.Windows.Forms.DateTimePicker ngayapdung;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txt_soluong;
     }
 }

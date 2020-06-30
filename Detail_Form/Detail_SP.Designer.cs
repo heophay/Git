@@ -233,6 +233,7 @@
             // 
             // domainUpDown1
             // 
+            this.domainUpDown1.InterceptArrowKeys = false;
             this.domainUpDown1.Location = new System.Drawing.Point(111, 31);
             this.domainUpDown1.Name = "domainUpDown1";
             this.domainUpDown1.Size = new System.Drawing.Size(49, 22);

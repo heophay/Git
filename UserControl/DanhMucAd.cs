@@ -30,7 +30,7 @@ namespace GiaoDien
                     cbb_danhmuc.Items.Add(i);
                 }
             }
-            //cbb_danhmuc.SelectedIndex = 0;
+            cbb_danhmuc.SelectedIndex = 0;
         }
 
         public void SetView()

@@ -80,6 +80,7 @@
             this.button_XoaSP.TabIndex = 7;
             this.button_XoaSP.Text = "Xóa sản phẩm";
             this.button_XoaSP.UseVisualStyleBackColor = false;
+            this.button_XoaSP.Click += new System.EventHandler(this.button_XoaSP_Click);
             // 
             // button_Lapdonhang
             // 

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
-
+using DACNPM.dll;
 namespace GiaoDien
 {
     public delegate void KQ(ItemsGH sp);
@@ -52,7 +52,7 @@ namespace GiaoDien
             txt_namedt.Text += ct.TenSP;
             txt_pin.Text += ct.Pin;
             txt_ram.Text += ct.Ram;
-            txt_sim.Text += ct.Ram.ToString();
+            txt_sim.Text += ct.SoSim;
             txt_xuatxu.Text += ct.Ram;
             KT_Gia_NhapXuat kt = db.KT_Gia_NhapXuats.Where(p => p.MaSP == MaDT).Select(p => p).FirstOrDefault();
             txt_gia.Text += "  " + kt.GiaBan.ToString();
@@ -61,36 +61,57 @@ namespace GiaoDien
                 domainUpDown1.Items.Add(i);
             }
             domainUpDown1.SelectedIndex = domainUpDown1.Items.Count - 1;
-            pic_dt.Image = ByteToImg(ct.HinhAnh);
+            pic_dt.Image = NVQL.Instance.ByteToImg(ct.HinhAnh);
         }
-        private Image ByteToImg(string byteString)
-        {
-            byte[] imgBytes = Convert.FromBase64String(byteString);
-            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
-            ms.Write(imgBytes, 0, imgBytes.Length);
-            Image image = Image.FromStream(ms, true);
-            return image;
-        }
+
 
         private void btn_Muahang_Click_1(object sender, EventArgs e)
         {
+            if(!Check_bt_Mua())
+            {
+                MessageBox.Show("Error");
+            }         
+        }
+        private bool Check_bt_Mua()
+        {
             try
             {
-                ItemsGH sp = new ItemsGH();
-                sp.MaSP = this.MaDT;
-                sp.Soluong = Convert.ToInt32(domainUpDown1.SelectedItem);
-                sp.TenSP = txt_namedt.Text.Substring(16);
-                sp.Gia = Convert.ToInt32(txt_gia.Text.Substring(5));
-                sp.ThanhTien = sp.Gia * sp.Soluong;
-                this.Result(sp);
-                this.Close();
+                if(domainUpDown1.Text=="")
+                {
+                    MessageBox.Show("Mời nhập số lượng mua");
+                    return true;
+                }
+                foreach (Char c in domainUpDown1.Text)
+                {
+                    if (!Char.IsDigit(c))
+                    {
+                        MessageBox.Show("Ai chơi nhập chữ vô số lượng");
+                        return true;
+                    }
+                }
+                if (Convert.ToInt32(domainUpDown1.Text) > 20)
+                {
+                    MessageBox.Show("Mặt hàng chỉ cho phép mua số lượng không quá 20");
+                    return true;
+                }
+                else
+                {
+                    ItemsGH sp = new ItemsGH();
+                    sp.MaSP = this.MaDT;
+                    sp.Soluong = Convert.ToInt32(domainUpDown1.Text);
+                    sp.TenSP = txt_namedt.Text.Substring(16);
+                    sp.Gia = Convert.ToInt32(txt_gia.Text.Substring(5));
+                    sp.ThanhTien = sp.Gia * sp.Soluong;
+                    this.Result(sp);
+                    this.Close();
+                }
+                return true;
             }
             catch (Exception)
             {
-                MessageBox.Show("Error");
+                return false;
             }
         }
-
         private void btn_Huy_Click_1(object sender, EventArgs e)
         {
             this.Close();

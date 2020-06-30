@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
 using System.Security.Cryptography;
-
+using DACNPM.dll;
 namespace GiaoDien
 {
     public partial class TaiKhoanUser : UserControl
@@ -31,6 +31,7 @@ namespace GiaoDien
             TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == MaTK).FirstOrDefault();
             txt_tk.Enabled = false;
             txt_tk.Text = tk.TenTK;
+            txt_tk.Enabled = false;
             txt_pass.UseSystemPasswordChar = true;
             txt_confirmpass.UseSystemPasswordChar = true;
             if (tk.LoaiTK.Equals("Customer"))
@@ -74,28 +75,12 @@ namespace GiaoDien
                 }
                 else
                 {
-                    tk.PassTK = MaHoaMK(txt_confirmpass.Text);
+                    tk.PassTK =NVQL.Instance.MaHoaMK(txt_confirmpass.Text);
                     db.SaveChanges();
                     MessageBox.Show("Lưu thành công");
                 }
 
             }
-        }
-        private string MaHoaMK(string pass)
-        {
-            MD5 mh = MD5.Create();
-            //Chuyển kiểu chuổi thành kiểu byte
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(pass);
-            //mã hóa chuỗi đã chuyển
-            byte[] hash = mh.ComputeHash(inputBytes);
-            //tạo đối tượng StringBuilder (làm việc với kiểu dữ liệu lớn)
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("x"));
-            }
-            return sb.ToString();
         }
         private void bt_luu_Click(object sender, EventArgs e)
         {

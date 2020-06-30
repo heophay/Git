@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
-
+using DACNPM.dll;
 namespace GiaoDien
 {
     public partial class Detail_NV : Form
@@ -23,7 +23,6 @@ namespace GiaoDien
             SetView();
         }
         SE_14X db = new SE_14X();
-        //SE_14 db = new SE_14();
 
         public string MaNV { get => _MaNV; set => _MaNV = value; }
         public SHow D { get => d; set => d = value; }
@@ -32,7 +31,10 @@ namespace GiaoDien
         {
             if (MaNV != "")
             {
+                txt_pass.UseSystemPasswordChar = true;
                 txt_manv.Enabled = false;
+                txt_pass.Enabled = false;
+                txt_tk.Enabled = false;
                 Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaNV).FirstOrDefault();
                 txt_manv.Text = nv.MaTK;
                 txt_nv.Text = nv.TenNV;
@@ -40,8 +42,10 @@ namespace GiaoDien
                 txt_tk.Text = nv.TaiKhoan.TenTK;
                 txt_dt.Text = nv.SoDT;
                 txt_diachi.Text = nv.DiaChi;
+                rb_nam.Checked = nv.Gender;
                 dateTimePicker1.Value = Convert.ToDateTime(nv.NgaySinh.ToString());
             }
+            txt_pass.UseSystemPasswordChar = true;
         }
         private void Run()
         {
@@ -64,7 +68,7 @@ namespace GiaoDien
                         {
                             MaTK = txt_manv.Text,
                             TenTK = txt_tk.Text,
-                            PassTK = txt_pass.Text,
+                            PassTK =NVQL.Instance.MaHoaMK(txt_pass.Text),
                             LoaiTK = "Customer",
                         });
                         db.Theodoi_NVs.Add(new Theodoi_NV
@@ -76,6 +80,7 @@ namespace GiaoDien
                             NgaySinh = dateTimePicker1.Value,
                             Gender = rb_nam.Checked
                         });
+                        MessageBox.Show("Add thành công");
                         db.SaveChanges();
                         Run();
                     }
@@ -105,7 +110,7 @@ namespace GiaoDien
                 Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaNV).FirstOrDefault();
                 if (txt_manv.Enabled == true && txt_manv.Text.Equals(nv.MaTK))
                 {
-                    MessageBox.Show("Ma so trùng rồi, nhập lại cái khác đi");
+                    MessageBox.Show("Mã trùng rồi, nhập lại cái khác đi");
                     return false;
                 }
                 else
@@ -114,13 +119,18 @@ namespace GiaoDien
                     {
                         MessageBox.Show("Không được để trống");
                     }
-                    nv.TenNV = txt_nv.Text;
-                    nv.SoDT = txt_dt.Text;
-                    nv.DiaChi = txt_diachi.Text;
-                    nv.NgaySinh = dateTimePicker1.Value;
-                    nv.Gender = rb_nam.Checked;
-                    db.SaveChanges();
-                    Run();
+                    else
+                    {
+                        nv.TenNV = txt_nv.Text;
+                        nv.SoDT = txt_dt.Text;
+                        nv.DiaChi = txt_diachi.Text;
+                        nv.NgaySinh = dateTimePicker1.Value;
+                        nv.Gender = rb_nam.Checked;
+                        db.SaveChanges();
+                        MessageBox.Show("Edit thành công");
+                        Run();
+                        
+                    }
                 }
                 return true;
             }
@@ -136,6 +146,11 @@ namespace GiaoDien
             {
 
             }
+        }
+
+        private void bt_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

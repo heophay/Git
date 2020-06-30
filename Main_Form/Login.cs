@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
+using DACNPM.dll;
 namespace GiaoDien
 {
 
@@ -104,22 +105,6 @@ namespace GiaoDien
             rp.ShowDialog();
             this.Dispose();
         }
-        private string MaHoaMK(string pass)
-        {
-            MD5 mh = MD5.Create();
-            //Chuyển kiểu chuổi thành kiểu byte
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(pass);
-            //mã hóa chuỗi đã chuyển
-            byte[] hash = mh.ComputeHash(inputBytes);
-            //tạo đối tượng StringBuilder (làm việc với kiểu dữ liệu lớn)
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("x"));
-            }
-            return sb.ToString();
-        }
         private void bt_login_Click(object sender, EventArgs e)
         {
             NameCus = txt_user.Text;
@@ -177,7 +162,7 @@ namespace GiaoDien
             {
                 string tam = "";
                 TaiKhoan tk = new TaiKhoan();
-                string pass = MaHoaMK(txt_pass.Text);
+                string pass = NVQL.Instance.MaHoaMK(txt_pass.Text);
                 tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.PassTK == pass).FirstOrDefault();
                 if (tk != null)
                 {

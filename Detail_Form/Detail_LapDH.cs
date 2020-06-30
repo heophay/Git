@@ -26,19 +26,21 @@ namespace GiaoDien.Detail_Form
         public string MaDH { get => _MaDH; set => _MaDH = value; }
         public Showdata ShowDGV { get => _ShowDGV; set => _ShowDGV = value; }
 
-        public Detail_LapDH(List<ItemsGH> listCTSP, string Matk)
+        public Detail_LapDH(List<ItemsGH> listCTSP, string Matk,Showdata rs)
         {
             InitializeComponent();
             this.listCTSP = listCTSP;
+            ShowDGV = rs;
             this.MaTK = Matk;
            
             Showdata();
         }
-        public Detail_LapDH(string MaDH, bool kt, Showdata sender)
+        public Detail_LapDH(string MaDH, bool kt, Showdata sender,string Matk)
         {
             InitializeComponent();
-            ShowDGV = sender;
+            this.ShowDGV = sender;
             this.MaDH = MaDH;
+            this.MaTK = Matk;
             Get_listSP();
             if (kt == true) bt_ThanhToan.Enabled = false;
             bt_LuuDH.Enabled = false;
@@ -53,7 +55,7 @@ namespace GiaoDien.Detail_Form
         {
             if (bt_LuuDH.Enabled)
             {
-                Detail_ThanhToan f = new Detail_ThanhToan(ResultThanhToan, this.listCTSP, MaTK);
+                Detail_ThanhToan f = new Detail_ThanhToan(ResultThanhToan, this.listCTSP, MaTK,ShowDGV);
                 f.ShowDialog();
                 if (KQTT == true)
                 {
@@ -63,7 +65,7 @@ namespace GiaoDien.Detail_Form
             }
             else
             {
-                Detail_ThanhToan f = new Detail_ThanhToan(ResultThanhToan, MaDH);
+                Detail_ThanhToan f = new Detail_ThanhToan(ResultThanhToan, MaDH,MaTK);
                 f.ShowDialog();
                 if (KQTT == true)
                 {
@@ -84,8 +86,14 @@ namespace GiaoDien.Detail_Form
 
         private void bt_LuuDH_Click(object sender, EventArgs e)
         {
-            CreateDH();
-            this.Close();
+            if(CreateDH())
+            {
+                this.Close();
+                MessageBox.Show("Lưu đơn hàng thành công!!");
+                Showdata();
+                ShowDGV();
+            }
+            else MessageBox.Show("Không thể add!!!");
         }
         public void Get_listSP()
         {
@@ -104,23 +112,23 @@ namespace GiaoDien.Detail_Form
                 }
             }
         }
-        public void CreateDH()
+        public bool CreateDH()
         {
             try
             {
                 DonHang dh = new DonHang();
-                dh.MaDonHang = (db.DonHangs.Count() + 1).ToString();
+                dh.MaDonHang = Get_MaDH();
                 dh.MaTK = this.MaTK;
                 dh.MaNV = "002";
                 dh.NgayTao = DateTime.Now;
                 dh.NgayThanhToan = DateTime.Now;
                 dh.UuDai = 0;
-                dh.TrangThai = false;
+                dh.TrangThai = true;
                 db.DonHangs.Add(dh);
                 foreach (ItemsGH i in listCTSP)
                 {
                     MuaHang mh = new MuaHang();
-                    mh.MaMuaHang = (db.MuaHangs.Count() + 1).ToString();
+                    mh.MaMuaHang = Get_MaMH();
                     mh.MaDonHang = dh.MaDonHang;
                     mh.MaSP = i.MaSP;
                     mh.SoLuong = i.Soluong;
@@ -131,11 +139,30 @@ namespace GiaoDien.Detail_Form
                     db.SaveChanges();
                 }
                 db.SaveChanges();
+                return true;
             }
             catch (Exception)
             {
-                MessageBox.Show("Error");
+                return false;
             }
+        }
+        public string Get_MaDH()
+        {
+            string x = (db.DonHangs.Count() + 1).ToString();
+            while (db.DonHangs.Where(p => p.MaDonHang.Equals(x)).Count() != 0)
+            {
+                x = (Convert.ToInt32(x) + 1).ToString();
+            }
+            return x;
+        }
+        public string Get_MaMH()
+        {
+            string x = (db.MuaHangs.Count() + 1).ToString();
+            while (db.MuaHangs.Where(p => p.MaMuaHang.Equals(x)).Count() != 0)
+            {
+                x = (Convert.ToInt32(x) + 1).ToString();
+            }
+            return x;
         }
     }
 }

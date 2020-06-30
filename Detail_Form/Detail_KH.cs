@@ -32,6 +32,8 @@ namespace GiaoDien
             if (MaKH != "")
             {
                 txt_makh.Enabled = false;
+                txt_tk.Enabled = false;
+                txt_pass.Enabled = false;
                 ThongTinCaNhan nv = db.ThongTinCaNhans.Where(p => p.MaTK == MaKH).FirstOrDefault();
                 txt_makh.Text = nv.MaTK;
                 txt_nv.Text = nv.TenKH;
@@ -63,42 +65,20 @@ namespace GiaoDien
                         {
                             MessageBox.Show("Không được để trống");
                         }
-                        nv.TenKH = txt_nv.Text;
-                        nv.SoDT = txt_dt.Text;
-                        nv.DiaChi = txt_diachi.Text;
-                        nv.NgaySinh = dateTimePicker1.Value;
-                        nv.Gender = rb_nam.Checked;
-                        db.SaveChanges();
-                        Run();
+                        else
+                        {
+                            nv.TenKH = txt_nv.Text;
+                            nv.SoDT = txt_dt.Text;
+                            nv.DiaChi = txt_diachi.Text;
+                            nv.NgaySinh = dateTimePicker1.Value;
+                            nv.Gender = rb_nam.Checked;
+                            db.SaveChanges();
+                            MessageBox.Show("Edit thành công");
+                            Run();
+                        }
                     }
                 }
                 
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-        private bool Check_MaSP()
-        {
-            try
-            {
-                ThongTinCaNhan nv = db.ThongTinCaNhans.Where(p => p.MaTK == MaKH).FirstOrDefault();
-                if (txt_makh.Enabled == true && txt_makh.Text.Equals(nv.MaTK))
-                {
-                    if (txt_nv.Text == "" || txt_pass.Text == "" || txt_tk.Text == "" || txt_dt.Text == "" || txt_diachi.Text == "")
-                    {
-                        MessageBox.Show("Không được để trống");
-                    }
-                    nv.TenKH = txt_nv.Text;
-                    nv.SoDT = txt_dt.Text;
-                    nv.DiaChi = txt_diachi.Text;
-                    nv.NgaySinh = dateTimePicker1.Value;
-                    nv.Gender = rb_nam.Checked;
-                    db.SaveChanges();
-                    Run();
-                }
                 return true;
             }
             catch (Exception)

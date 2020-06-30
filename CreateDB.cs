@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
+using DACNPM.dll;
 namespace GiaoDien
 {
     public class CreateDB : CreateDatabaseIfNotExists<SE_14X>
@@ -18,7 +18,7 @@ namespace GiaoDien
                 MaSP ="1", TenSP= "Xiaomi Redmi Note 9S",HangSX= "Xiaomi",ManHinh= "6.67 inch",
                 BaoHanh= "18 tháng",Ram= "4GB",BoNhoTrong= "64GB",HeDieuHanh= "Android",
                 Pin= "5020 mAh",SoSim=1,NoiXuatXu= "Trung Quốc",
-                HinhAnh=Convert.ToBase64String(converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/xiaomi-redmi-note-9-pro-max.png"))
+                HinhAnh=Convert.ToBase64String(NVQL.Instance.converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/xiaomi-redmi-note-9-pro-max.png"))
             });
             context.ChiTiet_SPs.Add(new Source_Code_CSDL.ChiTiet_SP()
             {
@@ -33,7 +33,7 @@ namespace GiaoDien
                 Pin = "4000 mAh",
                 SoSim = 1,
                 NoiXuatXu = "Việt Nam",
-                HinhAnh = Convert.ToBase64String(converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/SamSung Galaxy A30.png"))
+                HinhAnh = Convert.ToBase64String(NVQL.Instance.converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/SamSung Galaxy A30.png"))
             });
             context.ChiTiet_SPs.Add(new Source_Code_CSDL.ChiTiet_SP()
             {
@@ -48,7 +48,7 @@ namespace GiaoDien
                 Pin = "4000 mAh",
                 SoSim = 1,
                 NoiXuatXu = "Việt Nam",
-                HinhAnh = Convert.ToBase64String(converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/SamSung Galaxy A71.png"))
+                HinhAnh = Convert.ToBase64String(NVQL.Instance.converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/SamSung Galaxy A71.png"))
             });
             context.ChiTiet_SPs.Add(new Source_Code_CSDL.ChiTiet_SP()
             {
@@ -63,7 +63,7 @@ namespace GiaoDien
                 Pin = "4000 mAh",
                 SoSim = 1,
                 NoiXuatXu = "Mỹ",
-                HinhAnh = Convert.ToBase64String(converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/iphone-7-plus.jpg"))
+                HinhAnh = Convert.ToBase64String(NVQL.Instance.converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/iphone-7-plus.jpg"))
             });
             context.ChiTiet_SPs.Add(new Source_Code_CSDL.ChiTiet_SP()
             {
@@ -78,27 +78,27 @@ namespace GiaoDien
                 Pin = "4000 mAh",
                 SoSim = 1,
                 NoiXuatXu = "Mỹ",
-                HinhAnh = Convert.ToBase64String(converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/Iphone11.jpg"))
+                HinhAnh = Convert.ToBase64String(NVQL.Instance.converImgToByte("F:/Năm 2- Kỳ 2/ĐA CNPM/Ảnh_DA/Iphone11.jpg"))
             });
             context.TaiKhoans.Add(new Source_Code_CSDL.TaiKhoan()
             {
                 MaTK = "001",
                 TenTK = "ADMIN",
-                PassTK = MaHoaMK("123456"),
+                PassTK = NVQL.Instance.MaHoaMK("123456"),
                 LoaiTK= "Admin"
             }) ;
             context.TaiKhoans.Add(new Source_Code_CSDL.TaiKhoan()
             {
                 MaTK = "002",
                 TenTK = "Manager1",
-                PassTK = MaHoaMK("123456"),
+                PassTK = NVQL.Instance.MaHoaMK("123456"),
                 LoaiTK = "Manager"
             });
             context.TaiKhoans.Add(new Source_Code_CSDL.TaiKhoan()
             {
                 MaTK = "005",
                 TenTK = "Customer1",
-                PassTK = MaHoaMK("123"),
+                PassTK = NVQL.Instance.MaHoaMK("123"),
                 LoaiTK = "Customer"
             });
             context.ThongTinCaNhans.Add(new Source_Code_CSDL.ThongTinCaNhan()
@@ -226,30 +226,6 @@ namespace GiaoDien
             });
             base.Seed(context);
         }
-        private string MaHoaMK(string pass)
-        {
-            MD5 mh = MD5.Create();
-            //Chuyển kiểu chuổi thành kiểu byte
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes("123456");
-            //mã hóa chuỗi đã chuyển
-            byte[] hash = mh.ComputeHash(inputBytes);
-            //tạo đối tượng StringBuilder (làm việc với kiểu dữ liệu lớn)
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("x"));
-            }
-            return sb.ToString();
-        }
-        private byte[] converImgToByte(string path)
-        {
-            FileStream fs;
-            fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-            byte[] picbyte = new byte[fs.Length];
-            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
-            fs.Close();
-            return picbyte;
-        }
+ 
     }
 }

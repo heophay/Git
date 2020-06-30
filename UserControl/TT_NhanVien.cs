@@ -18,6 +18,7 @@ namespace GiaoDien
         {
             InitializeComponent();
             ShowDTGV();
+            cbb_search.SelectedIndex = 0;
         }
         private void ShowDTGV()
         {
@@ -41,25 +42,39 @@ namespace GiaoDien
             }
             else
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Click vào 1 Row trước khi muốn Edit");
             }
         }
         private bool Del()
         {
             try
             {
+                List<string> matk = new List<string>();
                 DataGridViewSelectedRowCollection r = DGV_NV.SelectedRows;
-                foreach (Theodoi_NV i in db.Theodoi_NVs)
+                if(r.Count>0)
                 {
-                    foreach (DataGridViewRow j in r)
+                    foreach (Theodoi_NV i in db.Theodoi_NVs)
                     {
-                        if (i.MaTK == j.Cells["MaTK"].Value.ToString())
+                        foreach (DataGridViewRow j in r)
                         {
-                            db.Theodoi_NVs.Remove(i);
+                            if (i.MaTK == j.Cells["MaTK"].Value.ToString())
+                            {
+                                db.Theodoi_NVs.Remove(i);
+                                matk.Add(i.MaTK);
+                            }
                         }
                     }
+                    foreach (string i in matk)
+                    {
+                        TaiKhoan del = db.TaiKhoans.Where(p => p.MaTK == i).FirstOrDefault();
+                        db.TaiKhoans.Remove(del);
+                    }
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
+                else
+                {
+                    MessageBox.Show("Chưa chọn Row");
+                }
                 return true;
             }
             catch (Exception)
@@ -73,6 +88,10 @@ namespace GiaoDien
             if (!Del())
             {
                 MessageBox.Show("Error!");
+            }
+            else
+            {
+                MessageBox.Show("Xóa thành công");
             }
             ShowDTGV();
         }

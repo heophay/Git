@@ -16,21 +16,24 @@ namespace GiaoDien.Detail_Form
         SE_14X db = new SE_14X();
         private List<ItemsGH> listSP = new List<ItemsGH>();
         private string _MaDH;
+        private Showdata _Reset;
         private MyDel _Result;
         private string _Matk;
-        public Detail_ThanhToan(MyDel sender, string madh)
+        public Detail_ThanhToan(MyDel sender, string madh,string matk)
         {
             InitializeComponent();
             this.Result = sender;
             this.MaDH = madh;
+            Matk = matk;
             Get_listSP();
             Showsp();
             SetView_Update();
         }
-        public Detail_ThanhToan(MyDel sender, List<ItemsGH> listSP, string matk)
+        public Detail_ThanhToan(MyDel sender, List<ItemsGH> listSP, string matk,Showdata rs)
         {
             InitializeComponent();
             this.Result = sender;
+            Reset = rs;
             this.ListSP = listSP;
             this.Matk = matk;
             Showsp();
@@ -41,6 +44,7 @@ namespace GiaoDien.Detail_Form
         public List<ItemsGH> ListSP { get => listSP; set => listSP = value; }
         public string Matk { get => _Matk; set => _Matk = value; }
         public string MaDH { get => _MaDH; set => _MaDH = value; }
+        public Showdata Reset { get => _Reset; set => _Reset = value; }
 
         private void bt_Cancel_Click(object sender, EventArgs e)
         {
@@ -57,6 +61,7 @@ namespace GiaoDien.Detail_Form
             else
             {
                 CreateDH();
+                Reset();
             }
             this.Result(true);
             this.Close();
@@ -74,9 +79,13 @@ namespace GiaoDien.Detail_Form
             }
             txt_Tongtien1.Text = Sum.ToString();
             txt_maDH.Text = (db.DonHangs.Count() + 1).ToString();
-            dtp_DateTao.Value = DateTime.Now;
+            if (MaDH == null) dtp_DateTao.Value = DateTime.Now;
+            else
+            {
+                DonHang dh = db.DonHangs.Where(p => p.MaDonHang.Equals(MaDH)).FirstOrDefault();
+                dtp_DateTao.Value = dh.NgayTao;
+            }
             dtp_DateTT.Value = DateTime.Now;
-            txt_Tongtien2.Text = Sum.ToString();
         }
         public void SetView_Update()
         {
@@ -89,7 +98,6 @@ namespace GiaoDien.Detail_Form
             txt_maDH.Text = this.MaDH;
             dtp_DateTao.Value = DateTime.Now;
             dtp_DateTT.Value = DateTime.Now;
-            txt_Tongtien2.Text = Sum.ToString();
         }
         public void Get_listSP()
         {
@@ -118,7 +126,7 @@ namespace GiaoDien.Detail_Form
         public void CreateDH()
         {
             DonHang dh = new DonHang();
-            dh.MaDonHang = (db.DonHangs.Count() + 1).ToString();
+            dh.MaDonHang = Get_MaDH();
             dh.MaTK = this.Matk;
             dh.MaNV = "002";
             dh.NgayTao = DateTime.Now;
@@ -129,8 +137,7 @@ namespace GiaoDien.Detail_Form
             foreach (ItemsGH i in ListSP)
             {
                 MuaHang mh = new MuaHang();
-                mh.MaMuaHang = (db.MuaHangs.Count() + 1).ToString();
-                MessageBox.Show(mh.MaMuaHang);
+                mh.MaMuaHang = Get_MaMH();
                 mh.MaDonHang = dh.MaDonHang;
                 mh.MaSP = i.MaSP;
                 mh.SoLuong = i.Soluong;
@@ -141,6 +148,60 @@ namespace GiaoDien.Detail_Form
                 db.SaveChanges();
             }
             db.SaveChanges();
+        }
+        public string Get_MaDH()
+        {
+            string x = (db.DonHangs.Count() + 1).ToString();
+            while (db.DonHangs.Where(p => p.MaDonHang.Equals(x)).Count() != 0)
+            {
+                x = (Convert.ToInt32(x) + 1).ToString();
+            }
+            return x;
+        }
+        public string Get_MaMH()
+        {
+            string x = (db.MuaHangs.Count() + 1).ToString();
+            while (db.MuaHangs.Where(p => p.MaMuaHang.Equals(x)).Count() != 0)
+            {
+                x = (Convert.ToInt32(x) + 1).ToString();
+            }
+            return x;
+        }
+
+        private void cbox_TenTK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbox_TenTK.Checked)
+            {
+                txt_TenKH.Text = db.ThongTinCaNhans.Where(p => p.MaTK.Equals(Matk)).FirstOrDefault().TenKH;
+            }
+            else
+            {
+                txt_TenKH.Text = "";
+            }
+        }
+
+        private void cbox_SDT_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbox_SDT.Checked)
+            {
+                txt_SDT.Text = db.ThongTinCaNhans.Where(p => p.MaTK.Equals(Matk)).FirstOrDefault().SoDT;
+            }
+            else
+            {
+                txt_SDT.Text = "";
+            }
+        }
+
+        private void cbox_DiaChi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbox_DiaChi.Checked)
+            {
+                txt_DiaChi.Text = db.ThongTinCaNhans.Where(p => p.MaTK.Equals(Matk)).FirstOrDefault().DiaChi;
+            }
+            else
+            {
+                txt_DiaChi.Text = "";
+            }
         }
     }
 }

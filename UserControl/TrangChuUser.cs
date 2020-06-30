@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
 using System.IO;
-
+using DACNPM.dll;
 namespace GiaoDien
 {
     public partial class TrangChuUser : UserControl
@@ -25,7 +25,6 @@ namespace GiaoDien
         public TrangChuUser()
         {
             InitializeComponent();
-
         }
         public TrangChuUser(Get_ListMaSP Masp)
         {
@@ -34,6 +33,7 @@ namespace GiaoDien
             SetView();
             Show_SP_ListView(List_SP());
         }
+        
         private void SetView()
         {
             cbb_thuonghieu.Items.Clear();
@@ -43,6 +43,18 @@ namespace GiaoDien
             foreach (DanhMuc i in db.DanhMucs)
             {
                 cbb_gia.Items.Add(i.TenDM);
+            }
+           for(int i=1;i<cbb_gia.Items.Count-1;i++)
+            {
+                for(int j=i+1;j<cbb_gia.Items.Count;j++)
+                {
+                    if(Cut_Number_Equal(cbb_gia.Items[i].ToString()) >Cut_Number_Equal(cbb_gia.Items[j].ToString()))
+                    {
+                        string temp = cbb_gia.Items[i].ToString();
+                        cbb_gia.Items[i] = cbb_gia.Items[j];
+                        cbb_gia.Items[j] = temp;
+                    }
+                }
             }
             foreach (ChiTiet_SP i in db.ChiTiet_SPs)
             {
@@ -65,15 +77,14 @@ namespace GiaoDien
         }
         private void GetKQ(ItemsGH sp)
         {
-            ListMaSP.Add(sp);
-            this.GetSP(ListMaSP);
+            this.GetSP(sp);
         }
         public void Show_SP_ListView(List<KT_Gia_NhapXuat> SP)
         {
             listView_DSSP.Items.Clear();
-            foreach (KT_Gia_NhapXuat sp in db.KT_Gia_NhapXuats)
+            foreach (KT_Gia_NhapXuat sp in SP)
             {
-                imageList1.Images.Add(ByteToImg(sp.ChiTiet_SP.HinhAnh));
+                imageList1.Images.Add(NVQL.Instance.ByteToImg(sp.ChiTiet_SP.HinhAnh));
                 imageList1.ImageSize = new Size(132, 132);
                 this.listView_DSSP.View = View.LargeIcon;
                 ListViewItem item = new ListViewItem();
@@ -84,66 +95,97 @@ namespace GiaoDien
             }       
             this.listView_DSSP.LargeImageList = imageList1;
         }
-        private Image ByteToImg(string byteString)
+        private double Cut_Number_Equal(string item)
         {
-            byte[] imgBytes = Convert.FromBase64String(byteString);
-            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
-            ms.Write(imgBytes, 0, imgBytes.Length);
-            Image image = Image.FromStream(ms, true);
-            return image;
+            string s = "";
+            if(item.Length>15)
+            {
+                foreach (Char c in item.Substring(9))
+                {
+                    if (Char.IsDigit(c))
+                        s += c;
+                }
+                return Convert.ToDouble(s)-0.001;
+            }
+            foreach (Char c in item)
+            {
+                if (Char.IsDigit(c))
+                    s += c;
+            }
+            return Convert.ToInt32(s);
+        }
+        private double Cut_Number_Canculate(string item,ref  double x)
+        {
+            string s = "";
+            if (item.Length > 15)
+            {
+                foreach (Char c in item.Substring(9))
+                {
+                    if (Char.IsDigit(c))
+                        s += c;
+                }
+                x = Convert.ToInt32(s);
+                s = "";
+                foreach (Char c in item.Substring(0, 9))
+                {
+                    if (Char.IsDigit(c))
+                        s += c;
+                }
+                return Convert.ToDouble(s) - 0.001;
+            }
+            foreach (Char c in item)
+            {
+                if (Char.IsDigit(c))
+                    s += c;
+            }
+            return Convert.ToInt32(s);
         }
         private List<KT_Gia_NhapXuat> List_SP()
         {
             List<KT_Gia_NhapXuat> List_SP = new List<KT_Gia_NhapXuat>();
-            if (cbb_gia.SelectedIndex == 0 && cbb_thuonghieu.SelectedIndex == 0)
+            double Gia = 100;
+            string HangSX = "";
+            double Gia2 = 100;
+            if (cbb_gia.SelectedItem.ToString() != "All")
             {
-                foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats)
+                Gia = Cut_Number_Canculate(cbb_gia.SelectedItem.ToString(),ref Gia2);
+            }
+            if(cbb_thuonghieu.SelectedItem.ToString()!="All")
+            {
+                HangSX = cbb_thuonghieu.SelectedItem.ToString();
+            }
+            //giá =0, hangsx =0 & !=0;
+            if (cbb_gia.SelectedIndex == 0)
+            {
+                foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
+                            p =>p.ChiTiet_SP.HangSX.Contains(HangSX)&&
+                            p.ChiTiet_SP.TenSP.Contains(txt_search.Text) &&p.GiaBan < Gia * 1000000))
                 {
                     List_SP.Add(i);
                 }
             }
             else
             {
-                if(cbb_thuonghieu.SelectedIndex>0&&cbb_gia.SelectedIndex>0)
+               if(cbb_gia.SelectedItem.Equals("Dưới 5 triệu"))
                 {
-                    string HangSX = cbb_thuonghieu.SelectedItem.ToString();
-                    int GiaBan = Convert.ToInt32(cbb_gia.SelectedItem.ToString());
                     foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
-                            p => p.ChiTiet_SP.HangSX == HangSX&&p.GiaBan==GiaBan))
+                       p => p.ChiTiet_SP.TenSP.Contains(txt_search.Text) &&
+                       p.ChiTiet_SP.HangSX.Contains(HangSX) && p.GiaBan < Gia * 1000000))
                     {
                         List_SP.Add(i);
                     }
-                    return List_SP;
                 }
-                else
+               else
                 {
-                    if (cbb_gia.SelectedIndex > 0)
+                    foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
+                       p => p.ChiTiet_SP.TenSP.Contains(txt_search.Text) &&
+                       p.ChiTiet_SP.HangSX.Contains(HangSX) && p.GiaBan < Gia2 * 1000000 && p.GiaBan > Gia * 1000000))
                     {
-                        string HangSX = cbb_thuonghieu.SelectedItem.ToString();
-                        foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
-                                p => p.ChiTiet_SP.HangSX == HangSX))
-                        {
-                            List_SP.Add(i);
-                        }
-                        return List_SP;
-                    }
-                   else
-                    {
-                        if (cbb_thuonghieu.SelectedIndex > 0)
-                        {
-                            int GiaBan = Convert.ToInt32(cbb_gia.SelectedItem.ToString());
-                            foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
-                                    p => p.GiaBan == GiaBan))
-                            {
-                                List_SP.Add(i);
-                            }
-                        }
-                        return List_SP;
+                        List_SP.Add(i);
                     }
                 }
-                
             }
-            return null;
+            return List_SP;
         }
         private void bt_search_Click(object sender, EventArgs e)
         {

@@ -59,7 +59,7 @@ namespace GiaoDien
             }
             else
             {
-                MessageBox.Show("Error!");
+                MessageBox.Show("Vui lòng click vào 1 Row");
             }
         }
         private void ShowDTGV()
@@ -70,7 +70,7 @@ namespace GiaoDien
         {
             if (!Del())
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error!");
             }
             ShowDTGV();
         }
@@ -79,6 +79,10 @@ namespace GiaoDien
             try
             {
                 DataGridViewSelectedRowCollection r = DGV_QLSP.SelectedRows;
+                if(r.Count<1)
+                {
+                    MessageBox.Show("Vui lòng click vào 1 Row");
+                }
                 foreach (ChiTiet_SP i in db.ChiTiet_SPs)
                 {
                     foreach (DataGridViewRow j in r)
@@ -103,11 +107,6 @@ namespace GiaoDien
         private void bt_search_Click(object sender, EventArgs e)
         {
             var list = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Contains(txt_search.Text));
-            DGV_QLSP.DataSource = list.ToList();
-        }
-        private void bt_search_Gia_Click(object sender, EventArgs e)
-        {
-            var list = db.ChiTiet_SPs.Where(p => p.TenSP.Contains(txt_search.Text));
             DGV_QLSP.DataSource = list.ToList();
         }
         private void txt_search_TextChanged(object sender, EventArgs e)

@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
+using DACNPM.dll;
 namespace GiaoDien
 {
     public partial class Register : Form
@@ -147,33 +149,31 @@ namespace GiaoDien
 
         private void bt_dangky_Click(object sender, EventArgs e)
         {
-            string x = (db.TaiKhoans.Count() + 1).ToString();
-            foreach (char i in db.TaiKhoans.Select(p => new { p.MaTK }).ToString())
-            {
-                if (x == i.ToString())
-                {
-                    x = (Convert.ToInt32(x) + 1).ToString();
-                    continue;
-                }
-            }
             if (db.TaiKhoans.Where(p => p.TenTK.Contains(txt_tk.Text)).Count() != 0)
             {
-                lb_Thongbao.Text = "Tai khoan da ton tai!";
-                lb_Thongbao.Visible = true;
+                MessageBox.Show("Tai khoan da ton tai!");
             }
             else
             {
                 if (!txt_pass.Text.ToString().Equals(txt_confirm.Text.ToString()))
                 {
-                    lb_Thongbao.Text = "Password xac nhan sai!!";
+                    MessageBox.Show("Password xac nhan sai!!");
                 }
                 else
                 {
+                    string x = (db.TaiKhoans.Count() + 1).ToString();
+                    foreach (char i in db.TaiKhoans.Select(p => new { p.MaTK }).ToString())
+                    {
+                        if (x == i.ToString())
+                        {
+                            x = (Convert.ToInt32(x) + 1).ToString();
+                        }
+                    }
                     db.TaiKhoans.Add(new TaiKhoan
                     {
                         MaTK = x,
                         TenTK = txt_tk.Text,
-                        PassTK = txt_pass.Text,
+                        PassTK = NVQL.Instance.MaHoaMK(txt_pass.Text),
                         LoaiTK = "Customer",
                     });
                     db.ThongTinCaNhans.Add(new ThongTinCaNhan
@@ -191,7 +191,6 @@ namespace GiaoDien
                 }
             }
         }
-
         private void txt_tk_TextChanged(object sender, EventArgs e)
         {
             foreach(char i in txt_tk.Text)
