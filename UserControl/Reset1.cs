@@ -21,10 +21,5 @@ namespace GiaoDien
             get { return txt_user.Text; }
             set { txt_user.Text = value; }
         }
-        public string txt_SDT
-        {
-            get { return txt_sdt.Text; }
-            set { txt_sdt.Text = value; }
-        }
     }
 }

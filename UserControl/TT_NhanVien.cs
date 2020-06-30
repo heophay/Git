@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GiaoDien.Source_Code_CSDL;
 namespace GiaoDien
 {
     public partial class TT_NhanVien : UserControl
     {
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
         public TT_NhanVien()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace GiaoDien
         }
         private void ShowDTGV()
         {
-            DGV_NV.DataSource = db.Theodoi_NV.Select(p => new { p.MaTK, p.TenNV, p.NgaySinh, p.SoDT,p.DiaChi,p.Gender }).ToList();
+            DGV_NV.DataSource = db.Theodoi_NVs.Select(p => new { p.MaTK, p.TenNV, p.NgaySinh, p.SoDT,p.DiaChi,p.Gender }).ToList();
         }
         private void button_Them_Click(object sender, EventArgs e)
         {
@@ -48,13 +49,13 @@ namespace GiaoDien
             try
             {
                 DataGridViewSelectedRowCollection r = DGV_NV.SelectedRows;
-                foreach (Theodoi_NV i in db.Theodoi_NV)
+                foreach (Theodoi_NV i in db.Theodoi_NVs)
                 {
                     foreach (DataGridViewRow j in r)
                     {
                         if (i.MaTK == j.Cells["MaTK"].Value.ToString())
                         {
-                            db.Theodoi_NV.Remove(i);
+                            db.Theodoi_NVs.Remove(i);
                         }
                     }
                 }

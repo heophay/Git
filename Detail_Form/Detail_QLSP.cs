@@ -8,15 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDien.Source_Code_CSDL;
 
 namespace GiaoDien
 {
     public partial class QLSP : Form
     {
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
+        private string _Picture;
         private string _MaSP;
         public string MaSP { get => _MaSP; set => _MaSP = value; }
         public ShowDTGV_QLSP show { get => _show; set => _show = value; }
+        public string Picture { get => _Picture; set => _Picture = value; }
 
         public delegate void ShowDTGV_QLSP();
         private ShowDTGV_QLSP _show;
@@ -40,17 +44,17 @@ namespace GiaoDien
 
         private void bt_openfile_Click(object sender, EventArgs e)
         {
-            DialogResult result = openFileDialog1.ShowDialog();
-
             //Kiểm tra xem người dùng đã chọn file chưa
-            if (result == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 // Lấy hình ảnh
                 openFileDialog1.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
-                openFileDialog1.FilterIndex = 1;
+                openFileDialog1.FilterIndex = 0;
                 Image img = Image.FromFile(openFileDialog1.FileName);
                 // Gán ảnh
                 pictureBox1.Image = img;
+                Picture = openFileDialog1.FileName;
+                MessageBox.Show(Picture);
             }
         }
         private void SetView()
@@ -58,7 +62,7 @@ namespace GiaoDien
             if(MaSP!="")
             {
                 txt_masp.Enabled = false;
-                ChiTiet_SP sp = db.ChiTiet_SP.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 txt_masp.Text = sp.MaSP;
                 txt_baohanh.Text = sp.BaoHanh;
                 txt_HDH.Text = sp.HeDieuHanh;
@@ -96,12 +100,12 @@ namespace GiaoDien
         {
             try
             {
-                ChiTiet_SP sp = db.ChiTiet_SP.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 if(sp==null)
                 {
                     if (txt_baohanh.Text != "" && txt_HDH.Text != "" && txt_manhinh.Text != "" && txt_namedt.Text != "" && txt_pin.Text != "" && txt_xuatxu.Text != "")
                     {
-                        db.ChiTiet_SP.Add(new ChiTiet_SP
+                        db.ChiTiet_SPs.Add(new ChiTiet_SP
                         {
                             MaSP = txt_masp.Text,
                             BaoHanh = txt_baohanh.Text,
@@ -110,12 +114,13 @@ namespace GiaoDien
                             ManHinh = txt_manhinh.Text,
                             NoiXuatXu = txt_xuatxu.Text,
                             Pin = txt_pin.Text,
+                            HinhAnh=Picture,
                             HangSX = cbb_hangsx.SelectedItem.ToString(),
                             Ram = cbb_ram.SelectedItem.ToString(),
                             BoNhoTrong = cbb_BNT.SelectedItem.ToString(),
                             SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString())
                         });
-                        db.KT_Gia_NhapXuat.Add(new KT_Gia_NhapXuat
+                        db.KT_Gia_NhapXuats.Add(new KT_Gia_NhapXuat
                         {
                             MaSP = txt_masp.Text,
                             GiaNhap = Convert.ToInt32(txt_gianhap.Text.ToString()),
@@ -149,7 +154,7 @@ namespace GiaoDien
         {
             try
             {
-                ChiTiet_SP sp = db.ChiTiet_SP.Where(p => p.MaSP == MaSP).FirstOrDefault();
+                ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 if (txt_masp.Enabled == true && txt_masp.Text.Equals(sp.MaSP))
                 {
                     MessageBox.Show("MSSV trùng rồi, nhập lại cái khác đi");

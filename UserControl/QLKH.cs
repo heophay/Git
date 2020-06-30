@@ -7,16 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GiaoDien.Source_Code_CSDL;
 namespace GiaoDien
 {
     public partial class QLKH : UserControl
     {
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
         public QLKH()
         {
             InitializeComponent();
             ShowDTGV();
+            cbb_search.SelectedIndex = 0;
         }
         private void ShowDTGV()
         {
@@ -74,6 +76,28 @@ namespace GiaoDien
                 MessageBox.Show("Error!");
             }
             ShowDTGV();
+        }
+
+        private void bt_search_Click(object sender, EventArgs e)
+        {
+            if(cbb_search.SelectedIndex==0)
+            {
+                var list = db.ThongTinCaNhans.Where(p => p.TenKH.Contains(txt_search.Text));
+                DGV_KH.DataSource = list.ToList();
+            }
+            else
+            {
+                var list = db.ThongTinCaNhans.Where(p => p.MaTK.Contains(txt_search.Text));
+                DGV_KH.DataSource = list.ToList();
+            }
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_search.Text=="")
+            {
+                ShowDTGV();
+            }
         }
     }
 }

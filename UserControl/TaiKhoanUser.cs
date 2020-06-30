@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDien.Source_Code_CSDL;
 
 namespace GiaoDien
 {
     public partial class TaiKhoanUser : UserControl
     {
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
         private string _MaTK;
         public TaiKhoanUser(string matk)
         {
@@ -51,7 +53,7 @@ namespace GiaoDien
             }
             else
             {
-                Theodoi_NV nv = db.Theodoi_NV.Where(p => p.MaTK == MaTK).FirstOrDefault();
+                Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaTK).FirstOrDefault();
                 txt_HotenKH.Text = nv.TenNV;
                 txt_SoDT.Text = nv.SoDT;
                 txt_Diachi.Text = nv.DiaChi;
@@ -99,7 +101,7 @@ namespace GiaoDien
             }
             else
             {
-                Theodoi_NV nv = db.Theodoi_NV.Where(p => p.MaTK == MaTK).FirstOrDefault();
+                Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaTK).FirstOrDefault();
                 nv.TenNV=txt_HotenKH.Text;
                 nv.SoDT=txt_SoDT.Text;
                 nv.DiaChi=txt_Diachi.Text;

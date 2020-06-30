@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GiaoDien.Source_Code_CSDL;
 namespace GiaoDien
 {
     public partial class TrangChuManager : UserControl
     {
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
         private string _MaTK;
         public TrangChuManager(string Matk)
         {
@@ -35,11 +36,6 @@ namespace GiaoDien
         }
         public string MaTK { get => _MaTK; set => _MaTK = value; }
 
-        private void bt_Gia_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(new KT_Gia());
-        }
 
         private void button_DanhMuc_Click(object sender, EventArgs e)
         {

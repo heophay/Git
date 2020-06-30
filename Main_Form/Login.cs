@@ -4,10 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GiaoDien.Source_Code_CSDL;
 namespace GiaoDien
 {
 
@@ -17,7 +18,9 @@ namespace GiaoDien
         string nameCus;
         public string MaTK { get => _MaTK; set => _MaTK = value; }
         public string NameCus { get => nameCus; set => nameCus = value; }
-        SE_14 db = new SE_14();
+        //SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        Register r;
         public Login()
         {
             InitializeComponent();
@@ -66,10 +69,6 @@ namespace GiaoDien
                 txt_pass.UseSystemPasswordChar = false;
             }
         }
-        Register r;
-
-       
-
         public void bt_dangky_Click(object sender, EventArgs e)
         {
             r = new Register();
@@ -105,15 +104,31 @@ namespace GiaoDien
             rp.ShowDialog();
             this.Dispose();
         }
+        private string MaHoaMK(string pass)
+        {
+            MD5 mh = MD5.Create();
+            //Chuyển kiểu chuổi thành kiểu byte
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(pass);
+            //mã hóa chuỗi đã chuyển
+            byte[] hash = mh.ComputeHash(inputBytes);
+            //tạo đối tượng StringBuilder (làm việc với kiểu dữ liệu lớn)
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x"));
+            }
+            return sb.ToString();
+        }
         private void bt_login_Click(object sender, EventArgs e)
         {
             NameCus = txt_user.Text;
             string s = Check_User();
             if (s!=null)
             {
-                
                 if(s== "Customer")
                 {
+                    RememberMe();
                     this.Visible = false;
                     Main_Form ma = new Main_Form(MaTK);
                     ma.ShowDialog();
@@ -123,6 +138,7 @@ namespace GiaoDien
                 {
                     if (s == "Admin")
                     {
+                        RememberMe();
                         this.Visible = false;
                         Main_Form ma = new Main_Form(MaTK);
                         ma.ShowDialog();
@@ -130,23 +146,42 @@ namespace GiaoDien
                     }
                     else
                     {
+                        RememberMe();
                         this.Visible = false;
                         Main_Form ma = new Main_Form(MaTK);
                         ma.ShowDialog();
                         this.Dispose();
                     }
                 }
+             
             }
         }    
+        private void RememberMe()
+        {
+            if (checkBox_nhoMK.Checked)
+            {
+                Properties.Settings.Default.users = txt_user.Text;
+                Properties.Settings.Default.pass = txt_pass.Text;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.users = "";
+                Properties.Settings.Default.pass = "";
+                Properties.Settings.Default.Save();
+            }
+        }
         private string Check_User()
         {
             try
             {
                 string tam = "";
                 TaiKhoan tk = new TaiKhoan();
-                tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.PassTK==txt_pass.Text).FirstOrDefault();
-                if(tk !=null)
+                string pass = MaHoaMK(txt_pass.Text);
+                tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.PassTK == pass).FirstOrDefault();
+                if (tk != null)
                 {
+                    MessageBox.Show(MaHoaMK(txt_pass.Text));
                     MaTK = tk.MaTK;
                     foreach (string i in db.TaiKhoans.Select(p => p.LoaiTK).Distinct().ToList())
                     {
@@ -161,12 +196,14 @@ namespace GiaoDien
                 {
                     MessageBox.Show("Tên TK hoặc MK sai");
                     return null;
-                }       
-            }
+                }
+            }      
             catch(Exception)
             {
                 return null;
             }
+
+
         }
         private void txt_user_Click(object sender, EventArgs e)
         {
@@ -200,6 +237,22 @@ namespace GiaoDien
             {
                 txt_pass.UseSystemPasswordChar = true;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.users != ""&& Properties.Settings.Default.pass != "")
+            {
+                txt_user.Text = Properties.Settings.Default.users;
+                txt_pass.Text = Properties.Settings.Default.pass;
+                txt_pass.UseSystemPasswordChar = true;
+                checkBox_nhoMK.Checked = true;
+            }
+            else
+            {
+                checkBox_nhoMK.Checked = false;
+            }
+           
         }
     }
 }

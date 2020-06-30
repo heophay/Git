@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDien.Source_Code_CSDL;
 
 namespace GiaoDien
 {
@@ -21,7 +22,8 @@ namespace GiaoDien
             InitializeComponent();
             SetView();
         }
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
 
         public string MaNV { get => _MaNV; set => _MaNV = value; }
         public SHow D { get => d; set => d = value; }
@@ -31,7 +33,7 @@ namespace GiaoDien
             if (MaNV != "")
             {
                 txt_manv.Enabled = false;
-                Theodoi_NV nv = db.Theodoi_NV.Where(p => p.MaTK == MaNV).FirstOrDefault();
+                Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaNV).FirstOrDefault();
                 txt_manv.Text = nv.MaTK;
                 txt_nv.Text = nv.TenNV;
                 txt_pass.Text = nv.TaiKhoan.PassTK;
@@ -53,7 +55,7 @@ namespace GiaoDien
         {
             try
             {
-                Theodoi_NV nv = db.Theodoi_NV.Where(p => p.MaTK == MaNV).FirstOrDefault();
+                Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaNV).FirstOrDefault();
                 if (nv == null)
                 {
                     if (txt_nv.Text != "" && txt_pass.Text != "" && txt_tk.Text != "" && txt_dt.Text != "" && txt_diachi.Text != "")
@@ -65,7 +67,7 @@ namespace GiaoDien
                             PassTK = txt_pass.Text,
                             LoaiTK = "Customer",
                         });
-                        db.Theodoi_NV.Add(new Theodoi_NV
+                        db.Theodoi_NVs.Add(new Theodoi_NV
                         {
                             MaTK = txt_manv.Text,
                             TenNV = txt_nv.Text,
@@ -100,7 +102,7 @@ namespace GiaoDien
         {
             try
             {
-                Theodoi_NV nv = db.Theodoi_NV.Where(p => p.MaTK == MaNV).FirstOrDefault();
+                Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaNV).FirstOrDefault();
                 if (txt_manv.Enabled == true && txt_manv.Text.Equals(nv.MaTK))
                 {
                     MessageBox.Show("Ma so trùng rồi, nhập lại cái khác đi");

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDien.Source_Code_CSDL;
 
 namespace GiaoDien
 {
     public partial class QL_SanPham : UserControl
     {
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
         public QL_SanPham()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace GiaoDien
             {
                 cbb_gia.Items.Add(i.TenDM);
             }
-            foreach (ChiTiet_SP i in db.ChiTiet_SP)
+            foreach (ChiTiet_SP i in db.ChiTiet_SPs)
             {
                 bool kt = true;
                 foreach(string j in cbb_loaidt.Items)
@@ -62,7 +64,7 @@ namespace GiaoDien
         }
         private void ShowDTGV()
         {
-            DGV_QLSP.DataSource = db.KT_Gia_NhapXuat.Select(p => new { p.MaSP,p.ID_Gia, p.ChiTiet_SP.TenSP, p.GiaNhap, p.GiaBan, p.NgayApDung, p.ChiTiet_SP.HangSX, p.ChiTiet_SP.ManHinh, p.ChiTiet_SP.HeDieuHanh, p.ChiTiet_SP.Ram, p.ChiTiet_SP.SoSim, p.ChiTiet_SP.Pin, p.ChiTiet_SP.NoiXuatXu }).ToList();
+            DGV_QLSP.DataSource = db.KT_Gia_NhapXuats.Select(p => new { p.MaSP,p.ID_Gia, p.ChiTiet_SP.TenSP, p.GiaNhap, p.GiaBan, p.NgayApDung, p.ChiTiet_SP.HangSX, p.ChiTiet_SP.ManHinh, p.ChiTiet_SP.HeDieuHanh, p.ChiTiet_SP.Ram, p.ChiTiet_SP.SoSim, p.ChiTiet_SP.Pin, p.ChiTiet_SP.NoiXuatXu }).ToList();
         }
         private void button_Xoa_Click(object sender, EventArgs e)
         {
@@ -77,15 +79,15 @@ namespace GiaoDien
             try
             {
                 DataGridViewSelectedRowCollection r = DGV_QLSP.SelectedRows;
-                foreach (ChiTiet_SP i in db.ChiTiet_SP)
+                foreach (ChiTiet_SP i in db.ChiTiet_SPs)
                 {
                     foreach (DataGridViewRow j in r)
                     {
                         if (i.MaSP == j.Cells["MaSP"].Value.ToString())
                         {
-                            KT_Gia_NhapXuat t =  db.KT_Gia_NhapXuat.Where(p => p.MaSP == i.MaSP).FirstOrDefault();
-                            db.KT_Gia_NhapXuat.Remove(t);
-                            db.ChiTiet_SP.Remove(i); 
+                            KT_Gia_NhapXuat t =  db.KT_Gia_NhapXuats.Where(p => p.MaSP == i.MaSP).FirstOrDefault();
+                            db.KT_Gia_NhapXuats.Remove(t);
+                            db.ChiTiet_SPs.Remove(i); 
                         }
                     }
                 }
@@ -100,12 +102,12 @@ namespace GiaoDien
 
         private void bt_search_Click(object sender, EventArgs e)
         {
-            var list = db.KT_Gia_NhapXuat.Where(p => p.MaSP.Contains(txt_search.Text));
+            var list = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Contains(txt_search.Text));
             DGV_QLSP.DataSource = list.ToList();
         }
         private void bt_search_Gia_Click(object sender, EventArgs e)
         {
-            var list = db.ChiTiet_SP.Where(p => p.TenSP.Contains(txt_search.Text));
+            var list = db.ChiTiet_SPs.Where(p => p.TenSP.Contains(txt_search.Text));
             DGV_QLSP.DataSource = list.ToList();
         }
         private void txt_search_TextChanged(object sender, EventArgs e)
@@ -113,20 +115,6 @@ namespace GiaoDien
             if (txt_search.Text == "")
             {
                 ShowDTGV();
-            }
-        }
-        private void button_Sua__GiaClick(object sender, EventArgs e)
-        {
-            DataGridViewSelectedRowCollection r = DGV_QLSP.SelectedRows;
-            if (r.Count == 1)
-            {
-                Detail_Gia f = new Detail_Gia(Convert.ToInt32(r[0].Cells["ID_GIa"].Value.ToString()));
-                f.D += new Detail_Gia.SHow(ShowDTGV);
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Error!");
             }
         }
 

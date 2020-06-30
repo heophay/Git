@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace GiaoDien
 {
-    public delegate void Get_ListMaSP(List<string> Masp);
+    public delegate void Get_ListMaSP(List<ItemsGH> Masp);
     public partial class User : UserControl
     {
-        private List<string> ListMaSP = new List<string>();
+        private List<ItemsGH> ListMaSP = new List<ItemsGH>();
         private string _matk;
 
         public string Matk { get => _matk; set => _matk = value; }
@@ -25,11 +25,12 @@ namespace GiaoDien
             panel1.Controls.Clear();
             TrangChuUser l = new TrangChuUser();
             panel1.Controls.Add(l);
+            SetView();
         }
         private void button_TrangChu_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            TrangChuUser l = new TrangChuUser();
+            TrangChuUser l = new TrangChuUser(Get_Listmasp);
             panel1.Controls.Add(l);
         }
         private void button_TaiKhoan_Click(object sender, EventArgs e)
@@ -49,12 +50,8 @@ namespace GiaoDien
         private void button_DonHang_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            DonHangCus l = new DonHangCus();
+            DonHangCus l = new DonHangCus(this.Matk);
             panel1.Controls.Add(l);
-        }
-        public  void Get_Listmasp(List<string> Masp)
-        {
-            this.ListMaSP = Masp;
         }
 
         private void User_Load(object sender, EventArgs e)
@@ -63,6 +60,14 @@ namespace GiaoDien
             TrangChuUser l = new TrangChuUser(Get_Listmasp);
             panel1.Controls.Add(l);
         }
-
+        public void SetView()
+        {
+            SE_14X db = new SE_14X();
+            label_Greeting.Text = db.ThongTinCaNhans.Where(p => p.MaTK == Matk).FirstOrDefault().TenKH;
+        }
+        public void Get_Listmasp(List<ItemsGH> Masp)
+        {
+            this.ListMaSP = Masp;
+        }
     }
 }

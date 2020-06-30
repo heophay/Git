@@ -31,8 +31,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_user = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_sdt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
@@ -43,8 +41,6 @@
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_user);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txt_sdt);
             this.groupBox2.Location = new System.Drawing.Point(195, 182);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(425, 152);
@@ -55,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 24);
+            this.label1.Location = new System.Drawing.Point(19, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 6;
@@ -64,28 +60,10 @@
             // txt_user
             // 
             this.txt_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user.Location = new System.Drawing.Point(167, 24);
+            this.txt_user.Location = new System.Drawing.Point(171, 64);
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(248, 28);
             this.txt_user.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Số điện thoại";
-            // 
-            // txt_sdt
-            // 
-            this.txt_sdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_sdt.Location = new System.Drawing.Point(167, 77);
-            this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(248, 28);
-            this.txt_sdt.TabIndex = 9;
             // 
             // groupBox1
             // 
@@ -129,8 +107,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_user;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
     }

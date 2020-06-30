@@ -31,18 +31,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.reset31 = new GiaoDien.Reset3();
-            this.reset21 = new GiaoDien.Reset2();
-            this.reset11 = new GiaoDien.Reset1();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.bt_dangnhap = new System.Windows.Forms.Button();
             this.bt_no = new System.Windows.Forms.Button();
             this.bt_yes = new System.Windows.Forms.Button();
             this.bt_search = new System.Windows.Forms.Button();
             this.bt_huy = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,39 +67,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.reset31);
-            this.panel2.Controls.Add(this.reset21);
-            this.panel2.Controls.Add(this.reset11);
-            this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(848, 499);
             this.panel2.TabIndex = 1;
-            // 
-            // reset31
-            // 
-            this.reset31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reset31.Location = new System.Drawing.Point(0, 0);
-            this.reset31.Name = "reset31";
-            this.reset31.Size = new System.Drawing.Size(848, 408);
-            this.reset31.TabIndex = 20;
-            // 
-            // reset21
-            // 
-            this.reset21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reset21.Location = new System.Drawing.Point(0, 0);
-            this.reset21.Name = "reset21";
-            this.reset21.Size = new System.Drawing.Size(848, 408);
-            this.reset21.TabIndex = 19;
-            // 
-            // reset11
-            // 
-            this.reset11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reset11.Location = new System.Drawing.Point(0, 0);
-            this.reset11.Name = "reset11";
-            this.reset11.Size = new System.Drawing.Size(848, 408);
-            this.reset11.TabIndex = 18;
             // 
             // groupBox3
             // 
@@ -110,8 +80,7 @@
             this.groupBox3.Controls.Add(this.bt_yes);
             this.groupBox3.Controls.Add(this.bt_search);
             this.groupBox3.Controls.Add(this.bt_huy);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(0, 408);
+            this.groupBox3.Location = new System.Drawing.Point(3, 13);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(848, 91);
             this.groupBox3.TabIndex = 17;
@@ -180,19 +149,29 @@
             this.bt_huy.UseVisualStyleBackColor = false;
             this.bt_huy.Click += new System.EventHandler(this.bt_huy_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.groupBox3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 483);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(848, 116);
+            this.panel3.TabIndex = 18;
+            // 
             // Reset_Pass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 599);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Reset_Pass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reset_Pass";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -208,8 +187,6 @@
         private System.Windows.Forms.Button bt_no;
         private System.Windows.Forms.Button bt_yes;
         private System.Windows.Forms.Button bt_dangnhap;
-        private Reset1 reset11;
-        private Reset3 reset31;
-        private Reset2 reset21;
+        private System.Windows.Forms.Panel panel3;
     }
 }

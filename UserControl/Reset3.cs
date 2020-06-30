@@ -16,5 +16,10 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
+        public string txt_Pass
+        {
+            get { return txt_pass.Text; }
+            set { txt_pass.Text = value; }
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GiaoDien.Source_Code_CSDL;
 namespace GiaoDien
 {
     public partial class Detail_KH : Form
@@ -21,7 +21,8 @@ namespace GiaoDien
             InitializeComponent();
             SetView();
         }
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
 
         public string MaKH { get => _MaKH; set => _MaKH = value; }
         public SHow D { get => d; set => d = value; }

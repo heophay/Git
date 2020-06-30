@@ -48,6 +48,7 @@
             this.button_XoaDonHang.TabIndex = 9;
             this.button_XoaDonHang.Text = "Xóa đơn hàng";
             this.button_XoaDonHang.UseVisualStyleBackColor = false;
+            this.button_XoaDonHang.Click += new System.EventHandler(this.button_XoaDonHang_Click);
             // 
             // button_Xemdonhang
             // 

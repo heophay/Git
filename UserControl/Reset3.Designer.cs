@@ -29,31 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_pass = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txt_pass);
             this.groupBox2.Location = new System.Drawing.Point(161, 173);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(527, 202);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             // 
-            // textBox3
+            // txt_pass
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(47, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(421, 27);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "Mật khẩu mới:";
+            this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pass.Location = new System.Drawing.Point(47, 73);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.Size = new System.Drawing.Size(421, 27);
+            this.txt_pass.TabIndex = 2;
+            this.txt_pass.Text = "Mật khẩu mới:";
             // 
             // groupBox1
             // 
@@ -83,6 +85,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thiết lập lại mật khẩu";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(68, 148);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(359, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Hãy thay đổi lại mật khẩu mới khi đăng nhập lại";
+            // 
             // Reset3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -102,9 +115,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

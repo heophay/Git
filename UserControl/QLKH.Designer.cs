@@ -33,8 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbb_search = new System.Windows.Forms.ComboBox();
             this.txt_search = new System.Windows.Forms.TextBox();
-            this.label_HangSX = new System.Windows.Forms.Label();
             this.DGV_KH = new System.Windows.Forms.DataGridView();
+            this.bt_search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_KH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,16 +100,7 @@
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(498, 27);
             this.txt_search.TabIndex = 56;
-            // 
-            // label_HangSX
-            // 
-            this.label_HangSX.AutoSize = true;
-            this.label_HangSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label_HangSX.Location = new System.Drawing.Point(137, 197);
-            this.label_HangSX.Name = "label_HangSX";
-            this.label_HangSX.Size = new System.Drawing.Size(85, 20);
-            this.label_HangSX.TabIndex = 55;
-            this.label_HangSX.Text = "Tìm kiếm";
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
             // DGV_KH
             // 
@@ -121,16 +112,27 @@
             this.DGV_KH.Size = new System.Drawing.Size(1065, 324);
             this.DGV_KH.TabIndex = 57;
             // 
+            // bt_search
+            // 
+            this.bt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.bt_search.Location = new System.Drawing.Point(104, 192);
+            this.bt_search.Name = "bt_search";
+            this.bt_search.Size = new System.Drawing.Size(109, 30);
+            this.bt_search.TabIndex = 62;
+            this.bt_search.Text = "Tìm Kiếm";
+            this.bt_search.UseVisualStyleBackColor = true;
+            this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
+            // 
             // QLKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bt_search);
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sua);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbb_search);
             this.Controls.Add(this.txt_search);
-            this.Controls.Add(this.label_HangSX);
             this.Controls.Add(this.DGV_KH);
             this.Name = "QLKH";
             this.Size = new System.Drawing.Size(1228, 808);
@@ -147,7 +149,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbb_search;
         private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.Label label_HangSX;
         private System.Windows.Forms.DataGridView DGV_KH;
+        private System.Windows.Forms.Button bt_search;
     }
 }

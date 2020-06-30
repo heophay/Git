@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDien.Source_Code_CSDL;
 
 namespace GiaoDien.Detail_Form
 {
     public partial class Detail_ThanhToan : Form
     {
-        SE_14 db = new SE_14();
+        SE_14X db = new SE_14X();
+        //SE_14 db = new SE_14();
         private List<ItemsGH> listSP = new List<ItemsGH>();
         private bool KQ = false;
         private MyDel _Result;
@@ -86,7 +88,7 @@ namespace GiaoDien.Detail_Form
                 mh.MaDonHang = dh.MaDonHang;
                 mh.MaSP = i.MaSP;
                 mh.SoLuong = i.Soluong;
-                KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuat.Where(p => p.MaSP == mh.MaSP).FirstOrDefault();
+                KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuats.Where(p => p.MaSP == mh.MaSP).FirstOrDefault();
                 mh.ID_Gia = gia.ID_Gia;
                 mh.ThanhTien = i.ThanhTien;
                 db.MuaHangs.Add(mh);

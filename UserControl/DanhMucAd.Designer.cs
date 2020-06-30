@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.trangthai_no = new System.Windows.Forms.RadioButton();
-            this.trangthai_yes = new System.Windows.Forms.RadioButton();
             this.txt_madanhmuc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.bt_luu = new System.Windows.Forms.Button();
@@ -46,14 +43,12 @@
             this.bt_them = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DanhMuc)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.txt_madanhmuc);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.bt_luu);
@@ -68,39 +63,6 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chỉnh Sửa";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.trangthai_no);
-            this.groupBox3.Controls.Add(this.trangthai_yes);
-            this.groupBox3.Location = new System.Drawing.Point(38, 295);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(486, 77);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Trạng Thái";
-            // 
-            // trangthai_no
-            // 
-            this.trangthai_no.AutoSize = true;
-            this.trangthai_no.Location = new System.Drawing.Point(304, 40);
-            this.trangthai_no.Name = "trangthai_no";
-            this.trangthai_no.Size = new System.Drawing.Size(154, 24);
-            this.trangthai_no.TabIndex = 1;
-            this.trangthai_no.TabStop = true;
-            this.trangthai_no.Text = "Không hiệu lực";
-            this.trangthai_no.UseVisualStyleBackColor = true;
-            // 
-            // trangthai_yes
-            // 
-            this.trangthai_yes.AutoSize = true;
-            this.trangthai_yes.Location = new System.Drawing.Point(72, 40);
-            this.trangthai_yes.Name = "trangthai_yes";
-            this.trangthai_yes.Size = new System.Drawing.Size(125, 24);
-            this.trangthai_yes.TabIndex = 0;
-            this.trangthai_yes.TabStop = true;
-            this.trangthai_yes.Text = "Có hiệu lực";
-            this.trangthai_yes.UseVisualStyleBackColor = true;
             // 
             // txt_madanhmuc
             // 
@@ -254,8 +216,6 @@
             this.Size = new System.Drawing.Size(1228, 808);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DanhMuc)).EndInit();
             this.ResumeLayout(false);
@@ -266,9 +226,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton trangthai_no;
-        private System.Windows.Forms.RadioButton trangthai_yes;
         private System.Windows.Forms.TextBox txt_madanhmuc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button bt_luu;
