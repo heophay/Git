@@ -32,6 +32,12 @@
             this.bt_luu = new System.Windows.Forms.Button();
             this.bt_huy = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ngayapdung = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txt_giaban = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_gianhap = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txt_masp = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_xuatxu = new System.Windows.Forms.TextBox();
@@ -54,17 +60,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_dt = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.bt_openfile = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_gianhap = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_giaban = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.ngayapdung = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -142,6 +142,60 @@
             this.groupBox1.Size = new System.Drawing.Size(909, 468);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
+            // 
+            // ngayapdung
+            // 
+            this.ngayapdung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.ngayapdung.Location = new System.Drawing.Point(194, 441);
+            this.ngayapdung.Name = "ngayapdung";
+            this.ngayapdung.Size = new System.Drawing.Size(363, 28);
+            this.ngayapdung.TabIndex = 48;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label15.Location = new System.Drawing.Point(26, 441);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(134, 24);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Ngày Áp Dụng";
+            // 
+            // txt_giaban
+            // 
+            this.txt_giaban.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.txt_giaban.Location = new System.Drawing.Point(638, 376);
+            this.txt_giaban.Name = "txt_giaban";
+            this.txt_giaban.Size = new System.Drawing.Size(244, 28);
+            this.txt_giaban.TabIndex = 46;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label14.Location = new System.Drawing.Point(473, 376);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 24);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "Giá Bán";
+            // 
+            // txt_gianhap
+            // 
+            this.txt_gianhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.txt_gianhap.Location = new System.Drawing.Point(194, 376);
+            this.txt_gianhap.Name = "txt_gianhap";
+            this.txt_gianhap.Size = new System.Drawing.Size(244, 28);
+            this.txt_gianhap.TabIndex = 44;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label13.Location = new System.Drawing.Point(26, 376);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(89, 24);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "Giá Nhập";
             // 
             // txt_masp
             // 
@@ -364,14 +418,14 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Tên Điện Thoại";
             // 
-            // pictureBox1
+            // pic_dt
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 116);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(401, 451);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pic_dt.Location = new System.Drawing.Point(29, 116);
+            this.pic_dt.Name = "pic_dt";
+            this.pic_dt.Size = new System.Drawing.Size(401, 451);
+            this.pic_dt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_dt.TabIndex = 0;
+            this.pic_dt.TabStop = false;
             // 
             // openFileDialog1
             // 
@@ -387,67 +441,13 @@
             this.bt_openfile.UseVisualStyleBackColor = true;
             this.bt_openfile.Click += new System.EventHandler(this.bt_openfile_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label13.Location = new System.Drawing.Point(26, 376);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 24);
-            this.label13.TabIndex = 43;
-            this.label13.Text = "Giá Nhập";
-            // 
-            // txt_gianhap
-            // 
-            this.txt_gianhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.txt_gianhap.Location = new System.Drawing.Point(194, 376);
-            this.txt_gianhap.Name = "txt_gianhap";
-            this.txt_gianhap.Size = new System.Drawing.Size(244, 28);
-            this.txt_gianhap.TabIndex = 44;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label14.Location = new System.Drawing.Point(473, 376);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 24);
-            this.label14.TabIndex = 45;
-            this.label14.Text = "Giá Bán";
-            // 
-            // txt_giaban
-            // 
-            this.txt_giaban.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.txt_giaban.Location = new System.Drawing.Point(638, 376);
-            this.txt_giaban.Name = "txt_giaban";
-            this.txt_giaban.Size = new System.Drawing.Size(244, 28);
-            this.txt_giaban.TabIndex = 46;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label15.Location = new System.Drawing.Point(26, 441);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(134, 24);
-            this.label15.TabIndex = 47;
-            this.label15.Text = "Ngày Áp Dụng";
-            // 
-            // ngayapdung
-            // 
-            this.ngayapdung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.ngayapdung.Location = new System.Drawing.Point(194, 441);
-            this.ngayapdung.Name = "ngayapdung";
-            this.ngayapdung.Size = new System.Drawing.Size(363, 28);
-            this.ngayapdung.TabIndex = 48;
-            // 
             // QLSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 761);
             this.Controls.Add(this.bt_openfile);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pic_dt);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bt_huy);
             this.Controls.Add(this.bt_luu);
@@ -458,7 +458,7 @@
             this.Text = "Form4";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,7 +490,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_dt;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button bt_openfile;
         private System.Windows.Forms.Label label12;

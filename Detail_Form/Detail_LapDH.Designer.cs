@@ -70,6 +70,7 @@
             this.bt_LuuDH.TabIndex = 0;
             this.bt_LuuDH.Text = "Lưu ";
             this.bt_LuuDH.UseVisualStyleBackColor = false;
+            this.bt_LuuDH.Click += new System.EventHandler(this.bt_LuuDH_Click);
             // 
             // bt_Cancel
             // 

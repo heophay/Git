@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuUser));
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Product1", 0);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Product2", 0);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Product3", 0);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Product4", 0);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Product5", 0);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Product6", 0);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Product1");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Product2");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Product3");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Product4");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Product5");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Product6");
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label_TimKiem = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbb_gia = new System.Windows.Forms.ComboBox();
@@ -48,6 +46,7 @@
             this.label_TimTheo = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.listView_DSSP = new System.Windows.Forms.ListView();
+            this.bt_search = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -56,7 +55,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Controls.Add(this.label_TimKiem);
+            this.panel2.Controls.Add(this.bt_search);
             this.panel2.Controls.Add(this.txt_search);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,23 +64,12 @@
             this.panel2.Size = new System.Drawing.Size(1228, 129);
             this.panel2.TabIndex = 1;
             // 
-            // label_TimKiem
-            // 
-            this.label_TimKiem.AutoSize = true;
-            this.label_TimKiem.BackColor = System.Drawing.Color.Gray;
-            this.label_TimKiem.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.label_TimKiem.ForeColor = System.Drawing.Color.White;
-            this.label_TimKiem.Location = new System.Drawing.Point(332, 84);
-            this.label_TimKiem.Name = "label_TimKiem";
-            this.label_TimKiem.Size = new System.Drawing.Size(103, 27);
-            this.label_TimKiem.TabIndex = 2;
-            this.label_TimKiem.Text = "Tìm kiếm";
-            // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(450, 89);
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(458, 84);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(476, 22);
+            this.txt_search.Size = new System.Drawing.Size(476, 27);
             this.txt_search.TabIndex = 1;
             // 
             // panel3
@@ -100,6 +88,7 @@
             // 
             // cbb_gia
             // 
+            this.cbb_gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_gia.FormattingEnabled = true;
             this.cbb_gia.Items.AddRange(new object[] {
             "Từ 1-2 Triệu",
@@ -108,7 +97,7 @@
             "Trên 8 Triệu"});
             this.cbb_gia.Location = new System.Drawing.Point(802, 20);
             this.cbb_gia.Name = "cbb_gia";
-            this.cbb_gia.Size = new System.Drawing.Size(294, 24);
+            this.cbb_gia.Size = new System.Drawing.Size(294, 28);
             this.cbb_gia.TabIndex = 3;
             // 
             // label_Gia
@@ -123,6 +112,7 @@
             // 
             // cbb_thuonghieu
             // 
+            this.cbb_thuonghieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_thuonghieu.FormattingEnabled = true;
             this.cbb_thuonghieu.Items.AddRange(new object[] {
             "Sam Sung",
@@ -132,7 +122,7 @@
             "Xiaomi"});
             this.cbb_thuonghieu.Location = new System.Drawing.Point(353, 20);
             this.cbb_thuonghieu.Name = "cbb_thuonghieu";
-            this.cbb_thuonghieu.Size = new System.Drawing.Size(261, 24);
+            this.cbb_thuonghieu.Size = new System.Drawing.Size(261, 28);
             this.cbb_thuonghieu.TabIndex = 3;
             // 
             // label_ThuongHieu
@@ -168,21 +158,21 @@
             // 
             // imageList1
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth16Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(180, 180);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "10044940_DTDD_SAMSUNG_SM-A715FDS-128GB-DEN_01_96en-r2.jpg");
             // 
             // listView_DSSP
             // 
             this.listView_DSSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView_DSSP.HideSelection = false;
             this.listView_DSSP.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.listView_DSSP.LargeImageList = this.imageList1;
             this.listView_DSSP.Location = new System.Drawing.Point(0, 129);
             this.listView_DSSP.Name = "listView_DSSP";
@@ -190,6 +180,21 @@
             this.listView_DSSP.TabIndex = 2;
             this.listView_DSSP.UseCompatibleStateImageBehavior = false;
             this.listView_DSSP.Click += new System.EventHandler(this.listView1_Click);
+            // 
+            // bt_search
+            // 
+            this.bt_search.BackColor = System.Drawing.Color.Gray;
+            this.bt_search.FlatAppearance.BorderSize = 0;
+            this.bt_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_search.Font = new System.Drawing.Font("Times New Roman", 13.8F);
+            this.bt_search.ForeColor = System.Drawing.Color.White;
+            this.bt_search.Location = new System.Drawing.Point(273, 77);
+            this.bt_search.Name = "bt_search";
+            this.bt_search.Size = new System.Drawing.Size(138, 39);
+            this.bt_search.TabIndex = 3;
+            this.bt_search.Text = "Tìm kiếm";
+            this.bt_search.UseVisualStyleBackColor = false;
+            this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
             // 
             // TrangChuUser
             // 
@@ -212,7 +217,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label_TimKiem;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbb_gia;
@@ -223,5 +227,6 @@
         private System.Windows.Forms.Label label_TimTheo;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListView listView_DSSP;
+        private System.Windows.Forms.Button bt_search;
     }
 }

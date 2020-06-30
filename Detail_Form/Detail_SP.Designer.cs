@@ -41,16 +41,16 @@
             this.txt_BNT = new System.Windows.Forms.TextBox();
             this.txt_gia = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pic_dt = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Muahang = new System.Windows.Forms.Button();
             this.btn_Huy = new System.Windows.Forms.Button();
             this.gb_Muahang = new System.Windows.Forms.GroupBox();
-            this.lb_Soluong = new System.Windows.Forms.Label();
-            this.pic_dt = new System.Windows.Forms.PictureBox();
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.lb_Soluong = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gb_Muahang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_xuatxu
@@ -61,7 +61,7 @@
             this.txt_xuatxu.Name = "txt_xuatxu";
             this.txt_xuatxu.Size = new System.Drawing.Size(486, 27);
             this.txt_xuatxu.TabIndex = 40;
-            this.txt_xuatxu.Text = "Xuất Xứ:";
+            this.txt_xuatxu.Text = "Xuất Xứ: ";
             // 
             // txt_pin
             // 
@@ -71,7 +71,7 @@
             this.txt_pin.Name = "txt_pin";
             this.txt_pin.Size = new System.Drawing.Size(266, 27);
             this.txt_pin.TabIndex = 38;
-            this.txt_pin.Text = "Pin:";
+            this.txt_pin.Text = "Pin: ";
             // 
             // txt_HDH
             // 
@@ -81,7 +81,7 @@
             this.txt_HDH.Name = "txt_HDH";
             this.txt_HDH.Size = new System.Drawing.Size(486, 27);
             this.txt_HDH.TabIndex = 37;
-            this.txt_HDH.Text = "Hệ Điều Hành";
+            this.txt_HDH.Text = "Hệ Điều Hành: ";
             // 
             // txt_manhinh
             // 
@@ -131,7 +131,7 @@
             this.txt_ram.Name = "txt_ram";
             this.txt_ram.Size = new System.Drawing.Size(266, 27);
             this.txt_ram.TabIndex = 42;
-            this.txt_ram.Text = "Ram:";
+            this.txt_ram.Text = "Ram: ";
             // 
             // txt_sim
             // 
@@ -151,7 +151,7 @@
             this.txt_BNT.Name = "txt_BNT";
             this.txt_BNT.Size = new System.Drawing.Size(266, 27);
             this.txt_BNT.TabIndex = 44;
-            this.txt_BNT.Text = "Bộ nhớ trong:";
+            this.txt_BNT.Text = "Bộ nhớ trong: ";
             // 
             // txt_gia
             // 
@@ -161,7 +161,18 @@
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(394, 45);
             this.txt_gia.TabIndex = 46;
-            this.txt_gia.Text = "Giá:";
+            this.txt_gia.Text = "Giá: ";
+            // 
+            // pic_dt
+            // 
+            this.pic_dt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pic_dt.Location = new System.Drawing.Point(12, 24);
+            this.pic_dt.Name = "pic_dt";
+            this.pic_dt.Size = new System.Drawing.Size(450, 498);
+            this.pic_dt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_dt.TabIndex = 4;
+            this.pic_dt.TabStop = false;
+            this.toolTip1.SetToolTip(this.pic_dt, "Sam Sung Galaxy A50");
             // 
             // groupBox1
             // 
@@ -220,6 +231,13 @@
             this.gb_Muahang.TabStop = false;
             this.gb_Muahang.Text = "Mua hàng";
             // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Location = new System.Drawing.Point(111, 31);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(49, 22);
+            this.domainUpDown1.TabIndex = 52;
+            // 
             // lb_Soluong
             // 
             this.lb_Soluong.AutoSize = true;
@@ -229,24 +247,6 @@
             this.lb_Soluong.Size = new System.Drawing.Size(74, 20);
             this.lb_Soluong.TabIndex = 50;
             this.lb_Soluong.Text = "Số lượng";
-            // 
-            // pic_dt
-            // 
-            this.pic_dt.BackgroundImage = global::GiaoDien.Properties.Resources.product_15574_1;
-            this.pic_dt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pic_dt.Location = new System.Drawing.Point(12, 24);
-            this.pic_dt.Name = "pic_dt";
-            this.pic_dt.Size = new System.Drawing.Size(450, 498);
-            this.pic_dt.TabIndex = 4;
-            this.pic_dt.TabStop = false;
-            this.toolTip1.SetToolTip(this.pic_dt, "Sam Sung Galaxy A50");
-            // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.Location = new System.Drawing.Point(111, 31);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(49, 22);
-            this.domainUpDown1.TabIndex = 52;
             // 
             // Detail_SP
             // 
@@ -260,11 +260,11 @@
             this.Name = "Detail_SP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gb_Muahang.ResumeLayout(false);
             this.gb_Muahang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_dt)).EndInit();
             this.ResumeLayout(false);
 
         }

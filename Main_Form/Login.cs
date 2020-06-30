@@ -181,7 +181,6 @@ namespace GiaoDien
                 tk = db.TaiKhoans.Where(p => p.TenTK == txt_user.Text && p.PassTK == pass).FirstOrDefault();
                 if (tk != null)
                 {
-                    MessageBox.Show(MaHoaMK(txt_pass.Text));
                     MaTK = tk.MaTK;
                     foreach (string i in db.TaiKhoans.Select(p => p.LoaiTK).Distinct().ToList())
                     {

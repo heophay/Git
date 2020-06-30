@@ -27,10 +27,11 @@ namespace GiaoDien
             if (tk.LoaiTK== "Manager")
             {
                 bt_Nhanvien.Visible = false;
+                label_Greeting.Text += " " + tk.LoaiTK;
             }
             if (tk.LoaiTK == "Admin")
             {
-
+                label_Greeting.Text += " " + tk.LoaiTK;
                 bt_TTCN.Visible = false;
             }
         }

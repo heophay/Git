@@ -63,7 +63,7 @@ namespace GiaoDien
         public void SetView()
         {
             SE_14X db = new SE_14X();
-            label_Greeting.Text = db.ThongTinCaNhans.Where(p => p.MaTK == Matk).FirstOrDefault().TenKH;
+            label_Greeting.Text +=" "+ db.ThongTinCaNhans.Where(p => p.MaTK == Matk).FirstOrDefault().TenKH;
         }
         public void Get_Listmasp(List<ItemsGH> Masp)
         {

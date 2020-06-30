@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,9 +53,8 @@ namespace GiaoDien
                 openFileDialog1.FilterIndex = 0;
                 Image img = Image.FromFile(openFileDialog1.FileName);
                 // Gán ảnh
-                pictureBox1.Image = img;
+                pic_dt.Image = img;
                 Picture = openFileDialog1.FileName;
-                MessageBox.Show(Picture);
             }
         }
         private void SetView()
@@ -75,9 +75,19 @@ namespace GiaoDien
                 cbb_hangsx.SelectedIndex = Fill_CBB(cbb_hangsx, sp.HangSX);
                 cbb_ram.SelectedIndex = Fill_CBB(cbb_ram, sp.Ram);
                 cbb_sim.SelectedIndex = Fill_CBB(cbb_sim, sp.SoSim.ToString());
+                pic_dt.Image = ByteToImg(sp.HinhAnh);
             }
         }
-        private int Fill_CBB(ComboBox cbb, string type)
+       
+    private Image ByteToImg(string byteString)
+    {
+        byte[] imgBytes = Convert.FromBase64String(byteString);
+        MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
+        ms.Write(imgBytes, 0, imgBytes.Length);
+        Image image = Image.FromStream(ms, true);
+        return image;
+    }
+    private int Fill_CBB(ComboBox cbb, string type)
         {
             foreach (string i in cbb.Items)
             {
@@ -95,6 +105,15 @@ namespace GiaoDien
                 show();
                 this.Close();
             }
+        }
+        private byte[] converImgToByte( string path)
+        {
+            FileStream fs;
+            fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+            byte[] picbyte = new byte[fs.Length];
+            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+            fs.Close();
+            return picbyte;
         }
         private bool Oke()
         {
@@ -114,11 +133,12 @@ namespace GiaoDien
                             ManHinh = txt_manhinh.Text,
                             NoiXuatXu = txt_xuatxu.Text,
                             Pin = txt_pin.Text,
-                            HinhAnh=Picture,
+                            HinhAnh= Convert.ToBase64String(converImgToByte(Picture)),
                             HangSX = cbb_hangsx.SelectedItem.ToString(),
                             Ram = cbb_ram.SelectedItem.ToString(),
                             BoNhoTrong = cbb_BNT.SelectedItem.ToString(),
-                            SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString())
+                            SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString()),
+                            
                         });
                         db.KT_Gia_NhapXuats.Add(new KT_Gia_NhapXuat
                         {
@@ -128,6 +148,7 @@ namespace GiaoDien
                             NgayApDung = ngayapdung.Value
 
                         }) ;
+                        MessageBox.Show("Add thành công");
                         db.SaveChanges();
                         Run();
                     }
@@ -176,6 +197,8 @@ namespace GiaoDien
                     sp.Ram = cbb_ram.SelectedItem.ToString();
                     sp.BoNhoTrong = cbb_BNT.SelectedItem.ToString();
                     sp.SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString());
+                    sp.HinhAnh  = Convert.ToBase64String(converImgToByte(Picture));
+                    MessageBox.Show("Edit thành công");
                     db.SaveChanges();
                     Run();
                 }

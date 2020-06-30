@@ -83,18 +83,18 @@ namespace GiaoDien
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //ChiTiet_SP c = db.ChiTiet_SPs.Where(p => p.MaSP == "1").FirstOrDefault();
-            //imageList1.Images.Add(ByteToImg(c.HinhAnh));
-            //imageList1.ImageSize = new Size(132, 132);
-            //this.listView1.View = View.LargeIcon;
-            //for (int counter = 0; counter < imageList1.Images.Count; counter++)
-            //{
-            //    ListViewItem item = new ListViewItem();
-            //    item.ImageIndex = counter;
-            //    this.listView1.Items.Add(item);
-            //}
-            //this.listView1.LargeImageList = imageList1;
             ChiTiet_SP c = db.ChiTiet_SPs.Where(p => p.MaSP == "1").FirstOrDefault();
+            imageList1.Images.Add(ByteToImg(c.HinhAnh));
+            imageList1.ImageSize = new Size(132, 132);
+            this.listView1.View = View.LargeIcon;
+            for (int counter = 0; counter < imageList1.Images.Count; counter++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = counter;
+                this.listView1.Items.Add(item);
+            }
+            this.listView1.LargeImageList = imageList1;
+            //ChiTiet_SP c = db.ChiTiet_SPs.Where(p => p.MaSP == "1").FirstOrDefault();
             pictureBox1.Image = Image.FromFile(c.HinhAnh);
         }
     }

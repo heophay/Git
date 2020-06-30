@@ -28,32 +28,6 @@ namespace GiaoDien
             panel2.Controls.Add(r1);
         }
         
-        private void bt_search_Click(object sender, EventArgs e)
-        {
-            TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == r1.txt_TK).FirstOrDefault();
-
-            if(r1.txt_TK=="")
-            {
-                MessageBox.Show("Nhập tên tài khoản");
-            }
-            else
-            {
-                if(tk==null)
-                {
-                    MessageBox.Show("Tên Tài khoản không tồn tại");
-                }
-                else
-                {
-                    panel2.Controls.Clear();
-                    panel2.Controls.Add(r2);
-                    r2.txt_TK += " " + tk.TenTK;
-                    bt_yes.Visible = true;
-                    bt_no.Visible = true;
-                    bt_search.Hide();
-                    bt_huy.Hide();
-                }
-            }       
-        }
         //me no chu
         private void bt_huy_Click(object sender, EventArgs e)
         {
@@ -92,6 +66,32 @@ namespace GiaoDien
             bt_no.Hide(); 
             bt_search.Visible = true;
             bt_huy.Visible = true;
+        }
+
+        private void bt_search_Click(object sender, EventArgs e)
+        {         
+            if (r1.txt_TK == "")
+            {
+                MessageBox.Show("Nhập tên tài khoản");
+            }
+            else
+            {
+                TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == r1.txt_TK).FirstOrDefault();
+                if (tk == null)
+                {
+                    MessageBox.Show("Tên Tài khoản không tồn tại");
+                }
+                else
+                {
+                    panel2.Controls.Clear();
+                    panel2.Controls.Add(r2);
+                    r2.txt_TK += " " + tk.TenTK;
+                    bt_yes.Visible = true;
+                    bt_no.Visible = true;
+                    bt_search.Hide();
+                    bt_huy.Hide();
+                }
+            }
         }
     }
 }

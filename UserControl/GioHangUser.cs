@@ -65,9 +65,12 @@ namespace GiaoDien
         private void button_Tangsoluong_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = DGV_Giohang.SelectedRows;
-            int x = Convert.ToInt32(r[0].Cells["Soluong"].Value.ToString());
-            x++;
-            r[0].Cells["Soluong"].Value = x;
+            //int x=0;
+            // x= Convert.ToInt32(r[0].Cells["Soluong"].Value.ToString());
+            //MessageBox.Show(x.ToString());
+            //++x;
+            r[0].Cells["Soluong"].Value=Convert.ToInt32(r[0].Cells["Soluong"].Value.ToString())+1;
+            MessageBox.Show(r[0].Cells["Soluong"].Value.ToString());
             int index = -1;
             foreach (ItemsGH i in ListGH)
             {
@@ -84,18 +87,26 @@ namespace GiaoDien
         {
             DataGridViewSelectedRowCollection r = DGV_Giohang.SelectedRows;
             int x = Convert.ToInt32(r[0].Cells["Soluong"].Value.ToString());
-            x--;
-            r[0].Cells["Soluong"].Value = x;
-            int index = -1;
-            foreach (ItemsGH i in ListGH)
+            if(x-1>0)
             {
-                if (r[0].Cells["MaSP"].Value.ToString().Equals(i.MaSP))
+                --x;
+                r[0].Cells["Soluong"].Value = x;
+                int index = -1;
+                foreach (ItemsGH i in ListGH)
                 {
-                    index = ListGH.IndexOf(i);
+                    if (r[0].Cells["MaSP"].Value.ToString().Equals(i.MaSP))
+                    {
+                        index = ListGH.IndexOf(i);
+                    }
                 }
+                if (index != -1) ListGH[index].Soluong -= 1;
+                ListGH[index].ThanhTien = ListGH[index].Soluong * ListGH[index].Gia;
             }
-            if (index != -1) ListGH[index].Soluong -= 1;
-            ListGH[index].ThanhTien = ListGH[index].Soluong * ListGH[index].Gia;
+            else
+            {
+                MessageBox.Show("Số lượng k đc nhỏ hơn 1");
+            }
+            
         }
     }
 }
