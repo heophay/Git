@@ -63,6 +63,16 @@ namespace GiaoDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1436436153_Login_1024x1024 {
+            get {
+                object obj = ResourceManager.GetObject("1436436153_Login-1024x1024", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_3_24 {
             get {
                 object obj = ResourceManager.GetObject("eye-3-24", resourceCulture);
@@ -186,6 +196,16 @@ namespace GiaoDien.Properties {
         internal static System.Drawing.Bitmap telephone_symbol_icon_png_clipart_2965774 {
             get {
                 object obj = ResourceManager.GetObject("telephone-symbol-icon-png-clipart_2965774", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap th {
+            get {
+                object obj = ResourceManager.GetObject("th", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -17,6 +17,12 @@ namespace GiaoDien
         //SE_14 db = new SE_14();
         private string text;
         public string Text1 { get => text; set => text = value; }
+        public Main_Form()
+        {
+            InitializeComponent();
+            panel2.Controls.Clear();
+            panel2.Controls.Add(new User());
+        }
         public Main_Form(string MaTK)
         {
             Text1 = MaTK;
@@ -56,6 +62,14 @@ namespace GiaoDien
             this.Visible = false;
             l.ShowDialog();
             this.Dispose();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Register r = new Register();
+            this.Visible = false;
+            r.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -65,7 +65,6 @@ namespace GiaoDien
                     Detail_LapDH f = new Detail_LapDH(dh.MaDonHang, false, ShowDTGV, MaTK);
                     f.ShowDialog();
                 }
-
             }
             else
             {
@@ -75,23 +74,37 @@ namespace GiaoDien
 
         private void button_XoaDonHang_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection dr = DGV_Donhang.SelectedRows;
-            if (dr.Count < 1)
+            DataGridViewSelectedRowCollection row = DGV_Donhang.SelectedRows;
+            if (row.Count < 1)
             {
-                MessageBox.Show("Hãy chọn đơn hàng!!");
+                MessageBox.Show("Chọn 1 hoặc nhiều đơn hàng trước khi muốn xóa!!");
             }
             else
             {
-                Delete_MH();
-                Delete_DH();
-                ShowDTGV();
+                if(!Delete_MH())
+                {
+                    MessageBox.Show("Error");
+                }
+                else
+                {
+                    if(!Delete_DH())
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        ShowDTGV();
+                    }
+                }
+                
             }
         }
-        public void Delete_DH()
+        public bool Delete_DH()
         {
             DataGridViewSelectedRowCollection dr = DGV_Donhang.SelectedRows;
             try
             {
+                MessageBox.Show("qua dơn hàng");
                 foreach (DonHang i in db.DonHangs)
                 {
                     foreach (DataGridViewRow r in dr)
@@ -103,32 +116,34 @@ namespace GiaoDien
                     }
                 }
                 db.SaveChanges();
+                return true;
             }
             catch (Exception)
             {
-                MessageBox.Show("Error");
+                return false;
             }
-        }
-        public void Delete_MH()
+}
+        public bool Delete_MH()
         {
             DataGridViewSelectedRowCollection dr = DGV_Donhang.SelectedRows;
             try
             {
-                foreach (MuaHang i in db.MuaHangs)
+                foreach (DataGridViewRow r in dr)
                 {
-                    foreach (DataGridViewRow r in dr)
+                    foreach (MuaHang i in db.MuaHangs)
                     {
-                        if (i.MaDonHang.Equals(r.Cells["MaDonHang"].Value.ToString()))
+                        if (i.MaDonHang==r.Cells["MaDonHang"].Value.ToString())
                         {
                             db.MuaHangs.Remove(i);
                         }
                     }
                 }
                 db.SaveChanges();
+                return true;
             }
             catch (Exception)
             {
-                MessageBox.Show("Error");
+                return false;
             }
         }
     }

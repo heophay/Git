@@ -44,18 +44,7 @@ namespace GiaoDien
             {
                 cbb_gia.Items.Add(i.TenDM);
             }
-           for(int i=1;i<cbb_gia.Items.Count-1;i++)
-            {
-                for(int j=i+1;j<cbb_gia.Items.Count;j++)
-                {
-                    if(Cut_Number_Equal(cbb_gia.Items[i].ToString()) >Cut_Number_Equal(cbb_gia.Items[j].ToString()))
-                    {
-                        string temp = cbb_gia.Items[i].ToString();
-                        cbb_gia.Items[i] = cbb_gia.Items[j];
-                        cbb_gia.Items[j] = temp;
-                    }
-                }
-            }
+            NVQL.Instance.Sort_CBB(cbb_gia.Items.Count, ref cbb_gia);
             foreach (ChiTiet_SP i in db.ChiTiet_SPs)
             {
                 bool kt = true;
@@ -95,50 +84,36 @@ namespace GiaoDien
             }       
             this.listView_DSSP.LargeImageList = imageList1;
         }
-        private double Cut_Number_Equal(string item)
+
+        public KT_Gia_NhapXuat Check_gia(string MaDT)
         {
-            string s = "";
-            if(item.Length>15)
+
+            KT_Gia_NhapXuat gia = null;
+            List<int> songaynn = new List<int>();
+            int songay = -1;
+            if (db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).Count() > 1)
             {
-                foreach (Char c in item.Substring(9))
+                foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
                 {
-                    if (Char.IsDigit(c))
-                        s += c;
+                    TimeSpan tsp = DateTime.Now.Subtract(i.NgayApDung);
+                    if (tsp.Days >= 0)
+                    {
+                        songay = tsp.Days;
+                        songaynn.Add(tsp.Days);
+                    }
                 }
-                return Convert.ToDouble(s)-0.001;
-            }
-            foreach (Char c in item)
-            {
-                if (Char.IsDigit(c))
-                    s += c;
-            }
-            return Convert.ToInt32(s);
-        }
-        private double Cut_Number_Canculate(string item,ref  double x)
-        {
-            string s = "";
-            if (item.Length > 15)
-            {
-                foreach (Char c in item.Substring(9))
+                int x = NVQL.Instance.TimSoNN(songaynn);
+                foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
                 {
-                    if (Char.IsDigit(c))
-                        s += c;
+                    if (DateTime.Now.Subtract(i.NgayApDung).Days == x) gia = i;
                 }
-                x = Convert.ToInt32(s);
-                s = "";
-                foreach (Char c in item.Substring(0, 9))
-                {
-                    if (Char.IsDigit(c))
-                        s += c;
-                }
-                return Convert.ToDouble(s) - 0.001;
+                return gia;
             }
-            foreach (Char c in item)
+            else
             {
-                if (Char.IsDigit(c))
-                    s += c;
+                gia = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).FirstOrDefault();
+                return gia;
             }
-            return Convert.ToInt32(s);
         }
         private List<KT_Gia_NhapXuat> List_SP()
         {
@@ -148,7 +123,7 @@ namespace GiaoDien
             double Gia2 = 100;
             if (cbb_gia.SelectedItem.ToString() != "All")
             {
-                Gia = Cut_Number_Canculate(cbb_gia.SelectedItem.ToString(),ref Gia2);
+                Gia = NVQL.Instance.Cut_Number_Canculate(cbb_gia.SelectedItem.ToString(),ref Gia2);
             }
             if(cbb_thuonghieu.SelectedItem.ToString()!="All")
             {
@@ -157,31 +132,35 @@ namespace GiaoDien
             //giá =0, hangsx =0 & !=0;
             if (cbb_gia.SelectedIndex == 0)
             {
-                foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
-                            p =>p.ChiTiet_SP.HangSX.Contains(HangSX)&&
-                            p.ChiTiet_SP.TenSP.Contains(txt_search.Text) &&p.GiaBan < Gia * 1000000))
+                foreach (ChiTiet_SP i in db.ChiTiet_SPs.Where(
+                            p => p.HangSX.Contains(HangSX) &&
+                            p.TenSP.Contains(txt_search.Text)))
                 {
-                    List_SP.Add(i);
+                    if (Check_gia(i.MaSP).GiaBan < Gia * 1000000) List_SP.Add(Check_gia(i.MaSP));
                 }
             }
             else
             {
-               if(cbb_gia.SelectedItem.Equals("Dưới 5 triệu"))
+                if (cbb_gia.SelectedItem.Equals("Dưới 5 triệu"))
                 {
-                    foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
-                       p => p.ChiTiet_SP.TenSP.Contains(txt_search.Text) &&
-                       p.ChiTiet_SP.HangSX.Contains(HangSX) && p.GiaBan < Gia * 1000000))
+
+                    foreach (ChiTiet_SP i in db.ChiTiet_SPs.Where(
+                       p => p.TenSP.Contains(txt_search.Text) &&
+                       p.HangSX.Contains(HangSX)))
                     {
-                        List_SP.Add(i);
+                        KT_Gia_NhapXuat gia = Check_gia(i.MaSP);
+                        if (gia.GiaBan < Gia * 1000000) List_SP.Add(gia);
                     }
                 }
-               else
+                else
                 {
-                    foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(
-                       p => p.ChiTiet_SP.TenSP.Contains(txt_search.Text) &&
-                       p.ChiTiet_SP.HangSX.Contains(HangSX) && p.GiaBan < Gia2 * 1000000 && p.GiaBan > Gia * 1000000))
+
+                    foreach (ChiTiet_SP i in db.ChiTiet_SPs.Where(
+                       p => p.TenSP.Contains(txt_search.Text) &&
+                       p.HangSX.Contains(HangSX)))
                     {
-                        List_SP.Add(i);
+                        KT_Gia_NhapXuat gia = Check_gia(i.MaSP);
+                        if (gia.GiaBan < Gia2 * 1000000 && gia.GiaBan > Gia * 1000000) List_SP.Add(gia);
                     }
                 }
             }

@@ -112,6 +112,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(366, 22);
             this.dateTimePicker1.TabIndex = 23;
+            this.dateTimePicker1.Value = new System.DateTime(2020, 7, 1, 0, 0, 0, 0);
             // 
             // groupBox2
             // 

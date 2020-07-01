@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
+using DACNPM.dll;
 namespace GiaoDien
 {
     public partial class Detail_KH : Form
@@ -22,7 +23,6 @@ namespace GiaoDien
             SetView();
         }
         SE_14X db = new SE_14X();
-        //SE_14 db = new SE_14();
 
         public string MaKH { get => _MaKH; set => _MaKH = value; }
         public SHow D { get => d; set => d = value; }
@@ -37,6 +37,7 @@ namespace GiaoDien
                 ThongTinCaNhan nv = db.ThongTinCaNhans.Where(p => p.MaTK == MaKH).FirstOrDefault();
                 txt_makh.Text = nv.MaTK;
                 txt_nv.Text = nv.TenKH;
+                rb_nam.Checked = nv.Gender;
                 txt_pass.Text = nv.TaiKhoan.PassTK;
                 txt_tk.Text = nv.TaiKhoan.TenTK;
                 txt_dt.Text = nv.SoDT;
@@ -67,18 +68,38 @@ namespace GiaoDien
                         }
                         else
                         {
-                            nv.TenKH = txt_nv.Text;
-                            nv.SoDT = txt_dt.Text;
-                            nv.DiaChi = txt_diachi.Text;
-                            nv.NgaySinh = dateTimePicker1.Value;
-                            nv.Gender = rb_nam.Checked;
-                            db.SaveChanges();
-                            MessageBox.Show("Edit thành công");
-                            Run();
+                            if(!NVQL.Instance.Check_Number(txt_dt.Text))
+                            {
+                                MessageBox.Show("Số điện thoại chỉ bao gồm kí tự số");
+                                return false;
+                            }
+                            else
+                            {
+                                if(txt_dt.Text.Length!=10)
+                                {
+                                    MessageBox.Show("số điện thoại phải đủ 10 số");
+                                    return false;
+                                }
+                                else
+                                {
+                                    nv.TenKH = txt_nv.Text;
+                                    nv.SoDT = txt_dt.Text;
+                                    nv.DiaChi = txt_diachi.Text;
+                                    nv.NgaySinh = dateTimePicker1.Value;
+                                    nv.Gender = rb_nam.Checked;
+                                    db.SaveChanges();
+                                    MessageBox.Show("Edit thành công");
+                                    Run();
+                                }
+                            }
                         }
                     }
                 }
-                
+                else
+                {
+                    MessageBox.Show("Error!");
+                    return false;
+                }
                 return true;
             }
             catch (Exception)

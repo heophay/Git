@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
 using DACNPM.dll;
+using System.Text.RegularExpressions;
+
 namespace GiaoDien
 {
     public partial class Register : Form
@@ -20,15 +22,6 @@ namespace GiaoDien
         {
             InitializeComponent();
             SetWaterMarkText();
-            cbb_ngay.SelectedIndex = 17;
-            cbb_thang.SelectedIndex = 2;
-
-            for (int i = 2020; i >= 1905; i--)
-            {
-                cbb_nam.Items.Add(i);
-            }
-            cbb_nam.SelectedIndex = 21;
-            lb_Thongbao.Visible = false;
         }
         private void SetWaterMarkText()
         {
@@ -146,48 +139,90 @@ namespace GiaoDien
         {
             this.Close();
         }
-
-        private void bt_dangky_Click(object sender, EventArgs e)
+        private bool Check_Format()
         {
-            if (db.TaiKhoans.Where(p => p.TenTK.Contains(txt_tk.Text)).Count() != 0)
+            try
             {
-                MessageBox.Show("Tai khoan da ton tai!");
-            }
-            else
-            {
-                if (!txt_pass.Text.ToString().Equals(txt_confirm.Text.ToString()))
+                if(NVQL.Instance.Check_String(txt_tk.Text)&&NVQL.Instance.Check_String(txt_pass.Text)
+                    &&NVQL.Instance.Check_String(txt_confirm.Text))
                 {
-                    MessageBox.Show("Password xac nhan sai!!");
+                    if(txt_pass.Text.Length<5)
+                    {
+                        MessageBox.Show("mật khẩu ít nhất 5 kí tự bao gồm số hoặc chữ cái");
+                        return false;
+                    }
+                    else
+                    {
+                        if (!NVQL.Instance.Check_Number(txt_sdt.Text))
+                        {
+                            MessageBox.Show("Số điện thoại không bao gồm chữ cái");
+                        }
+                        else
+                        {
+                            if (txt_sdt.Text.Length != 10)
+                            {
+                                MessageBox.Show("số điện thoại phải đủ 10 số");
+                                return false;
+                            }
+                        }
+                    }
                 }
                 else
                 {
-                    string x = (db.TaiKhoans.Count() + 1).ToString();
-                    foreach (char i in db.TaiKhoans.Select(p => new { p.MaTK }).ToString())
+                    MessageBox.Show("Sai định dạng! Tên tài khoản và mật khẩu không được có dấu");
+                    return false;
+                }
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+        private void bt_dangky_Click(object sender, EventArgs e)
+        {
+            if (Check_Format())
+            {
+                if (db.TaiKhoans.Where(p => p.TenTK.Contains(txt_tk.Text)).Count() != 0)
+                {
+                    MessageBox.Show("Tai khoan da ton tai!");
+                }
+                else
+                {
+                    if (!txt_pass.Text.ToString().Equals(txt_confirm.Text.ToString()))
                     {
-                        if (x == i.ToString())
-                        {
-                            x = (Convert.ToInt32(x) + 1).ToString();
-                        }
+                        MessageBox.Show("Password xac nhan sai!!");
                     }
-                    db.TaiKhoans.Add(new TaiKhoan
+                    else
                     {
-                        MaTK = x,
-                        TenTK = txt_tk.Text,
-                        PassTK = NVQL.Instance.MaHoaMK(txt_pass.Text),
-                        LoaiTK = "Customer",
-                    });
-                    db.ThongTinCaNhans.Add(new ThongTinCaNhan
-                    {
-                        MaTK = x,
-                        TenKH = txt_name.Text,
-                        SoDT = txt_sdt.Text,
-                        DiaChi = txt_diachi.Text,
-                        NgaySinh = new DateTime(Convert.ToInt32(cbb_nam.SelectedItem.ToString()),
-                        cbb_thang.SelectedIndex + 1, Convert.ToInt32(cbb_ngay.SelectedItem.ToString())),
-                        Gender = rdb_Nam.Checked
-                    });
-                    db.SaveChanges();
-                    MessageBox.Show("Success");
+                        string x = (db.TaiKhoans.Count() + 1).ToString();
+                        foreach (char i in db.TaiKhoans.Select(p => new { p.MaTK }).ToString())
+                        {
+                            if (x == i.ToString())
+                            {
+                                x = (Convert.ToInt32(x) + 1).ToString();
+                            }
+                        }
+                        db.TaiKhoans.Add(new TaiKhoan
+                        {
+                            MaTK = x,
+                            TenTK = txt_tk.Text,
+                            PassTK = NVQL.Instance.MaHoaMK(txt_pass.Text),
+                            LoaiTK = "Customer",
+                        });
+                        db.ThongTinCaNhans.Add(new ThongTinCaNhan
+                        {
+                            MaTK = x,
+                            TenKH = txt_name.Text,
+                            SoDT = txt_sdt.Text,
+                            DiaChi = txt_diachi.Text,
+                            NgaySinh = dtp_ngaysinh.Value,
+                            Gender = rdb_Nam.Checked
+                        });
+                        db.SaveChanges();
+                        MessageBox.Show("Success");
+                        this.Close();
+                    }
                 }
             }
         }

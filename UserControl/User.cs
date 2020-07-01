@@ -17,7 +17,15 @@ namespace GiaoDien
         private string _matk;
 
         public string Matk { get => _matk; set => _matk = value; }
-
+        SE_14X db = new SE_14X();
+        public User()
+        {
+            InitializeComponent();
+            panel1.Controls.Clear();
+            TrangChuUser l = new TrangChuUser();
+            panel1.Controls.Add(l);
+            this.Matk = "";
+        }
         public User(string Matk)
         {
             this.Matk = Matk;
@@ -35,9 +43,21 @@ namespace GiaoDien
         }
         private void button_TaiKhoan_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            TaiKhoanUser l = new TaiKhoanUser(Matk);
-            panel1.Controls.Add(l);
+            if(this.Matk!="")
+            {
+                panel1.Controls.Clear();
+                TaiKhoanUser l = new TaiKhoanUser(Matk);
+                panel1.Controls.Add(l);
+            }
+            else
+            {
+                if(MessageBox.Show("Bạn có muốn đăng nhập để tiếp tục chức năng này?", "Xác Nhận",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    Login l = new Login();
+                    l.ShowDialog();
+                }
+            }
         }
 
         private void button_GioHang_Click(object sender, EventArgs e)
@@ -49,9 +69,21 @@ namespace GiaoDien
 
         private void button_DonHang_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            DonHangCus l = new DonHangCus(this.Matk);
-            panel1.Controls.Add(l);
+            if(this.Matk!="")
+            {
+                panel1.Controls.Clear();
+                DonHangCus l = new DonHangCus(this.Matk);
+                panel1.Controls.Add(l);
+            }
+            else
+            {
+                if (MessageBox.Show("Bạn có muốn đăng nhập để tiếp tục chức năng này?", "Xác Nhận",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Login l = new Login();
+                    l.ShowDialog();
+                }              
+            }
         }
 
         private void User_Load(object sender, EventArgs e)
@@ -62,7 +94,6 @@ namespace GiaoDien
         }
         public void SetView()
         {
-            SE_14X db = new SE_14X();
             label_Greeting.Text +=" "+ db.ThongTinCaNhans.Where(p => p.MaTK == Matk).FirstOrDefault().TenKH;
         }
         public void Get_Listmasp(ItemsGH Masp)

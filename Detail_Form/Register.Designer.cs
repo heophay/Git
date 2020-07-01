@@ -30,9 +30,7 @@
         {
             this.bt_dangky = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbb_nam = new System.Windows.Forms.ComboBox();
-            this.cbb_thang = new System.Windows.Forms.ComboBox();
-            this.cbb_ngay = new System.Windows.Forms.ComboBox();
+            this.dtp_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdb_Nu = new System.Windows.Forms.RadioButton();
             this.rdb_Nam = new System.Windows.Forms.RadioButton();
@@ -66,99 +64,23 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbb_nam);
-            this.groupBox2.Controls.Add(this.cbb_thang);
-            this.groupBox2.Controls.Add(this.cbb_ngay);
+            this.groupBox2.Controls.Add(this.dtp_ngaysinh);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(106, 495);
+            this.groupBox2.Location = new System.Drawing.Point(97, 481);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 79);
+            this.groupBox2.Size = new System.Drawing.Size(386, 79);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ngày sinh";
             // 
-            // cbb_nam
+            // dtp_ngaysinh
             // 
-            this.cbb_nam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.cbb_nam.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.cbb_nam.FormattingEnabled = true;
-            this.cbb_nam.IntegralHeight = false;
-            this.cbb_nam.Items.AddRange(new object[] {
-            "Năm"});
-            this.cbb_nam.Location = new System.Drawing.Point(196, 31);
-            this.cbb_nam.MaxDropDownItems = 19;
-            this.cbb_nam.Name = "cbb_nam";
-            this.cbb_nam.Size = new System.Drawing.Size(79, 29);
-            this.cbb_nam.TabIndex = 2;
-            // 
-            // cbb_thang
-            // 
-            this.cbb_thang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.cbb_thang.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.cbb_thang.FormattingEnabled = true;
-            this.cbb_thang.Items.AddRange(new object[] {
-            "Tháng 1",
-            "Tháng 2",
-            "Tháng 3",
-            "Tháng 4",
-            "Tháng 5",
-            "Tháng 6",
-            "Tháng 7",
-            "Tháng 8",
-            "Tháng 9",
-            "Tháng 10",
-            "Tháng 11",
-            "Tháng 12"});
-            this.cbb_thang.Location = new System.Drawing.Point(76, 31);
-            this.cbb_thang.Name = "cbb_thang";
-            this.cbb_thang.Size = new System.Drawing.Size(114, 29);
-            this.cbb_thang.TabIndex = 1;
-            // 
-            // cbb_ngay
-            // 
-            this.cbb_ngay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.cbb_ngay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbb_ngay.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.cbb_ngay.FormattingEnabled = true;
-            this.cbb_ngay.IntegralHeight = false;
-            this.cbb_ngay.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.cbb_ngay.Location = new System.Drawing.Point(6, 31);
-            this.cbb_ngay.MaxDropDownItems = 19;
-            this.cbb_ngay.Name = "cbb_ngay";
-            this.cbb_ngay.Size = new System.Drawing.Size(63, 29);
-            this.cbb_ngay.TabIndex = 0;
+            this.dtp_ngaysinh.Location = new System.Drawing.Point(18, 36);
+            this.dtp_ngaysinh.Name = "dtp_ngaysinh";
+            this.dtp_ngaysinh.Size = new System.Drawing.Size(351, 27);
+            this.dtp_ngaysinh.TabIndex = 0;
+            this.dtp_ngaysinh.Value = new System.DateTime(2020, 7, 1, 0, 0, 0, 0);
             // 
             // groupBox1
             // 
@@ -331,9 +253,6 @@
 
         private System.Windows.Forms.Button bt_dangky;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbb_nam;
-        private System.Windows.Forms.ComboBox cbb_thang;
-        private System.Windows.Forms.ComboBox cbb_ngay;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdb_Nu;
         private System.Windows.Forms.RadioButton rdb_Nam;
@@ -346,5 +265,6 @@
         private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.Button bt_cancel;
         private System.Windows.Forms.Label lb_Thongbao;
+        private System.Windows.Forms.DateTimePicker dtp_ngaysinh;
     }
 }

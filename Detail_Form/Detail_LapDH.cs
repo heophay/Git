@@ -32,7 +32,6 @@ namespace GiaoDien.Detail_Form
             this.listCTSP = listCTSP;
             ShowDGV = rs;
             this.MaTK = Matk;
-           
             Showdata();
         }
         public Detail_LapDH(string MaDH, bool kt, Showdata sender,string Matk)

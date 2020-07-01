@@ -21,6 +21,7 @@ namespace GiaoDien
             MaNV = manv;
             InitializeComponent();
             SetView();
+            rb_nam.Checked = true;
         }
         SE_14X db = new SE_14X();
 
@@ -55,45 +56,89 @@ namespace GiaoDien
                 this.Close();
             }
         }
-        private bool Oke()
+        private bool Check_Format()
         {
             try
             {
-                Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaNV).FirstOrDefault();
-                if (nv == null)
+                if (NVQL.Instance.Check_String(txt_tk.Text) && NVQL.Instance.Check_String(txt_pass.Text)
+                    && NVQL.Instance.Check_String(txt_manv.Text))
                 {
-                    if (txt_nv.Text != "" && txt_pass.Text != "" && txt_tk.Text != "" && txt_dt.Text != "" && txt_diachi.Text != "")
+                    if (txt_pass.Text.Length < 5)
                     {
-                        db.TaiKhoans.Add(new TaiKhoan
-                        {
-                            MaTK = txt_manv.Text,
-                            TenTK = txt_tk.Text,
-                            PassTK =NVQL.Instance.MaHoaMK(txt_pass.Text),
-                            LoaiTK = "Customer",
-                        });
-                        db.Theodoi_NVs.Add(new Theodoi_NV
-                        {
-                            MaTK = txt_manv.Text,
-                            TenNV = txt_nv.Text,
-                            SoDT = txt_dt.Text,
-                            DiaChi = txt_diachi.Text,
-                            NgaySinh = dateTimePicker1.Value,
-                            Gender = rb_nam.Checked
-                        });
-                        MessageBox.Show("Add thành công");
-                        db.SaveChanges();
-                        Run();
+                        MessageBox.Show("mật khẩu ít nhất 5 kí tự bao gồm số hoặc chữ cái");
+                        return false;
                     }
                     else
                     {
-                        MessageBox.Show("Nhập đã đủ thông tin đâu mà đòi Add trời!");
+                        if (!NVQL.Instance.Check_Number(txt_dt.Text))
+                        {
+                            MessageBox.Show("Số điện thoại chỉ bao gồm kí tự số");
+                            return false;
+                        }
+                        else
+                        {
+                            if (txt_dt.Text.Length != 10)
+                            {
+                                MessageBox.Show("số điện thoại phải đủ 10 số");
+                                return false;
+                            }
+                        }
                     }
                 }
                 else
                 {
-                    if (Check_MaSP())
+                    MessageBox.Show("Sai định dạng! Tên tài khoản, mã nhân viên và mật khẩu không được có dấu");
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private bool Oke()
+        {
+            try
+            {
+                if (txt_manv.Text == "" || txt_pass.Text == ""||txt_nv.Text=="" || txt_tk.Text == "" || txt_dt.Text == "" || txt_diachi.Text == "")
+                {
+                    MessageBox.Show("Nhập đã đủ thông tin đâu mà đòi Add trời!");
+                }
+                else
+                {
+                    if (Check_Format())
                     {
+                        TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == txt_manv.Text).FirstOrDefault();
+                        if (tk == null)
+                        {
+                            db.TaiKhoans.Add(new TaiKhoan
+                            {
+                                MaTK = txt_manv.Text,
+                                TenTK = txt_tk.Text,
+                                PassTK = NVQL.Instance.MaHoaMK(txt_pass.Text),
+                                LoaiTK = "Customer",
+                            });
+                            db.Theodoi_NVs.Add(new Theodoi_NV
+                            {
+                                MaTK = txt_manv.Text,
+                                TenNV = txt_nv.Text,
+                                SoDT = txt_dt.Text,
+                                DiaChi = txt_diachi.Text,
+                                NgaySinh = dateTimePicker1.Value,
+                                Gender = rb_nam.Checked
+                            });
+                            MessageBox.Show("Add thành công");
+                            db.SaveChanges();
+                            Run();
+                        }
+                        else
+                        {
+                            if (Check_MaSP())
+                            {
 
+                            }
+                        }
                     }
                 }
                 return true;
@@ -108,10 +153,10 @@ namespace GiaoDien
             try
             {
                 Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaNV).FirstOrDefault();
-                if (txt_manv.Enabled == true && txt_manv.Text.Equals(nv.MaTK))
+                TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == txt_manv.Text).FirstOrDefault();
+                if (txt_manv.Enabled == true&&tk!=null)
                 {
                     MessageBox.Show("Mã trùng rồi, nhập lại cái khác đi");
-                    return false;
                 }
                 else
                 {

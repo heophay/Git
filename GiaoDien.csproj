@@ -111,6 +111,12 @@
     <Compile Include="Main_Form\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Detail_Form\Update_Gia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detail_Form\Update_Gia.Designer.cs">
+      <DependentUpon>Update_Gia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\QLKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,12 +152,6 @@
     </Compile>
     <Compile Include="UserControl\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\TrangChuAdmin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\TrangChuAdmin.Designer.cs">
-      <DependentUpon>TrangChuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\TrangChuManager.cs">
       <SubType>UserControl</SubType>
@@ -272,6 +272,9 @@
     <EmbeddedResource Include="Detail_Form\Detail_ThanhToan.resx">
       <DependentUpon>Detail_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Detail_Form\Update_Gia.resx">
+      <DependentUpon>Update_Gia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,9 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\User.resx">
       <DependentUpon>User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\TrangChuAdmin.resx">
-      <DependentUpon>TrangChuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\TrangChuManager.resx">
       <DependentUpon>TrangChuManager.cs</DependentUpon>
@@ -421,6 +421,12 @@
     <None Include="Resources\pngtree-logout--icon-in-trendy-style-isolated-background-png-image_4859907.jpg" />
     <None Include="Resources\pngtree-logout--icon-in-trendy-style-isolated-background-png-image_48599071.jpg" />
     <None Include="Resources\saovang1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1436436153_Login-1024x1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\th.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

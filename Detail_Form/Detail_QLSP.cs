@@ -103,6 +103,49 @@ namespace GiaoDien
                 this.Close();
             }
         }
+        private bool Check_Format()
+        {
+            try
+            {
+                if (NVQL.Instance.Check_String(txt_namedt.Text) && NVQL.Instance.Check_String(txt_masp.Text))
+                {
+                    if (!NVQL.Instance.Check_Number(txt_giaban.Text) || !NVQL.Instance.Check_Number(txt_gianhap.Text) ||
+                  !NVQL.Instance.Check_Number(txt_soluong.Text))
+                    {
+                        MessageBox.Show("Giá nhập, giá bán và số lượng chỉ cho phép nhập kí tự số");
+                        return false;
+                    }
+                    else
+                    {
+                        if (txt_giaban.Text.Length > 10 || txt_gianhap.Text.Length > 10)
+                        {
+                            MessageBox.Show("Giá không quá 10 chữ số");
+                            return false;
+                        }
+                        if(ngayapdung.Value>DateTime.Now)
+                        {
+                            MessageBox.Show("Ngày áp dụng phải nhỏ hơn hoặc bằng ngày hiện tại");
+                            return false;
+                        }
+                        if (Convert.ToInt32(txt_soluong.Text) <= 0 || Convert.ToInt32(txt_giaban.Text) <= 0 ||
+                            Convert.ToInt32(txt_gianhap.Text) <= 0)
+                        {
+                            MessageBox.Show("Số lượng và Giá phải lớn hơn 0");
+                            return false;
+                        }
+                    }                
+                }
+                else
+                {
+                    MessageBox.Show("Tên điện thoại và mã điện thoại không được chứa chữ cái tiếng việt");
+                    return false;
+                }
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
         private bool Oke()
         {
             try
@@ -110,35 +153,39 @@ namespace GiaoDien
                 ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == txt_masp.Text).FirstOrDefault();
                 if(sp==null)
                 {
-                    if (txt_baohanh.Text != "" && txt_HDH.Text != "" && txt_manhinh.Text != "" && txt_namedt.Text != "" && txt_pin.Text != "" && txt_xuatxu.Text != "")
+                    if (txt_baohanh.Text != "" && txt_HDH.Text != "" && txt_manhinh.Text != "" 
+                        && txt_namedt.Text != "" && txt_pin.Text != "" && txt_xuatxu.Text != ""&&pic_dt.Image!=null)
                     {
-                        db.ChiTiet_SPs.Add(new ChiTiet_SP
+                        if(Check_Format())
                         {
-                            MaSP = txt_masp.Text,
-                            BaoHanh = txt_baohanh.Text,
-                            HeDieuHanh = txt_HDH.Text,
-                            TenSP = txt_namedt.Text,
-                            ManHinh = txt_manhinh.Text,
-                            NoiXuatXu = txt_xuatxu.Text,
-                            Pin = txt_pin.Text,
-                            HinhAnh= Convert.ToBase64String(NVQL.Instance.converImgToByte(Picture)),
-                            HangSX = cbb_hangsx.SelectedItem.ToString(),
-                            Ram = cbb_ram.SelectedItem.ToString(),
-                            BoNhoTrong = cbb_BNT.SelectedItem.ToString(),
-                            SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString()),
-                            
-                        });
-                        db.KT_Gia_NhapXuats.Add(new KT_Gia_NhapXuat
-                        {
-                            MaSP = txt_masp.Text,
-                            GiaNhap = Convert.ToInt32(txt_gianhap.Text.ToString()),
-                            GiaBan = Convert.ToInt32(txt_giaban.Text.ToString()),
-                            NgayApDung = ngayapdung.Value,
-                            Soluong=Convert.ToInt32(txt_soluong.Text)
-                        }) ;
-                        MessageBox.Show("Add thành công");
-                        db.SaveChanges();
-                        Run();
+                            db.ChiTiet_SPs.Add(new ChiTiet_SP
+                            {
+                                MaSP = txt_masp.Text,
+                                BaoHanh = txt_baohanh.Text,
+                                HeDieuHanh = txt_HDH.Text,
+                                TenSP = txt_namedt.Text,
+                                ManHinh = txt_manhinh.Text,
+                                NoiXuatXu = txt_xuatxu.Text,
+                                Pin = txt_pin.Text,
+                                HinhAnh = Convert.ToBase64String(NVQL.Instance.converImgToByte(Picture)),
+                                HangSX = cbb_hangsx.SelectedItem.ToString(),
+                                Ram = cbb_ram.SelectedItem.ToString(),
+                                BoNhoTrong = cbb_BNT.SelectedItem.ToString(),
+                                SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString()),
+
+                            });
+                            db.KT_Gia_NhapXuats.Add(new KT_Gia_NhapXuat
+                            {
+                                MaSP = txt_masp.Text,
+                                GiaNhap = Convert.ToInt32(txt_gianhap.Text.ToString()),
+                                GiaBan = Convert.ToInt32(txt_giaban.Text.ToString()),
+                                NgayApDung = ngayapdung.Value,
+                                Soluong = Convert.ToInt32(txt_soluong.Text)
+                            });
+                            MessageBox.Show("Add thành công");
+                            db.SaveChanges();
+                            Run();
+                        }                     
                     }
                     else
                     {
@@ -148,7 +195,6 @@ namespace GiaoDien
                 else
                 {
                     Check_MaSP();
-
                 }
                 return true;
             }
@@ -161,12 +207,11 @@ namespace GiaoDien
         {
             try
             {
-
                 ChiTiet_SP sp = db.ChiTiet_SPs.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 KT_Gia_NhapXuat kt = db.KT_Gia_NhapXuats.Where(p => p.MaSP == MaSP).FirstOrDefault();
                 if (txt_masp.Enabled == true)
                 {
-                    MessageBox.Show("MSSV trùng rồi, nhập lại cái khác đi");
+                    MessageBox.Show("Mã Sản phẩm trùng rồi, nhập lại cái khác đi");
                     return false;
                 }
                 else
@@ -180,34 +225,36 @@ namespace GiaoDien
                     }
                     else
                     {
-                        sp.BaoHanh = txt_baohanh.Text;
-                        sp.HeDieuHanh = txt_HDH.Text;
-                        sp.TenSP = txt_namedt.Text;
-                        sp.ManHinh = txt_manhinh.Text;
-                        sp.NoiXuatXu = txt_xuatxu.Text;
-                        sp.Pin = txt_pin.Text;
-                        sp.HangSX = cbb_hangsx.SelectedItem.ToString();
-                        sp.Ram = cbb_ram.SelectedItem.ToString();
-                        sp.BoNhoTrong = cbb_BNT.SelectedItem.ToString();
-                        sp.SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString());
-                        sp.HinhAnh = Picture;
-                        kt.GiaNhap = Convert.ToInt32(txt_gianhap.Text);
-                        kt.GiaBan = Convert.ToInt32(txt_giaban.Text);
-                        kt.NgayApDung = ngayapdung.Value;
-                        kt.Soluong = Convert.ToInt32(txt_soluong.Text);
-                        db.SaveChanges();
-                        MessageBox.Show("Edit thành công");
-                        Run();
-                    }
-                                   
+                        if(Check_Format())
+                        {
+                            sp.BaoHanh = txt_baohanh.Text;
+                            sp.HeDieuHanh = txt_HDH.Text;
+                            sp.TenSP = txt_namedt.Text;
+                            sp.ManHinh = txt_manhinh.Text;
+                            sp.NoiXuatXu = txt_xuatxu.Text;
+                            sp.Pin = txt_pin.Text;
+                            sp.HangSX = cbb_hangsx.SelectedItem.ToString();
+                            sp.Ram = cbb_ram.SelectedItem.ToString();
+                            sp.BoNhoTrong = cbb_BNT.SelectedItem.ToString();
+                            sp.SoSim = Convert.ToInt32(cbb_sim.SelectedItem.ToString());
+                            sp.HinhAnh = Picture;
+                            kt.GiaNhap = Convert.ToInt32(txt_gianhap.Text);
+                            kt.GiaBan = Convert.ToInt32(txt_giaban.Text);
+                            kt.NgayApDung = ngayapdung.Value;
+                            kt.Soluong = Convert.ToInt32(txt_soluong.Text);
+                            db.SaveChanges();
+                            MessageBox.Show("Edit thành công");
+                            Run();
+                        }
+                    }                                
                 }
                 return true;
-        }
+            }
             catch(Exception)
             {
                 return false;
             }
-}
+        }
         private void bt_luu_Click(object sender, EventArgs e)
         {
             if(!Oke())

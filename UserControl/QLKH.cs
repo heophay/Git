@@ -22,7 +22,7 @@ namespace GiaoDien
         }
         private void ShowDTGV()
         {
-            DGV_KH.DataSource = db.ThongTinCaNhans.Select(p => new { p.MaTK, p.TenKH, p.NgaySinh, p.SoDT, p.DiaChi, p.Gender }).ToList();
+            DGV_KH.DataSource = db.ThongTinCaNhans.Select(p => new { p.MaTK,p.TaiKhoan.TenTK, p.TenKH, p.NgaySinh, p.SoDT, p.DiaChi, p.Gender }).ToList();
         }
         private void button_Them_Click(object sender, EventArgs e)
         {
@@ -96,12 +96,12 @@ namespace GiaoDien
         {
             if(cbb_search.SelectedIndex==0)
             {
-                var list = db.ThongTinCaNhans.Where(p => p.TenKH.Contains(txt_search.Text));
+                var list = db.ThongTinCaNhans.Where(p => p.TenKH.Contains(txt_search.Text)).Select(p => new { p.MaTK, p.TenKH, p.NgaySinh, p.SoDT, p.DiaChi, p.Gender });
                 DGV_KH.DataSource = list.ToList();
             }
             else
             {
-                var list = db.ThongTinCaNhans.Where(p => p.MaTK.Contains(txt_search.Text));
+                var list = db.ThongTinCaNhans.Where(p => p.MaTK.Contains(txt_search.Text)).Select(p => new { p.MaTK, p.TenKH, p.NgaySinh, p.SoDT, p.DiaChi, p.Gender });
                 DGV_KH.DataSource = list.ToList();
             }
         }

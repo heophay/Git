@@ -43,15 +43,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lb_NgayTao = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lb_TenKH = new System.Windows.Forms.Label();
-            this.txt_TenKH = new System.Windows.Forms.TextBox();
-            this.lb_SDT = new System.Windows.Forms.Label();
-            this.txt_SDT = new System.Windows.Forms.TextBox();
-            this.lb_DiaChi = new System.Windows.Forms.Label();
-            this.txt_DiaChi = new System.Windows.Forms.TextBox();
-            this.cbox_SDT = new System.Windows.Forms.CheckBox();
-            this.cbox_DiaChi = new System.Windows.Forms.CheckBox();
             this.cbox_TenTK = new System.Windows.Forms.CheckBox();
+            this.cbox_DiaChi = new System.Windows.Forms.CheckBox();
+            this.cbox_SDT = new System.Windows.Forms.CheckBox();
+            this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.lb_DiaChi = new System.Windows.Forms.Label();
+            this.txt_SDT = new System.Windows.Forms.TextBox();
+            this.lb_SDT = new System.Windows.Forms.Label();
+            this.txt_TenKH = new System.Windows.Forms.TextBox();
+            this.lb_TenKH = new System.Windows.Forms.Label();
             this.grb_InfoProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grb_DonHang.SuspendLayout();
@@ -224,67 +224,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin vận chuyển";
             // 
-            // lb_TenKH
+            // cbox_TenTK
             // 
-            this.lb_TenKH.AutoSize = true;
-            this.lb_TenKH.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lb_TenKH.Location = new System.Drawing.Point(16, 45);
-            this.lb_TenKH.Name = "lb_TenKH";
-            this.lb_TenKH.Size = new System.Drawing.Size(127, 20);
-            this.lb_TenKH.TabIndex = 0;
-            this.lb_TenKH.Text = "Tên khách hàng";
-            // 
-            // txt_TenKH
-            // 
-            this.txt_TenKH.Location = new System.Drawing.Point(163, 42);
-            this.txt_TenKH.Name = "txt_TenKH";
-            this.txt_TenKH.Size = new System.Drawing.Size(312, 27);
-            this.txt_TenKH.TabIndex = 1;
-            // 
-            // lb_SDT
-            // 
-            this.lb_SDT.AutoSize = true;
-            this.lb_SDT.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lb_SDT.Location = new System.Drawing.Point(32, 126);
-            this.lb_SDT.Name = "lb_SDT";
-            this.lb_SDT.Size = new System.Drawing.Size(106, 20);
-            this.lb_SDT.TabIndex = 0;
-            this.lb_SDT.Text = "Số điện thoại";
-            // 
-            // txt_SDT
-            // 
-            this.txt_SDT.Location = new System.Drawing.Point(163, 123);
-            this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Size = new System.Drawing.Size(312, 27);
-            this.txt_SDT.TabIndex = 1;
-            // 
-            // lb_DiaChi
-            // 
-            this.lb_DiaChi.AutoSize = true;
-            this.lb_DiaChi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lb_DiaChi.Location = new System.Drawing.Point(76, 209);
-            this.lb_DiaChi.Name = "lb_DiaChi";
-            this.lb_DiaChi.Size = new System.Drawing.Size(61, 20);
-            this.lb_DiaChi.TabIndex = 0;
-            this.lb_DiaChi.Text = "Địa chỉ";
-            // 
-            // txt_DiaChi
-            // 
-            this.txt_DiaChi.Location = new System.Drawing.Point(163, 206);
-            this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Size = new System.Drawing.Size(312, 27);
-            this.txt_DiaChi.TabIndex = 1;
-            // 
-            // cbox_SDT
-            // 
-            this.cbox_SDT.AutoSize = true;
-            this.cbox_SDT.Location = new System.Drawing.Point(163, 165);
-            this.cbox_SDT.Name = "cbox_SDT";
-            this.cbox_SDT.Size = new System.Drawing.Size(245, 24);
-            this.cbox_SDT.TabIndex = 2;
-            this.cbox_SDT.Text = "Sử dụng SĐT trong tải khoản";
-            this.cbox_SDT.UseVisualStyleBackColor = true;
-            this.cbox_SDT.CheckedChanged += new System.EventHandler(this.cbox_SDT_CheckedChanged);
+            this.cbox_TenTK.AutoSize = true;
+            this.cbox_TenTK.Location = new System.Drawing.Point(163, 80);
+            this.cbox_TenTK.Name = "cbox_TenTK";
+            this.cbox_TenTK.Size = new System.Drawing.Size(240, 24);
+            this.cbox_TenTK.TabIndex = 2;
+            this.cbox_TenTK.Text = "Sử dụng Tên trong tài khoản";
+            this.cbox_TenTK.UseVisualStyleBackColor = true;
+            this.cbox_TenTK.CheckedChanged += new System.EventHandler(this.cbox_TenTK_CheckedChanged);
             // 
             // cbox_DiaChi
             // 
@@ -297,16 +246,70 @@
             this.cbox_DiaChi.UseVisualStyleBackColor = true;
             this.cbox_DiaChi.CheckedChanged += new System.EventHandler(this.cbox_DiaChi_CheckedChanged);
             // 
-            // cbox_TenTK
+            // cbox_SDT
             // 
-            this.cbox_TenTK.AutoSize = true;
-            this.cbox_TenTK.Location = new System.Drawing.Point(163, 80);
-            this.cbox_TenTK.Name = "cbox_TenTK";
-            this.cbox_TenTK.Size = new System.Drawing.Size(240, 24);
-            this.cbox_TenTK.TabIndex = 2;
-            this.cbox_TenTK.Text = "Sử dụng Tên trong tài khoản";
-            this.cbox_TenTK.UseVisualStyleBackColor = true;
-            this.cbox_TenTK.CheckedChanged += new System.EventHandler(this.cbox_TenTK_CheckedChanged);
+            this.cbox_SDT.AutoSize = true;
+            this.cbox_SDT.Location = new System.Drawing.Point(163, 165);
+            this.cbox_SDT.Name = "cbox_SDT";
+            this.cbox_SDT.Size = new System.Drawing.Size(245, 24);
+            this.cbox_SDT.TabIndex = 2;
+            this.cbox_SDT.Text = "Sử dụng SĐT trong tải khoản";
+            this.cbox_SDT.UseVisualStyleBackColor = true;
+            this.cbox_SDT.CheckedChanged += new System.EventHandler(this.cbox_SDT_CheckedChanged);
+            // 
+            // txt_DiaChi
+            // 
+            this.txt_DiaChi.Location = new System.Drawing.Point(163, 206);
+            this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.Size = new System.Drawing.Size(312, 27);
+            this.txt_DiaChi.TabIndex = 1;
+            this.txt_DiaChi.TextChanged += new System.EventHandler(this.txt_DiaChi_TextChanged_1);
+            // 
+            // lb_DiaChi
+            // 
+            this.lb_DiaChi.AutoSize = true;
+            this.lb_DiaChi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lb_DiaChi.Location = new System.Drawing.Point(76, 209);
+            this.lb_DiaChi.Name = "lb_DiaChi";
+            this.lb_DiaChi.Size = new System.Drawing.Size(61, 20);
+            this.lb_DiaChi.TabIndex = 0;
+            this.lb_DiaChi.Text = "Địa chỉ";
+            // 
+            // txt_SDT
+            // 
+            this.txt_SDT.Location = new System.Drawing.Point(163, 123);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.Size = new System.Drawing.Size(312, 27);
+            this.txt_SDT.TabIndex = 1;
+            this.txt_SDT.TextChanged += new System.EventHandler(this.txt_DiaChi_TextChanged);
+            // 
+            // lb_SDT
+            // 
+            this.lb_SDT.AutoSize = true;
+            this.lb_SDT.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lb_SDT.Location = new System.Drawing.Point(32, 126);
+            this.lb_SDT.Name = "lb_SDT";
+            this.lb_SDT.Size = new System.Drawing.Size(106, 20);
+            this.lb_SDT.TabIndex = 0;
+            this.lb_SDT.Text = "Số điện thoại";
+            // 
+            // txt_TenKH
+            // 
+            this.txt_TenKH.Location = new System.Drawing.Point(163, 42);
+            this.txt_TenKH.Name = "txt_TenKH";
+            this.txt_TenKH.Size = new System.Drawing.Size(312, 27);
+            this.txt_TenKH.TabIndex = 1;
+            this.txt_TenKH.TextChanged += new System.EventHandler(this.txt_TenKH_TextChanged);
+            // 
+            // lb_TenKH
+            // 
+            this.lb_TenKH.AutoSize = true;
+            this.lb_TenKH.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lb_TenKH.Location = new System.Drawing.Point(16, 45);
+            this.lb_TenKH.Name = "lb_TenKH";
+            this.lb_TenKH.Size = new System.Drawing.Size(127, 20);
+            this.lb_TenKH.TabIndex = 0;
+            this.lb_TenKH.Text = "Tên khách hàng";
             // 
             // Detail_ThanhToan
             // 

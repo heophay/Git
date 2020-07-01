@@ -54,8 +54,8 @@ namespace GiaoDien
             txt_ram.Text += ct.Ram;
             txt_sim.Text += ct.SoSim;
             txt_xuatxu.Text += ct.Ram;
-            KT_Gia_NhapXuat kt = db.KT_Gia_NhapXuats.Where(p => p.MaSP == MaDT).Select(p => p).FirstOrDefault();
-            txt_gia.Text += "  " + kt.GiaBan.ToString();
+            KT_Gia_NhapXuat kt = Check_gia(MaDT);
+            txt_gia.Text += " " + kt.GiaBan.ToString();
             for (int i = 20; i >= 1; i--)
             {
                 domainUpDown1.Items.Add(i);
@@ -64,48 +64,50 @@ namespace GiaoDien
             pic_dt.Image = NVQL.Instance.ByteToImg(ct.HinhAnh);
         }
 
-
         private void btn_Muahang_Click_1(object sender, EventArgs e)
         {
-            if(!Check_bt_Mua())
+            if(Check_bt_Mua())
             {
-                MessageBox.Show("Error");
+                
             }         
         }
         private bool Check_bt_Mua()
         {
             try
             {
-                if(domainUpDown1.Text=="")
+                KT_Gia_NhapXuat kt = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).FirstOrDefault();
+                if (domainUpDown1.Text == "")
                 {
                     MessageBox.Show("Mời nhập số lượng mua");
-                    return true;
-                }
-                foreach (Char c in domainUpDown1.Text)
-                {
-                    if (!Char.IsDigit(c))
-                    {
-                        MessageBox.Show("Ai chơi nhập chữ vô số lượng");
-                        return true;
-                    }
-                }
-                if (Convert.ToInt32(domainUpDown1.Text) > 20)
-                {
-                    MessageBox.Show("Mặt hàng chỉ cho phép mua số lượng không quá 20");
-                    return true;
+                    return false;
                 }
                 else
                 {
-                    ItemsGH sp = new ItemsGH();
-                    sp.MaSP = this.MaDT;
-                    sp.Soluong = Convert.ToInt32(domainUpDown1.Text);
-                    sp.TenSP = txt_namedt.Text.Substring(16);
-                    sp.Gia = Convert.ToInt32(txt_gia.Text.Substring(5));
-                    sp.ThanhTien = sp.Gia * sp.Soluong;
-                    this.Result(sp);
-                    this.Close();
+                    if (!NVQL.Instance.Check_Number(domainUpDown1.Text))
+                    {
+                        MessageBox.Show("Chỉ cho phép nhập số");
+                    }
+                    if (Convert.ToInt32(domainUpDown1.Text) > kt.Soluong)
+                    {
+                        MessageBox.Show("Hiện không có đủ số lượng cho sản phẩm này");
+                        return false;
+                    }
+                    else
+                    {
+                        
+                        ItemsGH sp = new ItemsGH();
+                        sp.MaSP = this.MaDT;
+                        sp.Soluong = Convert.ToInt32(domainUpDown1.Text);
+                        sp.TenSP = txt_namedt.Text.Substring(16);
+                        
+                        sp.Gia = Convert.ToInt32(txt_gia.Text.Substring(5));
+                        sp.ThanhTien = sp.Gia * sp.Soluong;
+                        MessageBox.Show("s");
+                        this.Result(sp);
+                        this.Close();
+                        return true;
+                    }
                 }
-                return true;
             }
             catch (Exception)
             {
@@ -115,6 +117,36 @@ namespace GiaoDien
         private void btn_Huy_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public KT_Gia_NhapXuat Check_gia(string MaDT)
+        {
+
+            KT_Gia_NhapXuat gia = null;
+            List<int> songaynn = new List<int>();
+            int songay = -1;
+            if (db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).Count() > 1)
+            {
+                foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
+                {
+                    TimeSpan tsp = DateTime.Now.Subtract(i.NgayApDung);
+                    if (tsp.Days >= 0)
+                    {
+                        songay = tsp.Days;
+                        songaynn.Add(tsp.Days);
+                    }
+                }
+                int x = NVQL.Instance.TimSoNN(songaynn);
+                foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
+                {
+                    if (DateTime.Now.Subtract(i.NgayApDung).Days == x) gia = i;
+                }
+                return gia;
+            }
+            else
+            {
+                gia = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).FirstOrDefault();
+                return gia;
+            }
         }
     }
 }

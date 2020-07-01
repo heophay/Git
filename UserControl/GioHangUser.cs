@@ -32,70 +32,171 @@ namespace GiaoDien
             this.ListGH = Masp;
             this.RS = sender;
             this.MaTK = matk;
-            Showsp();
+            Show_ListGH();
+            SetCBB();
         }
-     
-        public void Showsp()
+        public void SetCBB()
         {
-            DGV_Giohang.DataSource = "";
+            for (int i = 20; i >= 1; i--)
+            {
+                domainUpDown1.Items.Add(i);
+            }
+            if (ListGH.Count > 0) Fill_Soluong(Convert.ToInt32(DGV_Giohang.Rows[0].Cells["Soluong"].Value.ToString()));
+        }
+        private void Fill_Soluong(int soluong)
+        {
+            int index = -1;
+            for (int i = 0; i < domainUpDown1.Items.Count; i++)
+            {
+                if (Convert.ToInt32(domainUpDown1.Items[i].ToString()) == soluong) index = i;
+            }
+            domainUpDown1.SelectedIndex = index;
+        }
+        public void Show_ListGH()
+        {
+            DGV_Giohang.DataSource = null;
             DGV_Giohang.DataSource = ListGH;
         }
         private void button_Lapdonhang_Click(object sender, EventArgs e)
         {
-            Detail_LapDH f = new Detail_LapDH(ListGH, this.MaTK,this.RS);
-            f.ShowDialog();
+            DataGridViewRowCollection r = DGV_Giohang.Rows;
+            if(r.Count>0)
+            {
+                Detail_LapDH f = new Detail_LapDH(ListGH, this.MaTK, this.RS);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Giỏ hàng rỗng chưa thể lập đơn hàng, Vui lòng quay lại mua hàng");
+            }
         }
-
-        private void button_Tangsoluong_Click(object sender, EventArgs e)
-        {
-            Change_SoLuong(true);
-        }
-
-        private void button_GiamSoLuong_Click(object sender, EventArgs e)
-        {
-            Change_SoLuong(false);
-        }
-        public void Change_SoLuong(bool lenh)
+        private void DGV_Giohang_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = DGV_Giohang.SelectedRows;
-            if (r.Count == 1)
+            if (r.Count != 1)
             {
-                int index = -1;
-                foreach (ItemsGH i in ListGH)
-                {
-                    if (r[0].Cells["MaSP"].Value.ToString().Equals(i.MaSP))
-                    {
-                        index = ListGH.IndexOf(i);
-                    }
-                }
-                if (index != -1)
-                {
-                    if (lenh) ListGH[index].Soluong += 1;
-                    else
-                    {
-                        if (ListGH[index].Soluong - 1 > 0) ListGH[index].Soluong -= 1;
-                        else MessageBox.Show("Số lượng không được nhỏ hơn 1!!!");
-                    }
-                    ListGH[index].ThanhTien = ListGH[index].Soluong * ListGH[index].Gia;
-                    Showsp();
-                }
+                domainUpDown1.Text = "";
             }
-            else MessageBox.Show("Chỉ được chọn 1 sản phẩm!!");
+            else
+            {
+                Fill_Soluong(Convert.ToInt32(r[0].Cells["Soluong"].Value.ToString()));
+            }
         }
 
+        private void btn_ThayDoi_Click(object sender, EventArgs e)
+        {
+            if(!Change_SoLuong())
+            {
+                MessageBox.Show("Error!");
+            }
+        }
+        private bool Change_SoLuong()
+        {
+            try
+            {
+                DataGridViewSelectedRowCollection r = DGV_Giohang.SelectedRows;
+                if (r.Count == 1)
+                {
+                    int index = -1;
+                    foreach (ItemsGH i in ListGH)
+                    {
+                        if (r[0].Cells["MaSP"].Value.ToString().Equals(i.MaSP))
+                        {
+                            index = ListGH.IndexOf(i);
+                        }
+                    }
+                    if (index != -1)
+                    {
+                        if (!Check_Soluong(r[0].Cells["MaSP"].Value.ToString()))
+                        {
+                            ListGH[index].Soluong = Convert.ToInt32(domainUpDown1.Text);
+                            ListGH[index].ThanhTien = ListGH[index].Soluong * ListGH[index].Gia;
+                        }
+                        Show_ListGH();
+                    }
+                }
+                else
+                {
+                    if (r.Count > 1) MessageBox.Show("Chỉ được chọn 1 sản phẩm!!");
+                    return false;
+                }
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
+        private bool Check_Soluong(string MaDT)
+        {
+
+            KT_Gia_NhapXuat gia = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).FirstOrDefault();
+            if (domainUpDown1.Text == "")
+            {
+                MessageBox.Show("Mời nhập số lượng mua");
+                return true;
+            }
+            foreach (Char c in domainUpDown1.Text)
+            {
+                if (!Char.IsDigit(c))
+                {
+                    MessageBox.Show("Ai chơi nhập chữ vô số lượng");
+                    return true;
+                }
+            }
+            if (Convert.ToInt32(domainUpDown1.Text) > gia.Soluong)
+            {
+                MessageBox.Show("Hiện không có đủ số lượng cho sản phẩm này");
+                return true;
+            }
+            if ((Convert.ToInt32(domainUpDown1.Text) > 20) || (Convert.ToInt32(domainUpDown1.Text) < 1))
+            {
+                MessageBox.Show("Mặt hàng chỉ cho phép mua số lượng từ 1 đến 20");
+                return true;
+            }
+            else return false;
+        }
+        private bool Xoa_SP_FromGH()
+        {
+            try
+            {
+                DataGridViewSelectedRowCollection r = DGV_Giohang.SelectedRows;
+                List<ItemsGH> Masp = new List<ItemsGH>();
+                if (r.Count > 0)
+                {
+                    foreach (ItemsGH i in ListGH)
+                    {
+                        foreach (DataGridViewRow j in r)
+                        {
+                            if (i.MaSP == j.Cells["MaSP"].Value.ToString())
+                            {
+                                Masp.Add(i); 
+                            }
+                           
+                        }
+                    }
+                   foreach(ItemsGH i in Masp)
+                    {
+                        ListGH.Remove(i);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn 1 hoặc nhiều Row trước khi xóa");
+                    return false;
+                }
+            return true;
+        }catch(Exception)
+            {
+                return false;
+            }
+}
         private void button_XoaSP_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = DGV_Giohang.SelectedRows;
-            foreach (DataGridViewRow j in r)
+            if(Xoa_SP_FromGH())
             {
-                int index = -1;
-                foreach (ItemsGH i in ListGH)
-                {
-                    if (j.Cells["MaSP"].Value.ToString().Equals(i.MaSP)) index = ListGH.IndexOf(i);
-                }
-                ListGH.RemoveAt(index);
+                Show_ListGH();
             }
-            Showsp();
+                  
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
-
+using DACNPM.dll;
 namespace GiaoDien
 {
     public partial class QL_SanPham : UserControl
@@ -22,23 +22,27 @@ namespace GiaoDien
         }
         private void SetView()
         {
+            cbb_thuonghieu.Items.Clear();
             cbb_gia.Items.Clear();
-            cbb_loaidt.Items.Clear();
+            cbb_thuonghieu.Items.Add("All");
+            cbb_gia.Items.Add("All");
             foreach (DanhMuc i in db.DanhMucs)
             {
                 cbb_gia.Items.Add(i.TenDM);
             }
+            //hàm sort thứ tự cbb giá
+            NVQL.Instance.Sort_CBB(cbb_gia.Items.Count,ref cbb_gia);
             foreach (ChiTiet_SP i in db.ChiTiet_SPs)
             {
                 bool kt = true;
-                foreach(string j in cbb_loaidt.Items)
+                foreach (string j in cbb_thuonghieu.Items)
                 {
                     if (i.HangSX == j) kt = false;
                 }
-                if (kt == true) cbb_loaidt.Items.Add(i.HangSX);
+                if (kt == true) cbb_thuonghieu.Items.Add(i.HangSX);
             }
             cbb_gia.SelectedIndex = 0;
-            cbb_loaidt.SelectedIndex = 0;
+            cbb_thuonghieu.SelectedIndex = 0;
         }
         private void button_Them_Click(object sender, EventArgs e)
         {
@@ -64,7 +68,7 @@ namespace GiaoDien
         }
         private void ShowDTGV()
         {
-            DGV_QLSP.DataSource = db.KT_Gia_NhapXuats.Select(p => new { p.MaSP,p.ID_Gia, p.ChiTiet_SP.TenSP, p.GiaNhap, p.GiaBan, p.NgayApDung, p.ChiTiet_SP.HangSX, p.ChiTiet_SP.ManHinh, p.ChiTiet_SP.HeDieuHanh, p.ChiTiet_SP.Ram, p.ChiTiet_SP.SoSim, p.ChiTiet_SP.Pin, p.ChiTiet_SP.NoiXuatXu }).ToList();
+            DGV_QLSP.DataSource = db.KT_Gia_NhapXuats.Select(p => new { p.MaSP,p.ID_Gia, p.ChiTiet_SP.TenSP, p.GiaNhap, p.GiaBan,p.Soluong, p.NgayApDung, p.ChiTiet_SP.HangSX, p.ChiTiet_SP.ManHinh, p.ChiTiet_SP.HeDieuHanh, p.ChiTiet_SP.Ram, p.ChiTiet_SP.SoSim, p.ChiTiet_SP.Pin, p.ChiTiet_SP.NoiXuatXu }).ToList();
         }
         private void button_Xoa_Click(object sender, EventArgs e)
         {
@@ -96,6 +100,7 @@ namespace GiaoDien
                     }
                 }
                 db.SaveChanges();
+                MessageBox.Show("Xóa thành công");
                 return true;
             }
             catch (Exception)
@@ -120,6 +125,21 @@ namespace GiaoDien
         private void bt_show_SP_Click(object sender, EventArgs e)
         {
             ShowDTGV();
+        }
+
+        private void bt_update_gia_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection r = DGV_QLSP.SelectedRows;
+            if (r.Count == 1)
+            {
+                Update_Gia f = new Update_Gia(r[0].Cells["ID_Gia"].Value.ToString());
+                f.Show1 += new Update_Gia.ShowGia(ShowDTGV);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng click vào 1 Row");
+            }
         }
     }
 }

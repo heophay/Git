@@ -59,55 +59,99 @@ namespace GiaoDien
                 Ngaysinh.Value = nv.NgaySinh;
             }
         }
-
-        private void button_changepass_Click(object sender, EventArgs e)
+        private bool Change_pass()
         {
-            TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == MaTK).FirstOrDefault();
-            if (txt_pass.Text == "" || txt_confirmpass.Text == "")
+            try
             {
-                MessageBox.Show("Chưa nhập đủ thông tin");
-            }
-            else
-            {
-                if (!txt_pass.Text.Equals(txt_confirmpass.Text))
+                if (txt_pass.Text == "" || txt_confirmpass.Text == "")
                 {
-                    MessageBox.Show("Mật Khẩu và Xác Nhận phải giống nhau");
+                    MessageBox.Show("Chưa nhập đủ thông tin");
+                    return false;
                 }
                 else
                 {
-                    tk.PassTK =NVQL.Instance.MaHoaMK(txt_confirmpass.Text);
-                    db.SaveChanges();
-                    MessageBox.Show("Lưu thành công");
+                    if (!NVQL.Instance.Check_String(txt_pass.Text))
+                    {
+                        MessageBox.Show("Mật khẩu không thể chứa tiếng việt");
+                        return false;
+                    }
+                    else
+                    {
+                        if (!txt_pass.Text.Equals(txt_confirmpass.Text))
+                        {
+                            MessageBox.Show("Mật Khẩu và Xác Nhận phải giống nhau");
+                            return false;
+                        }
+                    }
                 }
-
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
+        private void button_changepass_Click(object sender, EventArgs e)
+        {
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == MaTK).FirstOrDefault();
+            if (Change_pass()&&tk!=null)
+            {
+                tk.PassTK = NVQL.Instance.MaHoaMK(txt_confirmpass.Text);
+                db.SaveChanges();
+                MessageBox.Show("Lưu thành công");
+            }
+        }
+        private bool Oke()
+        {
+            try
+            {
+                if(!NVQL.Instance.Check_Number(txt_SoDT.Text))
+                {
+                    MessageBox.Show("Số điện thoại chỉ bao gồm kí tự số");
+                    return false;
+                }
+                else
+                {
+                    if(txt_SoDT.Text.Length!=10)
+                    {
+                        MessageBox.Show("Số điện thoại phải 10 chữ số");
+                        return false;
+                    }
+                }
+                return true;
+            }catch(Exception)
+            {
+                return false;
             }
         }
         private void bt_luu_Click(object sender, EventArgs e)
         {
-            TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == MaTK).FirstOrDefault();
-            if (tk.LoaiTK.Equals("Customer"))
-            {
-                ThongTinCaNhan kh = db.ThongTinCaNhans.Where(p => p.MaTK == MaTK).FirstOrDefault();
-                kh.TenKH = txt_HotenKH.Text;
-                kh.SoDT = txt_SoDT.Text;
-                kh.DiaChi = txt_Diachi.Text;
-                kh.Gender = radioButton_Nam.Checked;
-                kh.NgaySinh = Ngaysinh.Value;
-                db.SaveChanges();
-                MessageBox.Show("Lưu thay đổi");
-            }
-            else
-            {
-                Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaTK).FirstOrDefault();
-                nv.TenNV = txt_HotenKH.Text;
-                nv.SoDT = txt_SoDT.Text;
-                nv.DiaChi = txt_Diachi.Text;
-                nv.Gender = radioButton_Nam.Checked;
-                nv.NgaySinh = Ngaysinh.Value;
-                db.SaveChanges();
-                MessageBox.Show("Lưu thay đổi");
-            }
 
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == MaTK).FirstOrDefault();
+            if(Oke()&& tk != null)
+            {
+                if (tk.LoaiTK.Equals("Customer"))
+                {
+                    ThongTinCaNhan kh = db.ThongTinCaNhans.Where(p => p.MaTK == MaTK).FirstOrDefault();
+                    kh.TenKH = txt_HotenKH.Text;
+                    kh.SoDT = txt_SoDT.Text;
+                    kh.DiaChi = txt_Diachi.Text;
+                    kh.Gender = radioButton_Nam.Checked;
+                    kh.NgaySinh = Ngaysinh.Value;
+                    db.SaveChanges();
+                    MessageBox.Show("Lưu thay đổi");
+                }
+                else
+                {
+                    Theodoi_NV nv = db.Theodoi_NVs.Where(p => p.MaTK == MaTK).FirstOrDefault();
+                    nv.TenNV = txt_HotenKH.Text;
+                    nv.SoDT = txt_SoDT.Text;
+                    nv.DiaChi = txt_Diachi.Text;
+                    nv.Gender = radioButton_Nam.Checked;
+                    nv.NgaySinh = Ngaysinh.Value;
+                    db.SaveChanges();
+                    MessageBox.Show("Lưu thay đổi");
+                }
+            }
         }
 
     }

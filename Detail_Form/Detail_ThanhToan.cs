@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDien.Source_Code_CSDL;
-
+using DACNPM.dll;
 namespace GiaoDien.Detail_Form
 {
     public partial class Detail_ThanhToan : Form
@@ -51,20 +51,68 @@ namespace GiaoDien.Detail_Form
             this.Result(false);
             this.Close();
         }
+        private bool Check_Format()
+        {
+            try
+            {
+                if (!NVQL.Instance.Check_Number(txt_SDT.Text))
+                {
+                    MessageBox.Show("Số điện thoại chỉ bao gồm kí tự số");
+                    return false;
+                }
+                else
+                {
+                    if (txt_SDT.Text.Length != 10)
+                    {
+                        MessageBox.Show("số điện thoại phải đủ 10 số");
+                        return false;
+                    }
+                }
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
+        private bool XacNhan()
+        {
+            try
+                {
+                if (txt_TenKH.Text == "" || txt_SDT.Text == "" || txt_DiaChi.Text == "")
+                {
 
+                    MessageBox.Show("Mời nhập thông tin thanh toán!");
+                }
+                else
+                {
+                    if (Check_Format())
+                    {
+                        if (db.DonHangs.Where(p => p.MaDonHang.Equals(MaDH)).Count() == 1)
+                        {
+                            UpdateDH();
+                        }
+                        else
+                        {
+                            CreateDH();
+                            Reset();
+                        }
+                        this.Result(true);
+                        this.Close();
+                    }
+                }
+                return true;
+
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
         private void bt_XacNhan_Click(object sender, EventArgs e)
         {
-            if (db.DonHangs.Where(p => p.MaDonHang.Equals(MaDH)).Count() == 1)
+           if(XacNhan())
             {
-                UpdateDH();
+                MessageBox.Show("Giao dịch thành công");
             }
-            else
-            {
-                CreateDH();
-                Reset();
-            }
-            this.Result(true);
-            this.Close();
         }
         public void Showsp()
         {
@@ -73,6 +121,10 @@ namespace GiaoDien.Detail_Form
         public void SetView_New()
         {
             int Sum = 0;
+            txt_maDH.Enabled = false;
+            txt_Tongtien1.Enabled = false;
+            dtp_DateTao.Enabled = false;
+            dtp_DateTT.Enabled = false;
             foreach (ItemsGH i in listSP)
             {
                 Sum += i.ThanhTien;
@@ -201,6 +253,31 @@ namespace GiaoDien.Detail_Form
             else
             {
                 txt_DiaChi.Text = "";
+            }
+        }
+
+        private void txt_DiaChi_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_SDT.Text == "")
+            {
+                cbox_SDT.Checked = false;
+            }
+           
+        }
+
+        private void txt_TenKH_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_TenKH.Text == "")
+            {
+                cbox_TenTK.Checked = false;
+            }
+        }
+
+        private void txt_DiaChi_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txt_DiaChi.Text == "")
+            {
+                cbox_DiaChi.Checked = false;
             }
         }
     }

@@ -22,7 +22,7 @@ namespace GiaoDien
         }
         private void ShowDTGV()
         {
-            DGV_NV.DataSource = db.Theodoi_NVs.Select(p => new { p.MaTK, p.TenNV, p.NgaySinh, p.SoDT,p.DiaChi,p.Gender }).ToList();
+            DGV_NV.DataSource = db.Theodoi_NVs.Select(p => new { p.MaTK,p.TaiKhoan.TenTK, p.TenNV, p.NgaySinh, p.SoDT,p.DiaChi,p.Gender }).ToList();
         }
         private void button_Them_Click(object sender, EventArgs e)
         {
@@ -94,6 +94,20 @@ namespace GiaoDien
                 MessageBox.Show("Xóa thành công");
             }
             ShowDTGV();
+        }
+
+        private void bt_search_Click(object sender, EventArgs e)
+        {
+            if (cbb_search.SelectedIndex == 0)
+            {
+                var list = db.Theodoi_NVs.Where(p => p.TenNV.Contains(txt_search.Text)).Select(p => new { p.MaTK, p.TaiKhoan.TenTK, p.TenNV, p.NgaySinh, p.SoDT, p.DiaChi, p.Gender });
+                DGV_NV.DataSource = list.ToList();
+            }
+            else
+            {
+                var list = db.Theodoi_NVs.Where(p => p.MaTK.Contains(txt_search.Text)).Select(p=>new { p.MaTK, p.TaiKhoan.TenTK, p.TenNV, p.NgaySinh, p.SoDT, p.DiaChi, p.Gender });
+                DGV_NV.DataSource = list.ToList();
+            }
         }
     }
 }

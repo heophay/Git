@@ -99,7 +99,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(730, 338);
             this.dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -147,7 +147,7 @@
             this.grb_ListSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_ListSP.Location = new System.Drawing.Point(12, 137);
             this.grb_ListSP.Name = "grb_ListSP";
-            this.grb_ListSP.Size = new System.Drawing.Size(657, 380);
+            this.grb_ListSP.Size = new System.Drawing.Size(736, 380);
             this.grb_ListSP.TabIndex = 3;
             this.grb_ListSP.TabStop = false;
             this.grb_ListSP.Text = "Danh sách sản phẩm";
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 648);
+            this.ClientSize = new System.Drawing.Size(780, 648);
             this.Controls.Add(this.grb_ListSP);
             this.Controls.Add(this.lb_LapDH);
             this.Controls.Add(this.bt_Cancel);
