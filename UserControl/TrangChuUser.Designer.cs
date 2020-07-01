@@ -36,6 +36,7 @@
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Product5");
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Product6");
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bt_search = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbb_gia = new System.Windows.Forms.ComboBox();
@@ -46,10 +47,11 @@
             this.label_TimTheo = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.listView_DSSP = new System.Windows.Forms.ListView();
-            this.bt_search = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,6 +65,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1228, 129);
             this.panel2.TabIndex = 1;
+            // 
+            // bt_search
+            // 
+            this.bt_search.BackColor = System.Drawing.Color.Gray;
+            this.bt_search.FlatAppearance.BorderSize = 0;
+            this.bt_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_search.Font = new System.Drawing.Font("Times New Roman", 13.8F);
+            this.bt_search.ForeColor = System.Drawing.Color.White;
+            this.bt_search.Location = new System.Drawing.Point(273, 77);
+            this.bt_search.Name = "bt_search";
+            this.bt_search.Size = new System.Drawing.Size(138, 39);
+            this.bt_search.TabIndex = 3;
+            this.bt_search.Text = "Tìm kiếm";
+            this.bt_search.UseVisualStyleBackColor = false;
+            this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
             // 
             // txt_search
             // 
@@ -181,20 +198,9 @@
             this.listView_DSSP.UseCompatibleStateImageBehavior = false;
             this.listView_DSSP.Click += new System.EventHandler(this.listView1_Click);
             // 
-            // bt_search
+            // errorProvider1
             // 
-            this.bt_search.BackColor = System.Drawing.Color.Gray;
-            this.bt_search.FlatAppearance.BorderSize = 0;
-            this.bt_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_search.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.bt_search.ForeColor = System.Drawing.Color.White;
-            this.bt_search.Location = new System.Drawing.Point(273, 77);
-            this.bt_search.Name = "bt_search";
-            this.bt_search.Size = new System.Drawing.Size(138, 39);
-            this.bt_search.TabIndex = 3;
-            this.bt_search.Text = "Tìm kiếm";
-            this.bt_search.UseVisualStyleBackColor = false;
-            this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // TrangChuUser
             // 
@@ -210,6 +216,7 @@
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +235,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListView listView_DSSP;
         private System.Windows.Forms.Button bt_search;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

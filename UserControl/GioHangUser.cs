@@ -59,15 +59,23 @@ namespace GiaoDien
         }
         private void button_Lapdonhang_Click(object sender, EventArgs e)
         {
-            DataGridViewRowCollection r = DGV_Giohang.Rows;
-            if(r.Count>0)
+            if(MaTK!="")
             {
-                Detail_LapDH f = new Detail_LapDH(ListGH, this.MaTK, this.RS);
-                f.ShowDialog();
+                DataGridViewRowCollection r = DGV_Giohang.Rows;
+                if (r.Count > 0)
+                {
+                    Detail_LapDH f = new Detail_LapDH(ListGH, this.MaTK, this.RS);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Giỏ hàng rỗng chưa thể lập đơn hàng, Vui lòng quay lại mua hàng");
+                }
             }
             else
             {
-                MessageBox.Show("Giỏ hàng rỗng chưa thể lập đơn hàng, Vui lòng quay lại mua hàng");
+                MessageBox.Show("Mời bạn Bấm nút đăng ký ở góc trái trên ứng dụng để đăng ký", "Xác Nhận",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void DGV_Giohang_Click(object sender, EventArgs e)

@@ -19,6 +19,29 @@ namespace GiaoDien
         {
             InitializeComponent();
             SetView();
+            List<KT_Gia_NhapXuat> temp = new List<KT_Gia_NhapXuat>();
+            temp = Check_SoLuong();
+            if (temp!=null)
+            {
+                DGV_QLSP.DataSource = temp.Select(p=>new { p.ID_Gia,p.MaSP,p.ChiTiet_SP.TenSP,p.GiaNhap,p.GiaBan,p.Soluong}).ToList();
+                MessageBox.Show("Những mặt hàng đã hết", "Xác Nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
+        }
+        private List<KT_Gia_NhapXuat> Check_SoLuong()
+        {
+            List<KT_Gia_NhapXuat> KT = new List<KT_Gia_NhapXuat>();
+            KT_Gia_NhapXuat kt = new KT_Gia_NhapXuat();
+            foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.Soluong == 0))
+            {
+                KT.Add(i);
+            }
+            kt = KT[0];
+            for (int i = 1; i < KT.Count; i++)
+            {
+                if (KT[i].MaSP == kt.MaSP) KT.RemoveAt(i);
+            }
+            return KT;
         }
         private void SetView()
         {
@@ -68,6 +91,7 @@ namespace GiaoDien
         }
         private void ShowDTGV()
         {
+            DGV_QLSP.DataSource = null;
             DGV_QLSP.DataSource = db.KT_Gia_NhapXuats.Select(p => new { p.MaSP,p.ID_Gia, p.ChiTiet_SP.TenSP, p.GiaNhap, p.GiaBan,p.Soluong, p.NgayApDung, p.ChiTiet_SP.HangSX, p.ChiTiet_SP.ManHinh, p.ChiTiet_SP.HeDieuHanh, p.ChiTiet_SP.Ram, p.ChiTiet_SP.SoSim, p.ChiTiet_SP.Pin, p.ChiTiet_SP.NoiXuatXu }).ToList();
         }
         private void button_Xoa_Click(object sender, EventArgs e)
@@ -111,7 +135,9 @@ namespace GiaoDien
 
         private void bt_search_Click(object sender, EventArgs e)
         {
-            var list = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Contains(txt_search.Text));
+            var list = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Contains(txt_search.Text)).Select(p => new { p.MaSP,
+                p.ID_Gia, p.ChiTiet_SP.TenSP, p.GiaNhap, p.GiaBan, p.Soluong, p.NgayApDung, p.ChiTiet_SP.HangSX, p.ChiTiet_SP.ManHinh, p.ChiTiet_SP.HeDieuHanh, p.ChiTiet_SP.Ram, 
+                p.ChiTiet_SP.SoSim, p.ChiTiet_SP.Pin, p.ChiTiet_SP.NoiXuatXu });
             DGV_QLSP.DataSource = list.ToList();
         }
         private void txt_search_TextChanged(object sender, EventArgs e)

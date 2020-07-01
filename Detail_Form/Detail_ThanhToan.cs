@@ -111,7 +111,9 @@ namespace GiaoDien.Detail_Form
         {
            if(XacNhan())
             {
-                MessageBox.Show("Giao dịch thành công");
+                MessageBox.Show("Bạn có chắc chắn muốn xác nhận thanh toán?", "Xác Nhận",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             }
         }
         public void Showsp()

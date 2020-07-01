@@ -21,6 +21,7 @@ namespace GiaoDien
             InitializeComponent();
             SetView(MaTK);
         }
+        
         private void SetView(string matk)
         {
             TaiKhoan tk = db.TaiKhoans.Where(p => p.MaTK == matk).FirstOrDefault();

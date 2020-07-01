@@ -89,23 +89,24 @@ namespace GiaoDien
         {
 
             KT_Gia_NhapXuat gia = null;
-            List<int> songaynn = new List<int>();
-            int songay = -1;
+            int songay =1000;
             if (db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).Count() > 1)
             {
                 foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
                 {
                     TimeSpan tsp = DateTime.Now.Subtract(i.NgayApDung);
-                    if (tsp.Days >= 0)
+                    if (tsp.Days >= 0 && songay >= tsp.Days)
                     {
                         songay = tsp.Days;
-                        songaynn.Add(tsp.Days);
                     }
                 }
-                int x = NVQL.Instance.TimSoNN(songaynn);
                 foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
                 {
-                    if (DateTime.Now.Subtract(i.NgayApDung).Days == x) gia = i;
+                    if (DateTime.Now.Subtract(i.NgayApDung).Days== songay)
+                    {
+                        gia = i;
+                        break;
+                    }
                 }
                 return gia;
             }
@@ -134,9 +135,10 @@ namespace GiaoDien
             {
                 foreach (ChiTiet_SP i in db.ChiTiet_SPs.Where(
                             p => p.HangSX.Contains(HangSX) &&
-                            p.TenSP.Contains(txt_search.Text)))
+                            p.TenSP.Contains(txt_search.Text)/*&&p.GiaBan< Gia * 1000000*/))
                 {
                     if (Check_gia(i.MaSP).GiaBan < Gia * 1000000) List_SP.Add(Check_gia(i.MaSP));
+                    //List_SP.Add(i);
                 }
             }
             else

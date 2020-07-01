@@ -75,7 +75,7 @@ namespace GiaoDien
         {
             try
             {
-                KT_Gia_NhapXuat kt = db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).FirstOrDefault();
+                KT_Gia_NhapXuat kt = Check_gia(MaDT);
                 if (domainUpDown1.Text == "")
                 {
                     MessageBox.Show("Mời nhập số lượng mua");
@@ -98,11 +98,9 @@ namespace GiaoDien
                         ItemsGH sp = new ItemsGH();
                         sp.MaSP = this.MaDT;
                         sp.Soluong = Convert.ToInt32(domainUpDown1.Text);
-                        sp.TenSP = txt_namedt.Text.Substring(16);
-                        
+                        sp.TenSP = txt_namedt.Text.Substring(16);                       
                         sp.Gia = Convert.ToInt32(txt_gia.Text.Substring(5));
                         sp.ThanhTien = sp.Gia * sp.Soluong;
-                        MessageBox.Show("s");
                         this.Result(sp);
                         this.Close();
                         return true;
@@ -122,23 +120,24 @@ namespace GiaoDien
         {
 
             KT_Gia_NhapXuat gia = null;
-            List<int> songaynn = new List<int>();
-            int songay = -1;
+            int songay = 1000;
             if (db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)).Count() > 1)
             {
                 foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
                 {
                     TimeSpan tsp = DateTime.Now.Subtract(i.NgayApDung);
-                    if (tsp.Days >= 0)
+                    if (tsp.Days >= 0&& songay >= tsp.Days)
                     {
                         songay = tsp.Days;
-                        songaynn.Add(tsp.Days);
                     }
                 }
-                int x = NVQL.Instance.TimSoNN(songaynn);
                 foreach (KT_Gia_NhapXuat i in db.KT_Gia_NhapXuats.Where(p => p.MaSP.Equals(MaDT)))
                 {
-                    if (DateTime.Now.Subtract(i.NgayApDung).Days == x) gia = i;
+                    if (DateTime.Now.Subtract(i.NgayApDung).Days == songay)
+                    {
+                        gia = i;
+                        break;
+                    }
                 }
                 return gia;
             }

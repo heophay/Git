@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace GiaoDien
 {
@@ -18,14 +19,6 @@ namespace GiaoDien
 
         public string Matk { get => _matk; set => _matk = value; }
         SE_14X db = new SE_14X();
-        public User()
-        {
-            InitializeComponent();
-            panel1.Controls.Clear();
-            TrangChuUser l = new TrangChuUser();
-            panel1.Controls.Add(l);
-            this.Matk = "";
-        }
         public User(string Matk)
         {
             this.Matk = Matk;
@@ -33,7 +26,16 @@ namespace GiaoDien
             panel1.Controls.Clear();
             TrangChuUser l = new TrangChuUser();
             panel1.Controls.Add(l);
-            SetView();
+            if(Matk!="")  SetView();
+        }
+        public void DoProcessing(IProgress<int> progress)
+        {
+            for (int i = 0; i != 100; ++i)
+            {
+                Thread.Sleep(100);
+                if (progress != null)
+                    progress.Report(i);
+            }
         }
         private void button_TrangChu_Click(object sender, EventArgs e)
         {
@@ -54,8 +56,7 @@ namespace GiaoDien
                 if(MessageBox.Show("Bạn có muốn đăng nhập để tiếp tục chức năng này?", "Xác Nhận",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
                 {
-                    Login l = new Login();
-                    l.ShowDialog();
+                    MessageBox.Show("Mời Bạn nhấn đăng nhập ở góc phải màn hình");
                 }
             }
         }
@@ -80,8 +81,7 @@ namespace GiaoDien
                 if (MessageBox.Show("Bạn có muốn đăng nhập để tiếp tục chức năng này?", "Xác Nhận",
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Login l = new Login();
-                    l.ShowDialog();
+                    MessageBox.Show("Mời Bạn nhấn đăng nhập ở góc phải màn hình");
                 }              
             }
         }

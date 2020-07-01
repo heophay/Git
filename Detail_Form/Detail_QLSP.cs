@@ -46,15 +46,22 @@ namespace GiaoDien
         private void bt_openfile_Click(object sender, EventArgs e)
         {
             //Kiểm tra xem người dùng đã chọn file chưa
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if(MaSP!="")
             {
-                // Lấy hình ảnh
-                openFileDialog1.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
-                openFileDialog1.FilterIndex = 0;
-                Image img = Image.FromFile(openFileDialog1.FileName);
-                // Gán ảnh
-                pic_dt.Image = img;
-                Picture = openFileDialog1.FileName;
+                MessageBox.Show("Hiện tại chưa cho phép cập nhật hình ảnh của sản phẩm");
+            }
+            else
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy hình ảnh
+                    openFileDialog1.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
+                    openFileDialog1.FilterIndex = 0;
+                    Image img = Image.FromFile(openFileDialog1.FileName);
+                    // Gán ảnh
+                    pic_dt.Image = img;
+                    Picture = openFileDialog1.FileName;
+                }
             }
         }
         private void SetView()
